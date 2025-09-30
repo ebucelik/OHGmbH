@@ -4,26 +4,50 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import React from "react";
 
 export default function Header() {
     const [showNavBar, setShowNavBar] = useState(false);
+    const [hideHeaderWhileScrollingDown, setHideHeaderWhileScrollingDown] = useState("translate-y-0");
+    var previousScrollY = 0
 
     function toggleShowNavBar() {
         setShowNavBar(!showNavBar);
     }
 
+    React.useEffect(() => {
+        window.addEventListener("wheel", (event) => {
+            if (event.deltaY > 0) {
+                setHideHeaderWhileScrollingDown("-translate-y-100");
+            } else {
+                setHideHeaderWhileScrollingDown("translate-y-0");
+            }
+        })
+
+        window.addEventListener("scroll", () => {
+            if (innerWidth < 768) {
+                if (previousScrollY > scrollY || scrollY <= 0) {
+                    setHideHeaderWhileScrollingDown("translate-y-0");
+                } else {
+                    setHideHeaderWhileScrollingDown("-translate-y-100");
+                }
+            }
+
+            previousScrollY = scrollY
+        })
+    }, []);
+
     return (
-        <nav className="m-5 sticky top-0 z-10">
-            <div className="w-full p-5 rounded-md bg-white border-1 shadow-xl fade-down-1s">
+        <nav className={`${hideHeaderWhileScrollingDown} sticky top-2.5 z-10 m-5 transition duration-300`}>
+            <div className="w-full p-5 rounded-md bg-white border-1 border-gray-200 shadow-lg fade-down-1s">
                 <div className="flex flex-row">
                     <div className="flex-2 font-bold">
-                        <div className="sm:flex sm:flex-col-2 gap-3">
+                        <div className="flex sm:flex-col-2 sm:gap-3">
                             <Image
-                                className="rounded-md hidden sm:block"
-                                src="/haraldotto_logo.svg"
+                                src="/ohlogo.svg"
                                 alt="Harald Otto Logo"
-                                width={70}
-                                height={70}
+                                width={80}
+                                height={80}
                                 priority
                             />
                             <div className="content-center">
@@ -41,7 +65,7 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
-                    <div className="hidden mx-auto w-2/4 sm:flex flex-row text-lg font-bold text-center">
+                    <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
                         <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
                             <Link href="">Büros</Link>
                         </div>
