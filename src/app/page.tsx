@@ -1,12 +1,11 @@
-import Button from "./button";
-
+import Button from "../components/button";
 
 export default function Home() {
   return (
     <div className="mxauto mx-5 sm:mx-10">
       <div>
         <div className="sm:flex sm:flex-row fade-up-1s">
-          <div className="flex-1 content-center">
+          <div className="flex-1 content-center sm:pl-15">
             <div className="flex flex-col">
               <p className="text-4xl sm:text-8xl font-serif">
                 Stets an
@@ -20,7 +19,7 @@ export default function Home() {
               <p className="text-lg sm:text-2xl">
                 sicher und zuverlässig.
               </p>
-              <Button text="Jetzt Termin vereinbaren" />
+              <Button text="Jetzt Termin vereinbaren" className="my-5 sm:mt-20" />
             </div>
           </div>
           <div className="flex-1">
