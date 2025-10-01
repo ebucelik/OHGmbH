@@ -33,6 +33,30 @@
       transform: translateX(-100%);
     }
   }
+
+  --animate-infinite-spin: spin 60s linear infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  --animate-infinite-spin-reverse: spin-reverse 60s linear infinite;
+
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+
+    to {
+      transform: rotate(0deg);
+    }
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {

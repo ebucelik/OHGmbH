@@ -1,5 +1,6 @@
 import HCarousel from "@/components/hcarousel";
 import Button from "../components/button";
+import { Icon } from "@iconify/react";
 
 export default function Home() {
   const insuranceNames = [
@@ -51,7 +52,7 @@ export default function Home() {
         </div>
       </div>
 
-      <HCarousel leadingTitle="Unsere Partner" body={
+      <HCarousel leadingTitle="Unsere Partner" items={
         insuranceNames.map(
           (item, index) => (
             <li key={index}>
@@ -114,6 +115,10 @@ export default function Home() {
             <Button text="Unser Team kontaktieren" className="my-5 sm:mt-10" isPrimary={false} />
           </div>
         </div>
+      </div>
+
+      <div className="px-5 sm:px-10 w-full h-screen content-center">
+
       </div>
     </div>
   );
