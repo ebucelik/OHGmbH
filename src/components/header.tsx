@@ -45,23 +45,43 @@ export default function Header() {
                         <div className="flex sm:flex-col-2 sm:gap-3">
                             <Image
                                 src="/ohlogo.svg"
-                                alt="Harald Otto Logo"
+                                alt="OH GmbH Logo"
                                 width={80}
                                 height={80}
                                 priority
                             />
                             <div className="content-center">
                                 <p className="text-xl sm:text-3xl">
-                                    Harald Otto
+                                    OH GmbH
                                 </p>
-                                <div className="flex flex-row">
-                                    <p className="text-sm sm:text-xl">
-                                        Versicherungs
-                                    </p>
-                                    <p className="text-sm sm:text-xl text-appPrimary">
+                                <span className="flex flex-row">
+                                    <div className="window">
+                                        <div className="flex flex-col window-inner overflow-hidden text-right">
+                                            <div className="text-lg sm:text-xl">
+                                                Versicherungs
+                                            </div>
+                                            <div className="text-lg sm:text-xl">
+                                                Finanzierungs
+                                            </div>
+                                            <div className="text-lg sm:text-xl">
+                                                Energie
+                                            </div>
+                                            <div aria-hidden className="text-lg sm:text-xl">
+                                                Versicherungs
+                                            </div>
+                                            <div aria-hidden className="text-lg sm:text-xl">
+                                                Finanzierungs
+                                            </div>
+                                            <div aria-hidden className="text-lg sm:text-xl">
+                                                Energie
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-lg sm:text-xl text-appPrimary">
                                         makler
-                                    </p>
-                                </div>
+                                    </div>
+                                </span>
                             </div>
                         </div>
                     </div>

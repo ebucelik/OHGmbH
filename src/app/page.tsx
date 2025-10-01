@@ -1,8 +1,27 @@
-import Divider from "@/components/divider";
+import HCarousel from "@/components/hcarousel";
 import Button from "../components/button";
-import Image from "next/image";
 
 export default function Home() {
+  const insuranceNames = [
+    "allianz",
+    "acredia",
+    "apk-versicherung",
+    "donau",
+    "ergo",
+    "garanta",
+    "generali",
+    "hdi",
+    "helvetia",
+    "muki",
+    "roland",
+    "swisslife",
+    "uniqa",
+    "vig",
+    "wstv",
+    "wustenrot",
+    "zurich"
+  ];
+
   return (
     <div className="mxauto">
       <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
@@ -32,14 +51,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="my-10 px-5 sm:px-10 flex flex-row gap-2 justify-center">
-        <div>
-          Unsere Partner
-        </div>
-        <div>
-          Generali, zürich usw.
-        </div>
-      </div>
+      <HCarousel leadingTitle="Unsere Partner" body={
+        insuranceNames.map(
+          (item, index) => (
+            <li key={index}>
+              <img src={item + `-logo.svg`} className="w-10 sm:w-32" />
+            </li>
+          )
+        )
+      } />
 
       <div className="px-5 sm:px-10 w-full h-screen bg-appPrimary content-center">
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">

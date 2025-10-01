@@ -9,7 +9,7 @@
   --appSecondaryLight: #477cae;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -21,6 +21,18 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-infinite-scroll: infinite-scroll 100s linear infinite;
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -228,4 +240,65 @@ body {
 
 .grow:hover {
   transform: scale(1.05);
+}
+
+:root {
+  --font-size: 2rem;
+  --line-height: 1;
+  --num-words: 6;
+  --animation-duration: 17.5s;
+}
+
+.window {
+  display: inline-block;
+  overflow: hidden;
+  flex-grow: 1;
+  vertical-align: bottom;
+  height: calc(var(--font-size) * var(--line-height));
+}
+
+.window-inner {
+  display: inline-block;
+  animation: scroll-text var(--animation-duration) ease-in-out infinite;
+}
+
+.window span {
+  display: block;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateY(0%);
+    /* trust */
+  }
+
+  16.66% {
+    transform: translateY(calc(-16.66%));
+    /* loyalty */
+  }
+
+  33.33% {
+    transform: translateY(calc(-33.33%));
+    /* respect */
+  }
+
+  50% {
+    transform: translateY(calc(-50%));
+    /* value */
+  }
+
+  66.66% {
+    transform: translateY(calc(-66.66%));
+    /* referrals */
+  }
+
+  83.33% {
+    transform: translateY(calc(-83.33%));
+    /* trust (at the end) */
+  }
+
+  100% {
+    transform: translateY(calc(-83.33%));
+    /* trust (at the end) */
+  }
 }
