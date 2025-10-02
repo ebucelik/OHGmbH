@@ -38,8 +38,8 @@ export default function Header() {
     }, []);
 
     return (
-        <nav className={`${hideHeaderWhileScrollingDown} sticky top-2.5 z-10 m-5 transition duration-300`}>
-            <div className="w-full p-5 rounded-md bg-white border-1 border-gray-200 shadow-lg fade-down-1s">
+        <nav className={`${hideHeaderWhileScrollingDown} sticky top-0 z-10 mb-5 transition duration-300 opacity-95`}>
+            <div className="w-full p-5 rounded-b-2xl bg-white border-b-1 border-gray-200 shadow-lg fade-down-1s">
                 <div className="flex flex-row">
                     <div className="flex-2 font-bold">
                         <div className="flex sm:flex-col-2 sm:gap-3">
