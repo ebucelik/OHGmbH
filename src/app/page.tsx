@@ -1,4 +1,4 @@
-import HCarousel from "@/components/hcarousel";
+import HCarousel from "../components/hcarousel";
 import Button from "../components/button";
 
 export default function Home() {
