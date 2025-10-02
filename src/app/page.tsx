@@ -61,7 +61,7 @@ export default function Home() {
         )
       } />
 
-      <div className="px-5 sm:px-10 w-full h-screen bg-linear-to-b from-appPrimary to-white content-center">
+      <div className="px-5 sm:px-10 w-full h-screen bg-linear-to-b from-white via-appPrimary to-white content-center">
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
           <div className="sm:hidden font-serif">
             <div className="flex flex-row place-items-baseline">
@@ -117,11 +117,11 @@ export default function Home() {
       </div>
 
       <div className="py-10 sm:py-20 px-5 sm:px-10 w-full h-screen">
-        <div className="text-2xl sm:text-5xl text-center">
+        <div className="text-2xl sm:text-5xl text-center font-serif">
           Es bleibt nicht nur bei Versicherungen.
         </div>
         <div className="flex flex-col sm:flex-row justify-evenly gap-5 sm:gap-5 my-15">
-          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg">
+          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
             <div className="relative">
               <img src="/electric.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
 
@@ -159,7 +159,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg">
+          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
             <div className="relative">
               <img src="/finance.webp" alt="Finanzierung Bild" className="w-full rounded-t-xl" />
 
@@ -196,7 +196,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg">
+          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
             <div className="relative">
               <img src="/consulting.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
 
@@ -234,6 +234,16 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="flex flex-row justify-center place-items-center gap-5">
+          <div className="text-sm sm:text-xl text-center">
+            Haben wir dein Interesse geweckt?
+          </div>
+          <Button text="Kontaktiere Uns" isPrimary={false} />
+        </div>
+      </div>
+
+      <div className="px-5 sm:px-10 w-full h-screen content-center">
+
       </div>
     </div>
   );
