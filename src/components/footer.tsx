@@ -8,13 +8,15 @@ export default function Footer() {
             <div className="flex place-content-center">
                 <div className="flex flex-row gap-10 sm:gap-20">
                     <div className="hidden sm:flex sm:flex-col place-content-center">
-                        <Image
-                            src="/ohlogo.svg"
-                            alt="OH GmbH Logo"
-                            width={150}
-                            height={150}
-                            priority
-                        />
+                        <Link href="/">
+                            <Image
+                                src="/ohlogo.svg"
+                                alt="OH GmbH Logo"
+                                width={150}
+                                height={150}
+                                priority
+                            />
+                        </Link>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:gap-20">
                         <div className="flex flex-col gap-1 text-sm">
@@ -36,15 +38,15 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="">Versicherungen</Link>
+                                <Link href="" className="hover:text-appPrimary">Versicherungen</Link>
                             </div>
 
                             <div>
-                                <Link href="">Finanzierungen</Link>
+                                <Link href="" className="hover:text-appPrimary">Finanzierungen</Link>
                             </div>
 
                             <div>
-                                <Link href="">Strom & Gas</Link>
+                                <Link href="" className="hover:text-appPrimary">Strom & Gas</Link>
                             </div>
                         </div>
                         <div className="flex flex-col gap-1 text-sm">
@@ -53,15 +55,15 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="">haraldotto@oh.at</Link>
+                                <Link href="" className="hover:text-appPrimary">haraldotto@oh.at</Link>
                             </div>
 
                             <div>
-                                <Link href="">manuelholzmann@oh.at</Link>
+                                <Link href="" className="hover:text-appPrimary">manuelholzmann@oh.at</Link>
                             </div>
 
                             <div>
-                                <Link href="">+43 664 1817109</Link>
+                                <Link href="" className="hover:text-appPrimary">+43 664 1817109</Link>
                             </div>
                         </div>
                         <div className="flex flex-col gap-1 text-sm">
@@ -73,7 +75,7 @@ export default function Footer() {
                                 24/7 telefonisch erreichbar
                             </div>
                             <div>
-                                <Link href="">+43 664 1817109</Link>
+                                <Link href="" className="hover:text-appPrimary">+43 664 1817109</Link>
                             </div>
                         </div>
                         <div className="flex flex-col gap-1 text-sm">
@@ -82,15 +84,15 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="">Impressum</Link>
+                                <Link href="" className="hover:text-appPrimary">Impressum</Link>
                             </div>
 
                             <div>
-                                <Link href="">Datenschutz</Link>
+                                <Link href="" className="hover:text-appPrimary">Datenschutz</Link>
                             </div>
 
                             <div>
-                                <Link href="">AGB</Link>
+                                <Link href="" className="hover:text-appPrimary">AGB</Link>
                             </div>
                         </div>
                     </div>
@@ -104,7 +106,7 @@ export default function Footer() {
                     </div>
                     <div>
                         © Branding und technische Umsetzung <span className="underline underline-offset-2">
-                            <Link href="">OC GmbH</Link>
+                            <Link href="" className="hover:text-appPrimary">OC GmbH</Link>
                         </span>.
                     </div>
                 </div>
