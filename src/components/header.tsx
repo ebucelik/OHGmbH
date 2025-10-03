@@ -2,13 +2,22 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { Icon } from "@iconify/react";
 import React from "react";
 
 export default function Header() {
+    enum Menu {
+        solution = "Solution",
+        service = "Service",
+        team = "Team",
+        contact = "Contact",
+        default = ""
+    }
     const [showNavBar, setShowNavBar] = useState(false);
     const [hideHeaderWhileScrollingDown, setHideHeaderWhileScrollingDown] = useState("translate-y-0");
+    const [showMenu, setShowMenu] = useState(Menu.default);
+
     var previousScrollY = 0
 
     function toggleShowNavBar() {
@@ -37,13 +46,203 @@ export default function Header() {
         })
     }, []);
 
+    function menu(): ReactElement {
+        switch (showMenu) {
+            case Menu.solution:
+                return <div
+                    className="flex flex-row fade-down-05s py-5 gap-10"
+                    onMouseEnter={() => setShowMenu(Menu.solution)}
+                    onMouseLeave={() => setShowMenu(Menu.default)}
+                >
+                    <div className="flex-1"></div>
+                    <div className="flex-2">
+                        <div className="font-bold sm:text-lg">
+                            Versicherungen
+                        </div>
+                        <div className="grid grid-cols-3">
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Mobilität
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Auto
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Motorrad
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Fahrrad
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Wohnung
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Eigenheim
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Haushalt
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Sicherheit
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Unfall
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Berufsunfähigkeit
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Ableben
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Gesundheit
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Krankenversicherung
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Unfall
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Recht
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Rechtsschutz
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Freizeit
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Reise
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Unfall
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Fahrrad
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex-1">
+                        <div className="font-bold sm:text-lg">
+                            Finanzierungen
+                        </div>
+                        <div className="grid grid-cols-2">
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Klassisch
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Wohnbaukredit
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Konsumkredit
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Leasing
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Speziell
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Umschuldung
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex-1">
+                        <div className="font-bold sm:text-lg">
+                            Strom & Gas
+                        </div>
+                        <div className="grid grid-cols-1">
+                            <div className="py-2">
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Tarifvergleich
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Wechsel des Anbieters
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Öko-Tarife
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>;
+
+            default:
+                return <div></div>;
+        }
+    }
+
     return (
         <nav className={`${hideHeaderWhileScrollingDown} sticky top-0 z-10 mb-5 transition duration-300 opacity-95`}>
             <div className="w-full p-5 rounded-b-2xl bg-white border-b-1 border-gray-200 shadow-lg fade-down-1s">
                 <div className="flex flex-row">
                     <div className="flex-2 font-bold">
                         <Link href="/">
-                            <div className="flex sm:flex-col-2 sm:gap-3">
+                            <div className="flex sm:flex-col-2 gap-1 sm:gap-3">
                                 <Image
                                     src="/ohlogo.svg"
                                     alt="OH GmbH Logo"
@@ -88,34 +287,53 @@ export default function Header() {
                         </Link>
                     </div>
                     <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
-                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg hover:scale-104 duration-500">
-                            <Link href="">Büros</Link>
+                        <div
+                            className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${showMenu == Menu.solution ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
+                            onMouseEnter={() => setShowMenu(Menu.solution)}
+                            onMouseLeave={() => setShowMenu(Menu.default)}
+                        >
+                            Lösungen
                         </div>
-                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg hover:scale-104 duration-500">
-                            <Link href="">Lösungen</Link>
+                        <div
+                            className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${showMenu == Menu.service ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
+                            onMouseEnter={() => setShowMenu(Menu.service)}
+                            onMouseLeave={() => setShowMenu(Menu.default)}
+                        >
+                            Leistungen
                         </div>
-                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg hover:scale-104 duration-500">
-                            <Link href="/services">Leistungen</Link>
+                        <div
+                            className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${showMenu == Menu.team ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
+                            onMouseEnter={() => setShowMenu(Menu.team)}
+                            onMouseLeave={() => setShowMenu(Menu.default)}
+                        >
+                            Team
                         </div>
-                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg hover:scale-104 duration-500">
-                            <Link href="">Team</Link>
+                        <div
+                            className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${showMenu == Menu.contact ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
+                            onMouseEnter={() => setShowMenu(Menu.contact)}
+                            onMouseLeave={() => setShowMenu(Menu.default)}
+                        >
+                            Kontakt
                         </div>
                     </div>
                     <div className="block content-center sm:hidden" onClick={toggleShowNavBar}>
                         <Icon icon="ri:menu-3-line" className="h-10 w-10" />
                     </div>
                 </div>
+                {
+                    menu()
+                }
                 <div className={`fade-in-1s mx-auto w-2/4 pt-5 sm:hidden text-lg font-bold text-center ${showNavBar ? 'block' : 'hidden'}`}>
-                    <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
+                    <div className="flex-1 decoration-appPrimary content-center rounded-lg">
                         <Link href="">Büros</Link>
                     </div>
-                    <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
+                    <div className="flex-1 decoration-appPrimary content-center rounded-lg">
                         <Link href="">Lösungen</Link>
                     </div>
-                    <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
+                    <div className="flex-1 decoration-appPrimary content-center rounded-lg">
                         <Link href="/services">Leistungen</Link>
                     </div>
-                    <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
+                    <div className="flex-1 decoration-appPrimary content-center rounded-lg">
                         <Link href="">Team</Link>
                     </div>
                 </div>

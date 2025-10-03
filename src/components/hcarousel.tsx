@@ -14,8 +14,8 @@ export default function HCarousel(
 ) {
     return (
         <div className="flex place-content-center my-15 mx-5 sm:mx-10">
-            <div className={`flex flex-row w-full sm:w-1/2 ${outerDivClassName}`}>
-                <div className="whitespace-nowrap font-bold place-content-center">
+            <div className={`flex flex-col sm:flex-row w-full sm:w-1/2 ${outerDivClassName}`}>
+                <div className="whitespace-nowrap font-bold sm:place-content-center">
                     {leadingTitle}
                 </div>
                 <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_50px,_black_calc(100%-50px),transparent_100%)]">

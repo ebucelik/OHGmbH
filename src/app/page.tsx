@@ -98,7 +98,7 @@ export default function Home() {
         insuranceNames.map(
           (item, index) => (
             <li key={index}>
-              <img src={item + `-logo.svg`} className={`w-10 sm:w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
+              <img src={item + `-logo.svg`} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
             </li>
           )
         )
