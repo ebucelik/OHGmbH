@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Ubuntu } from "next/font/google";
+import { Radley, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 
-const ubuntu = Ubuntu({
-  weight: '400'
-});
+const outfit = Outfit();
+export const radley = Radley({ weight: '400' });
 
 export const metadata: Metadata = {
   title: "OH GmbH - Versicherungsmakler & Vermögensberater",
@@ -21,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ubuntu.className} antialiased`}
+        className={`${outfit.className} antialiased`}
       >
         <Header />
 

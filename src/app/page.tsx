@@ -1,5 +1,6 @@
 import HCarousel from "../components/hcarousel";
 import Button from "../components/button";
+import { radley } from "./layout";
 
 export default function Home() {
   const customerReviews = [
@@ -69,10 +70,10 @@ export default function Home() {
       <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
         <div className="flex-1 content-center sm:pl-15">
           <div className="flex flex-col">
-            <p className="text-4xl sm:text-8xl font-serif">
+            <p className={`text-4xl sm:text-8xl ${radley.className}`}>
               Stets an
             </p>
-            <p className="text-4xl sm:text-8xl font-serif">
+            <p className={`text-4xl sm:text-8xl ${radley.className}`}>
               deiner Seite.
             </p>
             <p className="text-lg sm:text-2xl pt-5">
@@ -105,7 +106,7 @@ export default function Home() {
 
       <div className="py-15 sm:py-25 px-5 sm:px-10 w-full bg-linear-to-b from-white via-appPrimary to-white content-center">
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
-          <div className="sm:hidden font-serif">
+          <div className={`sm:hidden ${radley.className}`}>
             <div className="flex flex-row place-items-baseline">
               <div className="text-2xl sm:text-5xl">
                 L
@@ -130,7 +131,7 @@ export default function Home() {
           </div>
 
           <div className="flex-1 flex flex-col gap-5 justify-center">
-            <div className="hidden sm:block font-serif">
+            <div className={`hidden sm:block ${radley.className}`}>
               <div className="flex flex-row place-items-baseline">
                 <div className="text-2xl sm:text-5xl">
                   L
@@ -160,7 +161,7 @@ export default function Home() {
 
       <div className="py-15 sm:py-25 px-5 sm:px-10 w-full">
         <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-20">
-          <div className="text-2xl sm:text-5xl text-center sm:text-left font-serif place-content-center">
+          <div className={`text-2xl sm:text-5xl text-center sm:text-left ${radley.className} place-content-center`}>
             Wer wir sind
           </div>
           <div className="flex flex-col text-2xl sm:text-5xl text-left sm:w-1/2 gap-1">
@@ -240,7 +241,7 @@ export default function Home() {
       </div>
 
       <div className="py-15 sm:py-25 px-5 sm:px-10 w-full">
-        <div className="text-2xl sm:text-5xl text-center font-serif">
+        <div className={`text-2xl sm:text-5xl text-center ${radley.className}`}>
           Es bleibt nicht nur bei Versicherungen.
         </div>
         <div className="flex flex-col sm:flex-row justify-evenly gap-5 sm:gap-5 my-15">
@@ -367,7 +368,7 @@ export default function Home() {
       </div>
 
       <div className="py-15 sm:py-25 px-5 sm:px-10 w-full">
-        <div className="text-xl sm:text-3xl text-left font-serif">
+        <div className={`text-xl sm:text-3xl text-left ${radley.className}`}>
           Was unsere Kunden über uns sagen.
         </div>
         <HCarousel
@@ -395,7 +396,7 @@ export default function Home() {
 
       <div className="py-15 sm:py-25 mb-50 px-5 sm:px-10 w-full content-center">
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center">
-          <div className="flex-1 text-2xl sm:text-5xl font-serif text-right">
+          <div className={`flex-1 text-2xl sm:text-5xl ${radley.className} text-right`}>
             <div>
               Immer für Sie da,
             </div>
