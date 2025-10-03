@@ -2,6 +2,48 @@ import HCarousel from "../components/hcarousel";
 import Button from "../components/button";
 
 export default function Home() {
+  const customerReviews = [
+    {
+      "text": '„Super Service! Mein Stromtarif wurde in wenigen Tagen gewechselt und ich spare jetzt jedes Monat. Alles total unkompliziert.“',
+      "name": "- Markus H., Linz"
+    },
+    {
+      "text": '„Ich habe über 120 Banken nie selbst vergleichen müssen - das Team hat alles übernommen und für mich den besten Kredit rausgeholt. Top Beratung!“',
+      "name": "- Sabine K., Wien"
+    },
+    {
+      "text": '„Bei meinem Autounfall hat man mir sofort geholfen. Kein Papierkram, kein Stress - einfach anrufen und es läuft. Sehr empfehlenswert!“',
+      "name": "- Thomas R., Graz"
+    },
+    {
+      "text": '„Endlich jemand, der Versicherungen so erklärt, dass man es versteht. Ehrlich, freundlich und zuverlässig!“',
+      "name": "- Petra M., Salzburg"
+    },
+    {
+      "text": '„Ich hatte das Gefühl, wirklich persönlich betreut zu werden. Man merkt, dass es hier nicht nur ums Geschäft geht, sondern um die Menschen.“',
+      "name": "- Johann W., Innsbruck"
+    },
+    {
+      "text": '„Super Service! Mein Stromtarif wurde in wenigen Tagen gewechselt und ich spare jetzt jedes Monat. Alles total unkompliziert.“',
+      "name": "- Markus H., Linz"
+    },
+    {
+      "text": '„Ich habe über 120 Banken nie selbst vergleichen müssen - das Team hat alles übernommen und für mich den besten Kredit rausgeholt. Top Beratung!“',
+      "name": "- Sabine K., Wien"
+    },
+    {
+      "text": '„Bei meinem Autounfall hat man mir sofort geholfen. Kein Papierkram, kein Stress - einfach anrufen und es läuft. Sehr empfehlenswert!“',
+      "name": "- Thomas R., Graz"
+    },
+    {
+      "text": '„Endlich jemand, der Versicherungen so erklärt, dass man es versteht. Ehrlich, freundlich und zuverlässig!“',
+      "name": "- Petra M., Salzburg"
+    },
+    {
+      "text": '„Ich hatte das Gefühl, wirklich persönlich betreut zu werden. Man merkt, dass es hier nicht nur ums Geschäft geht, sondern um die Menschen.“',
+      "name": "- Johann W., Innsbruck"
+    }
+  ]
   const insuranceNames = [
     "allianz",
     "acredia",
@@ -55,7 +97,7 @@ export default function Home() {
         insuranceNames.map(
           (item, index) => (
             <li key={index}>
-              <img src={item + `-logo.svg`} className="w-10 sm:w-32" />
+              <img src={item + `-logo.svg`} className={`w-10 sm:w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
             </li>
           )
         )
@@ -112,6 +154,87 @@ export default function Home() {
             </div>
 
             <Button text="Unser Team kontaktieren" className="my-5 sm:mt-10" isPrimary={false} />
+          </div>
+        </div>
+      </div>
+
+      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full">
+        <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-20">
+          <div className="text-2xl sm:text-5xl text-center sm:text-left font-serif place-content-center">
+            Wer wir sind
+          </div>
+          <div className="flex flex-col text-2xl sm:text-5xl text-left sm:w-1/2 gap-1">
+            <div className="grid grid-cols-2">
+              <div>
+                <span className="text-appPrimary">O</span>ffen,
+              </div>
+              <div>
+                <span className="text-appPrimary">H</span>erzlich.
+              </div>
+              <div>
+                <span className="text-appPrimary">O</span>ffensiv,
+              </div>
+              <div>
+                <span className="text-appPrimary">H</span>artnäckig.
+              </div>
+              <div>
+                <span className="text-appPrimary">O</span>rganisiert,
+              </div>
+              <div>
+                <span className="text-appPrimary">H</span>ilfsbereit.
+              </div>
+              <div>
+                <span className="text-appPrimary">O</span>ptimal,
+              </div>
+              <div>
+                <span className="text-appPrimary">H</span>erausragend.
+              </div>
+              <div>
+                <span className="text-appPrimary">O</span>rdentlich,
+              </div>
+              <div>
+                <span className="text-appPrimary">H</span>ochprofesionell.
+              </div>
+              <div>
+                <span className="text-appPrimary font-bold">Otto,</span>
+              </div>
+              <div>
+                <span className="text-appPrimary font-bold">Holzmann.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-15 sm:py-25 flex flex-col sm:flex-row gap-5 sm:gap-20">
+          <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
+            <img
+              src="/haraldotto1.webp" alt="Harald Otto"
+              className="object-contain rounded-lg shadow-2xl"
+            />
+            <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
+            <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+              <div className="text-xl sm:text-5xl font-bold">
+                Harald Otto
+              </div>
+              <div className="text-sm sm:text-2xl">
+                Geschäftsführer & Versicherungsmakler
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
+            <img
+              src="/holzmannmanuel.png" alt="Manuel Holzmann"
+              className="object-cover rounded-lg shadow-2xl"
+            />
+            <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
+            <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+              <div className="text-xl sm:text-5xl font-bold">
+                Manuel Holzmann
+              </div>
+              <div className="text-sm sm:text-2xl">
+                Geschäftsführer & Vermögensberater
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -235,12 +358,39 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-center place-items-center gap-5">
+        <div className="flex flex-col sm:flex-row justify-center place-items-center gap-5">
           <div className="text-sm sm:text-xl text-center">
-            Haben wir Ihre Interesse geweckt?
+            Haben wir Ihr Interesse geweckt?
           </div>
           <Button text="Kontaktiere Uns" isPrimary={false} />
         </div>
+      </div>
+
+      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full">
+        <div className="text-xl sm:text-3xl text-left font-serif">
+          Was unsere Kunden über uns sagen.
+        </div>
+        <HCarousel
+          outerDivClassName="sm:w-full"
+          innerDivClassName="[&_li]:mx-0 sm:[&_li]:mx-8"
+          items={
+            customerReviews.map((item, index) => (
+              <li key={index} className="mb-5">
+                <div className="flex flex-col gap-2 p-3 bg-white border-2 border-appPrimary rounded-4xl w-50 sm:w-100 h-35 sm:h-50 text-xs sm:text-lg justify-center place-items-center text-center shadow-lg">
+                  <div>
+                    {
+                      item.text
+                    }
+                  </div>
+                  <div className="font-bold">
+                    {
+                      item.name
+                    }
+                  </div>
+                </div>
+              </li>
+            ))
+          } />
       </div>
 
       <div className="py-15 sm:py-25 mb-50 px-5 sm:px-10 w-full content-center">

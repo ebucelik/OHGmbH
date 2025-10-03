@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Divider from "./divider";
 import Link from "next/link";
+import { Icon } from "@iconify/react";
 
 export default function Footer() {
     return (
-        <footer className="py-15 sm:py-25 px-10 sm:px-30">
-            <div className="flex place-content-center">
+        <footer className="pb-5 sm:pb-10 px-10 sm:px-30">
+            <div className="py-15 sm:py-25 flex place-content-center">
                 <div className="flex flex-row gap-10 sm:gap-20">
                     <div className="hidden sm:flex sm:flex-col place-content-center">
                         <Link href="/">
@@ -18,7 +19,7 @@ export default function Footer() {
                             />
                         </Link>
                     </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:gap-20">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:gap-10">
                         <div className="flex flex-col gap-1 text-sm">
                             <div className="font-bold py-2 sm:text-lg">
                                 Öffnungszeiten
@@ -30,6 +31,22 @@ export default function Footer() {
 
                             <div>
                                 09:00 - 17:00 Uhr
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-1 text-sm">
+                            <div className="font-bold py-2 sm:text-lg">
+                                Kontakt
+                            </div>
+
+                            <div>
+                                <Link href="" className="hover:text-appPrimary">office@oh-gmbh.at</Link>
+                            </div>
+
+                            <div>
+                                <Link href="" className="hover:text-appPrimary">+43 664 1817109</Link>
+                            </div>
+                            <div>
+                                <Link href="" className="hover:text-appPrimary">Kontaktformular</Link>
                             </div>
                         </div>
                         <div className="flex flex-col gap-1 text-sm">
@@ -46,41 +63,20 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="" className="hover:text-appPrimary">Strom & Gas</Link>
+                                <Link href="" className="hover:text-appPrimary">Strom & Gas Vergleich</Link>
+                            </div>
+
+                            <div>
+                                <Link href="" className="hover:text-appPrimary">Beratung vereinbaren</Link>
+                            </div>
+
+                            <div>
+                                <Link href="" className="hover:text-appPrimary">Schaden melden</Link>
                             </div>
                         </div>
                         <div className="flex flex-col gap-1 text-sm">
                             <div className="font-bold py-2 sm:text-lg">
-                                Kontakt
-                            </div>
-
-                            <div>
-                                <Link href="" className="hover:text-appPrimary">haraldotto@oh.at</Link>
-                            </div>
-
-                            <div>
-                                <Link href="" className="hover:text-appPrimary">manuelholzmann@oh.at</Link>
-                            </div>
-
-                            <div>
-                                <Link href="" className="hover:text-appPrimary">+43 664 1817109</Link>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-1 text-sm">
-                            <div className="font-bold py-2 sm:text-lg">
-                                Im Notfall
-                            </div>
-
-                            <div>
-                                24/7 telefonisch erreichbar
-                            </div>
-                            <div>
-                                <Link href="" className="hover:text-appPrimary">+43 664 1817109</Link>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-1 text-sm">
-                            <div className="font-bold py-2 sm:text-lg">
-                                Rechtliches
+                                Rechtliche Hinweise
                             </div>
 
                             <div>
@@ -93,6 +89,44 @@ export default function Footer() {
 
                             <div>
                                 <Link href="" className="hover:text-appPrimary">AGB</Link>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-1 text-sm">
+                            <div className="font-bold py-2 sm:text-lg">
+                                Soziale Medien
+                            </div>
+
+                            <div>
+                                <Link href="" className="hover:text-appPrimary">
+                                    <div className="flex flex-row gap-1">
+                                        <Icon icon="mdi:instagram" className="h-5 w-5" />
+                                        <div>
+                                            Instagram
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+
+                            <div>
+                                <Link href="" className="hover:text-appPrimary">
+                                    <div className="flex flex-row gap-1">
+                                        <Icon icon="mdi:youtube" className="h-5 w-5" />
+                                        <div>
+                                            YouTube
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+
+                            <div>
+                                <Link href="" className="hover:text-appPrimary">
+                                    <div className="flex flex-row gap-1">
+                                        <Icon icon="mdi:linkedin" className="h-5 w-5" />
+                                        <div>
+                                            LinkedIn
+                                        </div>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
