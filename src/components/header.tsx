@@ -21,6 +21,7 @@ export default function Header() {
     var previousScrollY = 0
 
     function toggleShowNavBar() {
+        setShowMenu(Menu.default);
         setShowNavBar(!showNavBar);
     }
 
@@ -50,11 +51,11 @@ export default function Header() {
         switch (showMenu) {
             case Menu.solution:
                 return <div
-                    className="flex flex-row fade-down-05s py-5 gap-10"
+                    className="flex flex-col sm:flex-row fade-down-05s py-5 gap-2 sm:gap-10"
                     onMouseEnter={() => setShowMenu(Menu.solution)}
                     onMouseLeave={() => setShowMenu(Menu.default)}
                 >
-                    <div className="flex-1"></div>
+                    <div className="sm:flex-1"></div>
                     <div className="flex-2">
                         <div className="font-bold sm:text-lg">
                             Versicherungen
@@ -124,7 +125,7 @@ export default function Header() {
                                 </div>
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
-                                        Krankenversicherung
+                                        Krankenvers.
                                     </Link>
                                 </div>
                                 <div>
@@ -320,22 +321,41 @@ export default function Header() {
                         <Icon icon="ri:menu-3-line" className="h-10 w-10" />
                     </div>
                 </div>
-                {
-                    menu()
-                }
-                <div className={`fade-in-1s mx-auto w-2/4 pt-5 sm:hidden text-lg font-bold text-center ${showNavBar ? 'block' : 'hidden'}`}>
-                    <div className="flex-1 decoration-appPrimary content-center rounded-lg">
-                        <Link href="">Büros</Link>
-                    </div>
-                    <div className="flex-1 decoration-appPrimary content-center rounded-lg">
+                <div className="hidden sm:block">
+                    {
+                        menu()
+                    }
+                </div>
+                <div className={`fade-in-05s flex flex-col gap-3 pt-5 sm:hidden text-lg font-bold text-left ${showNavBar ? 'block' : 'hidden'}`}>
+                    <div
+                        className={`decoration-appPrimary content-center rounded-lg ${showMenu == Menu.solution ? 'decoration-3 underline underline-offset-7' : ''}`}
+                        onClick={() => setShowMenu(showMenu != Menu.solution ? Menu.solution : Menu.default)}
+                    >
                         <Link href="">Lösungen</Link>
                     </div>
-                    <div className="flex-1 decoration-appPrimary content-center rounded-lg">
-                        <Link href="/services">Leistungen</Link>
+                    <div
+                        className={`decoration-appPrimary content-center rounded-lg ${showMenu == Menu.service ? 'decoration-3 underline underline-offset-7' : ''}`}
+                        onClick={() => setShowMenu(showMenu != Menu.service ? Menu.service : Menu.default)}
+                    >
+                        <Link href="">Leistungen</Link>
                     </div>
-                    <div className="flex-1 decoration-appPrimary content-center rounded-lg">
+                    <div
+                        className={`decoration-appPrimary content-center rounded-lg ${showMenu == Menu.team ? 'decoration-3 underline underline-offset-7' : ''}`}
+                        onClick={() => setShowMenu(showMenu != Menu.team ? Menu.team : Menu.default)}
+                    >
                         <Link href="">Team</Link>
                     </div>
+                    <div
+                        className={`decoration-appPrimary content-center rounded-lg ${showMenu == Menu.contact ? 'decoration-3 underline underline-offset-7' : ''}`}
+                        onClick={() => setShowMenu(showMenu != Menu.contact ? Menu.contact : Menu.default)}
+                    >
+                        <Link href="">Kontakt</Link>
+                    </div>
+                </div>
+                <div className="sm:hidden">
+                    {
+                        menu()
+                    }
                 </div>
             </div>
         </nav>
