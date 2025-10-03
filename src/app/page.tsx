@@ -45,7 +45,7 @@ export default function Home() {
         </div>
         <div className="flex-1">
           <img
-            src="/haraldotto3.webp" alt="Harald Otto am Arbeiten"
+            src="/haraldotto3.webp" alt="Harald Otto"
             className="object-contain rounded-lg shadow-2xl"
           />
         </div>
@@ -61,7 +61,7 @@ export default function Home() {
         )
       } />
 
-      <div className="px-5 sm:px-10 w-full bg-linear-to-b from-white via-appPrimary to-white content-center">
+      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full bg-linear-to-b from-white via-appPrimary to-white content-center">
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
           <div className="sm:hidden font-serif">
             <div className="flex flex-row place-items-baseline">
@@ -264,7 +264,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full h-screen bg-linear-to-b from-appPrimary via-appPrimary to-white">
+      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full bg-linear-to-b from-appPrimary via-appPrimary to-white">
         <div>
           <div className="pb-10 text-2xl sm:text-5xl text-left">
             Was tun bei <span className="decoration-white underline underline-offset-8">einem Schaden?</span>

@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header";
+import Footer from "../components/footer";
 
 const ubuntu = Ubuntu({
   weight: '400'
 });
 
 export const metadata: Metadata = {
-  title: "Harald Otto - Versicherungsmakler",
-  description: "Ihre Sicherheit in guten Händen mit Otto & Co KG.",
+  title: "OH GmbH - Versicherungsmakler & Vermögensberater",
+  description: "Ihre Sicherheit in guten Händen mit der Otto Holzmann GmbH.",
 };
 
 export default function RootLayout({
@@ -27,6 +28,8 @@ export default function RootLayout({
         <div className="">
           {children}
         </div>
+
+        <Footer />
       </body>
     </html>
   );

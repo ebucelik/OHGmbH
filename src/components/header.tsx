@@ -42,60 +42,62 @@ export default function Header() {
             <div className="w-full p-5 rounded-b-2xl bg-white border-b-1 border-gray-200 shadow-lg fade-down-1s">
                 <div className="flex flex-row">
                     <div className="flex-2 font-bold">
-                        <div className="flex sm:flex-col-2 sm:gap-3">
-                            <Image
-                                src="/ohlogo.svg"
-                                alt="OH GmbH Logo"
-                                width={80}
-                                height={80}
-                                priority
-                            />
-                            <div className="content-center">
-                                <p className="text-xl sm:text-3xl">
-                                    OH GmbH
-                                </p>
-                                <span className="flex flex-row">
-                                    <div className="window">
-                                        <div className="flex flex-col window-inner overflow-hidden text-right">
-                                            <div className="text-lg sm:text-xl">
-                                                Versicherungs
-                                            </div>
-                                            <div className="text-lg sm:text-xl">
-                                                Finanzierungs
-                                            </div>
-                                            <div className="text-lg sm:text-xl">
-                                                Energie
-                                            </div>
-                                            <div aria-hidden className="text-lg sm:text-xl">
-                                                Versicherungs
-                                            </div>
-                                            <div aria-hidden className="text-lg sm:text-xl">
-                                                Finanzierungs
-                                            </div>
-                                            <div aria-hidden className="text-lg sm:text-xl">
-                                                Energie
+                        <Link href="/">
+                            <div className="flex sm:flex-col-2 sm:gap-3">
+                                <Image
+                                    src="/ohlogo.svg"
+                                    alt="OH GmbH Logo"
+                                    width={80}
+                                    height={80}
+                                    priority
+                                />
+                                <div className="content-center">
+                                    <p className="text-xl sm:text-3xl">
+                                        OH GmbH
+                                    </p>
+                                    <span className="flex flex-row">
+                                        <div className="window">
+                                            <div className="flex flex-col window-inner overflow-hidden text-right">
+                                                <div className="text-lg sm:text-xl">
+                                                    Versicherungs
+                                                </div>
+                                                <div className="text-lg sm:text-xl">
+                                                    Finanzierungs
+                                                </div>
+                                                <div className="text-lg sm:text-xl">
+                                                    Energie
+                                                </div>
+                                                <div aria-hidden className="text-lg sm:text-xl">
+                                                    Versicherungs
+                                                </div>
+                                                <div aria-hidden className="text-lg sm:text-xl">
+                                                    Finanzierungs
+                                                </div>
+                                                <div aria-hidden className="text-lg sm:text-xl">
+                                                    Energie
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div className="text-lg sm:text-xl text-appPrimary">
-                                        makler
-                                    </div>
-                                </span>
+                                        <div className="text-lg sm:text-xl text-appPrimary">
+                                            makler
+                                        </div>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
-                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
+                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg hover:scale-104 duration-500">
                             <Link href="">Büros</Link>
                         </div>
-                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
+                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg hover:scale-104 duration-500">
                             <Link href="">Lösungen</Link>
                         </div>
-                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
+                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg hover:scale-104 duration-500">
                             <Link href="/services">Leistungen</Link>
                         </div>
-                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg">
+                        <div className="flex-1 decoration-appPrimary decoration-3 hover:underline hover:underline-offset-7 content-center rounded-lg hover:scale-104 duration-500">
                             <Link href="">Team</Link>
                         </div>
                     </div>
