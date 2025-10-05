@@ -140,7 +140,7 @@ export default function Footer() {
                     </div>
                     <div>
                         © Branding und technische Umsetzung <span className="underline underline-offset-2">
-                            <Link href="" className="hover:text-appPrimary">OC GmbH</Link>
+                            <Link href="https://ebucelik.dev" target="_blank" className="hover:text-appPrimary">ebucelik.dev</Link>
                         </span>.
                     </div>
                 </div>
