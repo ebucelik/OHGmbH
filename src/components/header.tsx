@@ -255,7 +255,7 @@ export default function Header() {
                 return <div className="flex flex-col sm:flex-row fade-in-05s gap-1 sm:gap-10">
                     <div className="sm:flex-1"></div>
                     <div className="flex-2">
-                        <div className="grid grid-cols-3">
+                        <div className="grid grid-cols-2">
                             <div className="py-2">
                                 <div className="font-bold pb-2">
                                     Schadenmeldung
