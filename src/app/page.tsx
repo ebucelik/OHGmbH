@@ -66,7 +66,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="mxauto">
+    <div className="mxauto pt-30">
       <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
         <div className="flex-1 content-center sm:pl-15">
           <div className="flex flex-col">
@@ -254,33 +254,28 @@ export default function Home() {
               </div>
             </div>
             <div className="p-5">
-              <div>
-                <b className="text-lg sm:text-xl">Wir finden den besten Tarif für Sie.</b>
-                <p className="pt-2">
-                  Energie ist ein wichtiger Kostenfaktor im Alltag. Doch die Preisunterschiede zwischen den Anbietern sind oft enorm.
-                  Genau hier setzen wir an:
-                </p>
-                <ul className="list-disc pl-5 py-1.5">
-                  <li>
-                    <b>
-                      Unabhängiger Vergleich:
-                    </b> Wir durchsuchen für Sie über 100 Strom- und Gasanbieter.
-                  </li>
-                  <li>
-                    <b>
-                      Transparenz & Fairness:
-                    </b> Sie sehen auf einen Blick, welche Tarife wirklich zu Ihrem Verbrauch passen.
-                  </li>
-                  <li>
-                    <b>
-                      Einfacher Wechsel:
-                    </b> Wir kümmern uns um die Abwicklung, Sie sparen Zeit und Geld.
-                  </li>
-                </ul>
-                <p>
-                  Ob Haushalt oder Unternehmen - wir sorgen dafür, dass Sie <b>nicht mehr zahlen als nötig</b>.
-                </p>
-              </div>
+              <b className="text-lg sm:text-xl">Wir finden den besten Tarif für Sie.</b>
+
+              <ul className="list-disc pl-5 py-1.5 pt-2">
+                <li>
+                  <b>
+                    Unabhängiger Vergleich:
+                  </b> Wir durchsuchen für Sie über 100 Strom- und Gasanbieter.
+                </li>
+                <li>
+                  <b>
+                    Transparenz & Fairness:
+                  </b> Sie sehen auf einen Blick, welche Tarife wirklich zu Ihrem Verbrauch passen.
+                </li>
+                <li>
+                  <b>
+                    Einfacher Wechsel:
+                  </b> Wir kümmern uns um die Abwicklung, Sie sparen Zeit und Geld.
+                </li>
+              </ul>
+              <p>
+                Ob Haushalt oder Unternehmen - wir sorgen dafür, dass Sie <b>nicht mehr zahlen als nötig</b>.
+              </p>
             </div>
           </div>
 
@@ -293,32 +288,28 @@ export default function Home() {
               </div>
             </div>
             <div className="p-5">
-              <div>
-                <b className="text-lg sm:text-xl">Maßgeschneidert für Ihre Bedürfnisse.</b>
-                <p className="pt-2">
-                  Als unabhängiger Vermittler greifen wir auf <b>über 120 Banken in ganz Österreich</b> zu und können dadurch für Sie die besten Konditionen vergleichen.
-                </p>
-                <ul className="list-disc pl-5 py-1.5">
-                  <li>
-                    <b>
-                      Individuelle Beratung:
-                    </b> Wir finden gemeinsam heraus, welche Finanzierungslösung zu Ihrer Situation passt.
-                  </li>
-                  <li>
-                    <b>
-                      Große Auswahl:
-                    </b> Dank unseres Zugriffs auf mehr als 120 Banken haben wir Zugriff auf ein breites Angebot.
-                  </li>
-                  <li>
-                    <b>
-                      Beste Konditionen:
-                    </b> Durch den Vergleich sichern wir Ihnen attraktive Zinsen und faire Vertragsbedingungen.
-                  </li>
-                </ul>
-                <p>
-                  So kommen Sie sicher zu Ihrer Wunschfinanzierung - ob für Immobilien, Investitionen oder private Projekte.
-                </p>
-              </div>
+              <b className="text-lg sm:text-xl">Maßgeschneidert für Ihre Bedürfnisse.</b>
+
+              <ul className="list-disc pl-5 py-1.5 pt-2">
+                <li>
+                  <b>
+                    Individuelle Beratung:
+                  </b> Wir finden gemeinsam heraus, welche Finanzierungslösung zu Ihrer Situation passt.
+                </li>
+                <li>
+                  <b>
+                    Große Auswahl:
+                  </b> Dank unseres Zugriffs auf mehr als 120 Banken haben wir Zugriff auf ein breites Angebot.
+                </li>
+                <li>
+                  <b>
+                    Beste Konditionen:
+                  </b> Durch den Vergleich sichern wir Ihnen attraktive Zinsen und faire Vertragsbedingungen.
+                </li>
+              </ul>
+              <p>
+                So kommen Sie sicher zu Ihrer Wunschfinanzierung - ob für Immobilien, Investitionen oder private Projekte.
+              </p>
             </div>
           </div>
           <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
@@ -330,32 +321,28 @@ export default function Home() {
               </div>
             </div>
             <div className="p-5">
-              <div>
-                <b className="text-lg sm:text-xl">Alles aus einer Hand.</b>
-                <p className="pt-2">
-                  Wir bieten Ihnen eine umfassende und unabhängige Beratung in allen wichtigen Bereichen:
-                </p>
-                <ul className="list-disc pl-5 py-1.5">
-                  <li>
-                    <b>
-                      Autoversicherung:
-                    </b> Wir finden für Sie die passende Versicherung mit optimalem Schutz und fairen Prämien.
-                  </li>
-                  <li>
-                    <b>
-                      Strom & Gas:
-                    </b> Über 100 Anbieter im Vergleich - damit Sie nie mehr zahlen als nötig.
-                  </li>
-                  <li>
-                    <b>
-                      Weitere Versicherungen & Services:
-                    </b> Ob Haushalt, Gesundheit oder Vorsorge - wir beraten Sie ganzheitlich..
-                  </li>
-                </ul>
-                <p>
-                  Mit uns haben Sie einen Partner, der <b>alles vergleicht, für Sie auswählt und verständlich erklärt</b>.
-                </p>
-              </div>
+              <b className="text-lg sm:text-xl">Alles aus einer Hand.</b>
+
+              <ul className="list-disc pl-5 py-1.5 pt-2">
+                <li>
+                  <b>
+                    Autoversicherung:
+                  </b> Wir finden für Sie die passende Versicherung mit optimalem Schutz und fairen Prämien.
+                </li>
+                <li>
+                  <b>
+                    Strom & Gas:
+                  </b> Über 100 Anbieter im Vergleich - damit Sie nie mehr zahlen als nötig.
+                </li>
+                <li>
+                  <b>
+                    Weitere Versicherungen & Services:
+                  </b> Ob Haushalt, Gesundheit oder Vorsorge - wir beraten Sie ganzheitlich..
+                </li>
+              </ul>
+              <p>
+                Mit uns haben Sie einen Partner, der <b>alles vergleicht, für Sie auswählt und verständlich erklärt</b>.
+              </p>
             </div>
           </div>
         </div>

@@ -20,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.className} antialiased`}
+        className={`${outfit.className} antialiased relative`}
       >
         <Header />
 
-        <div className="">
+        <div>
           {children}
         </div>
 
