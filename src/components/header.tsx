@@ -47,15 +47,15 @@ export default function Header() {
         })
     }, []);
 
-    function menuBody(): ReactElement {
+    function navBody(): ReactElement {
         return <div
-            className={`flex flex-col sm:flex-row sm:block ${menu == Menu.default ? 'hidden' : 'pt-5'}`}
+            className={`flex flex-col sm:flex-row sm:block ${menu == Menu.default || menu == Menu.contact || menu == Menu.team ? 'hidden' : 'pt-5'}`}
             onMouseEnter={() => setMenu(menu)}
             onMouseLeave={() => setMenu(Menu.default)}
         >
             <div className="flex flex-row sm:hidden" onClick={() => setMenu(Menu.default)}>
                 <div>
-                    <Icon icon="material-symbols:chevron-left-rounded" className="h-8 w-8" />
+                    <Icon icon="material-symbols:chevron-left-rounded" />
                 </div>
                 <div className="text-xs place-content-center">
                     {
@@ -65,12 +65,12 @@ export default function Header() {
             </div>
 
             {
-                menuBodies()
+                menuBody()
             }
         </div>;
     }
 
-    function menuBodies(): ReactElement {
+    function menuBody(): ReactElement {
         switch (menu) {
             case Menu.solution:
                 return <div className="flex flex-col sm:flex-row fade-in-05s gap-1 sm:gap-10">
@@ -251,6 +251,41 @@ export default function Header() {
                     </div>
                 </div>;
 
+            case Menu.service:
+                return <div className="flex flex-col sm:flex-row fade-in-05s gap-1 sm:gap-10">
+                    <div className="sm:flex-1"></div>
+                    <div className="flex-2">
+                        <div className="grid grid-cols-3">
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Schadenmeldung
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        KFZ-Schaden
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Haushaltsschaden
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div className="py-2">
+                                <div className="font-bold pb-2">
+                                    Downloads
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Formulare (zb.: KFZ-Kaufvertrag)
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>;
+
             default:
                 return <div></div>;
         };
@@ -312,37 +347,51 @@ export default function Header() {
                             onMouseEnter={() => setMenu(Menu.solution)}
                             onMouseLeave={() => setMenu(Menu.default)}
                         >
-                            Lösungen
+                            <div className="flex flex-row place-items-center gap-1">
+                                <div>
+                                    Lösungen
+                                </div>
+                                <div>
+                                    <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.solution ? 'rotate-180' : ''}`} />
+                                </div>
+                            </div>
                         </div>
                         <div
                             className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
                             onMouseEnter={() => setMenu(Menu.service)}
                             onMouseLeave={() => setMenu(Menu.default)}
                         >
-                            Leistungen
+                            <div className="flex flex-row place-items-center gap-1">
+                                <div>
+                                    Leistungen
+                                </div>
+                                <div>
+                                    <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.service ? 'rotate-180' : ''}`} />
+                                </div>
+                            </div>
                         </div>
                         <div
                             className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.team ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
                             onMouseEnter={() => setMenu(Menu.team)}
                             onMouseLeave={() => setMenu(Menu.default)}
                         >
-                            Team
+                            <Link href="/team">Team</Link>
                         </div>
                         <div
                             className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
                             onMouseEnter={() => setMenu(Menu.contact)}
                             onMouseLeave={() => setMenu(Menu.default)}
                         >
-                            Kontakt
+                            <Link href="/contact">Kontakt</Link>
                         </div>
                     </div>
                     <div className="block content-center sm:hidden" onClick={toggleShowNavBar}>
-                        <Icon icon="ri:menu-3-line" className="h-10 w-10" />
+                        <Icon icon="ri:menu-3-line" className={`h-10 w-10 easeIn transition duration-500 ${showNavBar ? 'rotate-90' : ''}`} />
                     </div>
                 </div>
                 <div className="hidden sm:block">
                     {
-                        menuBody()
+                        navBody()
                     }
                 </div>
                 <div className={`fade-in-05s flex flex-col gap-3 pt-5 sm:hidden text-lg font-bold text-left ${showNavBar ? 'block' : 'hidden'} ${menu != Menu.default ? 'hidden' : ''}`}>
@@ -362,18 +411,18 @@ export default function Header() {
                         className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.team ? 'decoration-3 underline underline-offset-7' : ''}`}
                         onClick={() => setMenu(menu != Menu.team ? Menu.team : Menu.default)}
                     >
-                        <Link href="">Team</Link>
+                        <Link href="/team">Team</Link>
                     </div>
                     <div
                         className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7' : ''}`}
                         onClick={() => setMenu(menu != Menu.contact ? Menu.contact : Menu.default)}
                     >
-                        <Link href="">Kontakt</Link>
+                        <Link href="/contact">Kontakt</Link>
                     </div>
                 </div>
                 <div className="sm:hidden">
                     {
-                        menuBody()
+                        navBody()
                     }
                 </div>
             </div>
