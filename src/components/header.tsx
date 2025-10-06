@@ -85,7 +85,7 @@ export default function Header() {
                                     Mobilität
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="/solution/insurance/car" className="hover:text-appPrimary">
                                         Auto
                                     </Link>
                                 </div>

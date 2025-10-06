@@ -1,6 +1,7 @@
 import HCarousel from "../components/hcarousel";
 import Button from "../components/button";
 import { radley } from "./layout";
+import { defaultPadding } from "../shared/style";
 
 export default function Home() {
   const customerReviews = [
@@ -66,7 +67,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="mxauto pt-30">
+    <div>
       <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
         <div className="flex-1 content-center sm:pl-15">
           <div className="flex flex-col">
@@ -77,7 +78,10 @@ export default function Home() {
               deiner Seite.
             </p>
             <p className="text-lg sm:text-2xl pt-5">
-              Dein unabhängiger Versicherungsmakler -
+              Dein unabhängiger Makler für
+            </p>
+            <p className="text-lg sm:text-2xl">
+              Versicherungen, Finanzierungen & Energie -
             </p>
             <p className="text-lg sm:text-2xl">
               sicher und zuverlässig.
@@ -104,7 +108,7 @@ export default function Home() {
         )
       } />
 
-      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full bg-linear-to-b from-white via-appPrimary to-white content-center">
+      <div className={`${defaultPadding} w-full bg-linear-to-b from-white via-appPrimary to-white content-center`}>
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
           <div className={`sm:hidden ${radley.className}`}>
             <div className="flex flex-row place-items-baseline">
@@ -159,7 +163,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full">
+      <div className={`${defaultPadding} w-full`}>
         <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-20">
           <div className={`text-2xl sm:text-5xl text-center sm:text-left ${radley.className} place-content-center`}>
             Wer wir sind
@@ -206,7 +210,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="py-15 sm:py-25 flex flex-col sm:flex-row gap-5 sm:gap-20">
+        <div className="px-10 2xl:px-50 4xl:px-100 py-15 sm:py-25 flex flex-col sm:flex-row gap-5 sm:gap-20">
           <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
             <img
               src="/haraldotto1.webp" alt="Harald Otto"
@@ -214,10 +218,10 @@ export default function Home() {
             />
             <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
             <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-              <div className="text-xl sm:text-5xl font-bold">
+              <div className="text-lg sm:text-5xl font-bold">
                 Harald Otto
               </div>
-              <div className="text-sm sm:text-2xl">
+              <div className="text-xs sm:text-2xl">
                 Geschäftsführer & Versicherungsmakler
               </div>
             </div>
@@ -229,10 +233,10 @@ export default function Home() {
             />
             <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
             <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-              <div className="text-xl sm:text-5xl font-bold">
+              <div className="text-lg sm:text-5xl font-bold">
                 Manuel Holzmann
               </div>
-              <div className="text-sm sm:text-2xl">
+              <div className="text-xs sm:text-2xl">
                 Geschäftsführer & Vermögensberater
               </div>
             </div>
@@ -240,7 +244,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full">
+      <div className={`${defaultPadding} px-10 w-full`}>
         <div className={`text-2xl sm:text-5xl text-center ${radley.className}`}>
           Es bleibt nicht nur bei Versicherungen.
         </div>
@@ -354,7 +358,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full">
+      <div className={`${defaultPadding} w-full`}>
         <div className={`text-xl sm:text-3xl text-left ${radley.className}`}>
           Was unsere Kunden über uns sagen.
         </div>
@@ -381,7 +385,7 @@ export default function Home() {
           } />
       </div>
 
-      <div className="py-15 sm:py-25 mb-50 px-5 sm:px-10 w-full content-center">
+      <div className={`${defaultPadding} mb-50 w-full content-center`}>
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center">
           <div className={`flex-1 text-2xl sm:text-5xl ${radley.className} text-right`}>
             <div>
@@ -402,7 +406,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-15 sm:py-25 px-5 sm:px-10 w-full bg-appSecondary text-white">
+      <div className={`${defaultPadding} w-full bg-appSecondary text-white`}>
         <div>
           <div className="pb-10 text-2xl sm:text-5xl text-left">
             Was tun bei <span className="decoration-appPrimary underline underline-offset-8">einem Schaden?</span>

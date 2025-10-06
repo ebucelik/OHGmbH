@@ -7,6 +7,7 @@
   --appSecondary: #0d3b66;
   --appPrimaryLight: #f9edbd;
   --appSecondaryLight: #477cae;
+  --appGray: #edecec;
 }
 
 @theme {
@@ -14,10 +15,11 @@
   --color-foreground: var(--foreground);
 
   --color-appPrimary: var(--appPrimary);
-  --color-appOnPrimary: #171717;
+  --color-appOnPrimary: var(--foreground);
   --color-appSecondary: var(--appSecondary);
   --color-appPrimaryLight: var(--appPrimaryLight);
   --color-appSecondaryLight: var(--appSecondaryLight);
+  --color-appGray: var(--appGray);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

@@ -1,0 +1,1 @@
+export const defaultPadding = "py-5 sm:py-10 px-5 sm:px-10";
