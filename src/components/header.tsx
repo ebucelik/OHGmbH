@@ -85,7 +85,7 @@ export default function Header() {
                                     Mobilität
                                 </div>
                                 <div>
-                                    <Link href="/solution/insurance/car" className="hover:text-appPrimary">
+                                    <Link href="/insurance/car" className="hover:text-appPrimary">
                                         Auto
                                     </Link>
                                 </div>
@@ -311,7 +311,7 @@ export default function Header() {
                                     </p>
                                     <span className="flex flex-row">
                                         <div className="window">
-                                            <div className="flex flex-col window-inner overflow-hidden text-right">
+                                            <div className="flex flex-col window-inner overflow-hidden text-right bg-linear-to-r from-black to-appPrimary bg-clip-text text-transparent">
                                                 <div className="text-lg sm:text-xl">
                                                     Versicherungs
                                                 </div>

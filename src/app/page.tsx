@@ -7,7 +7,7 @@ export default function Home() {
   const customerReviews = [
     {
       "text": '„Super Service! Mein Stromtarif wurde in wenigen Tagen gewechselt und ich spare jetzt jedes Monat. Alles total unkompliziert.“',
-      "name": "- Markus H., Linz"
+      "name": "- Markus H., Leobersdorf"
     },
     {
       "text": '„Ich habe über 120 Banken nie selbst vergleichen müssen - das Team hat alles übernommen und für mich den besten Kredit rausgeholt. Top Beratung!“',
@@ -15,19 +15,19 @@ export default function Home() {
     },
     {
       "text": '„Bei meinem Autounfall hat man mir sofort geholfen. Kein Papierkram, kein Stress - einfach anrufen und es läuft. Sehr empfehlenswert!“',
-      "name": "- Thomas R., Graz"
+      "name": "- Thomas R., Baden"
     },
     {
       "text": '„Endlich jemand, der Versicherungen so erklärt, dass man es versteht. Ehrlich, freundlich und zuverlässig!“',
-      "name": "- Petra M., Salzburg"
+      "name": "- Petra M., Mödling"
     },
     {
       "text": '„Ich hatte das Gefühl, wirklich persönlich betreut zu werden. Man merkt, dass es hier nicht nur ums Geschäft geht, sondern um die Menschen.“',
-      "name": "- Johann W., Innsbruck"
+      "name": "- Johann W., Wiener Neustadt"
     },
     {
       "text": '„Super Service! Mein Stromtarif wurde in wenigen Tagen gewechselt und ich spare jetzt jedes Monat. Alles total unkompliziert.“',
-      "name": "- Markus H., Linz"
+      "name": "- Markus H., Leobersdorf"
     },
     {
       "text": '„Ich habe über 120 Banken nie selbst vergleichen müssen - das Team hat alles übernommen und für mich den besten Kredit rausgeholt. Top Beratung!“',
@@ -35,15 +35,15 @@ export default function Home() {
     },
     {
       "text": '„Bei meinem Autounfall hat man mir sofort geholfen. Kein Papierkram, kein Stress - einfach anrufen und es läuft. Sehr empfehlenswert!“',
-      "name": "- Thomas R., Graz"
+      "name": "- Thomas R., Baden"
     },
     {
       "text": '„Endlich jemand, der Versicherungen so erklärt, dass man es versteht. Ehrlich, freundlich und zuverlässig!“',
-      "name": "- Petra M., Salzburg"
+      "name": "- Petra M., Mödling"
     },
     {
       "text": '„Ich hatte das Gefühl, wirklich persönlich betreut zu werden. Man merkt, dass es hier nicht nur ums Geschäft geht, sondern um die Menschen.“',
-      "name": "- Johann W., Innsbruck"
+      "name": "- Johann W., Wiener Neustadt"
     }
   ]
   const insuranceNames = [
@@ -81,7 +81,7 @@ export default function Home() {
               Dein unabhängiger Makler für
             </p>
             <p className="text-lg sm:text-2xl">
-              Versicherungen, Finanzierungen & Energie -
+              Versicherungen, Finanzierungen & Energie - hbasbasbasbasbbashabsabss
             </p>
             <p className="text-lg sm:text-2xl">
               sicher und zuverlässig.
@@ -98,15 +98,18 @@ export default function Home() {
         </div>
       </div>
 
-      <HCarousel leadingTitle="Unsere Partner" items={
-        insuranceNames.map(
-          (item, index) => (
-            <li key={index}>
-              <img src={item + `-logo.svg`} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
-            </li>
+      <HCarousel
+        leadingTitle="Unsere Partner"
+        innerDivClassName="[&_li]:mx-1 sm:[&_li]:mx-2"
+        items={
+          insuranceNames.map(
+            (item, index) => (
+              <li key={index}>
+                <img src={item + `-logo.svg`} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
+              </li>
+            )
           )
-        )
-      } />
+        } />
 
       <div className={`${defaultPadding} w-full bg-linear-to-b from-white via-appPrimary to-white content-center`}>
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
@@ -364,11 +367,11 @@ export default function Home() {
         </div>
         <HCarousel
           outerDivClassName="sm:w-full"
-          innerDivClassName="[&_li]:mx-0 sm:[&_li]:mx-8"
+          innerDivClassName="[&_li]:mx-2 sm:[&_li]:mx-4"
           items={
             customerReviews.map((item, index) => (
               <li key={index} className="mb-5">
-                <div className="flex flex-col gap-2 p-3 bg-white border-2 border-appPrimary rounded-4xl w-50 sm:w-100 h-35 sm:h-50 text-xs sm:text-lg justify-center place-items-center text-center shadow-lg">
+                <div className="flex flex-col gap-2 p-3 bg-appGray rounded-4xl w-60 sm:w-100 h-60 sm:h-80 sm:text-xl justify-center place-items-center text-center shadow-lg">
                   <div>
                     {
                       item.text
@@ -385,7 +388,7 @@ export default function Home() {
           } />
       </div>
 
-      <div className={`${defaultPadding} mb-50 w-full content-center`}>
+      <div className={`${defaultPadding} mb-25 w-full content-center`}>
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center">
           <div className={`flex-1 text-2xl sm:text-5xl ${radley.className} text-right`}>
             <div>
@@ -395,7 +398,7 @@ export default function Home() {
               auch im <span className="decoration-appPrimary underline underline-offset-8">Ernstfall</span>.
             </div>
           </div>
-          <div className="flex-1 text-sm sm:text-lg text-left">
+          <div className="flex-1 sm:text-xl text-left">
             Unfälle und Schäden sind schon nervig genug - da braucht's keinen Papierkram-Stress obendrauf.
             Genau da kommen wir ins Spiel: Sie rufen uns an, und wir kümmern uns um den Rest.
             Ob Meldung, Abwicklung oder Diskussion mit der Versicherung - wir nehmen Ihnen den Aufwand ab.
