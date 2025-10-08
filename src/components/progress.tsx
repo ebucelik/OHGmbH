@@ -124,7 +124,7 @@ export default function Progress() {
         }
     }
 
-    return <div className="px-10 py-5 sm:py-10 sm:p-20 text-lg flex flex-col gap-2">
+    return <div className="px-5 sm:px-10 py-5 sm:py-10 sm:p-20 text-lg flex flex-col gap-2">
         <div className="text-nowrap">
             Schritt {step} von {stepToReach} - <b>{getCarInsuranceStepText(step)}</b>
         </div>
@@ -137,7 +137,7 @@ export default function Progress() {
 
         <div className={`flex flex-row ${step > 1 ? 'gap-2' : 'gap-0'}`}>
             <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${step > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />
-            <Button text="Nächster Schritt" isPrimary={false} className="w-50 lg:text-lg" onClick={nextStep} />
+            <Button text="Nächster Schritt" isPrimary={false} className="w-30 sm:w-50 lg:text-lg" onClick={nextStep} />
         </div>
     </div>
 }
