@@ -1,18 +1,18 @@
 "use client";
 
-import { Component, use, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Button from "./button";
 
 export default function Progress() {
-    enum CarInsuranceSteps {
-        type = 1,
-        carDetails = 2,
-        carDetailsEnhanced = 3,
-        paymentType = 4,
-        personalDetails = 5
+    const CarInsuranceSteps = {
+        type: 1,
+        carDetails: 2,
+        carDetailsEnhanced: 3,
+        paymentType: 4,
+        personalDetails: 5
     }
     const [step, setStep] = useState(CarInsuranceSteps.type);
-    const stepToReach = Object.keys(CarInsuranceSteps).length / 2;
+    const stepToReach = Object.keys(CarInsuranceSteps).length;
     const [percentage, setPercentage] = useState(20);
 
     const nextStep = () => {
@@ -47,31 +47,11 @@ export default function Progress() {
         });
     }
 
-    const evaluateStep = (currentStep: CarInsuranceSteps, nextStep: CarInsuranceSteps) => {
+    const evaluateStep = (currentStep: number, nextStep: number) => {
 
         var percentageToReach = (nextStep.valueOf() / stepToReach) * 100;
 
-        var interval = setInterval(() => {
-            setPercentage((currentPercentage) => {
-                if (nextStep > currentStep) {
-                    if (currentPercentage >= percentageToReach) {
-                        clearInterval(interval);
-
-                        return currentPercentage;
-                    }
-
-                    return currentPercentage + 1;
-                } else {
-                    if (currentPercentage <= percentageToReach) {
-                        clearInterval(interval);
-
-                        return currentPercentage;
-                    }
-
-                    return currentPercentage - 1;
-                }
-            });
-        }, 15);
+        setPercentage(percentageToReach);
     }
 
     const previousStep = () => {
@@ -105,7 +85,7 @@ export default function Progress() {
         });
     }
 
-    function getCarInsuranceStepText(currentStep: CarInsuranceSteps): String {
+    function getCarInsuranceStepText(currentStep: number): String {
         switch (currentStep) {
             case CarInsuranceSteps.type:
                 return "Deckungsumfang"
@@ -121,6 +101,9 @@ export default function Progress() {
 
             case CarInsuranceSteps.personalDetails:
                 return "Persönliche Angaben"
+
+            default:
+                return ""
         }
     }
 
@@ -130,7 +113,7 @@ export default function Progress() {
         </div>
 
         <div className="h-3 bg-gray-200 rounded-2xl">
-            <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl`}>
+            <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl easeIn transition-all duration-500`}>
 
             </div>
         </div>
