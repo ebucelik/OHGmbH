@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Button(
     { text, className, onClick, isPrimary }: { text: String, className?: String, onClick?: () => void, isPrimary: boolean }
 ) {

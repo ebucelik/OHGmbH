@@ -3,124 +3,61 @@
 import { useState } from "react";
 import Button from "./button";
 
-export default function Progress() {
-    const CarInsuranceSteps = {
-        type: 1,
-        carDetails: 2,
-        carDetailsEnhanced: 3,
-        paymentType: 4,
-        personalDetails: 5
-    }
-    const [step, setStep] = useState(CarInsuranceSteps.type);
-    const stepToReach = Object.keys(CarInsuranceSteps).length;
+type Step<T> = { key: String, value: T };
+
+export default function Progress(
+    { steps }: { steps: Step<any>[] }
+) {
+    const [step, setStep] = useState(steps[0]);
+    const stepToReach = Object.keys(steps).length;
     const [percentage, setPercentage] = useState(20);
 
     const nextStep = () => {
         setStep((currentStep) => {
-            var nextStep = CarInsuranceSteps.type
+            var nextStep = steps.indexOf(currentStep) == steps.length - 1
+                ? steps[steps.length - 1]
+                : steps[steps.indexOf(currentStep) + 1]
 
-            switch (currentStep) {
-                case CarInsuranceSteps.type:
-                    nextStep = CarInsuranceSteps.carDetails
-                    break
-
-                case CarInsuranceSteps.carDetails:
-                    nextStep = CarInsuranceSteps.carDetailsEnhanced
-                    break;
-
-                case CarInsuranceSteps.carDetailsEnhanced:
-                    nextStep = CarInsuranceSteps.paymentType
-                    break;
-
-                case CarInsuranceSteps.paymentType:
-                    nextStep = CarInsuranceSteps.personalDetails
-                    break;
-
-                case CarInsuranceSteps.personalDetails:
-                    // TODO: send email
-                    break;
-            }
-
-            evaluateStep(currentStep, nextStep)
+            evaluateStep(steps.indexOf(nextStep) + 1)
 
             return nextStep
         });
-    }
-
-    const evaluateStep = (currentStep: number, nextStep: number) => {
-
-        var percentageToReach = (nextStep.valueOf() / stepToReach) * 100;
-
-        setPercentage(percentageToReach);
     }
 
     const previousStep = () => {
         setStep((currentStep) => {
-            var nextStep = CarInsuranceSteps.type
+            var nextStep = steps.indexOf(currentStep) == 0
+                ? steps[0]
+                : steps[steps.indexOf(currentStep) - 1]
 
-            switch (currentStep) {
-                case CarInsuranceSteps.type:
-                    break
-
-                case CarInsuranceSteps.carDetails:
-                    nextStep = CarInsuranceSteps.type
-                    break;
-
-                case CarInsuranceSteps.carDetailsEnhanced:
-                    nextStep = CarInsuranceSteps.carDetails
-                    break;
-
-                case CarInsuranceSteps.paymentType:
-                    nextStep = CarInsuranceSteps.carDetailsEnhanced
-                    break;
-
-                case CarInsuranceSteps.personalDetails:
-                    nextStep = CarInsuranceSteps.paymentType
-                    break;
-            }
-
-            evaluateStep(currentStep, nextStep)
+            evaluateStep(steps.indexOf(nextStep) + 1)
 
             return nextStep
-        });
+        })
     }
 
-    function getCarInsuranceStepText(currentStep: number): String {
-        switch (currentStep) {
-            case CarInsuranceSteps.type:
-                return "Deckungsumfang"
+    const evaluateStep = (nextStep: number) => {
+        setPercentage((nextStep.valueOf() / stepToReach) * 100);
+    }
 
-            case CarInsuranceSteps.carDetails:
-                return "KFZ Details"
-
-            case CarInsuranceSteps.carDetailsEnhanced:
-                return "KFZ Details Erweitert"
-
-            case CarInsuranceSteps.paymentType:
-                return "Zahlungsart"
-
-            case CarInsuranceSteps.personalDetails:
-                return "Persönliche Angaben"
-
-            default:
-                return ""
-        }
+    const indexOfStep = () => {
+        return steps.indexOf(step) + 1;
     }
 
     return <div className="px-5 sm:px-10 py-5 sm:py-10 sm:p-20 text-lg flex flex-col gap-2">
         <div className="text-nowrap">
-            Schritt {step} von {stepToReach} - <b>{getCarInsuranceStepText(step)}</b>
+            Schritt {indexOfStep()} von {stepToReach} - <b>{step.value}</b>
         </div>
 
         <div className="h-3 bg-gray-200 rounded-2xl">
-            <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl easeIn transition-all duration-500`}>
+            <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl ease-linear transition-all duration-500`}>
 
             </div>
         </div>
 
-        <div className={`flex flex-row ${step > 1 ? 'gap-2' : 'gap-0'}`}>
-            <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${step > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />
-            <Button text="Nächster Schritt" isPrimary={false} className="w-30 sm:w-50 lg:text-lg" onClick={nextStep} />
+        <div className={`flex flex-row ${indexOfStep() > 1 ? 'gap-2' : 'gap-0'}`}>
+            <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${indexOfStep() > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />
+            <Button text="Weiter" isPrimary={false} className="w-25 lg:text-lg" onClick={nextStep} />
         </div>
     </div>
 }

@@ -23,7 +23,36 @@ export default function Car() {
                 In wenigen Schritten zur Autoversicherung
             </div>
 
-            <Progress />
+            type: "Deckungsumfang",
+            carDetails: "KFZ Details",
+            carDetailsEnhanced: "KFZ Details Erweitert",
+            paymentType: "Zahlungsart",
+            personalDetails: "Persönliche Angaben"
+
+            <Progress steps={
+                [
+                    {
+                        key: "type",
+                        value: "Deckungsumfang"
+                    },
+                    {
+                        key: "carDetails",
+                        value: "KFZ Details"
+                    },
+                    {
+                        key: "carDetailsEnhanced",
+                        value: "KFZ Details Erweitert"
+                    },
+                    {
+                        key: "paymentType",
+                        value: "Zahlungsart"
+                    },
+                    {
+                        key: "personalDetails",
+                        value: "Persönliche Angaben"
+                    }
+                ]
+            } />
         </div>
     </div>
 }
