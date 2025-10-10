@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Button from "./button";
 
-type Step<T> = { key: String, value: T };
+type Step<T> = { key: String, title: T, children: React.ReactNode };
 
 export default function Progress(
     { steps }: { steps: Step<any>[] }
@@ -46,14 +46,18 @@ export default function Progress(
 
     return <div className="px-5 sm:px-10 py-5 sm:py-10 sm:p-20 text-lg flex flex-col gap-2">
         <div className="text-nowrap">
-            Schritt {indexOfStep()} von {stepToReach} - <b>{step.value}</b>
+            Schritt {indexOfStep()} von {stepToReach} - <b>{step.title}</b>
         </div>
 
         <div className="h-3 bg-gray-200 rounded-2xl">
-            <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl ease-linear transition-all duration-500`}>
-
-            </div>
+            <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl ease-linear transition-all duration-500`}></div>
         </div>
+
+        <form className="py-5">
+            {
+                step.children
+            }
+        </form>
 
         <div className={`flex flex-row ${indexOfStep() > 1 ? 'gap-2' : 'gap-0'}`}>
             <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${indexOfStep() > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />

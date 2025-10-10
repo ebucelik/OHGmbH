@@ -1,3 +1,4 @@
+import FormInput, { InputType } from "../../../components/formInput";
 import Progress from "../../../components/progress";
 import { defaultPadding } from "../../../shared/style";
 import { radley } from "../../layout";
@@ -18,41 +19,61 @@ export default function Car() {
                 <img src="/driving.webp" alt="Eine Frau fährt ein Auto." className="object-cover rounded-2xl shadow-xl" />
             </div>
         </div>
-        <div className={`${defaultPadding} flex flex-col`}>
-            <div className="text-xl sm:text-4xl">
+        <div className={`${defaultPadding} flex flex-col place-items-center`}>
+            <div className="text-xl sm:text-4xl sm:w-2/3">
                 In wenigen Schritten zur Autoversicherung
             </div>
 
-            type: "Deckungsumfang",
-            carDetails: "KFZ Details",
-            carDetailsEnhanced: "KFZ Details Erweitert",
-            paymentType: "Zahlungsart",
-            personalDetails: "Persönliche Angaben"
-
-            <Progress steps={
-                [
-                    {
-                        key: "type",
-                        value: "Deckungsumfang"
-                    },
-                    {
-                        key: "carDetails",
-                        value: "KFZ Details"
-                    },
-                    {
-                        key: "carDetailsEnhanced",
-                        value: "KFZ Details Erweitert"
-                    },
-                    {
-                        key: "paymentType",
-                        value: "Zahlungsart"
-                    },
-                    {
-                        key: "personalDetails",
-                        value: "Persönliche Angaben"
-                    }
-                ]
-            } />
+            <div className="sm:w-2/3">
+                <Progress steps={
+                    [
+                        {
+                            key: "type",
+                            title: "Deckungsumfang",
+                            children: <div>
+                                <FormInput
+                                    type={InputType.radio}
+                                    required={true}
+                                    title="Welche Variante wünscht du?"
+                                    listValues={[
+                                        "Haftpflicht",
+                                        "Haftpflicht und Teilkasko",
+                                        "Haftpflicht und Vollkasko"
+                                    ]}
+                                />
+                            </div>
+                        },
+                        {
+                            key: "carDetails",
+                            title: "KFZ Details",
+                            children: <div>
+                                Details
+                            </div>
+                        },
+                        {
+                            key: "carDetailsEnhanced",
+                            title: "KFZ Details Erweitert",
+                            children: <div>
+                                Erweitert
+                            </div>
+                        },
+                        {
+                            key: "paymentType",
+                            title: "Zahlungsart",
+                            children: <div>
+                                Zahlung
+                            </div>
+                        },
+                        {
+                            key: "personalDetails",
+                            title: "Persönliche Angaben",
+                            children: <div>
+                                Persönlich
+                            </div>
+                        }
+                    ]
+                } />
+            </div>
         </div>
     </div>
 }
