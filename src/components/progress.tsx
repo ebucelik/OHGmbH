@@ -15,7 +15,7 @@ export default function Progress(
     const nextStep = () => {
         setStep((currentStep) => {
             var nextStep = steps.indexOf(currentStep) == steps.length - 1
-                ? steps[steps.length - 1]
+                ? steps[0]
                 : steps[steps.indexOf(currentStep) + 1]
 
             evaluateStep(steps.indexOf(nextStep) + 1)
@@ -44,6 +44,10 @@ export default function Progress(
         return steps.indexOf(step) + 1;
     }
 
+    const reachedLastStep = () => {
+        return indexOfStep() == steps.length
+    }
+
     return <div className="px-5 sm:px-10 py-5 sm:py-10 sm:p-20 text-lg flex flex-col gap-2">
         <div className="text-nowrap">
             Schritt {indexOfStep()} von {stepToReach} - <b>{step.title}</b>
@@ -61,7 +65,7 @@ export default function Progress(
 
         <div className={`flex flex-row ${indexOfStep() > 1 ? 'gap-2' : 'gap-0'}`}>
             <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${indexOfStep() > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />
-            <Button text="Weiter" isPrimary={false} className="w-25 lg:text-lg" onClick={nextStep} />
+            <Button text={reachedLastStep() ? 'Absenden' : 'Weiter'} isPrimary={false} className="w-30 lg:text-lg" onClick={nextStep} />
         </div>
     </div>
 }
