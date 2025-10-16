@@ -26,9 +26,9 @@ export default function FormInput(
 
     function input(id: string): React.ReactNode {
         if (required == true) {
-            return <input required type={type.valueOf()} id={id} name={type.valueOf()} className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow" placeholder={placeholder} />
+            return <input required type={type.valueOf()} name={type.valueOf()} id={id} defaultValue={type == InputType.radio ? id : undefined} className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow" placeholder={placeholder} />
         } else {
-            return <input type={type.valueOf()} id={id} name={type.valueOf()} className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow" placeholder={placeholder} />
+            return <input type={type.valueOf()} name={type.valueOf()} id={id} defaultValue={type == InputType.radio ? id : undefined} className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow" placeholder={placeholder} />
         }
     }
 

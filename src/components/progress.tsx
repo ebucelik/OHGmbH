@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "./button";
+import Insurance from "../model/insurance";
 
 type Step<T> = { key: String, title: T, children: React.ReactNode };
 
@@ -12,7 +13,15 @@ export default function Progress(
     const stepToReach = Object.keys(steps).length;
     const [percentage, setPercentage] = useState(20);
 
-    const nextStep = () => {
+    const [insurance, setInsurance] = useState(new Insurance("", ""));
+
+    async function nextStep(formData: FormData) {
+        setInsurance((currentInsurance) => {
+            currentInsurance.set(formData)
+
+            return currentInsurance;
+        });
+
         setStep((currentStep) => {
             var nextStep = steps.indexOf(currentStep) == steps.length - 1
                 ? steps[0]
@@ -57,15 +66,17 @@ export default function Progress(
             <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl ease-linear transition-all duration-500`}></div>
         </div>
 
-        <form className="py-5">
-            {
-                step.children
-            }
-        </form>
+        <form className="py-5" action={nextStep}>
+            <div className="pb-5">
+                {
+                    step.children
+                }
+            </div>
 
-        <div className={`flex flex-row ${indexOfStep() > 1 ? 'gap-2' : 'gap-0'}`}>
-            <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${indexOfStep() > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />
-            <Button text={reachedLastStep() ? 'Absenden' : 'Weiter'} isPrimary={false} className="w-30 lg:text-lg" onClick={nextStep} />
-        </div>
+            <div className={`flex flex-row ${indexOfStep() > 1 ? 'gap-2' : 'gap-0'}`}>
+                <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${indexOfStep() > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />
+                <Button text={reachedLastStep() ? 'Absenden' : 'Weiter'} isSubmit={true} isPrimary={false} className={`w-30 lg:text-lg`} />
+            </div>
+        </form>
     </div>
 }
