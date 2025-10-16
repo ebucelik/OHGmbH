@@ -1,3 +1,4 @@
+import { InsuranceType } from "../../../model/insurance";
 import FormInput, { InputType } from "../../../components/formInput";
 import Progress from "../../../components/progress";
 import { defaultPadding } from "../../../shared/style";
@@ -33,6 +34,7 @@ export default function Car() {
                                 title: "Deckungsumfang",
                                 children: <div>
                                     <FormInput
+                                        id={InsuranceType.insuranceType}
                                         type={InputType.radio}
                                         required={true}
                                         title="Welche Variante wünscht du?"
@@ -50,6 +52,7 @@ export default function Car() {
                                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.carType}
                                             type={InputType.list}
                                             required={true}
                                             title="Fahrzeugart"
@@ -63,6 +66,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.movementType}
                                             type={InputType.list}
                                             required={true}
                                             title="Antriebsart"
@@ -77,6 +81,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.brand}
                                             type={InputType.list}
                                             required={true}
                                             title="Marke"
@@ -87,6 +92,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.modelName}
                                             type={InputType.text}
                                             required={true}
                                             title="Modellbezeichnung"
@@ -95,6 +101,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.enginePower}
                                             type={InputType.text}
                                             required={true}
                                             title="Motorleistung in kW (gesamt)"
@@ -109,6 +116,7 @@ export default function Car() {
                                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.carPrice}
                                             type={InputType.text}
                                             required={true}
                                             title="Listenneupreise inkl. USt und NoVA"
@@ -117,6 +125,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.specialEquipment}
                                             type={InputType.text}
                                             required={true}
                                             title="Sonderaustattung in EUR"
@@ -124,6 +133,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.leasing}
                                             type={InputType.list}
                                             required={true}
                                             title="Leasing"
@@ -135,6 +145,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.creationDate}
                                             type={InputType.number}
                                             required={true}
                                             title="Baujahr/Erstzulassung"
@@ -143,6 +154,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.amountOfSeats}
                                             type={InputType.list}
                                             title="Anzahl der Sitzplätze"
                                             listValues={[
@@ -160,6 +172,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.registrationDistrict}
                                             type={InputType.list}
                                             required={true}
                                             title="Zulassungsbezirk"
@@ -170,6 +183,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.bonusLevel}
                                             type={InputType.list}
                                             required={true}
                                             title="Bonusstufe"
@@ -204,6 +218,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.kmPerYear}
                                             type={InputType.list}
                                             required={true}
                                             title="Kilometerleistung pro Jahr"
@@ -224,6 +239,7 @@ export default function Car() {
                                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.paymentType}
                                             type={InputType.list}
                                             required={true}
                                             title="Zahlart"
@@ -235,6 +251,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.paymentFrequency}
                                             type={InputType.list}
                                             required={true}
                                             title="Zahlungsfrequenz"
@@ -254,6 +271,7 @@ export default function Car() {
                                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.salutation}
                                             type={InputType.list}
                                             required={true}
                                             title="Anrede"
@@ -266,6 +284,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.academicTitlePre}
                                             type={InputType.text}
                                             title="Akad. Grad (vorangestellt)"
                                             placeholder="zB.: Ing."
@@ -273,6 +292,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.firstname}
                                             type={InputType.text}
                                             required={true}
                                             title="Vorname"
@@ -280,6 +300,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.lastname}
                                             type={InputType.text}
                                             required={true}
                                             title="Nachname"
@@ -287,6 +308,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.academicTitlePost}
                                             type={InputType.text}
                                             title="Akad. Grad (nachgestellt)"
                                             placeholder="zB.: BSc"
@@ -294,6 +316,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.citizenship}
                                             type={InputType.text}
                                             required={true}
                                             title="Staatsbürgerschaft"
@@ -304,6 +327,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.birthday}
                                             type={InputType.text}
                                             required={true}
                                             title="Geburtsdatum"
@@ -312,6 +336,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.job}
                                             type={InputType.text}
                                             required={true}
                                             title="Beruf"
@@ -320,6 +345,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.address}
                                             type={InputType.text}
                                             required={true}
                                             title="Adresse"
@@ -328,6 +354,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.doornumber}
                                             type={InputType.text}
                                             required={true}
                                             title="Hausnummer/Stiege/Stock/Tür"
@@ -336,6 +363,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.postalCode}
                                             type={InputType.number}
                                             required={true}
                                             title="PLZ"
@@ -344,6 +372,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.city}
                                             type={InputType.text}
                                             required={true}
                                             title="Ort"
@@ -352,6 +381,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.email}
                                             type={InputType.email}
                                             required={true}
                                             title="E-Mail Adresse"
@@ -360,6 +390,7 @@ export default function Car() {
                                     </div>
                                     <div>
                                         <FormInput
+                                            id={InsuranceType.phoneNumber}
                                             type={InputType.tel}
                                             required={true}
                                             title="Telefonnummer"
