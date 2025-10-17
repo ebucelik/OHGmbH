@@ -81,7 +81,7 @@ export default function Home() {
               Dein unabhängiger Makler für
             </p>
             <p className="text-lg sm:text-2xl">
-              Versicherungen, Finanzierungen & Energie - hbasbasbasbasbbashabsabss
+              Versicherungen, Finanzierungen & Energie -
             </p>
             <p className="text-lg sm:text-2xl">
               sicher und zuverlässig.

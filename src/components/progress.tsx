@@ -2,32 +2,35 @@
 
 import { useState } from "react";
 import Button from "./button";
-import Insurance from "../model/insurance";
 
-type Step<T> = { key: String, title: T, children: React.ReactNode };
+export type Step<T> = { key: String, title: T, children: React.ReactNode };
 
 export default function Progress(
-    { steps }: { steps: Step<any>[] }
+    {
+        onNextStep,
+        firstStep,
+        lastStep,
+        steps
+    }: {
+        onNextStep(formData: FormData): void,
+        firstStep: Step<any>,
+        lastStep: Step<any>,
+        steps: Step<any>[]
+    }
 ) {
-    const [step, setStep] = useState(steps[0]);
+    const [step, setStep] = useState(firstStep);
     const stepToReach = Object.keys(steps).length;
     const [percentage, setPercentage] = useState(20);
 
-    const [insurance, setInsurance] = useState(new Insurance("", ""));
-
-    async function nextStep(formData: FormData) {
-        setInsurance((currentInsurance) => {
-            currentInsurance.set(formData)
-
-            return currentInsurance;
-        });
+    function nextStep(formData: FormData) {
+        onNextStep(formData)
 
         setStep((currentStep) => {
-            var nextStep = steps.indexOf(currentStep) == steps.length - 1
-                ? steps[0]
-                : steps[steps.indexOf(currentStep) + 1]
+            var nextStep = currentStep == lastStep
+                ? firstStep
+                : steps[indexOfStep(currentStep)]
 
-            evaluateStep(steps.indexOf(nextStep) + 1)
+            evaluateStep(indexOfStep(nextStep))
 
             return nextStep
         });
@@ -35,11 +38,11 @@ export default function Progress(
 
     const previousStep = () => {
         setStep((currentStep) => {
-            var nextStep = steps.indexOf(currentStep) == 0
-                ? steps[0]
-                : steps[steps.indexOf(currentStep) - 1]
+            var nextStep = currentStep == firstStep
+                ? firstStep
+                : steps[indexOfStep(currentStep) - 2]
 
-            evaluateStep(steps.indexOf(nextStep) + 1)
+            evaluateStep(indexOfStep(nextStep))
 
             return nextStep
         })
@@ -49,8 +52,18 @@ export default function Progress(
         setPercentage((nextStep.valueOf() / stepToReach) * 100);
     }
 
-    const indexOfStep = () => {
-        return steps.indexOf(step) + 1;
+    const indexOfStep = (currentStep?: Step<any>) => {
+        var index = 0
+
+        steps.forEach((element) => {
+            if (element.key === currentStep?.key || element.key == step.key) {
+                index = steps.indexOf(element) + 1
+
+                return
+            }
+        })
+
+        return index
     }
 
     const reachedLastStep = () => {

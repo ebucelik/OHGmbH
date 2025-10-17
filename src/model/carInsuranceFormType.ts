@@ -1,6 +1,4 @@
-import InsuranceService from "../service/InsuranceService";
-
-export enum InsuranceType {
+export enum CarInsuranceFormType {
     insuranceType = "insuranceType",
     carType = "carType",
     movementType = "movementType",
@@ -31,30 +29,4 @@ export enum InsuranceType {
     city = "city",
     email = "email",
     phoneNumber = "phoneNumber"
-}
-
-export default class Insurance implements InsuranceService {
-    insuranceType: string;
-    carType: string;
-
-    constructor(
-        insuranceType: string,
-        carType: string
-    ) {
-        this.insuranceType = insuranceType;
-        this.carType = carType;
-    }
-
-    set(formData: FormData) {
-        const insuranceType = formData.get(InsuranceType.insuranceType)?.toString()
-        const carType = formData.get(InsuranceType.carType)?.toString()
-
-        if (insuranceType != undefined && insuranceType != "") {
-            this.insuranceType = insuranceType
-        }
-
-        if (carType != undefined && carType != "") {
-            this.carType = carType
-        }
-    }
 }

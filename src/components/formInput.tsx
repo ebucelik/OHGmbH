@@ -1,3 +1,6 @@
+import { useAppSelector } from "../app/hook"
+import { ChangeEvent, useState } from "react"
+
 export enum InputType {
     checkbox = "checkbox",
     radio = "radio",
@@ -15,22 +18,57 @@ export default function FormInput(
         required,
         title,
         listValues,
-        placeholder
+        placeholder,
+        value,
+        onChange
     }: {
         id: string,
         type: InputType,
         required?: boolean,
         title?: string,
         listValues?: string[],
-        placeholder?: string
+        placeholder?: string,
+        value?: string,
+        onChange?(event: ChangeEvent<HTMLInputElement>): void
     }
 ) {
 
+    const [radioCheckedValue, setRadioCheckedValueState] = useState("")
+
+    function onChangeEvent(event: ChangeEvent<HTMLInputElement>) {
+        if (type == InputType.radio || type == InputType.checkbox) {
+            onChange && onChange(event)
+
+            setRadioCheckedValueState(event.target.getAttribute('id') ?? "")
+        }
+
+        return
+    }
+
     function input(defaultValue?: string): React.ReactNode {
         if (required == true) {
-            return <input required type={type.valueOf()} name={id} id={type == InputType.radio ? defaultValue : id} defaultValue={type == InputType.radio ? defaultValue : undefined} className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow" placeholder={placeholder} />
+            return <input
+                onChange={onChangeEvent}
+                required
+                type={type}
+                name={id}
+                id={type == InputType.radio ? defaultValue : id}
+                checked={(radioCheckedValue === "" ? value : radioCheckedValue) === defaultValue}
+                value={defaultValue}
+                className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow"
+                placeholder={placeholder}
+            />
         } else {
-            return <input type={type.valueOf()} name={id} id={type == InputType.radio ? defaultValue : id} defaultValue={type == InputType.radio ? defaultValue : undefined} className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow" placeholder={placeholder} />
+            return <input
+                onChange={onChangeEvent}
+                type={type}
+                name={id}
+                id={type == InputType.radio ? defaultValue : id}
+                checked={(radioCheckedValue === "" ? value : radioCheckedValue) == defaultValue}
+                value={defaultValue}
+                className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow"
+                placeholder={placeholder}
+            />
         }
     }
 
@@ -62,12 +100,12 @@ export default function FormInput(
 
         case InputType.list:
             return <div className="w-full max-w-sm min-w-[200px] flex flex-col gap-2">
-                <label htmlFor={title}>
+                <label htmlFor={id}>
                     {
                         title + (required == true ? " *" : "")
                     }
                 </label>
-                <select id={title} name={title} className="appearance-none p-3 bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow">
+                <select id={id} name={id} defaultValue={value} className="appearance-none p-3 bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow">
                     <option defaultValue={"Bitte auswählen"}>
                         Bitte auswählen
                     </option>
