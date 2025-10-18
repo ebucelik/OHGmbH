@@ -1,6 +1,7 @@
 import { defaultPadding } from "../../../shared/style";
 import { radley } from "../../layout";
-import ProgressStore from "../../../components/progressStore";
+import ProgressStore from "../../../components/progress/progressStore";
+import { ProgressType } from "../../../components/progress/progressType";
 
 export default function Car() {
     return <div>
@@ -24,7 +25,7 @@ export default function Car() {
             </div>
 
             <div className="sm:w-2/3">
-                <ProgressStore />
+                <ProgressStore progressType={ProgressType.car} />
             </div>
         </div>
     </div>

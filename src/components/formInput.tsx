@@ -1,4 +1,3 @@
-import { useAppSelector } from "../app/hook"
 import { ChangeEvent, useState } from "react"
 
 export enum InputType {
@@ -32,11 +31,11 @@ export default function FormInput(
         onChange?(event: ChangeEvent<HTMLInputElement>): void
     }
 ) {
-
+    const isRadioOrCheckbox = type == InputType.radio || type == InputType.checkbox
     const [radioCheckedValue, setRadioCheckedValueState] = useState("")
 
     function onChangeEvent(event: ChangeEvent<HTMLInputElement>) {
-        if (type == InputType.radio || type == InputType.checkbox) {
+        if (isRadioOrCheckbox) {
             onChange && onChange(event)
 
             setRadioCheckedValueState(event.target.getAttribute('id') ?? "")
@@ -46,30 +45,18 @@ export default function FormInput(
     }
 
     function input(defaultValue?: string): React.ReactNode {
-        if (required == true) {
-            return <input
-                onChange={onChangeEvent}
-                required
-                type={type}
-                name={id}
-                id={type == InputType.radio ? defaultValue : id}
-                checked={(radioCheckedValue === "" ? value : radioCheckedValue) === defaultValue}
-                value={defaultValue}
-                className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow"
-                placeholder={placeholder}
-            />
-        } else {
-            return <input
-                onChange={onChangeEvent}
-                type={type}
-                name={id}
-                id={type == InputType.radio ? defaultValue : id}
-                checked={(radioCheckedValue === "" ? value : radioCheckedValue) == defaultValue}
-                value={defaultValue}
-                className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow"
-                placeholder={placeholder}
-            />
-        }
+        return <input
+            onChange={onChangeEvent}
+            required={required}
+            type={type}
+            name={id}
+            id={isRadioOrCheckbox ? defaultValue : id}
+            checked={(radioCheckedValue === "" ? value : radioCheckedValue) === defaultValue}
+            value={defaultValue}
+            defaultValue={isRadioOrCheckbox ? undefined : value}
+            className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow"
+            placeholder={placeholder}
+        />
     }
 
     switch (type) {

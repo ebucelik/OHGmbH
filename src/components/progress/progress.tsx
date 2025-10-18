@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Button from "./button";
+import Button from "../button";
 
 export type Step<T> = { key: String, title: T, children: React.ReactNode };
 
@@ -42,7 +42,7 @@ export default function Progress(
                 ? firstStep
                 : steps[indexOfStep(currentStep) - 2]
 
-            evaluateStep(indexOfStep(nextStep))
+            evaluateStep(indexOfStep(nextStep) - 1)
 
             return nextStep
         })
