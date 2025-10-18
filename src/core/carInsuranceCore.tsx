@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface InsuranceState {
+export interface InsuranceState {
     insuranceType: string,
     carType: string,
     movementType: string,
@@ -103,8 +103,6 @@ export const carInsuranceCore = createSlice({
             state.city = newState.city === "" ? state.city : newState.city
             state.email = newState.email === "" ? state.email : newState.email
             state.phoneNumber = newState.phoneNumber === "" ? state.phoneNumber : newState.phoneNumber
-
-            console.log(state)
         }
     }
 })

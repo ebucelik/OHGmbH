@@ -25,15 +25,21 @@ export default function Progress(
     function nextStep(formData: FormData) {
         onNextStep(formData)
 
-        setStep((currentStep) => {
-            var nextStep = currentStep == lastStep
-                ? firstStep
-                : steps[indexOfStep(currentStep)]
+        if (reachedLastStep()) {
+            setStep(firstStep)
 
-            evaluateStep(indexOfStep(nextStep))
+            evaluateStep(1)
+        } else {
+            setStep((currentStep) => {
+                var nextStep = currentStep == lastStep
+                    ? firstStep
+                    : steps[indexOfStep(currentStep)]
 
-            return nextStep
-        });
+                evaluateStep(indexOfStep(nextStep))
+
+                return nextStep
+            });
+        }
     }
 
     const previousStep = () => {
@@ -56,8 +62,9 @@ export default function Progress(
         var index = 0
 
         steps.forEach((element) => {
-            if (element.key === currentStep?.key || element.key == step.key) {
-                index = steps.indexOf(element) + 1
+            if (element.key === currentStep?.key || element.key === step.key) {
+                index = steps.indexOf(element)
+                index = index == steps.length ? index : index + 1
 
                 return
             }

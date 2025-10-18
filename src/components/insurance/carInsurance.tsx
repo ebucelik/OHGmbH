@@ -4,79 +4,17 @@ import { CarInsuranceFormType } from "../../model/carInsuranceFormType";
 import FormInput, { InputType } from "../formInput";
 import Progress, { Step } from "../progress/progress";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
-import { setInsurance } from "../../core/carInsuranceCore";
+import { InsuranceState, setInsurance } from "../../core/carInsuranceCore";
 
 export default function CarInsurance() {
     const carInsurance = useAppSelector((state) => state.carInsuranceCore)
     const dispatch = useAppDispatch()
 
     function setInsuranceForm(
-        insuranceType?: string,
-        carType?: string,
-        movementType?: string,
-        brand?: string,
-        modelName?: string,
-        enginePower?: string,
-        carPrice?: string,
-        specialEquipment?: string,
-        leasing?: string,
-        creationDate?: string,
-        amountOfSeats?: string,
-        registrationDistrict?: string,
-        bonusLevel?: string,
-        kmPerYear?: string,
-        paymentType?: string,
-        paymentFrequency?: string,
-        salutation?: string,
-        academicTitlePre?: string,
-        firstname?: string,
-        lastname?: string,
-        academicTitlePost?: string,
-        citizenship?: string,
-        birthday?: string,
-        job?: string,
-        address?: string,
-        doornumber?: string,
-        postalCode?: string,
-        city?: string,
-        email?: string,
-        phoneNumber?: string
+        insuranceState: InsuranceState
     ) {
         dispatch(
-            setInsurance(
-                {
-                    insuranceType: insuranceType ?? "",
-                    carType: carType ?? "",
-                    movementType: movementType ?? "",
-                    brand: brand ?? "",
-                    modelName: modelName ?? "",
-                    enginePower: enginePower ?? "",
-                    carPrice: carPrice ?? "",
-                    specialEquipment: specialEquipment ?? "",
-                    leasing: leasing ?? "",
-                    creationDate: creationDate ?? "",
-                    amountOfSeats: amountOfSeats ?? "",
-                    registrationDistrict: registrationDistrict ?? "",
-                    bonusLevel: bonusLevel ?? "",
-                    kmPerYear: kmPerYear ?? "",
-                    paymentType: paymentType ?? "",
-                    paymentFrequency: paymentFrequency ?? "",
-                    salutation: salutation ?? "",
-                    academicTitlePre: academicTitlePre ?? "",
-                    firstname: firstname ?? "",
-                    lastname: lastname ?? "",
-                    academicTitlePost: academicTitlePost ?? "",
-                    citizenship: citizenship ?? "",
-                    birthday: birthday ?? "",
-                    job: job ?? "",
-                    address: address ?? "",
-                    doornumber: doornumber ?? "",
-                    postalCode: postalCode ?? "",
-                    city: city ?? "",
-                    email: email ?? "",
-                    phoneNumber: phoneNumber ?? ""
-                }
-            )
+            setInsurance(insuranceState)
         )
     }
 
@@ -99,7 +37,38 @@ export default function CarInsurance() {
                         value={carInsurance.insuranceType}
                         onChange={(event) =>
                             setInsuranceForm(
-                                event.target.getAttribute('id') ?? undefined
+                                {
+                                    insuranceType: event.target.getAttribute('id') ?? "",
+                                    carType: "",
+                                    movementType: "",
+                                    brand: "",
+                                    modelName: "",
+                                    enginePower: "",
+                                    carPrice: "",
+                                    specialEquipment: "",
+                                    leasing: "",
+                                    creationDate: "",
+                                    amountOfSeats: "",
+                                    registrationDistrict: "",
+                                    bonusLevel: "",
+                                    kmPerYear: "",
+                                    paymentType: "",
+                                    paymentFrequency: "",
+                                    salutation: "",
+                                    academicTitlePre: "",
+                                    firstname: "",
+                                    lastname: "",
+                                    academicTitlePost: "",
+                                    citizenship: "",
+                                    birthday: "",
+                                    job: "",
+                                    address: "",
+                                    doornumber: "",
+                                    postalCode: "",
+                                    city: "",
+                                    email: "",
+                                    phoneNumber: ""
+                                }
                             )
                         }
                     />
@@ -492,39 +461,41 @@ export default function CarInsurance() {
     return <Progress
         firstStep={steps[0]}
         lastStep={steps[steps.length - 1]}
-        onNextStep={(formData) =>
+        onNextStep={(formData) => {
             setInsuranceForm(
-                formData.get(CarInsuranceFormType.insuranceType)?.toString(),
-                formData.get(CarInsuranceFormType.carType)?.toString(),
-                formData.get(CarInsuranceFormType.movementType)?.toString(),
-                formData.get(CarInsuranceFormType.brand)?.toString(),
-                formData.get(CarInsuranceFormType.modelName)?.toString(),
-                formData.get(CarInsuranceFormType.enginePower)?.toString(),
-                formData.get(CarInsuranceFormType.carPrice)?.toString(),
-                formData.get(CarInsuranceFormType.specialEquipment)?.toString(),
-                formData.get(CarInsuranceFormType.leasing)?.toString(),
-                formData.get(CarInsuranceFormType.creationDate)?.toString(),
-                formData.get(CarInsuranceFormType.amountOfSeats)?.toString(),
-                formData.get(CarInsuranceFormType.registrationDistrict)?.toString(),
-                formData.get(CarInsuranceFormType.bonusLevel)?.toString(),
-                formData.get(CarInsuranceFormType.kmPerYear)?.toString(),
-                formData.get(CarInsuranceFormType.paymentType)?.toString(),
-                formData.get(CarInsuranceFormType.paymentFrequency)?.toString(),
-                formData.get(CarInsuranceFormType.salutation)?.toString(),
-                formData.get(CarInsuranceFormType.academicTitlePre)?.toString(),
-                formData.get(CarInsuranceFormType.firstname)?.toString(),
-                formData.get(CarInsuranceFormType.lastname)?.toString(),
-                formData.get(CarInsuranceFormType.academicTitlePost)?.toString(),
-                formData.get(CarInsuranceFormType.citizenship)?.toString(),
-                formData.get(CarInsuranceFormType.birthday)?.toString(),
-                formData.get(CarInsuranceFormType.job)?.toString(),
-                formData.get(CarInsuranceFormType.address)?.toString(),
-                formData.get(CarInsuranceFormType.doornumber)?.toString(),
-                formData.get(CarInsuranceFormType.postalCode)?.toString(),
-                formData.get(CarInsuranceFormType.city)?.toString(),
-                formData.get(CarInsuranceFormType.email)?.toString(),
-                formData.get(CarInsuranceFormType.phoneNumber)?.toString()
+                {
+                    insuranceType: formData.get(CarInsuranceFormType.insuranceType)?.toString() ?? "",
+                    carType: formData.get(CarInsuranceFormType.carType)?.toString() ?? "",
+                    movementType: formData.get(CarInsuranceFormType.movementType)?.toString() ?? "",
+                    brand: formData.get(CarInsuranceFormType.brand)?.toString() ?? "",
+                    modelName: formData.get(CarInsuranceFormType.modelName)?.toString() ?? "",
+                    enginePower: formData.get(CarInsuranceFormType.enginePower)?.toString() ?? "",
+                    carPrice: formData.get(CarInsuranceFormType.carPrice)?.toString() ?? "",
+                    specialEquipment: formData.get(CarInsuranceFormType.specialEquipment)?.toString() ?? "",
+                    leasing: formData.get(CarInsuranceFormType.leasing)?.toString() ?? "",
+                    creationDate: formData.get(CarInsuranceFormType.creationDate)?.toString() ?? "",
+                    amountOfSeats: formData.get(CarInsuranceFormType.amountOfSeats)?.toString() ?? "",
+                    registrationDistrict: formData.get(CarInsuranceFormType.registrationDistrict)?.toString() ?? "",
+                    bonusLevel: formData.get(CarInsuranceFormType.bonusLevel)?.toString() ?? "",
+                    kmPerYear: formData.get(CarInsuranceFormType.kmPerYear)?.toString() ?? "",
+                    paymentType: formData.get(CarInsuranceFormType.paymentType)?.toString() ?? "",
+                    paymentFrequency: formData.get(CarInsuranceFormType.paymentFrequency)?.toString() ?? "",
+                    salutation: formData.get(CarInsuranceFormType.salutation)?.toString() ?? "",
+                    academicTitlePre: formData.get(CarInsuranceFormType.academicTitlePre)?.toString() ?? "",
+                    firstname: formData.get(CarInsuranceFormType.firstname)?.toString() ?? "",
+                    lastname: formData.get(CarInsuranceFormType.lastname)?.toString() ?? "",
+                    academicTitlePost: formData.get(CarInsuranceFormType.academicTitlePost)?.toString() ?? "",
+                    citizenship: formData.get(CarInsuranceFormType.citizenship)?.toString() ?? "",
+                    birthday: formData.get(CarInsuranceFormType.birthday)?.toString() ?? "",
+                    job: formData.get(CarInsuranceFormType.job)?.toString() ?? "",
+                    address: formData.get(CarInsuranceFormType.address)?.toString() ?? "",
+                    doornumber: formData.get(CarInsuranceFormType.doornumber)?.toString() ?? "",
+                    postalCode: formData.get(CarInsuranceFormType.postalCode)?.toString() ?? "",
+                    city: formData.get(CarInsuranceFormType.city)?.toString() ?? "",
+                    email: formData.get(CarInsuranceFormType.email)?.toString() ?? "",
+                    phoneNumber: formData.get(CarInsuranceFormType.phoneNumber)?.toString() ?? ""
+                }
             )
-        }
+        }}
         steps={steps} />
 }
