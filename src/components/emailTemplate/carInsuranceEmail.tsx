@@ -105,6 +105,9 @@ export default function CarEmailTemplate({ insurance }: { insurance: InsuranceSt
             <div>
                 Telefonnummer: <b>{insurance.phoneNumber}</b>
             </div>
+            <div>
+                Beratungsauftrag akzeptiert: <b>{insurance.orderAccepted ? 'JA' : 'NEIN'}</b>
+            </div>
         </div>
     )
 }

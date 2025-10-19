@@ -30,7 +30,8 @@ export interface InsuranceState {
     postalCode: string,
     city: string,
     email: string,
-    phoneNumber: string
+    phoneNumber: string,
+    orderAccepted: boolean
 }
 
 const initialState: InsuranceState = {
@@ -63,7 +64,8 @@ const initialState: InsuranceState = {
     postalCode: "",
     city: "",
     email: "",
-    phoneNumber: ""
+    phoneNumber: "",
+    orderAccepted: false
 }
 
 export const carInsuranceCore = createSlice({
@@ -103,6 +105,7 @@ export const carInsuranceCore = createSlice({
             state.city = newState.city === "" ? state.city : newState.city
             state.email = newState.email === "" ? state.email : newState.email
             state.phoneNumber = newState.phoneNumber === "" ? state.phoneNumber : newState.phoneNumber
+            state.orderAccepted = newState.orderAccepted
 
             return state
         },

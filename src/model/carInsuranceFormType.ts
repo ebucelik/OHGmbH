@@ -28,5 +28,6 @@ export enum CarInsuranceFormType {
     postalCode = "postalCode",
     city = "city",
     email = "email",
-    phoneNumber = "phoneNumber"
+    phoneNumber = "phoneNumber",
+    orderAccepted = "orderAccepted"
 }

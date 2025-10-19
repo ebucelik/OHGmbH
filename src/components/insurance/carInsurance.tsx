@@ -70,7 +70,8 @@ export default function CarInsurance() {
                                     postalCode: "",
                                     city: "",
                                     email: "",
-                                    phoneNumber: ""
+                                    phoneNumber: "",
+                                    orderAccepted: false
                                 }
                             )
                         }
@@ -314,147 +315,199 @@ export default function CarInsurance() {
             {
                 key: "personalDetails",
                 title: "Persönliche Angaben",
-                children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
+                children: <div className="flex flex-col gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.salutation}
+                                type={InputType.list}
+                                required={required}
+                                title="Anrede"
+                                listValues={[
+                                    "Herr",
+                                    "Frau",
+                                    "Firma"
+                                ]}
+                                value={carInsurance.salutation}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.academicTitlePre}
+                                type={InputType.text}
+                                title="Akad. Grad (vorangestellt)"
+                                placeholder="zB.: Ing."
+                                value={carInsurance.academicTitlePre}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.firstname}
+                                type={InputType.text}
+                                required={required}
+                                title="Vorname"
+                                value={carInsurance.firstname}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.lastname}
+                                type={InputType.text}
+                                required={required}
+                                title="Nachname"
+                                value={carInsurance.lastname}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.academicTitlePost}
+                                type={InputType.text}
+                                title="Akad. Grad (nachgestellt)"
+                                placeholder="zB.: BSc"
+                                value={carInsurance.academicTitlePost}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.citizenship}
+                                type={InputType.text}
+                                required={required}
+                                title="Staatsbürgerschaft"
+                                listValues={[
+                                    "Afghanistan", "Albanien", "Algerien", "Andorra", "Angola", "Antigua und Barbuda", "Äquatorialguinea", "Argentinien", "Armenien", "Aserbaidschan", "Äthiopien", "Australien", "Bahamas", "Bahrain", "Bangladesch", "Barbados", "Belarus", "Belgien", "Belize", "Benin", "Bhutan", "Bolivien", "Bosnien und Herzegowina", "Botswana", "Brasilien", "Brunei", "Bulgarien", "Burkina Faso", "Burundi", "Cabo Verde", "Chile", "China", "Costa Rica", "Dänemark", "Deutschland", "Dominica", "Dominikanische Republik", "Dschibuti", "Ecuador", "El Salvador", "Elfenbeinküste", "Eritrea", "Estland", "Eswatini", "Fidschi", "Finnland", "Frankreich", "Gabun", "Gambia", "Georgien", "Ghana", "Grenada", "Griechenland", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Indien", "Indonesien", "Irak", "Iran", "Irland", "Island", "Israel", "Italien", "Jamaika", "Japan", "Jemen", "Jordanien", "Kambodscha", "Kamerun", "Kanada", "Kasachstan", "Katar", "Kenia", "Kirgisistan", "Kiribati", "Kolumbien", "Komoren", "Kongo", "Kongo, Demokratische Republik", "Kroatien", "Kuba", "Kuwait", "Laos", "Lesotho", "Lettland", "Libanon", "Liberia", "Libyen", "Liechtenstein", "Litauen", "Luxemburg", "Madagaskar", "Malawi", "Malaysia", "Malediven", "Mali", "Malta", "Marokko", "Marshallinseln", "Mauretanien", "Mauritius", "Mexiko", "Mikronesien", "Moldau", "Monaco", "Mongolei", "Montenegro", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Neuseeland", "Nicaragua", "Niederlande", "Niger", "Nigeria", "Nordkorea", "Nordmazedonien", "Norwegen", "Oman", "Österreich", "Osttimor", "Pakistan", "Palästina", "Panama", "Papua-Neuguinea", "Paraguay", "Peru", "Philippinen", "Polen", "Portugal", "Ruanda", "Rumänien", "Russland", "Salomonen", "Sambia", "Samoa", "San Marino", "São Tomé und Príncipe", "Saudi-Arabien", "Schweden", "Schweiz", "Senegal", "Serbien", "Seychellen", "Sierra Leone", "Simbabwe", "Singapur", "Slowakei", "Slowenien", "Somalia", "Spanien", "Sri Lanka", "St. Kitts und Nevis", "St. Lucia", "St. Vincent und die Grenadinen", "Südafrika", "Sudan", "Südsudan", "Suriname", "Syrien", "Tadschikistan", "Tansania", "Thailand", "Togo", "Tonga", "Trinidad und Tobago", "Tschad", "Tschechien", "Tunesien", "Türkei", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "Ungarn", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstadt", "Venezuela", "Vereinigte Arabische Emirate", "Vereinigte Staaten", "Vereinigtes Königreich", "Vietnam", "Weißrussland", "Zentralafrikanische Republik", "Zypern"
+                                ]}
+                                value={carInsurance.citizenship}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.birthday}
+                                type={InputType.text}
+                                required={required}
+                                title="Geburtsdatum"
+                                placeholder="zB.: 22.01.1998"
+                                value={carInsurance.birthday}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.job}
+                                type={InputType.text}
+                                required={required}
+                                title="Beruf"
+                                placeholder="zB.: Informatiker"
+                                value={carInsurance.job}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.address}
+                                type={InputType.text}
+                                required={required}
+                                title="Adresse"
+                                placeholder="zB.: Hauptstraße 1"
+                                value={carInsurance.address}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.doornumber}
+                                type={InputType.text}
+                                required={required}
+                                title="Hausnummer/Stiege/Stock/Tür"
+                                placeholder="zB.: 28/2"
+                                value={carInsurance.doornumber}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.postalCode}
+                                type={InputType.number}
+                                required={required}
+                                title="PLZ"
+                                placeholder="zB.: 2500"
+                                value={carInsurance.postalCode}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.city}
+                                type={InputType.text}
+                                required={required}
+                                title="Ort"
+                                placeholder="zB.: Baden"
+                                value={carInsurance.city}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.email}
+                                type={InputType.email}
+                                required={required}
+                                title="E-Mail Adresse"
+                                placeholder="zB.: maxmustermann@hotmail.com"
+                                value={carInsurance.email}
+                            />
+                        </div>
+                        <div>
+                            <FormInput
+                                id={CarInsuranceFormType.phoneNumber}
+                                type={InputType.tel}
+                                required={required}
+                                title="Telefonnummer"
+                                placeholder="zB.: +43 660 1111100"
+                                value={carInsurance.phoneNumber}
+                            />
+                        </div>
+                    </div>
+                    <div className="flex">
                         <FormInput
-                            id={CarInsuranceFormType.salutation}
-                            type={InputType.list}
+                            id={CarInsuranceFormType.orderAccepted}
+                            type={InputType.checkbox}
                             required={required}
-                            title="Anrede"
                             listValues={[
-                                "Herr",
-                                "Frau",
-                                "Firma"
+                                <div>
+                                    Diese Anfrage ist zu <b>100% unverbindlich</b>. Ich erteile einen Beratungsauftrag und akzeptiere die zugrundeliegende <b className="text-appPrimary">AGB</b>.
+                                </div>
                             ]}
-                            value={carInsurance.salutation}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.academicTitlePre}
-                            type={InputType.text}
-                            title="Akad. Grad (vorangestellt)"
-                            placeholder="zB.: Ing."
-                            value={carInsurance.academicTitlePre}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.firstname}
-                            type={InputType.text}
-                            required={required}
-                            title="Vorname"
-                            value={carInsurance.firstname}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.lastname}
-                            type={InputType.text}
-                            required={required}
-                            title="Nachname"
-                            value={carInsurance.lastname}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.academicTitlePost}
-                            type={InputType.text}
-                            title="Akad. Grad (nachgestellt)"
-                            placeholder="zB.: BSc"
-                            value={carInsurance.academicTitlePost}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.citizenship}
-                            type={InputType.text}
-                            required={required}
-                            title="Staatsbürgerschaft"
-                            listValues={[
-                                "Afghanistan", "Albanien", "Algerien", "Andorra", "Angola", "Antigua und Barbuda", "Äquatorialguinea", "Argentinien", "Armenien", "Aserbaidschan", "Äthiopien", "Australien", "Bahamas", "Bahrain", "Bangladesch", "Barbados", "Belarus", "Belgien", "Belize", "Benin", "Bhutan", "Bolivien", "Bosnien und Herzegowina", "Botswana", "Brasilien", "Brunei", "Bulgarien", "Burkina Faso", "Burundi", "Cabo Verde", "Chile", "China", "Costa Rica", "Dänemark", "Deutschland", "Dominica", "Dominikanische Republik", "Dschibuti", "Ecuador", "El Salvador", "Elfenbeinküste", "Eritrea", "Estland", "Eswatini", "Fidschi", "Finnland", "Frankreich", "Gabun", "Gambia", "Georgien", "Ghana", "Grenada", "Griechenland", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Indien", "Indonesien", "Irak", "Iran", "Irland", "Island", "Israel", "Italien", "Jamaika", "Japan", "Jemen", "Jordanien", "Kambodscha", "Kamerun", "Kanada", "Kasachstan", "Katar", "Kenia", "Kirgisistan", "Kiribati", "Kolumbien", "Komoren", "Kongo", "Kongo, Demokratische Republik", "Kroatien", "Kuba", "Kuwait", "Laos", "Lesotho", "Lettland", "Libanon", "Liberia", "Libyen", "Liechtenstein", "Litauen", "Luxemburg", "Madagaskar", "Malawi", "Malaysia", "Malediven", "Mali", "Malta", "Marokko", "Marshallinseln", "Mauretanien", "Mauritius", "Mexiko", "Mikronesien", "Moldau", "Monaco", "Mongolei", "Montenegro", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Neuseeland", "Nicaragua", "Niederlande", "Niger", "Nigeria", "Nordkorea", "Nordmazedonien", "Norwegen", "Oman", "Österreich", "Osttimor", "Pakistan", "Palästina", "Panama", "Papua-Neuguinea", "Paraguay", "Peru", "Philippinen", "Polen", "Portugal", "Ruanda", "Rumänien", "Russland", "Salomonen", "Sambia", "Samoa", "San Marino", "São Tomé und Príncipe", "Saudi-Arabien", "Schweden", "Schweiz", "Senegal", "Serbien", "Seychellen", "Sierra Leone", "Simbabwe", "Singapur", "Slowakei", "Slowenien", "Somalia", "Spanien", "Sri Lanka", "St. Kitts und Nevis", "St. Lucia", "St. Vincent und die Grenadinen", "Südafrika", "Sudan", "Südsudan", "Suriname", "Syrien", "Tadschikistan", "Tansania", "Thailand", "Togo", "Tonga", "Trinidad und Tobago", "Tschad", "Tschechien", "Tunesien", "Türkei", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "Ungarn", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstadt", "Venezuela", "Vereinigte Arabische Emirate", "Vereinigte Staaten", "Vereinigtes Königreich", "Vietnam", "Weißrussland", "Zentralafrikanische Republik", "Zypern"
-                            ]}
-                            value={carInsurance.citizenship}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.birthday}
-                            type={InputType.text}
-                            required={required}
-                            title="Geburtsdatum"
-                            placeholder="zB.: 22.01.1998"
-                            value={carInsurance.birthday}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.job}
-                            type={InputType.text}
-                            required={required}
-                            title="Beruf"
-                            placeholder="zB.: Informatiker"
-                            value={carInsurance.job}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.address}
-                            type={InputType.text}
-                            required={required}
-                            title="Adresse"
-                            placeholder="zB.: Hauptstraße 1"
-                            value={carInsurance.address}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.doornumber}
-                            type={InputType.text}
-                            required={required}
-                            title="Hausnummer/Stiege/Stock/Tür"
-                            placeholder="zB.: 28/2"
-                            value={carInsurance.doornumber}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.postalCode}
-                            type={InputType.number}
-                            required={required}
-                            title="PLZ"
-                            placeholder="zB.: 2500"
-                            value={carInsurance.postalCode}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.city}
-                            type={InputType.text}
-                            required={required}
-                            title="Ort"
-                            placeholder="zB.: Baden"
-                            value={carInsurance.city}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.email}
-                            type={InputType.email}
-                            required={required}
-                            title="E-Mail Adresse"
-                            placeholder="zB.: maxmustermann@hotmail.com"
-                            value={carInsurance.email}
-                        />
-                    </div>
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.phoneNumber}
-                            type={InputType.tel}
-                            required={required}
-                            title="Telefonnummer"
-                            placeholder="zB.: +43 660 1111100"
-                            value={carInsurance.phoneNumber}
+                            value={`${carInsurance.orderAccepted}`}
+                            onChange={() =>
+                                setInsuranceForm(
+                                    {
+                                        insuranceType: "",
+                                        carType: "",
+                                        movementType: "",
+                                        brand: "",
+                                        modelName: "",
+                                        enginePower: "",
+                                        carPrice: "",
+                                        specialEquipment: "",
+                                        leasing: "",
+                                        creationDate: "",
+                                        amountOfSeats: "",
+                                        registrationDistrict: "",
+                                        bonusLevel: "",
+                                        kmPerYear: "",
+                                        paymentType: "",
+                                        paymentFrequency: "",
+                                        salutation: "",
+                                        academicTitlePre: "",
+                                        firstname: "",
+                                        lastname: "",
+                                        academicTitlePost: "",
+                                        citizenship: "",
+                                        birthday: "",
+                                        job: "",
+                                        address: "",
+                                        doornumber: "",
+                                        postalCode: "",
+                                        city: "",
+                                        email: "",
+                                        phoneNumber: "",
+                                        orderAccepted: !carInsurance.orderAccepted
+                                    }
+                                )
+                            }
                         />
                     </div>
                 </div>
@@ -462,6 +515,7 @@ export default function CarInsurance() {
         ]
 
     async function sendEmail(): Promise<Response> {
+        console.log(state().carInsuranceCore)
         return await fetch('/api/carinsurance', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -505,7 +559,8 @@ export default function CarInsurance() {
                     postalCode: formData.get(CarInsuranceFormType.postalCode)?.toString() ?? "",
                     city: formData.get(CarInsuranceFormType.city)?.toString() ?? "",
                     email: formData.get(CarInsuranceFormType.email)?.toString() ?? "",
-                    phoneNumber: formData.get(CarInsuranceFormType.phoneNumber)?.toString() ?? ""
+                    phoneNumber: formData.get(CarInsuranceFormType.phoneNumber)?.toString() ?? "",
+                    orderAccepted: (formData.get(CarInsuranceFormType.orderAccepted)?.toString() ?? "") != ""
                 }
             )
         }}

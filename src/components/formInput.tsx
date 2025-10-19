@@ -25,7 +25,7 @@ export default function FormInput(
         type: InputType,
         required?: boolean,
         title?: string,
-        listValues?: string[],
+        listValues?: React.ReactNode[],
         placeholder?: string,
         value?: string,
         onChange?(event: ChangeEvent<HTMLInputElement>): void
@@ -59,7 +59,7 @@ export default function FormInput(
             type={type}
             name={id}
             id={isRadioOrCheckbox ? defaultValue : id}
-            checked={(radioCheckedValue === "" ? value : radioCheckedValue) === defaultValue}
+            checked={type == InputType.checkbox ? undefined : (radioCheckedValue === "" ? value : radioCheckedValue) === defaultValue}
             value={defaultValue}
             defaultValue={isRadioOrCheckbox ? undefined : value}
             className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow"
@@ -79,11 +79,11 @@ export default function FormInput(
                     {
                         listValues?.map((element, id) => {
                             return (
-                                <div key={id} className="w-full max-w-sm min-w-[200px] flex flex-row gap-2 place-items-center">
+                                <div key={id} className="w-full flex flex-row gap-2 place-items-center">
                                     {
-                                        input(element)
+                                        input(element?.valueOf() as string)
                                     }
-                                    <label htmlFor={element}>
+                                    <label htmlFor={element?.valueOf() as string}>
                                         {
                                             element
                                         }
@@ -116,7 +116,7 @@ export default function FormInput(
                         {
                             listValues?.map((element, id) => {
                                 return (
-                                    <option key={id} value={element}>
+                                    <option key={id} value={element?.valueOf() as string}>
                                         {element}
                                     </option>
                                 )
