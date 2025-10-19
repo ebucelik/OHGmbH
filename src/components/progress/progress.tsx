@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../button";
 import { Icon } from "@iconify/react";
-import { useAppSelector } from "@/app/hook";
-import { InsuranceState } from "../../core/carInsuranceCore";
 
 export type Step<T> = { key: String, title: T, children: React.ReactNode };
 
