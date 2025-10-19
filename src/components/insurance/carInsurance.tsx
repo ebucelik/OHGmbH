@@ -4,7 +4,7 @@ import { CarInsuranceFormType } from "../../model/carInsuranceFormType";
 import FormInput, { InputType } from "../formInput";
 import Progress, { Step } from "../progress/progress";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
-import { InsuranceState, setInsurance } from "../../core/carInsuranceCore";
+import { InsuranceState, reset, setInsurance } from "../../core/carInsuranceCore";
 
 export default function CarInsurance() {
     const carInsurance = useAppSelector((state) => state.carInsuranceCore)
@@ -497,5 +497,6 @@ export default function CarInsurance() {
                 }
             )
         }}
+        onEmailSend={() => dispatch(reset())}
         steps={steps} />
 }

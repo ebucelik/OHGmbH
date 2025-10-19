@@ -103,10 +103,16 @@ export const carInsuranceCore = createSlice({
             state.city = newState.city === "" ? state.city : newState.city
             state.email = newState.email === "" ? state.email : newState.email
             state.phoneNumber = newState.phoneNumber === "" ? state.phoneNumber : newState.phoneNumber
+
+            return state
+        },
+        reset: (state) => {
+            state = initialState
+            return state
         }
     }
 })
 
-export const { setInsurance } = carInsuranceCore.actions
+export const { setInsurance, reset } = carInsuranceCore.actions
 
 export default carInsuranceCore.reducer
