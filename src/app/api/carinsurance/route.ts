@@ -1,15 +1,20 @@
-import EmailTemplate from "../../../components/email-template"
+import { InsuranceState } from "../../../core/carInsuranceCore"
+import CarEmailTemplate from "../../../components/emailTemplate/carInsuranceEmail"
 import { Resend } from "resend"
+import { NextRequest } from "next/server"
 
 const resend = new Resend(process.env.OH_RESEND_API_KEY)
 
-export async function POST() {
+export async function POST(request: NextRequest) {
     try {
+        const body = await request.json()
+        const insurance: InsuranceState = JSON.parse(JSON.stringify(body as string))
+
         const { data, error } = await resend.emails.send({
             from: 'OH GmbH <onboarding@resend.dev>',
-            to: ['ebucelik1@hotmail.com'],
-            subject: 'Hello World.',
-            react: EmailTemplate({ firstName: 'Ebu' })
+            to: ['ebucelik1@hotmail.com', 'office@oh-gmbh.at'],
+            subject: 'Neue Anfrage: Autoversicherung',
+            react: CarEmailTemplate({ insurance })
         })
 
         if (error) {

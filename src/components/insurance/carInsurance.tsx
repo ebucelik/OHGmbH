@@ -5,10 +5,14 @@ import FormInput, { InputType } from "../formInput";
 import Progress, { Step } from "../progress/progress";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
 import { InsuranceState, reset, setInsurance } from "../../core/carInsuranceCore";
+import { shallowEqual } from "react-redux";
+import store from "../../app/store";
 
 export default function CarInsurance() {
-    const carInsurance = useAppSelector((state) => state.carInsuranceCore)
+    const carInsurance = useAppSelector((state) => state.carInsuranceCore, shallowEqual)
     const dispatch = useAppDispatch()
+    const required = true
+    const state = store.getState
 
     function setInsuranceForm(
         insuranceState: InsuranceState
@@ -17,7 +21,6 @@ export default function CarInsurance() {
             setInsurance(insuranceState)
         )
     }
-
     const steps: Step<any>[] =
         [
             {
@@ -27,7 +30,7 @@ export default function CarInsurance() {
                     <FormInput
                         id={CarInsuranceFormType.insuranceType}
                         type={InputType.radio}
-                        required={true}
+                        required={required}
                         title="Welche Variante wünscht du?"
                         listValues={[
                             "Haftpflicht",
@@ -82,7 +85,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.carType}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Fahrzeugart"
                             listValues={[
                                 "PKW",
@@ -97,7 +100,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.movementType}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Antriebsart"
                             listValues={[
                                 "Diesel",
@@ -113,7 +116,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.brand}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Marke"
                             listValues={[
                                 "Abarth", "AC", "Acura", "Aiways", "Alfa Romeo", "Alpina", "Alpine", "Ariel", "Arrinera", "Artega", "Asia Motors", "Aston Martin", "Audi", "BAC", "Baojun", "Bentley", "BMW", "Borgward", "Brabus", "Brilliance", "Bugatti", "Buick", "BYD", "Cadillac", "Carver", "Caterham", "Changan", "Changhe", "Chery", "Chevrolet", "Chrysler", "Citroën", "Cupra", "Dacia", "Daewoo", "Daihatsu", "De Tomaso", "Delorean", "DFSK", "Dodge", "Dongfeng", "DS Automobiles", "Elaris", "Exeed", "FAW", "Ferrari", "Fiat", "Fisker", "Ford", "Foton", "GAC", "Geely", "Genesis", "Ginetta", "GMC", "Great Wall", "Gumpert", "Haval", "HiPhi", "Hindustan Motors", "Holden", "Honda", "Hongqi", "Hummer", "Hyundai", "Infiniti", "Isuzu", "Iveco", "JAC", "Jaguar", "Jeep", "Jensen", "Karma", "Kia", "Koenigsegg", "KTM", "Lada", "Lamborghini", "Lancia", "Land Rover", "LEVC", "Lexus", "Ligier", "Lincoln", "Lotus", "Lucid", "Luxgen", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-AMG", "Mercedes-Benz", "Mercury", "MG", "Microcar", "Mini", "Mitsubishi", "Morgan", "Nio", "Nissan", "Noble", "Oldsmobile", "Opel", "Pagani", "Peugeot", "Piaggio", "Pininfarina", "Plymouth", "Polestar", "Pontiac", "Porsche", "Proton", "Qoros", "RAM", "Renault", "Rezvani", "Rimac", "Rivian", "Rolls-Royce", "Rover", "Saab", "Saleen", "Samsung", "Saturn", "Scion", "SEAT", "Seres", "Shelby", "Škoda", "Smart", "Spyker", "SsangYong", "Subaru", "Suzuki", "Tata", "Tazzari", "Tesla", "Toyota", "Trabant", "TVR", "Vauxhall", "Venturi", "Volkswagen", "Volvo", "W Motors", "Wartburg", "Wiesmann", "XPeng", "Yugo", "Zastava", "Zhidou", "Zotye"
@@ -125,7 +128,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.modelName}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Modellbezeichnung"
                             placeholder="zB.: CLA 180"
                             value={carInsurance.modelName}
@@ -135,7 +138,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.enginePower}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Motorleistung in kW (gesamt)"
                             placeholder="zB.: 110"
                             value={carInsurance.enginePower}
@@ -151,7 +154,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.carPrice}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Listenneupreise inkl. USt und NoVA"
                             placeholder="Neupreis des Fahrzeugs"
                             value={carInsurance.carPrice}
@@ -161,7 +164,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.specialEquipment}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Sonderaustattung in EUR"
                             value={carInsurance.specialEquipment}
                         />
@@ -170,7 +173,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.leasing}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Leasing"
                             listValues={[
                                 "Nein",
@@ -183,7 +186,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.creationDate}
                             type={InputType.number}
-                            required={true}
+                            required={required}
                             title="Baujahr/Erstzulassung"
                             placeholder="zB.: 2020"
                             value={carInsurance.creationDate}
@@ -212,7 +215,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.registrationDistrict}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Zulassungsbezirk"
                             listValues={[
                                 "AM", "B", "BL", "BN", "BZ", "E", "FW", "G", "GM", "GS", "GU", "HA", "HB", "HE", "HO", "IL", "IM", "JE", "JO", "KI", "KL", "KO", "KR", "KS", "KU", "LA", "LB", "LE", "LF", "LI", "LN", "LO", "LZ", "MD", "ME", "MI", "MU", "ND", "NK", "OP", "PE", "PL", "RE", "RI", "RO", "S", "SD", "SE", "SL", "SP", "SR", "ST", "SZ", "TA", "TU", "UU", "VB", "VI", "VL", "VO", "W", "WB", "WE", "WL", "WO", "WT", "WU", "WY", "ZE"
@@ -224,7 +227,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.bonusLevel}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Bonusstufe"
                             listValues={[
                                 "-7",
@@ -260,7 +263,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.kmPerYear}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Kilometerleistung pro Jahr"
                             listValues={[
                                 "max 7.000 km",
@@ -282,7 +285,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.paymentType}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Zahlart"
                             listValues={[
                                 "Abbuchungsauftrag",
@@ -295,7 +298,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.paymentFrequency}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Zahlungsfrequenz"
                             listValues={[
                                 "monatlich (nur bei Abbuchung möglich)",
@@ -316,7 +319,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.salutation}
                             type={InputType.list}
-                            required={true}
+                            required={required}
                             title="Anrede"
                             listValues={[
                                 "Herr",
@@ -339,7 +342,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.firstname}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Vorname"
                             value={carInsurance.firstname}
                         />
@@ -348,7 +351,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.lastname}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Nachname"
                             value={carInsurance.lastname}
                         />
@@ -366,7 +369,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.citizenship}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Staatsbürgerschaft"
                             listValues={[
                                 "Afghanistan", "Albanien", "Algerien", "Andorra", "Angola", "Antigua und Barbuda", "Äquatorialguinea", "Argentinien", "Armenien", "Aserbaidschan", "Äthiopien", "Australien", "Bahamas", "Bahrain", "Bangladesch", "Barbados", "Belarus", "Belgien", "Belize", "Benin", "Bhutan", "Bolivien", "Bosnien und Herzegowina", "Botswana", "Brasilien", "Brunei", "Bulgarien", "Burkina Faso", "Burundi", "Cabo Verde", "Chile", "China", "Costa Rica", "Dänemark", "Deutschland", "Dominica", "Dominikanische Republik", "Dschibuti", "Ecuador", "El Salvador", "Elfenbeinküste", "Eritrea", "Estland", "Eswatini", "Fidschi", "Finnland", "Frankreich", "Gabun", "Gambia", "Georgien", "Ghana", "Grenada", "Griechenland", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Indien", "Indonesien", "Irak", "Iran", "Irland", "Island", "Israel", "Italien", "Jamaika", "Japan", "Jemen", "Jordanien", "Kambodscha", "Kamerun", "Kanada", "Kasachstan", "Katar", "Kenia", "Kirgisistan", "Kiribati", "Kolumbien", "Komoren", "Kongo", "Kongo, Demokratische Republik", "Kroatien", "Kuba", "Kuwait", "Laos", "Lesotho", "Lettland", "Libanon", "Liberia", "Libyen", "Liechtenstein", "Litauen", "Luxemburg", "Madagaskar", "Malawi", "Malaysia", "Malediven", "Mali", "Malta", "Marokko", "Marshallinseln", "Mauretanien", "Mauritius", "Mexiko", "Mikronesien", "Moldau", "Monaco", "Mongolei", "Montenegro", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Neuseeland", "Nicaragua", "Niederlande", "Niger", "Nigeria", "Nordkorea", "Nordmazedonien", "Norwegen", "Oman", "Österreich", "Osttimor", "Pakistan", "Palästina", "Panama", "Papua-Neuguinea", "Paraguay", "Peru", "Philippinen", "Polen", "Portugal", "Ruanda", "Rumänien", "Russland", "Salomonen", "Sambia", "Samoa", "San Marino", "São Tomé und Príncipe", "Saudi-Arabien", "Schweden", "Schweiz", "Senegal", "Serbien", "Seychellen", "Sierra Leone", "Simbabwe", "Singapur", "Slowakei", "Slowenien", "Somalia", "Spanien", "Sri Lanka", "St. Kitts und Nevis", "St. Lucia", "St. Vincent und die Grenadinen", "Südafrika", "Sudan", "Südsudan", "Suriname", "Syrien", "Tadschikistan", "Tansania", "Thailand", "Togo", "Tonga", "Trinidad und Tobago", "Tschad", "Tschechien", "Tunesien", "Türkei", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "Ungarn", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstadt", "Venezuela", "Vereinigte Arabische Emirate", "Vereinigte Staaten", "Vereinigtes Königreich", "Vietnam", "Weißrussland", "Zentralafrikanische Republik", "Zypern"
@@ -378,7 +381,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.birthday}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Geburtsdatum"
                             placeholder="zB.: 22.01.1998"
                             value={carInsurance.birthday}
@@ -388,7 +391,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.job}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Beruf"
                             placeholder="zB.: Informatiker"
                             value={carInsurance.job}
@@ -398,7 +401,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.address}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Adresse"
                             placeholder="zB.: Hauptstraße 1"
                             value={carInsurance.address}
@@ -408,7 +411,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.doornumber}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Hausnummer/Stiege/Stock/Tür"
                             placeholder="zB.: 28/2"
                             value={carInsurance.doornumber}
@@ -418,7 +421,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.postalCode}
                             type={InputType.number}
-                            required={true}
+                            required={required}
                             title="PLZ"
                             placeholder="zB.: 2500"
                             value={carInsurance.postalCode}
@@ -428,7 +431,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.city}
                             type={InputType.text}
-                            required={true}
+                            required={required}
                             title="Ort"
                             placeholder="zB.: Baden"
                             value={carInsurance.city}
@@ -438,7 +441,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.email}
                             type={InputType.email}
-                            required={true}
+                            required={required}
                             title="E-Mail Adresse"
                             placeholder="zB.: maxmustermann@hotmail.com"
                             value={carInsurance.email}
@@ -448,7 +451,7 @@ export default function CarInsurance() {
                         <FormInput
                             id={CarInsuranceFormType.phoneNumber}
                             type={InputType.tel}
-                            required={true}
+                            required={required}
                             title="Telefonnummer"
                             placeholder="zB.: +43 660 1111100"
                             value={carInsurance.phoneNumber}
@@ -458,7 +461,16 @@ export default function CarInsurance() {
             }
         ]
 
+    async function sendEmail(): Promise<Response> {
+        return await fetch('/api/carinsurance', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(state().carInsuranceCore)
+        })
+    }
+
     return <Progress
+        onSendEmail={sendEmail}
         firstStep={steps[0]}
         lastStep={steps[steps.length - 1]}
         onNextStep={(formData) => {

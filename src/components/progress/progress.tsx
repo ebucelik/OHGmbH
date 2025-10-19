@@ -3,17 +3,21 @@
 import { useEffect, useState } from "react";
 import Button from "../button";
 import { Icon } from "@iconify/react";
+import { useAppSelector } from "@/app/hook";
+import { InsuranceState } from "../../core/carInsuranceCore";
 
 export type Step<T> = { key: String, title: T, children: React.ReactNode };
 
 export default function Progress(
     {
+        onSendEmail,
         onNextStep,
         onEmailSend,
         firstStep,
         lastStep,
         steps
     }: {
+        onSendEmail(): Promise<Response>,
         onNextStep(formData: FormData): void,
         onEmailSend(): void,
         firstStep: Step<any>,
@@ -31,10 +35,7 @@ export default function Progress(
     })
 
     async function sendEmail() {
-        const response = await fetch('/api/carinsurance', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' }
-        })
+        const response = await onSendEmail()
 
         setIsLoading(false)
 

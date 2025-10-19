@@ -108,6 +108,7 @@ export const carInsuranceCore = createSlice({
         },
         reset: (state) => {
             state = initialState
+
             return state
         }
     }
