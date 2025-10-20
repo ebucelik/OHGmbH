@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
 
         const { data, error } = await resend.emails.send({
             from: 'OH GmbH <onboarding@resend.dev>',
-            to: ['ebucelik1@hotmail.com', 'office@oh-gmbh.at'],
+            to: ['ebucelik1@hotmail.com'],
             subject: 'Neue Anfrage: Autoversicherung',
             react: CarEmailTemplate({ insurance })
         })

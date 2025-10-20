@@ -11,7 +11,7 @@ import store from "../../app/store";
 export default function CarInsurance() {
     const carInsurance = useAppSelector((state) => state.carInsuranceCore, shallowEqual)
     const dispatch = useAppDispatch()
-    const required = true
+    const required = false
     const state = store.getState
 
     function setInsuranceForm(
@@ -515,7 +515,6 @@ export default function CarInsurance() {
         ]
 
     async function sendEmail(): Promise<Response> {
-        console.log(state().carInsuranceCore)
         return await fetch('/api/carinsurance', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

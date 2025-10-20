@@ -1,10 +1,12 @@
 import { InsuranceState } from "../../core/carInsuranceCore";
 
 export default function CarEmailTemplate({ insurance }: { insurance: InsuranceState }) {
+    const date = new Date()
+
     return (
         <div>
             <h3>
-                Eine neue Autoversicherung ist verbindlich angefragt worden.
+                Eine neue Autoversicherung ist angefragt worden.
             </h3>
             <div>
                 <b>Details zur Autoversicherung:</b>
@@ -107,6 +109,12 @@ export default function CarEmailTemplate({ insurance }: { insurance: InsuranceSt
             </div>
             <div>
                 Beratungsauftrag akzeptiert: <b>{insurance.orderAccepted ? 'JA' : 'NEIN'}</b>
+            </div>
+            <br />
+            <div>
+                {
+                    'Auftragsdatum: ' + date.toLocaleDateString() + ' ' + date.toLocaleTimeString('de-DE')
+                }
             </div>
         </div>
     )
