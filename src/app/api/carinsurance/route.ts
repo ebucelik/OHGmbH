@@ -8,7 +8,7 @@ const resend = new Resend(process.env.OH_RESEND_API_KEY)
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json()
-        const insurance: InsuranceState = JSON.parse(JSON.stringify(body as string))
+        const insurance: InsuranceState = body
 
         const { data, error } = await resend.emails.send({
             from: 'OH GmbH <onboarding@resend.dev>',
