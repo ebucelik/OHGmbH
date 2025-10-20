@@ -339,7 +339,7 @@ export default function CarInsurance() {
                         <div>
                             <FormInput
                                 id={CarInsuranceFormType.citizenship}
-                                type={InputType.text}
+                                type={InputType.list}
                                 required={required}
                                 title="Staatsbürgerschaft"
                                 listValues={[
