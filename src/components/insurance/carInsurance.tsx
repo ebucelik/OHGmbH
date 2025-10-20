@@ -435,15 +435,18 @@ export default function CarInsurance() {
                             type={InputType.checkbox}
                             required={required}
                             listValues={[
+                                "Diese Anfrage ist zu 100% unverbindlich. Ich erteile einen Beratungsauftrag und akzeptiere die zugrundeliegende AGB."
+                            ]}
+                            listReactValues={[
                                 <div>
                                     Diese Anfrage ist zu <b>100% unverbindlich</b>. Ich erteile einen Beratungsauftrag und akzeptiere die zugrundeliegende <b className="text-appPrimary">AGB</b>.
                                 </div>
                             ]}
-                            value={`${carInsurance[CarInsuranceFormType.orderAccepted] != "" ? true : false}`}
+                            value={carInsurance[CarInsuranceFormType.orderAccepted]}
                             onChange={() => {
                                 const newInsuranceState: InsuranceState = {}
                                 newInsuranceState[CarInsuranceFormType.orderAccepted] = state().carInsuranceCore[CarInsuranceFormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
-
+                                console.log("test")
                                 setInsuranceForm(newInsuranceState)
                             }}
                         />
@@ -453,7 +456,6 @@ export default function CarInsurance() {
         ]
 
     async function sendEmail(): Promise<Response> {
-        console.log(JSON.stringify(state().carInsuranceCore))
         return await fetch('/api/carinsurance', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -471,6 +473,8 @@ export default function CarInsurance() {
             carInsuranceFormTypes.forEach((type) => {
                 newInsuranceState[type] = formData.get(type)?.toString() ?? ""
             })
+
+            newInsuranceState[CarInsuranceFormType.orderAccepted] = newInsuranceState[CarInsuranceFormType.orderAccepted] != 'NEIN' ? 'JA' : 'NEIN'
 
             setInsuranceForm(newInsuranceState)
         }}

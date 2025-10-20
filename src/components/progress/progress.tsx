@@ -35,10 +35,6 @@ export default function Progress(
     async function sendEmail() {
         const response = await onSendEmail()
 
-        const test = await response.json()
-
-        console.log(test)
-
         setIsLoading(false)
 
         setEmailSentInfo({

@@ -33,7 +33,7 @@ export default function CarEmailTemplate({ insurance }: { insurance: InsuranceSt
             <br />
             <div>
                 {
-                    'Datum: ' + date.toLocaleDateString() + ' ' + date.toLocaleTimeString('de-DE')
+                    'Auftragsdatum: ' + date.toLocaleDateString() + ' ' + date.toLocaleTimeString('de-DE')
                 }
             </div>
         </div>

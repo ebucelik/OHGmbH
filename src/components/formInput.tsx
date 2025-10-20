@@ -17,6 +17,7 @@ export default function FormInput(
         required,
         title,
         listValues,
+        listReactValues,
         placeholder,
         value,
         onChange
@@ -25,7 +26,8 @@ export default function FormInput(
         type: InputType,
         required?: boolean,
         title?: string,
-        listValues?: React.ReactNode[],
+        listValues?: string[],
+        listReactValues?: React.ReactNode[],
         placeholder?: string,
         value?: string,
         onChange?(event: ChangeEvent<HTMLInputElement>): void
@@ -81,11 +83,11 @@ export default function FormInput(
                             return (
                                 <div key={id} className="w-full flex flex-row gap-2 place-items-center">
                                     {
-                                        input(element?.valueOf() as string)
+                                        input(element)
                                     }
-                                    <label htmlFor={element?.valueOf() as string}>
+                                    <label htmlFor={element}>
                                         {
-                                            element
+                                            (listReactValues && listReactValues[id]) ?? element
                                         }
                                     </label>
                                 </div>
@@ -116,7 +118,7 @@ export default function FormInput(
                         {
                             listValues?.map((element, id) => {
                                 return (
-                                    <option key={id} value={element?.valueOf() as string}>
+                                    <option key={id} value={element}>
                                         {element}
                                     </option>
                                 )
