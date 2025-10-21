@@ -20,10 +20,6 @@ export default function Car() {
             </div>
         </div>
         <div className={`${defaultPadding} flex flex-col place-items-center`}>
-            <div className="text-xl sm:text-4xl sm:w-2/3">
-                In wenigen Schritten zur Autoversicherung
-            </div>
-
             <div className="sm:w-2/3">
                 <ProgressStore progressType={ProgressType.car} />
             </div>

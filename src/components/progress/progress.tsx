@@ -8,19 +8,21 @@ export type Step<T> = { key: String, title: T, children: React.ReactNode };
 
 export default function Progress(
     {
-        onSendEmail,
-        onNextStep,
-        onEmailSend,
+        title,
         firstStep,
         lastStep,
-        steps
+        steps,
+        onSendEmail,
+        onNextStep,
+        afterEmailSent,
     }: {
-        onSendEmail(): Promise<Response>,
-        onNextStep(formData: FormData): void,
-        onEmailSend(): void,
+        title: string,
         firstStep: Step<any>,
         lastStep: Step<any>,
-        steps: Step<any>[]
+        steps: Step<any>[],
+        onSendEmail(): Promise<Response>,
+        onNextStep(formData: FormData): void,
+        afterEmailSent(): void,
     }
 ) {
     const [step, setStep] = useState(firstStep);
@@ -47,9 +49,9 @@ export default function Progress(
                 show: false,
                 success: false
             })
-        }, 5000)
+        }, 8000)
 
-        onEmailSend()
+        afterEmailSent()
 
         setStep(firstStep)
 
@@ -114,41 +116,76 @@ export default function Progress(
 
     function emailSentNotification(): React.ReactNode {
         return emailSentInfo.show
-            ? <div
-                className={`mt-5 sm:mt-0 sm:ml-5 px-5 rounded-2xl place-content-center fade-down-1s text-white font-bold ${emailSentInfo.success ? 'bg-green-500' : 'bg-red-500'}`}
-            >
-                Ihre Anfrage {emailSentInfo.success ? 'wurde erfolgreich gesendet.' : 'ist fehlgeschlagen.'}
+            ? <div className="flex flex-col gap-5 place-items-center fade-down-1s px-5 sm:px-10 py-5 sm:py-10">
+                {
+                    emailSentInfo.success
+                        ?
+                        <div className="font-bold text-xl sm:text-4xl text-appPrimary">
+                            Danke für Ihr Vertrauen!
+                        </div>
+                        : <div className="font-bold text-xl sm:text-4xl">
+                            Uups, ein Fehler ist aufgetreten.
+                        </div>
+                }
+                {
+                    emailSentInfo.success
+                        ?
+                        <div className="text-sm sm:text-lg">
+                            Ein Berater wird sich in Kürze bei Ihnen melden.
+                        </div>
+                        : <div className="text-sm sm:text-lg">
+                            Bitte probieren Sie es erneut.
+                        </div>
+                }
+                <div
+                    className={`mt-5 p-3 rounded-2xl text-white text-sm sm:text-lg font-bold ${emailSentInfo.success ? 'bg-green-500' : 'bg-red-500'}`}
+                >
+                    Ihre Anfrage {emailSentInfo.success ? 'wurde erfolgreich gesendet.' : 'ist fehlgeschlagen.'}
+                </div>
             </div>
             : <div></div>
     }
 
-    return <div className="px-5 sm:px-10 py-5 sm:py-10 sm:p-20 text-lg flex flex-col gap-2">
-        <div className="text-nowrap">
-            Schritt {indexOfStep()} von {stepToReach} - <b>{step.title}</b>
-        </div>
-
-        <div className="h-3 bg-gray-200 rounded-2xl">
-            <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl ease-linear transition-all duration-500`}></div>
-        </div>
-
-        <form className="py-5" action={nextStep}>
-            <div className="pb-5">
-                {
-                    step.children
-                }
-            </div>
-
+    return <form action={nextStep}>
+        <div>
             {
                 isLoading
-                    ? <Icon icon="mingcute:loading-fill" className="animate-spin h-12 w-12 text-appPrimary" />
-                    : <div className={`flex flex-col sm:flex-row ${indexOfStep() > 1 ? 'gap-2' : 'gap-0'}`}>
-                        <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${indexOfStep() > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />
-                        <Button text={reachedLastStep() ? 'Absenden' : 'Weiter'} isSubmit={true} isPrimary={false} className={`w-30 lg:text-lg`} />
-                        {
-                            emailSentNotification()
-                        }
+                    ? <div className="flex flex-col gap-5 place-items-center px-5 sm:px-10 py-5 sm:py-10">
+                        <Icon icon="mingcute:loading-fill" className="animate-spin h-12 w-12 text-appPrimary" />
+                        <div>
+                            Bitte warten, Ihre Anfrage wird gesendet.
+                        </div>
                     </div>
+                    : emailSentInfo.show
+                        ? emailSentNotification()
+                        : <div>
+                            <div className="text-xl sm:text-4xl sm:w-2/3">
+                                {
+                                    title
+                                }
+                            </div>
+
+                            <div className="px-5 sm:px-10 py-5 sm:py-10 text-lg flex flex-col gap-2">
+                                <div className="text-nowrap">
+                                    Schritt {indexOfStep()} von {stepToReach} - <b>{step.title}</b>
+                                </div>
+
+                                <div className="h-3 bg-gray-200 rounded-2xl">
+                                    <div style={{ width: `${percentage}%` }} className={`h-3 bg-appPrimary rounded-2xl ease-linear transition-all duration-500`}></div>
+                                </div>
+
+                                <div className="p-5">
+                                    {
+                                        step.children
+                                    }
+                                </div>
+                                <div className={`flex flex-col sm:flex-row ${indexOfStep() > 1 ? 'gap-2' : 'gap-0'}`}>
+                                    <Button text="Zurück" isPrimary={false} className={`w-25 lg:text-lg ${indexOfStep() > 1 ? 'block' : 'hidden'}`} onClick={previousStep} />
+                                    <Button text={reachedLastStep() ? 'Absenden' : 'Weiter'} isSubmit={true} isPrimary={false} className={`w-30 lg:text-lg`} />
+                                </div>
+                            </div>
+                        </div>
             }
-        </form>
-    </div>
+        </div>
+    </form>
 }

@@ -53,16 +53,16 @@ export default function FormInput(
         setIsInvalid(true)
     }
 
-    function input(defaultValue?: string): React.ReactNode {
+    function input(elementValue?: string): React.ReactNode {
         return <input
             onChange={onChangeEvent}
             onInvalid={onInvalid}
             required={required}
             type={type}
             name={id}
-            id={isRadioOrCheckbox ? defaultValue : id}
-            checked={type == InputType.checkbox ? undefined : (radioCheckedValue === "" ? value : radioCheckedValue) === defaultValue}
-            value={defaultValue}
+            id={isRadioOrCheckbox ? elementValue : id}
+            checked={type == InputType.checkbox ? undefined : (radioCheckedValue === "" ? value : radioCheckedValue) === elementValue}
+            value={elementValue}
             defaultValue={isRadioOrCheckbox ? undefined : value}
             className="bg-transparent placeholder:text-gray-400 border border-gray-100 rounded-2xl px-3 py-4 transition duration-300 ease focus:outline-none focus:border-gray-400 hover:border-gray-300 shadow-sm focus:shadow"
             placeholder={placeholder}

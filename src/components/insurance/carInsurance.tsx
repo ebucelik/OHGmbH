@@ -449,9 +449,11 @@ export default function CarInsurance() {
     }
 
     return <Progress
-        onSendEmail={sendEmail}
+        title="In wenigen Schritten zur Autoversicherung"
         firstStep={steps[0]}
         lastStep={steps[steps.length - 1]}
+        steps={steps}
+        onSendEmail={sendEmail}
         onNextStep={(formData) => {
             const newInsuranceState: InsuranceState = {}
 
@@ -463,6 +465,5 @@ export default function CarInsurance() {
 
             setInsuranceForm(newInsuranceState)
         }}
-        onEmailSend={() => dispatch(reset())}
-        steps={steps} />
+        afterEmailSent={() => dispatch(reset())} />
 }
