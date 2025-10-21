@@ -28,7 +28,7 @@ export default function Car() {
                 <div className="text-xl sm:text-4xl">
                     Warum eine KFZ-Versicherung <span className="text-appPrimary font-bold">wichtig ist.</span>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-5 sm:text-lg px-10">
+                <div className="flex flex-col sm:flex-row gap-5 sm:text-lg">
                     <div className="flex-1">
                         <img src="/carInsurance.svg" alt="Wichtigkeit der Autoversicherung." className="object-cover rounded-2xl shadow-xl" />
                     </div>

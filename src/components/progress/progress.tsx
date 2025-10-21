@@ -34,7 +34,17 @@ export default function Progress(
         success: false
     })
 
+    const isBrowser = () => typeof window !== 'undefined';
+
+    function scrollToTop() {
+        if (!isBrowser()) return;
+
+        window.scrollTo({ top: 200, behavior: 'smooth' });
+    }
+
     async function sendEmail() {
+        scrollToTop()
+
         const response = await onSendEmail()
 
         setIsLoading(false)
@@ -159,7 +169,7 @@ export default function Progress(
                     : emailSentInfo.show
                         ? emailSentNotification()
                         : <div>
-                            <div className="text-xl sm:text-4xl sm:w-2/3">
+                            <div className="text-xl sm:text-4xl">
                                 {
                                     title
                                 }
