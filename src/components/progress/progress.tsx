@@ -169,7 +169,7 @@ export default function Progress(
                     : emailSentInfo.show
                         ? emailSentNotification()
                         : <div>
-                            <div className="text-xl sm:text-4xl">
+                            <div className="text-2xl sm:text-4xl px-5 sm:px-10">
                                 {
                                     title
                                 }

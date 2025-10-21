@@ -91,7 +91,17 @@ export default function Header() {
                                 </div>
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
+                                        LKW
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
                                         Motorrad
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Moped
                                     </Link>
                                 </div>
                                 <div>

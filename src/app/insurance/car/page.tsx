@@ -3,6 +3,7 @@ import { radley } from "../../layout";
 import ProgressStore from "../../../components/progress/progressStore";
 import { ProgressType } from "../../../components/progress/progressType";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 export default function Car() {
     return <div>
@@ -17,15 +18,15 @@ export default function Car() {
                 </div>
             </div>
             <div className="flex-1">
-                <img src="/driving.webp" alt="Eine Frau fährt ein Auto." className="object-cover rounded-2xl shadow-xl" />
+                <img src="/carInsuranceInitial.webp" alt="Eine Frau fährt ein Auto." className="object-cover rounded-2xl shadow-xl" />
             </div>
         </div>
-        <div className={`${defaultPadding} flex flex-col place-items-center`}>
-            <div className="sm:w-2/3">
+        <div className={`flex flex-col place-items-center`}>
+            <div className="sm:w-2/3 pt-15">
                 <ProgressStore progressType={ProgressType.car} />
             </div>
-            <div className="flex flex-col gap-10 sm:w-2/3 pt-20">
-                <div className="text-xl sm:text-4xl">
+            <div className="flex flex-col gap-5 sm:gap-20 sm:w-2/3 px-5 py-10 sm:py-20">
+                <div className="text-2xl sm:text-4xl">
                     Warum eine KFZ-Versicherung <span className="text-appPrimary font-bold">wichtig ist.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-5 sm:text-lg">
@@ -43,8 +44,8 @@ export default function Car() {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col gap-10 sm:w-2/3 pt-20">
-                <div className="text-xl sm:text-4xl text-center">
+            <div className="flex flex-col gap-5 sm:gap-20 sm:w-2/3 px-5 py-10 sm:py-20">
+                <div className="text-2xl sm:text-4xl text-center">
                     Was ist eigentlich <span className="decoration-appPrimary underline underline-offset-8">versichert?</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-5 justify-center">
@@ -155,6 +156,45 @@ export default function Car() {
                                 Schäden durch höhere Gewalt (z. B. Naturkatastrophen)
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className={`${defaultPadding} w-full bg-appSecondary text-white`}>
+                <div className="text-2xl sm:text-4xl">
+                    Mehr Versicherungen
+                </div>
+                <div className="grid grid-rows-1 sm:grid-cols-3 gap-10 py-5 sm:py-10 place-items-center sm:justify-center">
+                    <div className="hover:scale-101 duration-500">
+                        <Link href="">
+                            <div className="text-lg text-center pb-2">
+                                LKW-Versicherung
+                            </div>
+                            <img src="/lkwInsuranceInitial.webp" alt="LKW-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                        </Link>
+                    </div>
+                    <div className="hover:scale-101 duration-500">
+                        <Link href="">
+                            <div className="text-lg text-center pb-2">
+                                Motorrad-Versicherung
+                            </div>
+                            <img src="/motorcycleInsuranceInitial.webp" alt="Motorrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                        </Link>
+                    </div>
+                    <div className="hover:scale-101 duration-500">
+                        <Link href="">
+                            <div className="text-lg text-center pb-2">
+                                Moped-Versicherung
+                            </div>
+                            <img src="/motorcycleInsuranceInitial.webp" alt="Motorrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                        </Link>
+                    </div>
+                    <div className="hover:scale-101 duration-500">
+                        <Link href="">
+                            <div className="text-lg text-center pb-2">
+                                Lebens-Versicherung
+                            </div>
+                            <img src="/lifeInsuranceInitial.webp" alt="Lebens-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                        </Link>
                     </div>
                 </div>
             </div>
