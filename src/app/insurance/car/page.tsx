@@ -185,7 +185,15 @@ export default function Car() {
                             <div className="text-lg text-center pb-2">
                                 Moped-Versicherung
                             </div>
-                            <img src="/motorcycleInsuranceInitial.webp" alt="Motorrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                            <img src="/mopedInsuranceInitial.webp" alt="Motorrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                        </Link>
+                    </div>
+                    <div className="hover:scale-101 duration-500">
+                        <Link href="">
+                            <div className="text-lg text-center pb-2">
+                                Fahrrad-Versicherung
+                            </div>
+                            <img src="/bicycleInsuranceInitial.webp" alt="Fahrrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                         </Link>
                     </div>
                     <div className="hover:scale-101 duration-500">
@@ -194,6 +202,14 @@ export default function Car() {
                                 Lebens-Versicherung
                             </div>
                             <img src="/lifeInsuranceInitial.webp" alt="Lebens-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                        </Link>
+                    </div>
+                    <div className="hover:scale-101 duration-500">
+                        <Link href="">
+                            <div className="text-lg text-center pb-2">
+                                Haushalts-Versicherung
+                            </div>
+                            <img src="/householdInsuranceInitial.webp" alt="Haushalts-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                         </Link>
                     </div>
                 </div>
