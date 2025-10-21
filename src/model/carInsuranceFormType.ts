@@ -1,6 +1,5 @@
 export enum CarInsuranceFormType {
     insuranceType = "Variante",
-    carType = "Fahrzeugart",
     movementType = "Antriebsart",
     brand = "Marke",
     modelName = "Modellbezeichnung",

@@ -21,6 +21,7 @@ export default function CarInsurance() {
             setInsurance(insuranceState)
         )
     }
+
     const steps: Step<any>[] =
         [
             {
@@ -51,21 +52,6 @@ export default function CarInsurance() {
                 key: "carDetails",
                 title: "KFZ Details",
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                        <FormInput
-                            id={CarInsuranceFormType.carType}
-                            type={InputType.list}
-                            required={required}
-                            title="Fahrzeugart"
-                            listValues={[
-                                "PKW",
-                                "LKW",
-                                "Motorrad",
-                                "Moped"
-                            ]}
-                            value={carInsurance[CarInsuranceFormType.carType]}
-                        />
-                    </div>
                     <div>
                         <FormInput
                             id={CarInsuranceFormType.movementType}
@@ -446,7 +432,6 @@ export default function CarInsurance() {
                             onChange={() => {
                                 const newInsuranceState: InsuranceState = {}
                                 newInsuranceState[CarInsuranceFormType.orderAccepted] = state().carInsuranceCore[CarInsuranceFormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
-                                console.log("test")
                                 setInsuranceForm(newInsuranceState)
                             }}
                         />
@@ -456,9 +441,9 @@ export default function CarInsurance() {
         ]
 
     async function sendEmail(): Promise<Response> {
-        return await fetch('/api/carinsurance', {
+        return await fetch('/api/insurance', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'order': 'Autoversicherung' },
             body: JSON.stringify(state().carInsuranceCore)
         })
     }

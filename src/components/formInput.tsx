@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, useState } from "react"
 
 export enum InputType {
     checkbox = "checkbox",
@@ -30,7 +30,7 @@ export default function FormInput(
         listReactValues?: React.ReactNode[],
         placeholder?: string,
         value?: string,
-        onChange?(event: ChangeEvent<HTMLInputElement>): void
+        onChange?(event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>): void
     }
 ) {
     const isRadioOrCheckbox = type == InputType.radio || type == InputType.checkbox
@@ -38,9 +38,9 @@ export default function FormInput(
     const [isInvalid, setIsInvalid] = useState(false)
 
     function onChangeEvent(event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) {
-        if (isRadioOrCheckbox) {
-            onChange && onChange(event as ChangeEvent<HTMLInputElement>)
+        onChange && onChange(event as (ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>))
 
+        if (isRadioOrCheckbox) {
             setRadioCheckedValueState(event.target.getAttribute('id') ?? "")
         }
 

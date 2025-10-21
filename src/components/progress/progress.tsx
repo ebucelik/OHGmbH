@@ -66,7 +66,7 @@ export default function Progress(
             sendEmail()
         } else {
             setStep((currentStep) => {
-                var nextStep = currentStep == lastStep
+                let nextStep = currentStep == lastStep
                     ? firstStep
                     : steps[indexOfStep(currentStep)]
 
@@ -79,7 +79,7 @@ export default function Progress(
 
     const previousStep = () => {
         setStep((currentStep) => {
-            var nextStep = currentStep == firstStep
+            let nextStep = currentStep == firstStep
                 ? firstStep
                 : steps[indexOfStep(currentStep) - 2]
 

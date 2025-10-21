@@ -1,18 +1,20 @@
 import { carInsuranceFormTypes } from "../../model/carInsuranceFormType";
 import { InsuranceState } from "../../core/carInsuranceCore";
 
-export default function CarEmailTemplate({ insurance }: { insurance: InsuranceState }) {
+export default function EmailTemplate({ order, insurance }: { order: String | null, insurance: InsuranceState }) {
     const date = new Date()
 
     function getInsurance(): React.ReactNode {
         return <div>
             {
-                carInsuranceFormTypes.map((type) => {
-                    return (
-                        <div>
-                            {type}: <b>{insurance[type]}</b>
-                        </div>
-                    )
+                carInsuranceFormTypes.map((type, key) => {
+                    return insurance[type] != ""
+                        ? (
+                            <div key={key}>
+                                {type}: <b>{insurance[type]}</b>
+                            </div>
+                        )
+                        : (<div></div>)
                 })
             }
         </div>
@@ -21,10 +23,10 @@ export default function CarEmailTemplate({ insurance }: { insurance: InsuranceSt
     return (
         <div>
             <h3>
-                Eine neue Autoversicherung ist angefragt worden.
+                Eine neue {order} ist angefragt worden.
             </h3>
             <div>
-                <b>Details zur Autoversicherung:</b>
+                <b>Details zur {order}:</b>
             </div>
             <br />
             {

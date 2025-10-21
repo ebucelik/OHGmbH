@@ -24,15 +24,13 @@ export const carInsuranceCore = createSlice({
             const newState = action.payload
 
             carInsuranceFormTypes.forEach((type) => {
-                state[type] = newState[type] === "" || newState[type] == undefined ? state[type] : newState[type]
+                newState[type] = newState[type] === "" || newState[type] == undefined ? state[type] : newState[type]
             })
 
-            return state
+            return newState
         },
-        reset: (state) => {
-            state = initialState
-
-            return state
+        reset: () => {
+            return initialState
         }
     }
 })
