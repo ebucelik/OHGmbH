@@ -49,7 +49,7 @@ export default function Progress(
                 show: false,
                 success: false
             })
-        }, 8000)
+        }, 6000)
 
         afterEmailSent()
 
