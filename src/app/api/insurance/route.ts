@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
 
         const { data, error } = await resend.emails.send({
             from: 'OH GmbH <onboarding@resend.dev>',
-            to: ['ebucelik1@hotmail.com'],
+            to: ['ebucelik1@hotmail.com', 'office@oh-gmbh.at'],
             subject: 'Neue Anfrage: ' + order,
             react: EmailTemplate({ order, insurance })
         })
