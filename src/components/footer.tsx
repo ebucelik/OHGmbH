@@ -26,7 +26,7 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="" className="hover:text-appPrimary">Versicherungen</Link>
+                                <Link href="/insurance/car" className="hover:text-appPrimary">Versicherungen</Link>
                             </div>
 
                             <div>
@@ -97,7 +97,7 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="" className="hover:text-appPrimary">
+                                <Link href="https://www.instagram.com/oh_gmbh/?igsh=d3psbHd4MHRuY2Fz" target="_blank" className="hover:text-appPrimary">
                                     <div className="flex flex-row gap-1">
                                         <Icon icon="mdi:instagram" className="h-5 w-5" />
                                         <div>
@@ -108,7 +108,7 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="" className="hover:text-appPrimary">
+                                <Link href="" target="_blank" className="hover:text-appPrimary">
                                     <div className="flex flex-row gap-1">
                                         <Icon icon="mdi:youtube" className="h-5 w-5" />
                                         <div>
@@ -119,7 +119,7 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="" className="hover:text-appPrimary">
+                                <Link href="" target="_blank" className="hover:text-appPrimary">
                                     <div className="flex flex-row gap-1">
                                         <Icon icon="mdi:linkedin" className="h-5 w-5" />
                                         <div>

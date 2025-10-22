@@ -9,7 +9,7 @@ import { shallowEqual } from "react-redux";
 import store from "../../app/store";
 import Link from "next/link";
 
-export default function LKWInsurance() {
+export default function MotorcycleInsurance() {
     const carInsurance = useAppSelector((state) => state.carInsuranceCore, shallowEqual)
     const dispatch = useAppDispatch()
     const required = true
@@ -51,7 +51,7 @@ export default function LKWInsurance() {
             },
             {
                 key: "carDetails",
-                title: "LKW Details",
+                title: "Motorrad Details",
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
@@ -103,29 +103,45 @@ export default function LKWInsurance() {
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.payload}
-                            type={InputType.number}
+                            id={CarInsuranceFormType.cubicCentimeter}
+                            type={InputType.text}
                             required={required}
-                            title={CarInsuranceFormType.payload}
-                            placeholder="zB.: 2"
-                            value={carInsurance[CarInsuranceFormType.payload]}
+                            title={CarInsuranceFormType.cubicCentimeter}
+                            placeholder="zB.: 125 ccm"
+                            value={carInsurance[CarInsuranceFormType.cubicCentimeter]}
                         />
                     </div>
                     <div>
                         <FormInput
                             id={CarInsuranceFormType.ownWeight}
-                            type={InputType.number}
+                            type={InputType.text}
                             required={required}
                             title={CarInsuranceFormType.ownWeight}
-                            placeholder="zB.: 7"
                             value={carInsurance[CarInsuranceFormType.ownWeight]}
                         />
                     </div>
+                    <FormInput
+                        id={CarInsuranceFormType.putAwayLicensePlateInWinter}
+                        type={InputType.radio}
+                        required={required}
+                        title="Kennzeichenhinterlegung im Winter?"
+                        listValues={[
+                            "Ja",
+                            "Nein"
+                        ]}
+                        value={carInsurance[CarInsuranceFormType.putAwayLicensePlateInWinter]}
+                        onChange={(event) => {
+                            const newInsuranceState: InsuranceState = {}
+                            newInsuranceState[CarInsuranceFormType.putAwayLicensePlateInWinter] = event.target.getAttribute('id') ?? ""
+
+                            setInsuranceForm(newInsuranceState)
+                        }}
+                    />
                 </div>
             },
             {
                 key: "carDetailsEnhanced",
-                title: "LKW Details Erweitert",
+                title: "Motorrad Details Erweitert",
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
@@ -133,7 +149,7 @@ export default function LKWInsurance() {
                             type={InputType.text}
                             required={required}
                             title={CarInsuranceFormType.carPrice}
-                            placeholder="Neupreis des Fahrzeugs"
+                            placeholder="Neupreis des Motorrads"
                             value={carInsurance[CarInsuranceFormType.carPrice]}
                         />
                     </div>
@@ -465,13 +481,13 @@ export default function LKWInsurance() {
     async function sendEmail(): Promise<Response> {
         return await fetch('/api/insurance', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'order': 'LKW-Versicherung' },
+            headers: { 'Content-Type': 'application/json', 'order': 'Motorrad-Versicherung' },
             body: JSON.stringify(state().carInsuranceCore)
         })
     }
 
     return <Progress
-        title="In wenigen Schritten zur LKW-Versicherung"
+        title="In wenigen Schritten zur Motorrad-Versicherung"
         firstStep={steps[0]}
         lastStep={steps[steps.length - 1]}
         steps={steps}

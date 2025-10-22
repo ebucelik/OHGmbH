@@ -235,7 +235,7 @@ export default function LKW() {
                         </Link>
                     </div>
                     <div className="hover:scale-101 duration-500">
-                        <Link href="">
+                        <Link href="/insurance/motorcycle">
                             <div className="relative">
                                 <img src="/motorcycleInsuranceInitial.webp" alt="Motorrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                                 <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">

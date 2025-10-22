@@ -175,7 +175,7 @@ export default function Progress(
                                 }
                             </div>
 
-                            <div className="px-5 sm:px-10 py-5 sm:py-10 text-lg flex flex-col gap-2">
+                            <div className="px-5 sm:px-30 py-5 sm:py-10 text-lg flex flex-col gap-2">
                                 <div className="text-nowrap">
                                     Schritt {indexOfStep()} von {stepToReach} - <b>{step.title}</b>
                                 </div>

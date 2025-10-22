@@ -95,7 +95,7 @@ export default function Header() {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="/insurance/motorcycle" className="hover:text-appPrimary">
                                         Motorrad
                                     </Link>
                                 </div>

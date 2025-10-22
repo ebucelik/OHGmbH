@@ -11,7 +11,7 @@ carInsuranceFormTypes.forEach((type) => {
     initialState[type] = ''
 })
 
-initialState[CarInsuranceFormType.bonusLevel] = '7'
+initialState[CarInsuranceFormType.bonusLevel] = '9'
 initialState[CarInsuranceFormType.paymentType] = 'Abbuchungsauftrag'
 initialState[CarInsuranceFormType.paymentFrequency] = 'monatlich (nur bei Abbuchung möglich)'
 initialState[CarInsuranceFormType.orderAccepted] = 'NEIN'
