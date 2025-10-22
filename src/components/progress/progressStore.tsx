@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import store from "../../app/store";
 import CarInsurance from "../insurance/carInsurance";
 import { ProgressType } from "./progressType";
+import LKWInsurance from "../insurance/lkwInsurance";
 
 export default function ProgressStore(
     { progressType }: { progressType: ProgressType }
@@ -13,6 +14,9 @@ export default function ProgressStore(
         switch (progressType) {
             case ProgressType.car:
                 return <CarInsurance />
+
+            case ProgressType.lkw:
+                return <LKWInsurance />
 
             case ProgressType.motorcycle:
                 return <div></div>

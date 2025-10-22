@@ -8,7 +8,7 @@ import { InsuranceState, reset, setInsurance } from "../../core/carInsuranceCore
 import { shallowEqual } from "react-redux";
 import store from "../../app/store";
 
-export default function CarInsurance() {
+export default function LKWInsurance() {
     const carInsurance = useAppSelector((state) => state.carInsuranceCore, shallowEqual)
     const dispatch = useAppDispatch()
     const required = true
@@ -50,7 +50,7 @@ export default function CarInsurance() {
             },
             {
                 key: "carDetails",
-                title: "KFZ Details",
+                title: "LKW Details",
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
@@ -104,7 +104,7 @@ export default function CarInsurance() {
             },
             {
                 key: "carDetailsEnhanced",
-                title: "KFZ Details Erweitert",
+                title: "LKW Details Erweitert",
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
@@ -443,13 +443,13 @@ export default function CarInsurance() {
     async function sendEmail(): Promise<Response> {
         return await fetch('/api/insurance', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'order': 'Auto-Versicherung' },
+            headers: { 'Content-Type': 'application/json', 'order': 'LKW-Versicherung' },
             body: JSON.stringify(state().carInsuranceCore)
         })
     }
 
     return <Progress
-        title="In wenigen Schritten zur Auto-Versicherung"
+        title="In wenigen Schritten zur LKW-Versicherung"
         firstStep={steps[0]}
         lastStep={steps[steps.length - 1]}
         steps={steps}

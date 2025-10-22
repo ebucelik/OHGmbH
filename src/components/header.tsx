@@ -76,10 +76,10 @@ export default function Header() {
                 return <div className="flex flex-col sm:flex-row fade-in-05s gap-1 sm:gap-10">
                     <div className="sm:flex-1"></div>
                     <div className="flex-2">
-                        <div className="font-bold sm:text-lg">
+                        <div className="font-bold sm:text-xl">
                             Versicherungen
                         </div>
-                        <div className="grid grid-cols-3">
+                        <div className="grid grid-cols-3 sm:text-lg">
                             <div className="py-2">
                                 <div className="font-bold pb-2">
                                     Mobilität
@@ -90,7 +90,7 @@ export default function Header() {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="/insurance/lkw" className="hover:text-appPrimary">
                                         LKW
                                     </Link>
                                 </div>
@@ -198,10 +198,10 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="flex-1">
-                        <div className="font-bold sm:text-lg">
+                        <div className="font-bold sm:text-xl">
                             Finanzierungen
                         </div>
-                        <div className="grid grid-cols-2">
+                        <div className="grid grid-cols-2 sm:text-lg">
                             <div className="py-2">
                                 <div className="font-bold pb-2">
                                     Klassisch
@@ -236,10 +236,10 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="flex-1">
-                        <div className="font-bold sm:text-lg">
+                        <div className="font-bold sm:text-xl">
                             Strom & Gas
                         </div>
-                        <div className="grid grid-cols-1">
+                        <div className="grid grid-cols-1 sm:text-lg">
                             <div className="py-2">
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
@@ -265,7 +265,7 @@ export default function Header() {
                 return <div className="flex flex-col sm:flex-row fade-in-05s gap-1 sm:gap-10">
                     <div className="sm:flex-1"></div>
                     <div className="flex-2">
-                        <div className="grid grid-cols-2">
+                        <div className="grid grid-cols-2 sm:text-lg">
                             <div className="py-2">
                                 <div className="font-bold pb-2">
                                     Schadenmeldung

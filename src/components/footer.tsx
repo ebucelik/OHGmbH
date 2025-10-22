@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 export default function Footer() {
     return (
         <footer className="pb-5 sm:pb-10 px-10 sm:px-30">
-            <div className="py-15 sm:py-25 flex place-content-center">
+            <div className="py-15 sm:py-20 flex place-content-center">
                 <div className="flex flex-row gap-10 sm:gap-20">
                     <div className="hidden sm:flex sm:flex-col place-content-center">
                         <Link href="/">
@@ -20,8 +20,8 @@ export default function Footer() {
                         </Link>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:gap-10">
-                        <div className="flex flex-col gap-1 text-sm">
-                            <div className="font-bold py-2 sm:text-lg">
+                        <div className="flex flex-col gap-1 text-sm sm:text-lg">
+                            <div className="font-bold py-2 text-lg sm:text-xl">
                                 Dienstleistungen
                             </div>
 
@@ -45,8 +45,8 @@ export default function Footer() {
                                 <Link href="" className="hover:text-appPrimary">Schaden melden</Link>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-1 text-sm">
-                            <div className="font-bold py-2 sm:text-lg">
+                        <div className="flex flex-col gap-1 text-sm sm:text-lg">
+                            <div className="font-bold py-2 text-lg sm:text-xl">
                                 Kontakt
                             </div>
 
@@ -61,8 +61,8 @@ export default function Footer() {
                                 <Link href="" className="hover:text-appPrimary">Kontaktformular</Link>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-1 text-sm">
-                            <div className="font-bold py-2 sm:text-lg">
+                        <div className="flex flex-col gap-1 text-sm sm:text-lg">
+                            <div className="font-bold py-2 text-lg sm:text-xl">
                                 Öffnungszeiten
                             </div>
 
@@ -74,8 +74,8 @@ export default function Footer() {
                                 09:00 - 17:00 Uhr
                             </div>
                         </div>
-                        <div className="flex flex-col gap-1 text-sm">
-                            <div className="font-bold py-2 sm:text-lg">
+                        <div className="flex flex-col gap-1 text-sm sm:text-lg">
+                            <div className="font-bold py-2 text-lg sm:text-xl">
                                 Rechtliche Hinweise
                             </div>
 
@@ -91,8 +91,8 @@ export default function Footer() {
                                 <Link href="" className="hover:text-appPrimary">AGB</Link>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-1 text-sm">
-                            <div className="font-bold py-2 sm:text-lg">
+                        <div className="flex flex-col gap-1 text-sm sm:text-lg">
+                            <div className="font-bold py-2 text-lg sm:text-xl">
                                 Soziale Medien
                             </div>
 
