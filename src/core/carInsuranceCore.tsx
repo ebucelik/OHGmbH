@@ -1,4 +1,4 @@
-import { CarInsuranceFormType, carInsuranceFormTypes } from "../model/carInsuranceFormType";
+import { FormType, carInsuranceFormTypes } from "../model/formType";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface InsuranceState {
@@ -11,10 +11,10 @@ carInsuranceFormTypes.forEach((type) => {
     initialState[type] = ''
 })
 
-initialState[CarInsuranceFormType.bonusLevel] = '9'
-initialState[CarInsuranceFormType.paymentType] = 'Abbuchungsauftrag'
-initialState[CarInsuranceFormType.paymentFrequency] = 'monatlich (nur bei Abbuchung möglich)'
-initialState[CarInsuranceFormType.orderAccepted] = 'NEIN'
+initialState[FormType.bonusLevel] = '9'
+initialState[FormType.paymentType] = 'Abbuchungsauftrag'
+initialState[FormType.paymentFrequency] = 'monatlich (nur bei Abbuchung möglich)'
+initialState[FormType.orderAccepted] = 'NEIN'
 
 export const carInsuranceCore = createSlice({
     name: 'carInsuranceCore',

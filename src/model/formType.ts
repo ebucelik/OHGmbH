@@ -1,4 +1,4 @@
-export enum CarInsuranceFormType {
+export enum FormType {
     insuranceType = "Variante",
     movementType = "Antriebsart",
     brand = "Marke",
@@ -35,4 +35,4 @@ export enum CarInsuranceFormType {
     orderAccepted = "Beratungsauftrag akzeptiert"
 }
 
-export const carInsuranceFormTypes = Object.values(CarInsuranceFormType)
+export const carInsuranceFormTypes = Object.values(FormType)

@@ -1,4 +1,4 @@
-import { carInsuranceFormTypes } from "../../model/carInsuranceFormType";
+import { carInsuranceFormTypes } from "../../model/formType";
 import { InsuranceState } from "../../core/carInsuranceCore";
 
 export default function EmailTemplate({ order, insurance }: { order: String | null, insurance: InsuranceState }) {

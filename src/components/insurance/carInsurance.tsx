@@ -1,6 +1,6 @@
 "use client";
 
-import { CarInsuranceFormType, carInsuranceFormTypes } from "../../model/carInsuranceFormType";
+import { FormType, carInsuranceFormTypes } from "../../model/formType";
 import FormInput, { InputType } from "../formInput";
 import Progress, { Step } from "../progress/progress";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
@@ -30,7 +30,7 @@ export default function CarInsurance() {
                 title: "Deckungsumfang",
                 children: <div>
                     <FormInput
-                        id={CarInsuranceFormType.insuranceType}
+                        id={FormType.insuranceType}
                         type={InputType.radio}
                         required={required}
                         title="Welche Variante wünscht du?"
@@ -39,10 +39,10 @@ export default function CarInsurance() {
                             "Haftpflicht und Teilkasko",
                             "Haftpflicht und Vollkasko"
                         ]}
-                        value={carInsurance[CarInsuranceFormType.insuranceType]}
+                        value={carInsurance[FormType.insuranceType]}
                         onChange={(event) => {
                             const newInsuranceState: InsuranceState = {}
-                            newInsuranceState[CarInsuranceFormType.insuranceType] = event.target.getAttribute('id') ?? ""
+                            newInsuranceState[FormType.insuranceType] = event.target.getAttribute('id') ?? ""
 
                             setInsuranceForm(newInsuranceState)
                         }}
@@ -55,10 +55,10 @@ export default function CarInsurance() {
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.movementType}
+                            id={FormType.movementType}
                             type={InputType.list}
                             required={required}
-                            title={CarInsuranceFormType.movementType}
+                            title={FormType.movementType}
                             listValues={[
                                 "Diesel",
                                 "Benzin",
@@ -66,39 +66,39 @@ export default function CarInsurance() {
                                 "Hybrid",
                                 "Erdgas"
                             ]}
-                            value={carInsurance[CarInsuranceFormType.movementType]}
+                            value={carInsurance[FormType.movementType]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.brand}
+                            id={FormType.brand}
                             type={InputType.list}
                             required={required}
-                            title={CarInsuranceFormType.brand}
+                            title={FormType.brand}
                             listValues={[
                                 "Abarth", "AC", "Acura", "Aiways", "Alfa Romeo", "Alpina", "Alpine", "Ariel", "Arrinera", "Artega", "Asia Motors", "Aston Martin", "Audi", "BAC", "Baojun", "Bentley", "BMW", "Borgward", "Brabus", "Brilliance", "Bugatti", "Buick", "BYD", "Cadillac", "Carver", "Caterham", "Changan", "Changhe", "Chery", "Chevrolet", "Chrysler", "Citroën", "Cupra", "Dacia", "Daewoo", "Daihatsu", "De Tomaso", "Delorean", "DFSK", "Dodge", "Dongfeng", "DS Automobiles", "Elaris", "Exeed", "FAW", "Ferrari", "Fiat", "Fisker", "Ford", "Foton", "GAC", "Geely", "Genesis", "Ginetta", "GMC", "Great Wall", "Gumpert", "Haval", "HiPhi", "Hindustan Motors", "Holden", "Honda", "Hongqi", "Hummer", "Hyundai", "Infiniti", "Isuzu", "Iveco", "JAC", "Jaguar", "Jeep", "Jensen", "Karma", "Kia", "Koenigsegg", "KTM", "Lada", "Lamborghini", "Lancia", "Land Rover", "LEVC", "Lexus", "Ligier", "Lincoln", "Lotus", "Lucid", "Luxgen", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-AMG", "Mercedes-Benz", "Mercury", "MG", "Microcar", "Mini", "Mitsubishi", "Morgan", "Nio", "Nissan", "Noble", "Oldsmobile", "Opel", "Pagani", "Peugeot", "Piaggio", "Pininfarina", "Plymouth", "Polestar", "Pontiac", "Porsche", "Proton", "Qoros", "RAM", "Renault", "Rezvani", "Rimac", "Rivian", "Rolls-Royce", "Rover", "Saab", "Saleen", "Samsung", "Saturn", "Scion", "SEAT", "Seres", "Shelby", "Škoda", "Smart", "Spyker", "SsangYong", "Subaru", "Suzuki", "Tata", "Tazzari", "Tesla", "Toyota", "Trabant", "TVR", "Vauxhall", "Venturi", "Volkswagen", "Volvo", "W Motors", "Wartburg", "Wiesmann", "XPeng", "Yugo", "Zastava", "Zhidou", "Zotye"
                             ]}
-                            value={carInsurance[CarInsuranceFormType.brand]}
+                            value={carInsurance[FormType.brand]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.modelName}
+                            id={FormType.modelName}
                             type={InputType.text}
                             required={required}
-                            title={CarInsuranceFormType.modelName}
+                            title={FormType.modelName}
                             placeholder="zB.: CLA 180"
-                            value={carInsurance[CarInsuranceFormType.modelName]}
+                            value={carInsurance[FormType.modelName]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.enginePower}
+                            id={FormType.enginePower}
                             type={InputType.text}
                             required={required}
-                            title={CarInsuranceFormType.enginePower}
+                            title={FormType.enginePower}
                             placeholder="zB.: 110"
-                            value={carInsurance[CarInsuranceFormType.enginePower]}
+                            value={carInsurance[FormType.enginePower]}
                         />
                     </div>
                 </div>
@@ -109,51 +109,51 @@ export default function CarInsurance() {
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.carPrice}
+                            id={FormType.carPrice}
                             type={InputType.text}
                             required={required}
-                            title={CarInsuranceFormType.carPrice}
+                            title={FormType.carPrice}
                             placeholder="Neupreis des Fahrzeugs"
-                            value={carInsurance[CarInsuranceFormType.carPrice]}
+                            value={carInsurance[FormType.carPrice]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.specialEquipment}
+                            id={FormType.specialEquipment}
                             type={InputType.text}
                             required={required}
-                            title={CarInsuranceFormType.specialEquipment}
-                            value={carInsurance[CarInsuranceFormType.specialEquipment]}
+                            title={FormType.specialEquipment}
+                            value={carInsurance[FormType.specialEquipment]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.leasing}
+                            id={FormType.leasing}
                             type={InputType.list}
                             required={required}
-                            title={CarInsuranceFormType.leasing}
+                            title={FormType.leasing}
                             listValues={[
                                 "Nein",
                                 "Ja"
                             ]}
-                            value={carInsurance[CarInsuranceFormType.leasing]}
+                            value={carInsurance[FormType.leasing]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.creationDate}
+                            id={FormType.creationDate}
                             type={InputType.number}
                             required={required}
-                            title={CarInsuranceFormType.creationDate}
+                            title={FormType.creationDate}
                             placeholder="zB.: 2020"
-                            value={carInsurance[CarInsuranceFormType.creationDate]}
+                            value={carInsurance[FormType.creationDate]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.amountOfSeats}
+                            id={FormType.amountOfSeats}
                             type={InputType.list}
-                            title={CarInsuranceFormType.amountOfSeats}
+                            title={FormType.amountOfSeats}
                             listValues={[
                                 "1",
                                 "2",
@@ -165,27 +165,27 @@ export default function CarInsurance() {
                                 "8",
                                 "9"
                             ]}
-                            value={carInsurance[CarInsuranceFormType.amountOfSeats]}
+                            value={carInsurance[FormType.amountOfSeats]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.registrationDistrict}
+                            id={FormType.registrationDistrict}
                             type={InputType.list}
                             required={required}
                             title="Zulassungsbezirk"
                             listValues={[
                                 "AM", "B", "BL", "BN", "BZ", "E", "FW", "G", "GM", "GS", "GU", "HA", "HB", "HE", "HO", "IL", "IM", "JE", "JO", "KI", "KL", "KO", "KR", "KS", "KU", "LA", "LB", "LE", "LF", "LI", "LN", "LO", "LZ", "MD", "ME", "MI", "MU", "ND", "NK", "OP", "PE", "PL", "RE", "RI", "RO", "S", "SD", "SE", "SL", "SP", "SR", "ST", "SZ", "TA", "TU", "UU", "VB", "VI", "VL", "VO", "W", "WB", "WE", "WL", "WO", "WT", "WU", "WY", "ZE"
                             ]}
-                            value={carInsurance[CarInsuranceFormType.registrationDistrict]}
+                            value={carInsurance[FormType.registrationDistrict]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.bonusLevel}
+                            id={FormType.bonusLevel}
                             type={InputType.list}
                             required={required}
-                            title={CarInsuranceFormType.bonusLevel}
+                            title={FormType.bonusLevel}
                             listValues={[
                                 "-7",
                                 "-6",
@@ -213,15 +213,15 @@ export default function CarInsurance() {
                                 "16",
                                 "17"
                             ]}
-                            value={carInsurance[CarInsuranceFormType.bonusLevel]}
+                            value={carInsurance[FormType.bonusLevel]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.kmPerYear}
+                            id={FormType.kmPerYear}
                             type={InputType.list}
                             required={required}
-                            title={CarInsuranceFormType.kmPerYear}
+                            title={FormType.kmPerYear}
                             listValues={[
                                 "max 7.000 km",
                                 "max 10.000 km",
@@ -229,7 +229,7 @@ export default function CarInsurance() {
                                 "max 30.000 km",
                                 "mehr als 30.000 km",
                             ]}
-                            value={carInsurance[CarInsuranceFormType.kmPerYear]}
+                            value={carInsurance[FormType.kmPerYear]}
                         />
                     </div>
                 </div>
@@ -240,30 +240,30 @@ export default function CarInsurance() {
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.paymentType}
+                            id={FormType.paymentType}
                             type={InputType.list}
                             required={required}
-                            title={CarInsuranceFormType.paymentType}
+                            title={FormType.paymentType}
                             listValues={[
                                 "Abbuchungsauftrag",
                                 "Zahlschein"
                             ]}
-                            value={carInsurance[CarInsuranceFormType.paymentType]}
+                            value={carInsurance[FormType.paymentType]}
                         />
                     </div>
                     <div>
                         <FormInput
-                            id={CarInsuranceFormType.paymentFrequency}
+                            id={FormType.paymentFrequency}
                             type={InputType.list}
                             required={required}
-                            title={CarInsuranceFormType.paymentFrequency}
+                            title={FormType.paymentFrequency}
                             listValues={[
                                 "monatlich (nur bei Abbuchung möglich)",
                                 "vierteljährlich",
                                 "halbjährlich",
                                 "jährlich"
                             ]}
-                            value={carInsurance[CarInsuranceFormType.paymentFrequency]}
+                            value={carInsurance[FormType.paymentFrequency]}
                         />
                     </div>
                 </div>
@@ -275,150 +275,150 @@ export default function CarInsurance() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.salutation}
+                                id={FormType.salutation}
                                 type={InputType.list}
                                 required={required}
-                                title={CarInsuranceFormType.salutation}
+                                title={FormType.salutation}
                                 listValues={[
                                     "Herr",
                                     "Frau",
                                     "Firma"
                                 ]}
-                                value={carInsurance[CarInsuranceFormType.salutation]}
+                                value={carInsurance[FormType.salutation]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.academicTitlePre}
+                                id={FormType.academicTitlePre}
                                 type={InputType.text}
-                                title={CarInsuranceFormType.academicTitlePre}
+                                title={FormType.academicTitlePre}
                                 placeholder="zB.: Ing."
-                                value={carInsurance[CarInsuranceFormType.academicTitlePre]}
+                                value={carInsurance[FormType.academicTitlePre]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.firstname}
+                                id={FormType.firstname}
                                 type={InputType.text}
                                 required={required}
-                                title={CarInsuranceFormType.firstname}
-                                value={carInsurance[CarInsuranceFormType.firstname]}
+                                title={FormType.firstname}
+                                value={carInsurance[FormType.firstname]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.lastname}
+                                id={FormType.lastname}
                                 type={InputType.text}
                                 required={required}
-                                title={CarInsuranceFormType.lastname}
-                                value={carInsurance[CarInsuranceFormType.lastname]}
+                                title={FormType.lastname}
+                                value={carInsurance[FormType.lastname]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.academicTitlePost}
+                                id={FormType.academicTitlePost}
                                 type={InputType.text}
-                                title={CarInsuranceFormType.academicTitlePost}
+                                title={FormType.academicTitlePost}
                                 placeholder="zB.: BSc"
-                                value={carInsurance[CarInsuranceFormType.academicTitlePost]}
+                                value={carInsurance[FormType.academicTitlePost]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.citizenship}
+                                id={FormType.citizenship}
                                 type={InputType.list}
                                 required={required}
-                                title={CarInsuranceFormType.citizenship}
+                                title={FormType.citizenship}
                                 listValues={[
                                     "Afghanistan", "Albanien", "Algerien", "Andorra", "Angola", "Antigua und Barbuda", "Äquatorialguinea", "Argentinien", "Armenien", "Aserbaidschan", "Äthiopien", "Australien", "Bahamas", "Bahrain", "Bangladesch", "Barbados", "Belarus", "Belgien", "Belize", "Benin", "Bhutan", "Bolivien", "Bosnien und Herzegowina", "Botswana", "Brasilien", "Brunei", "Bulgarien", "Burkina Faso", "Burundi", "Cabo Verde", "Chile", "China", "Costa Rica", "Dänemark", "Deutschland", "Dominica", "Dominikanische Republik", "Dschibuti", "Ecuador", "El Salvador", "Elfenbeinküste", "Eritrea", "Estland", "Eswatini", "Fidschi", "Finnland", "Frankreich", "Gabun", "Gambia", "Georgien", "Ghana", "Grenada", "Griechenland", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Indien", "Indonesien", "Irak", "Iran", "Irland", "Island", "Israel", "Italien", "Jamaika", "Japan", "Jemen", "Jordanien", "Kambodscha", "Kamerun", "Kanada", "Kasachstan", "Katar", "Kenia", "Kirgisistan", "Kiribati", "Kolumbien", "Komoren", "Kongo", "Kongo, Demokratische Republik", "Kroatien", "Kuba", "Kuwait", "Laos", "Lesotho", "Lettland", "Libanon", "Liberia", "Libyen", "Liechtenstein", "Litauen", "Luxemburg", "Madagaskar", "Malawi", "Malaysia", "Malediven", "Mali", "Malta", "Marokko", "Marshallinseln", "Mauretanien", "Mauritius", "Mexiko", "Mikronesien", "Moldau", "Monaco", "Mongolei", "Montenegro", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Neuseeland", "Nicaragua", "Niederlande", "Niger", "Nigeria", "Nordkorea", "Nordmazedonien", "Norwegen", "Oman", "Österreich", "Osttimor", "Pakistan", "Palästina", "Panama", "Papua-Neuguinea", "Paraguay", "Peru", "Philippinen", "Polen", "Portugal", "Ruanda", "Rumänien", "Russland", "Salomonen", "Sambia", "Samoa", "San Marino", "São Tomé und Príncipe", "Saudi-Arabien", "Schweden", "Schweiz", "Senegal", "Serbien", "Seychellen", "Sierra Leone", "Simbabwe", "Singapur", "Slowakei", "Slowenien", "Somalia", "Spanien", "Sri Lanka", "St. Kitts und Nevis", "St. Lucia", "St. Vincent und die Grenadinen", "Südafrika", "Sudan", "Südsudan", "Suriname", "Syrien", "Tadschikistan", "Tansania", "Thailand", "Togo", "Tonga", "Trinidad und Tobago", "Tschad", "Tschechien", "Tunesien", "Türkei", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "Ungarn", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstadt", "Venezuela", "Vereinigte Arabische Emirate", "Vereinigte Staaten", "Vereinigtes Königreich", "Vietnam", "Weißrussland", "Zentralafrikanische Republik", "Zypern"
                                 ]}
-                                value={carInsurance[CarInsuranceFormType.citizenship]}
+                                value={carInsurance[FormType.citizenship]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.birthday}
+                                id={FormType.birthday}
                                 type={InputType.text}
                                 required={required}
-                                title={CarInsuranceFormType.birthday}
+                                title={FormType.birthday}
                                 placeholder="zB.: 22.01.1998"
-                                value={carInsurance[CarInsuranceFormType.birthday]}
+                                value={carInsurance[FormType.birthday]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.job}
+                                id={FormType.job}
                                 type={InputType.text}
                                 required={required}
-                                title={CarInsuranceFormType.job}
+                                title={FormType.job}
                                 placeholder="zB.: Informatiker"
-                                value={carInsurance[CarInsuranceFormType.job]}
+                                value={carInsurance[FormType.job]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.address}
+                                id={FormType.address}
                                 type={InputType.text}
                                 required={required}
-                                title={CarInsuranceFormType.address}
+                                title={FormType.address}
                                 placeholder="zB.: Hauptstraße 1"
-                                value={carInsurance[CarInsuranceFormType.address]}
+                                value={carInsurance[FormType.address]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.doornumber}
+                                id={FormType.doornumber}
                                 type={InputType.text}
                                 required={required}
-                                title={CarInsuranceFormType.doornumber}
+                                title={FormType.doornumber}
                                 placeholder="zB.: 28/2"
-                                value={carInsurance[CarInsuranceFormType.doornumber]}
+                                value={carInsurance[FormType.doornumber]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.postalCode}
+                                id={FormType.postalCode}
                                 type={InputType.number}
                                 required={required}
-                                title={CarInsuranceFormType.postalCode}
+                                title={FormType.postalCode}
                                 placeholder="zB.: 2500"
-                                value={carInsurance[CarInsuranceFormType.postalCode]}
+                                value={carInsurance[FormType.postalCode]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.city}
+                                id={FormType.city}
                                 type={InputType.text}
                                 required={required}
-                                title={CarInsuranceFormType.city}
+                                title={FormType.city}
                                 placeholder="zB.: Baden"
-                                value={carInsurance[CarInsuranceFormType.city]}
+                                value={carInsurance[FormType.city]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.email}
+                                id={FormType.email}
                                 type={InputType.email}
                                 required={required}
-                                title={CarInsuranceFormType.email}
+                                title={FormType.email}
                                 placeholder="zB.: maxmustermann@hotmail.com"
-                                value={carInsurance[CarInsuranceFormType.email]}
+                                value={carInsurance[FormType.email]}
                             />
                         </div>
                         <div>
                             <FormInput
-                                id={CarInsuranceFormType.phoneNumber}
+                                id={FormType.phoneNumber}
                                 type={InputType.tel}
                                 required={required}
-                                title={CarInsuranceFormType.phoneNumber}
+                                title={FormType.phoneNumber}
                                 placeholder="zB.: +43 660 1111100"
-                                value={carInsurance[CarInsuranceFormType.phoneNumber]}
+                                value={carInsurance[FormType.phoneNumber]}
                             />
                         </div>
                     </div>
                     <div className="flex">
                         <FormInput
-                            id={CarInsuranceFormType.orderAccepted}
+                            id={FormType.orderAccepted}
                             type={InputType.checkbox}
                             required={required}
                             listValues={[
@@ -430,10 +430,10 @@ export default function CarInsurance() {
                                     <Link href=""><b className="text-appPrimary"> AGB</b></Link>.
                                 </div>
                             ]}
-                            value={carInsurance[CarInsuranceFormType.orderAccepted]}
+                            value={carInsurance[FormType.orderAccepted]}
                             onChange={() => {
                                 const newInsuranceState: InsuranceState = {}
-                                newInsuranceState[CarInsuranceFormType.orderAccepted] = state().carInsuranceCore[CarInsuranceFormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
+                                newInsuranceState[FormType.orderAccepted] = state().carInsuranceCore[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
                                 setInsuranceForm(newInsuranceState)
                             }}
                         />
@@ -463,7 +463,7 @@ export default function CarInsurance() {
                 newInsuranceState[type] = formData.get(type)?.toString() ?? ""
             })
 
-            newInsuranceState[CarInsuranceFormType.orderAccepted] = newInsuranceState[CarInsuranceFormType.orderAccepted] != 'NEIN' ? 'JA' : 'NEIN'
+            newInsuranceState[FormType.orderAccepted] = newInsuranceState[FormType.orderAccepted] != 'NEIN' ? 'JA' : 'NEIN'
 
             setInsuranceForm(newInsuranceState)
         }}
