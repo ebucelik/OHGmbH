@@ -278,33 +278,43 @@ body {
     /* trust */
   }
 
-  16.66% {
-    transform: translateY(calc(-16.66%));
+  12.55% {
+    transform: translateY(calc(-12.55%));
     /* loyalty */
   }
 
-  33.33% {
-    transform: translateY(calc(-33.33%));
+  25.10% {
+    transform: translateY(calc(-25.10%));
     /* respect */
   }
 
-  50% {
-    transform: translateY(calc(-50%));
+  37.65% {
+    transform: translateY(calc(-37.65%));
     /* value */
   }
 
-  66.66% {
-    transform: translateY(calc(-66.66%));
+  50.20% {
+    transform: translateY(calc(-50.20%));
     /* referrals */
   }
 
-  83.33% {
-    transform: translateY(calc(-83.33%));
+  62.75% {
+    transform: translateY(calc(-62.75%));
+    /* trust (at the end) */
+  }
+
+  75.30% {
+    transform: translateY(calc(-75.30%));
+    /* trust (at the end) */
+  }
+
+  87.85% {
+    transform: translateY(calc(-87.85%));
     /* trust (at the end) */
   }
 
   100% {
-    transform: translateY(calc(-83.33%));
+    transform: translateY(calc(-87.85%));
     /* trust (at the end) */
   }
 }

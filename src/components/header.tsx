@@ -133,7 +133,7 @@ export default function Header() {
                                 </div>
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
-                                        Unfall
+                                        Krankenvers.
                                     </Link>
                                 </div>
                                 <div>
@@ -143,23 +143,12 @@ export default function Header() {
                                 </div>
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
-                                        Ableben
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="py-2">
-                                <div className="font-bold pb-2">
-                                    Gesundheit
-                                </div>
-                                <div>
-                                    <Link href="" className="hover:text-appPrimary">
-                                        Krankenvers.
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="" className="hover:text-appPrimary">
                                         Unfall
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Ableben
                                     </Link>
                                 </div>
                             </div>
@@ -186,12 +175,7 @@ export default function Header() {
                                 </div>
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
-                                        Unfall
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="" className="hover:text-appPrimary">
-                                        Fahrrad
+                                        Privathaftpflicht
                                     </Link>
                                 </div>
                             </div>
@@ -329,6 +313,9 @@ export default function Header() {
                                                     Finanzierungs
                                                 </div>
                                                 <div className="text-lg sm:text-xl">
+                                                    Vermögens
+                                                </div>
+                                                <div className="text-lg sm:text-xl">
                                                     Energie
                                                 </div>
                                                 <div aria-hidden className="text-lg sm:text-xl">
@@ -338,13 +325,16 @@ export default function Header() {
                                                     Finanzierungs
                                                 </div>
                                                 <div aria-hidden className="text-lg sm:text-xl">
+                                                    Vermögens
+                                                </div>
+                                                <div aria-hidden className="text-lg sm:text-xl">
                                                     Energie
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div className="text-lg sm:text-xl text-appPrimary">
-                                            makler
+                                            berater
                                         </div>
                                     </span>
                                 </div>
