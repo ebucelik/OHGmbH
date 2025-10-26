@@ -187,9 +187,6 @@ export default function Header() {
                         </div>
                         <div className="grid grid-cols-2 sm:text-lg">
                             <div className="py-2">
-                                <div className="font-bold pb-2">
-                                    Klassisch
-                                </div>
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
                                         Wohnbaukredit
@@ -202,18 +199,12 @@ export default function Header() {
                                 </div>
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
-                                        Leasing
+                                        Umschuldung
                                     </Link>
-                                </div>
-                            </div>
-
-                            <div className="py-2">
-                                <div className="font-bold pb-2">
-                                    Speziell
                                 </div>
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
-                                        Umschuldung
+                                        Leasing
                                     </Link>
                                 </div>
                             </div>
@@ -238,6 +229,30 @@ export default function Header() {
                                 <div>
                                     <Link href="" className="hover:text-appPrimary">
                                         Öko-Tarife
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex-1">
+                        <div className="font-bold sm:text-xl">
+                            Investment
+                        </div>
+                        <div className="grid grid-cols-1 sm:text-lg">
+                            <div className="py-2">
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Investment-Service
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Gewinnfreibetrag
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link href="" className="hover:text-appPrimary">
+                                        Rendite-Rechner
                                     </Link>
                                 </div>
                             </div>
