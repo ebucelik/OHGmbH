@@ -24,7 +24,7 @@ export default function RootLayout({
       >
         <Header />
 
-        <div>
+        <div className="pt-30 sm:pt-0">
           {children}
         </div>
 

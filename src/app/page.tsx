@@ -75,7 +75,7 @@ export default function Home() {
       </div>
 
       <ParallaxComponent
-        translateYStart={-70}
+        translateYStart={-75}
         translateYEnd={40}
         opacityStart={5}
         opacityEnd={0.6}
@@ -86,7 +86,9 @@ export default function Home() {
               <p className={`text-5xl sm:text-8xl ${radley.className}`}>
                 Stets
               </p>
-              <TypedComponent words={["an deiner Seite.", "für dich da.", "qualitativ.", "innovativ.", "profesionell."]} className={`text-5xl sm:text-8xl ${radley.className}`} />
+
+              <TypedComponent words={["an deiner Seite.", "für dich da.", "professionell.", "qualitativ.", "innovativ."]} className={`text-5xl sm:text-8xl ${radley.className}`} />
+
               <p className="text-lg sm:text-2xl pt-5">
                 Dein unabhängiger Makler für
               </p>
