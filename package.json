@@ -14,8 +14,10 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-redux": "^9.2.0",
+    "react-scroll-parallax": "^3.5.0",
     "redux": "^5.0.1",
-    "resend": "^6.2.0"
+    "resend": "^6.2.0",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@iconify/react": "^6.0.2",

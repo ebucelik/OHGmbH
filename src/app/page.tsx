@@ -2,6 +2,8 @@ import HCarousel from "../components/hcarousel";
 import Button from "../components/button";
 import { radley } from "./layout";
 import { defaultPadding } from "../shared/style";
+import ParallaxComponent from "../components/parallaxComponent";
+import TypedComponent from "../components/typedComponent";
 
 export default function Home() {
   const customerReviews = [
@@ -67,16 +69,18 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div className="relative">
+      <div className="absolute -z-10">
+        <img src="/bglogo.svg" className="opacity-15 h-screen object-cover overflow-hidden" />
+      </div>
+
       <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
         <div className="flex-1 content-center sm:pl-15">
           <div className="flex flex-col">
-            <p className={`text-4xl sm:text-8xl ${radley.className}`}>
-              Stets an
+            <p className={`text-5xl sm:text-8xl ${radley.className}`}>
+              Stets
             </p>
-            <p className={`text-4xl sm:text-8xl ${radley.className}`}>
-              deiner Seite.
-            </p>
+            <TypedComponent words={["an deiner Seite.", "für dich da.", "qualitativ.", "innovativ.", "profesionell."]} className={`text-5xl sm:text-8xl ${radley.className}`} />
             <p className="text-lg sm:text-2xl pt-5">
               Dein unabhängiger Makler für
             </p>

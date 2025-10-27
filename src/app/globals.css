@@ -318,3 +318,15 @@ body {
     /* trust (at the end) */
   }
 }
+
+@media screen and (min-width: 601px) {
+  .typed-cursor {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .typed-cursor {
+    font-size: 30px;
+  }
+}
