@@ -70,79 +70,67 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="absolute -z-10">
-        <img src="/bglogo.svg" className="opacity-15 h-screen object-cover overflow-hidden" />
+      <div className="absolute -z-10" style={{ paddingTop: '200px' }}>
+        <img src="/bglogo.svg" className="opacity-15 object-cover overflow-hidden" />
       </div>
 
-      <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
-        <div className="flex-1 content-center sm:pl-15">
-          <div className="flex flex-col">
-            <p className={`text-5xl sm:text-8xl ${radley.className}`}>
-              Stets
-            </p>
-            <TypedComponent words={["an deiner Seite.", "für dich da.", "qualitativ.", "innovativ.", "profesionell."]} className={`text-5xl sm:text-8xl ${radley.className}`} />
-            <p className="text-lg sm:text-2xl pt-5">
-              Dein unabhängiger Makler für
-            </p>
-            <p className="text-lg sm:text-2xl">
-              Versicherungen, Finanzierungen & Energie -
-            </p>
-            <p className="text-lg sm:text-2xl">
-              sicher und zuverlässig.
-            </p>
+      <ParallaxComponent
+        translateYStart={-70}
+        translateYEnd={40}
+        opacityStart={5}
+        opacityEnd={0.6}
+      >
+        <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
+          <div className="flex-1 content-center sm:pl-15">
+            <div className="flex flex-col">
+              <p className={`text-5xl sm:text-8xl ${radley.className}`}>
+                Stets
+              </p>
+              <TypedComponent words={["an deiner Seite.", "für dich da.", "qualitativ.", "innovativ.", "profesionell."]} className={`text-5xl sm:text-8xl ${radley.className}`} />
+              <p className="text-lg sm:text-2xl pt-5">
+                Dein unabhängiger Makler für
+              </p>
+              <p className="text-lg sm:text-2xl">
+                Versicherungen, Finanzierungen & Energie -
+              </p>
+              <p className="text-lg sm:text-2xl">
+                sicher und zuverlässig.
+              </p>
 
-            <Button text="Jetzt Termin vereinbaren" className="my-5 sm:mt-20" isPrimary={true} />
-          </div>
-        </div>
-        <div className="flex-1">
-          <img
-            src="/haraldotto3.webp" alt="Harald Otto"
-            className="object-contain rounded-lg shadow-2xl"
-          />
-        </div>
-      </div>
-
-      <HCarousel
-        leadingTitle="Unsere Partner"
-        innerDivClassName="[&_li]:mx-1 sm:[&_li]:mx-2"
-        items={
-          insuranceNames.map(
-            (item, index) => (
-              <li key={index}>
-                <img src={item + `-logo.svg`} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
-              </li>
-            )
-          )
-        } />
-
-      <div className={`${defaultPadding} w-full bg-linear-to-b from-white via-appPrimary to-white content-center`}>
-        <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
-          <div className={`sm:hidden ${radley.className}`}>
-            <div className="flex flex-row place-items-baseline">
-              <div className="text-2xl sm:text-5xl">
-                L
-              </div>
-              <div>
-                angjährige Erfahrung,
-              </div>
-            </div>
-            <div>
-              unabhängige Marktübersicht,
-            </div>
-            <div>
-              und maßgeschneiderte Lösungen.
+              <Button text="Jetzt Termin vereinbaren" className="my-5 sm:mt-20" isPrimary={true} />
             </div>
           </div>
-
-          <div className="flex-1 content-center">
-            <img className="rounded-2xl shadow-lg"
-              src="/insurance1.svg"
-              alt="Langjährige Erfahrung in Versicherungen"
+          <div className="flex-1">
+            <img
+              src="/haraldotto3.webp" alt="Harald Otto"
+              className="object-contain rounded-lg shadow-2xl"
             />
           </div>
+        </div>
 
-          <div className="flex-1 flex flex-col gap-5 justify-center">
-            <div className={`hidden sm:block ${radley.className}`}>
+        <HCarousel
+          leadingTitle="Unsere Partner"
+          innerDivClassName="[&_li]:mx-1 sm:[&_li]:mx-2"
+          items={
+            insuranceNames.map(
+              (item, index) => (
+                <li key={index}>
+                  <img src={item + `-logo.svg`} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
+                </li>
+              )
+            )
+          } />
+      </ParallaxComponent>
+
+      <ParallaxComponent
+        translateYStart={40}
+        translateYEnd={-20}
+        className="bg-white"
+        opacityStart={0.96}
+      >
+        <div className={`${defaultPadding} w-full bg-linear-to-b from-white via-appPrimary to-white content-center`}>
+          <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
+            <div className={`sm:hidden ${radley.className}`}>
               <div className="flex flex-row place-items-baseline">
                 <div className="text-2xl sm:text-5xl">
                   L
@@ -158,98 +146,124 @@ export default function Home() {
                 und maßgeschneiderte Lösungen.
               </div>
             </div>
-            <div className="text-sm sm:text-xl">
-              Seit vielen Jahren begleiten wir unsere Kundinnen und Kunden bei allen Fragen rund um Versicherungen.
-              Dabei setzen wir nicht auf Standardlösungen, sondern auf persönliche Beratung und eine unabhängige Marktübersicht.
-              Das bedeutet: Wir vergleichen Angebote zahlreicher Versicherer und wählen gemeinsam mit dir jene Lösung aus, die wirklich zu deinem Leben passt.
-              So erhältst du eine Absicherung, die transparent, fair und auf deine individuellen Bedürfnisse zugeschnitten ist.
+
+            <div className="flex-1 content-center">
+              <img className="rounded-2xl shadow-lg"
+                src="/insurance1.svg"
+                alt="Langjährige Erfahrung in Versicherungen"
+              />
             </div>
 
-            <Button text="Unser Team kontaktieren" className="my-5 sm:mt-10" isPrimary={false} />
-          </div>
-        </div>
-      </div>
+            <div className="flex-1 flex flex-col gap-5 justify-center">
+              <div className={`hidden sm:block ${radley.className}`}>
+                <div className="flex flex-row place-items-baseline">
+                  <div className="text-2xl sm:text-5xl">
+                    L
+                  </div>
+                  <div>
+                    angjährige Erfahrung,
+                  </div>
+                </div>
+                <div>
+                  unabhängige Marktübersicht,
+                </div>
+                <div>
+                  und maßgeschneiderte Lösungen.
+                </div>
+              </div>
+              <div className="text-sm sm:text-xl">
+                Seit vielen Jahren begleiten wir unsere Kundinnen und Kunden bei allen Fragen rund um Versicherungen.
+                Dabei setzen wir nicht auf Standardlösungen, sondern auf persönliche Beratung und eine unabhängige Marktübersicht.
+                Das bedeutet: Wir vergleichen Angebote zahlreicher Versicherer und wählen gemeinsam mit dir jene Lösung aus, die wirklich zu deinem Leben passt.
+                So erhältst du eine Absicherung, die transparent, fair und auf deine individuellen Bedürfnisse zugeschnitten ist.
+              </div>
 
-      <div className={`${defaultPadding} w-full`}>
-        <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-20">
-          <div className={`text-2xl sm:text-5xl text-center sm:text-left ${radley.className} place-content-center`}>
-            Wer wir sind
-          </div>
-          <div className="flex flex-col text-2xl sm:text-5xl text-left sm:w-1/2 gap-1">
-            <div className="grid grid-cols-2">
-              <div>
-                <span className="text-appPrimary">O</span>ffen,
-              </div>
-              <div>
-                <span className="text-appPrimary">H</span>erzlich.
-              </div>
-              <div>
-                <span className="text-appPrimary">O</span>ffensiv,
-              </div>
-              <div>
-                <span className="text-appPrimary">H</span>artnäckig.
-              </div>
-              <div>
-                <span className="text-appPrimary">O</span>rganisiert,
-              </div>
-              <div>
-                <span className="text-appPrimary">H</span>ilfsbereit.
-              </div>
-              <div>
-                <span className="text-appPrimary">O</span>ptimal,
-              </div>
-              <div>
-                <span className="text-appPrimary">H</span>erausragend.
-              </div>
-              <div>
-                <span className="text-appPrimary">O</span>rdentlich,
-              </div>
-              <div>
-                <span className="text-appPrimary">H</span>ochprofesionell.
-              </div>
-              <div>
-                <span className="text-appPrimary font-bold">Otto,</span>
-              </div>
-              <div>
-                <span className="text-appPrimary font-bold">Holzmann.</span>
-              </div>
+              <Button text="Unser Team kontaktieren" className="my-5 sm:mt-10" isPrimary={false} />
             </div>
           </div>
         </div>
 
-        <div className="px-10 2xl:px-50 4xl:px-100 py-15 sm:py-25 flex flex-col sm:flex-row gap-5 sm:gap-20">
-          <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
-            <img
-              src="/haraldotto1.webp" alt="Harald Otto"
-              className="object-contain rounded-lg shadow-2xl"
-            />
-            <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
-            <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-              <div className="text-lg sm:text-5xl font-bold">
-                Harald Otto
-              </div>
-              <div className="text-xs sm:text-2xl">
-                Geschäftsführer & Versicherungsmakler
+        <div className={`${defaultPadding} w-full`}>
+          <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-20">
+            <div className={`text-2xl sm:text-5xl text-center sm:text-left ${radley.className} place-content-center`}>
+              Wer wir sind
+            </div>
+            <div className="flex flex-col text-2xl sm:text-5xl text-left sm:w-1/2 gap-1">
+              <div className="grid grid-cols-2">
+                <div>
+                  <span className="text-appPrimary">O</span>ffen,
+                </div>
+                <div>
+                  <span className="text-appPrimary">H</span>erzlich.
+                </div>
+                <div>
+                  <span className="text-appPrimary">O</span>ffensiv,
+                </div>
+                <div>
+                  <span className="text-appPrimary">H</span>artnäckig.
+                </div>
+                <div>
+                  <span className="text-appPrimary">O</span>rganisiert,
+                </div>
+                <div>
+                  <span className="text-appPrimary">H</span>ilfsbereit.
+                </div>
+                <div>
+                  <span className="text-appPrimary">O</span>ptimal,
+                </div>
+                <div>
+                  <span className="text-appPrimary">H</span>erausragend.
+                </div>
+                <div>
+                  <span className="text-appPrimary">O</span>rdentlich,
+                </div>
+                <div>
+                  <span className="text-appPrimary">H</span>ochprofesionell.
+                </div>
+                <div>
+                  <span className="text-appPrimary font-bold">Otto,</span>
+                </div>
+                <div>
+                  <span className="text-appPrimary font-bold">Holzmann.</span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
-            <img
-              src="/holzmannmanuel.png" alt="Manuel Holzmann"
-              className="object-cover rounded-lg shadow-2xl"
-            />
-            <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
-            <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-              <div className="text-lg sm:text-5xl font-bold">
-                Manuel Holzmann
+
+          <div className="px-10 2xl:px-50 4xl:px-100 py-15 sm:py-25 flex flex-col sm:flex-row gap-5 sm:gap-20">
+            <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
+              <img
+                src="/haraldotto1.webp" alt="Harald Otto"
+                className="object-contain rounded-lg shadow-2xl"
+              />
+              <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
+              <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                <div className="text-lg sm:text-5xl font-bold">
+                  Harald Otto
+                </div>
+                <div className="text-xs sm:text-2xl">
+                  Geschäftsführer & Versicherungsmakler
+                </div>
               </div>
-              <div className="text-xs sm:text-2xl">
-                Geschäftsführer & Vermögensberater
+            </div>
+            <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
+              <img
+                src="/holzmannmanuel.png" alt="Manuel Holzmann"
+                className="object-cover rounded-lg shadow-2xl"
+              />
+              <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
+              <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                <div className="text-lg sm:text-5xl font-bold">
+                  Manuel Holzmann
+                </div>
+                <div className="text-xs sm:text-2xl">
+                  Geschäftsführer & Vermögensberater
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </ParallaxComponent>
 
       <div className={`${defaultPadding} px-10 w-full`}>
         <div className={`text-2xl sm:text-5xl text-center ${radley.className}`}>
@@ -392,7 +406,7 @@ export default function Home() {
           } />
       </div>
 
-      <div className={`${defaultPadding} mb-25 w-full content-center`}>
+      <div className={`${defaultPadding} mb-30 w-full content-center`}>
         <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center">
           <div className={`flex-1 text-2xl sm:text-5xl ${radley.className} text-right`}>
             <div>

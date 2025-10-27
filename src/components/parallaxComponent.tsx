@@ -5,15 +5,34 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 export default function ParallaxComponent(
     {
-        speed,
+        translateYStart,
+        translateYEnd,
+        className,
+        scaleStart,
+        scaleEnd,
+        opacityStart,
+        opacityEnd,
         children
     }: {
-        speed: number,
+        translateYStart?: number,
+        translateYEnd?: number,
+        className?: string,
+        scaleStart?: number,
+        scaleEnd?: number,
+        opacityStart?: number,
+        opacityEnd?: number,
         children: ReactNode
     }
 ) {
     return <ParallaxProvider>
-        <Parallax speed={speed}>
+        <Parallax
+            translateY={[translateYStart ?? 0, translateYEnd ?? 0]}
+            className={className}
+            easing="ease"
+            scale={[scaleStart ?? 1, scaleEnd ?? 1]}
+            opacity={[opacityStart ?? 1, opacityEnd ?? 1]}
+            shouldDisableScalingTranslations
+        >
             {
                 children
             }
