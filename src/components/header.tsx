@@ -73,9 +73,9 @@ export default function Header() {
     function menuBody(): ReactElement {
         switch (menu) {
             case Menu.solution:
-                return <div className="flex flex-col sm:flex-row fade-in-05s gap-1 sm:gap-10">
+                return <div className="flex flex-col sm:flex-row fade-in-05s gap-1">
                     <div className="sm:flex-1"></div>
-                    <div className="flex-2">
+                    <div className="flex-2 p-2 bg-appPrimary rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Versicherungen
                         </div>
@@ -85,27 +85,27 @@ export default function Header() {
                                     Mobilität
                                 </div>
                                 <div>
-                                    <Link href="/insurance/car" className="hover:text-appPrimary">
+                                    <Link href="/insurance/car" className="hover:text-white">
                                         Auto
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/insurance/lkw" className="hover:text-appPrimary">
+                                    <Link href="/insurance/lkw" className="hover:text-white">
                                         LKW
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/insurance/motorcycle" className="hover:text-appPrimary">
+                                    <Link href="/insurance/motorcycle" className="hover:text-white">
                                         Motorrad
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Moped
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Fahrrad
                                     </Link>
                                 </div>
@@ -116,12 +116,12 @@ export default function Header() {
                                     Wohnung
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Eigenheim
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Haushalt
                                     </Link>
                                 </div>
@@ -132,22 +132,22 @@ export default function Header() {
                                     Sicherheit
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Krankenvers.
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
-                                        Berufsunfähigkeit
+                                    <Link href="" className="hover:text-white">
+                                        Berufsunfähigk.
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Unfall
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Ableben
                                     </Link>
                                 </div>
@@ -158,7 +158,7 @@ export default function Header() {
                                     Recht
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Rechtsschutz
                                     </Link>
                                 </div>
@@ -169,89 +169,89 @@ export default function Header() {
                                     Freizeit
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Reise
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Privathaftpflicht
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 p-2 bg-appPrimary rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Finanzierungen
                         </div>
                         <div className="grid grid-cols-2 sm:text-lg">
                             <div className="py-2">
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Wohnbaukredit
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Konsumkredit
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Umschuldung
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Leasing
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 p-2 bg-appPrimary rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Strom & Gas
                         </div>
                         <div className="grid grid-cols-1 sm:text-lg">
                             <div className="py-2">
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Tarifvergleich
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Wechsel des Anbieters
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Öko-Tarife
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 p-2 bg-appPrimary rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Investment
                         </div>
                         <div className="grid grid-cols-1 sm:text-lg">
                             <div className="py-2">
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Investment-Service
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Gewinnfreibetrag
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Rendite-Rechner
                                     </Link>
                                 </div>
@@ -262,31 +262,31 @@ export default function Header() {
 
             case Menu.service:
                 return <div className="flex flex-col sm:flex-row fade-in-05s gap-1 sm:gap-10">
-                    <div className="sm:flex-1"></div>
+                    <div className="sm:flex-2"></div>
                     <div className="flex-2">
-                        <div className="grid grid-cols-2 sm:text-lg">
-                            <div className="py-2">
+                        <div className="grid grid-cols-2 gap-1 sm:text-lg">
+                            <div className="p-2 bg-appPrimary rounded-2xl">
                                 <div className="font-bold pb-2">
                                     Schadenmeldung
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         KFZ-Schaden
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Haushaltsschaden
                                     </Link>
                                 </div>
                             </div>
 
-                            <div className="py-2">
+                            <div className="p-2 bg-appPrimary rounded-2xl">
                                 <div className="font-bold pb-2">
                                     Downloads
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" className="hover:text-white">
                                         Formulare (zb.: KFZ-Kaufvertrag)
                                     </Link>
                                 </div>
