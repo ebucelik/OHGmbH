@@ -5,6 +5,8 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 export default function ParallaxComponent(
     {
+        translateXStart,
+        translateXEnd,
         translateYStart,
         translateYEnd,
         className,
@@ -14,6 +16,8 @@ export default function ParallaxComponent(
         opacityEnd,
         children
     }: {
+        translateXStart?: number,
+        translateXEnd?: number,
         translateYStart?: number,
         translateYEnd?: number,
         className?: string,
@@ -33,11 +37,12 @@ export default function ParallaxComponent(
 
     return <div>
         {
-            isMobile ? children : <ParallaxProvider>
-                <Parallax
-                    translateY={[translateYStart ?? 0, translateYEnd ?? 0]}
+            isMobile
+                ? children
+                : <Parallax
+                    translateX={translateXStart == undefined && translateXEnd == undefined ? undefined : [translateXStart ?? 0, translateXEnd ?? 0]}
+                    translateY={translateYStart == undefined && translateYEnd == undefined ? undefined : [translateYStart ?? 0, translateYEnd ?? 0]}
                     className={className}
-                    easing="ease"
                     scale={[scaleStart ?? 1, scaleEnd ?? 1]}
                     opacity={[opacityStart ?? 1, opacityEnd ?? 1]}
                     shouldDisableScalingTranslations
@@ -46,7 +51,6 @@ export default function ParallaxComponent(
                         children
                     }
                 </Parallax>
-            </ParallaxProvider>
         }
     </div>
 }

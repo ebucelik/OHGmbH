@@ -75,183 +75,183 @@ export default function Header() {
             case Menu.solution:
                 return <div className="flex flex-col sm:flex-row fade-in-05s gap-1">
                     <div className="sm:flex-1"></div>
-                    <div className="flex-2 p-2 bg-appPrimary rounded-2xl">
+                    <div className="flex-2 p-2 bg-gray-100 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Versicherungen
                         </div>
                         <div className="grid grid-cols-3 sm:text-lg">
-                            <div className="py-2">
+                            <div className="py-2 pl-2">
                                 <div className="font-bold pb-2">
                                     Mobilität
                                 </div>
                                 <div>
-                                    <Link href="/insurance/car" className="hover:text-white">
+                                    <Link href="/insurance/car" className="hover:text-appPrimary">
                                         Auto
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/insurance/lkw" className="hover:text-white">
+                                    <Link href="/insurance/lkw" className="hover:text-appPrimary">
                                         LKW
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/insurance/motorcycle" className="hover:text-white">
+                                    <Link href="/insurance/motorcycle" className="hover:text-appPrimary">
                                         Motorrad
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Moped
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Fahrrad
                                     </Link>
                                 </div>
                             </div>
 
-                            <div className="py-2">
+                            <div className="py-2 pl-2">
                                 <div className="font-bold pb-2">
                                     Wohnung
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Eigenheim
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Haushalt
                                     </Link>
                                 </div>
                             </div>
 
-                            <div className="py-2">
+                            <div className="py-2 pl-2">
                                 <div className="font-bold pb-2">
                                     Sicherheit
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Krankenvers.
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Berufsunfähigk.
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Unfall
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Ableben
                                     </Link>
                                 </div>
                             </div>
 
-                            <div className="py-2">
+                            <div className="py-2 pl-2">
                                 <div className="font-bold pb-2">
                                     Recht
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Rechtsschutz
                                     </Link>
                                 </div>
                             </div>
 
-                            <div className="py-2">
+                            <div className="py-2 pl-2">
                                 <div className="font-bold pb-2">
                                     Freizeit
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Reise
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Privathaftpflicht
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 p-2 bg-appPrimary rounded-2xl">
+                    <div className="flex-1 p-2 bg-gray-100 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Finanzierungen
                         </div>
                         <div className="grid grid-cols-2 sm:text-lg">
-                            <div className="py-2">
+                            <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Wohnbaukredit
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Konsumkredit
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Umschuldung
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Leasing
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 p-2 bg-appPrimary rounded-2xl">
+                    <div className="flex-1 p-2 bg-gray-100 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Strom & Gas
                         </div>
                         <div className="grid grid-cols-1 sm:text-lg">
-                            <div className="py-2">
+                            <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Tarifvergleich
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Wechsel des Anbieters
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Öko-Tarife
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 p-2 bg-appPrimary rounded-2xl">
+                    <div className="flex-1 p-2 bg-gray-100 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Investment
                         </div>
                         <div className="grid grid-cols-1 sm:text-lg">
-                            <div className="py-2">
+                            <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Investment-Service
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Gewinnfreibetrag
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Rendite-Rechner
                                     </Link>
                                 </div>
@@ -265,28 +265,28 @@ export default function Header() {
                     <div className="sm:flex-2"></div>
                     <div className="flex-2">
                         <div className="grid grid-cols-2 gap-1 sm:text-lg">
-                            <div className="p-2 bg-appPrimary rounded-2xl">
+                            <div className="p-2 bg-gray-100 rounded-2xl">
                                 <div className="font-bold pb-2">
                                     Schadenmeldung
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         KFZ-Schaden
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Haushaltsschaden
                                     </Link>
                                 </div>
                             </div>
 
-                            <div className="p-2 bg-appPrimary rounded-2xl">
+                            <div className="p-2 bg-gray-100 rounded-2xl">
                                 <div className="font-bold pb-2">
                                     Downloads
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-white">
+                                    <Link href="" className="hover:text-appPrimary">
                                         Formulare (zb.: KFZ-Kaufvertrag)
                                     </Link>
                                 </div>

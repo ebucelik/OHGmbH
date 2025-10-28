@@ -4,6 +4,7 @@ import { radley } from "./layout";
 import { defaultPadding } from "../shared/style";
 import ParallaxComponent from "../components/parallaxComponent";
 import TypedComponent from "../components/typedComponent";
+import SliderComponent from "../components/sliderComponent";
 
 export default function Home() {
   const customerReviews = [
@@ -74,63 +75,151 @@ export default function Home() {
         <img src="/bglogo.svg" className="opacity-15 object-cover overflow-hidden" />
       </div>
 
-      <ParallaxComponent
-        translateYStart={-75}
-        translateYEnd={40}
-        opacityStart={5}
-        opacityEnd={0.6}
-      >
-        <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
-          <div className="flex-1 content-center sm:pl-15">
-            <div className="flex flex-col">
-              <p className={`text-5xl sm:text-8xl ${radley.className}`}>
-                Stets
-              </p>
+      <div>
+        <ParallaxComponent
+          translateYStart={-80}
+          translateYEnd={100}
+          opacityStart={2}
+          opacityEnd={0}
+          scaleStart={1.1}
+          scaleEnd={0.8}
+        >
+          <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
+            <div className="flex-1 content-center sm:pl-15">
+              <div className="flex flex-col">
+                <p className={`text-5xl sm:text-8xl ${radley.className}`}>
+                  Stets
+                </p>
 
-              <TypedComponent words={["an deiner Seite.", "für dich da.", "professionell.", "qualitativ.", "innovativ."]} className={`text-5xl sm:text-8xl ${radley.className}`} />
+                <TypedComponent words={["an deiner Seite.", "für dich da.", "professionell.", "qualitativ.", "innovativ."]} className={`text-5xl sm:text-8xl ${radley.className}`} />
 
-              <p className="text-lg sm:text-2xl pt-5">
-                Dein unabhängiger Makler für
-              </p>
-              <p className="text-lg sm:text-2xl">
-                Versicherungen, Finanzierungen & Energie -
-              </p>
-              <p className="text-lg sm:text-2xl">
-                sicher und zuverlässig.
-              </p>
+                <p className="text-lg sm:text-2xl pt-5">
+                  Dein unabhängiger Makler für
+                </p>
+                <p className="text-lg sm:text-2xl">
+                  Versicherungen, Finanzierungen & Energie -
+                </p>
+                <p className="text-lg sm:text-2xl">
+                  sicher und zuverlässig.
+                </p>
 
-              <Button text="Jetzt Termin vereinbaren" className="my-5 sm:mt-20" isPrimary={true} />
+                <Button text="Jetzt Termin vereinbaren" className="my-5 sm:mt-20" isPrimary={true} />
+              </div>
+            </div>
+            <div className="flex-1">
+              <SliderComponent
+                children={[
+                  <div className="relative">
+                    <img
+                      src="/haraldotto3.webp" alt="Harald Otto"
+                      className="object-contain rounded-lg shadow-lg"
+                    />
+                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                      <div className="text-lg sm:text-5xl font-bold">
+                        Harald Otto
+                      </div>
+                      <div className="text-xs sm:text-2xl">
+                        Geschäftsführer & Versicherungsmakler
+                      </div>
+                    </div>
+                  </div>,
+                  <div className="relative">
+                    <img
+                      src="/holzmannmanuel.png" alt="Manuel Holzmann"
+                      className="object-contain rounded-lg shadow-lg"
+                    />
+                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                      <div className="text-lg sm:text-5xl font-bold">
+                        Manuel Holzmann
+                      </div>
+                      <div className="text-xs sm:text-2xl">
+                        Geschäftsführer & Vermögensberater
+                      </div>
+                    </div>
+                  </div>,
+                  <div className="relative">
+                    <img
+                      src="/haraldotto3.webp" alt="Harald Otto"
+                      className="object-contain rounded-lg shadow-lg"
+                    />
+                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                      <div className="text-lg sm:text-5xl font-bold">
+                        Harald Otto
+                      </div>
+                      <div className="text-xs sm:text-2xl">
+                        Geschäftsführer & Versicherungsberater
+                      </div>
+                    </div>
+                  </div>,
+                  <div className="relative">
+                    <img
+                      src="/holzmannmanuel.png" alt="Manuel Holzmann"
+                      className="object-contain rounded-lg shadow-lg"
+                    />
+                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                      <div className="text-lg sm:text-5xl font-bold">
+                        Manuel Holzmann
+                      </div>
+                      <div className="text-xs sm:text-2xl">
+                        Geschäftsführer & Vermögensberater
+                      </div>
+                    </div>
+                  </div>,
+                  <div className="relative">
+                    <img
+                      src="/haraldotto3.webp" alt="Harald Otto"
+                      className="object-contain rounded-lg shadow-lg"
+                    />
+                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                      <div className="text-lg sm:text-5xl font-bold">
+                        Harald Otto
+                      </div>
+                      <div className="text-xs sm:text-2xl">
+                        Geschäftsführer & Versicherungsberater
+                      </div>
+                    </div>
+                  </div>,
+                  <div className="relative">
+                    <img
+                      src="/holzmannmanuel.png" alt="Manuel Holzmann"
+                      className="object-contain rounded-lg shadow-lg"
+                    />
+                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                      <div className="text-lg sm:text-5xl font-bold">
+                        Manuel Holzmann
+                      </div>
+                      <div className="text-xs sm:text-2xl">
+                        Geschäftsführer & Vermögensberater
+                      </div>
+                    </div>
+                  </div>
+                ]}
+              />
             </div>
           </div>
-          <div className="flex-1">
-            <img
-              src="/haraldotto3.webp" alt="Harald Otto"
-              className="object-contain rounded-lg shadow-2xl"
-            />
-          </div>
-        </div>
 
-        <HCarousel
-          leadingTitle="Unsere Partner"
-          innerDivClassName="[&_li]:mx-1 sm:[&_li]:mx-2"
-          items={
-            insuranceNames.map(
-              (item, index) => (
-                <li key={index}>
-                  <img src={item + `-logo.svg`} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
-                </li>
+          <HCarousel
+            leadingTitle="Unsere Partner"
+            innerDivClassName="[&_li]:mx-1 sm:[&_li]:mx-2"
+            items={
+              insuranceNames.map(
+                (item, index) => (
+                  <li key={index}>
+                    <img src={item + `-logo.svg`} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
+                  </li>
+                )
               )
-            )
-          } />
-      </ParallaxComponent>
+            } />
+        </ParallaxComponent>
+      </div>
 
-      <ParallaxComponent
-        translateYStart={40}
-        translateYEnd={-20}
-        className="bg-white"
-        opacityStart={0.96}
-      >
-        <div className={`${defaultPadding} w-full bg-linear-to-b from-white via-appPrimary to-white content-center`}>
+      <div className={`${defaultPadding} w-full bg-linear-to-b from-white via-appPrimary to-white content-center`}>
+        <ParallaxComponent
+          translateYStart={90}
+          translateYEnd={-60}
+          scaleStart={0.9}
+          scaleEnd={1}
+        >
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
             <div className={`sm:hidden ${radley.className}`}>
               <div className="flex flex-row place-items-baseline">
@@ -183,9 +272,16 @@ export default function Home() {
               <Button text="Unser Team kontaktieren" className="my-5 sm:mt-10" isPrimary={false} />
             </div>
           </div>
-        </div>
+        </ParallaxComponent>
+      </div>
 
-        <div className={`${defaultPadding} w-full`}>
+      <div className={`${defaultPadding} w-full sm:my-50`}>
+        <ParallaxComponent
+          translateYStart={0}
+          translateYEnd={0}
+          scaleStart={0.9}
+          scaleEnd={1}
+        >
           <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-20">
             <div className={`text-2xl sm:text-5xl text-center sm:text-left ${radley.className} place-content-center`}>
               Wer wir sind
@@ -193,240 +289,288 @@ export default function Home() {
             <div className="flex flex-col text-2xl sm:text-5xl text-left sm:w-1/2 gap-1">
               <div className="grid grid-cols-2">
                 <div>
-                  <span className="text-appPrimary">O</span>ffen,
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-250}
+                  >
+                    <span className="text-appPrimary">O</span>ffen,
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">H</span>erzlich.
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-250}
+                  >
+                    <span className="text-appPrimary">H</span>erzlich.
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">O</span>ffensiv,
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-200}
+                  >
+                    <span className="text-appPrimary">O</span>ffensiv,
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">H</span>artnäckig.
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-200}
+                  >
+                    <span className="text-appPrimary">H</span>artnäckig.
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">O</span>rganisiert,
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-150}
+                  >
+                    <span className="text-appPrimary">O</span>rganisiert,
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">H</span>ilfsbereit.
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-150}
+                  >
+                    <span className="text-appPrimary">H</span>ilfsbereit.
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">O</span>ptimal,
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-100}
+                  >
+                    <span className="text-appPrimary">O</span>ptimal,
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">H</span>erausragend.
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-100}
+                  >
+                    <span className="text-appPrimary">H</span>erausragend.
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">O</span>rdentlich,
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-50}
+                  >
+                    <span className="text-appPrimary">O</span>rdentlich,
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary">H</span>ochprofesionell.
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-50}
+                  >
+                    <span className="text-appPrimary">H</span>ochprofesionell.
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary font-bold">Otto,</span>
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-25}
+                  >
+                    <span className="text-appPrimary font-bold">Otto,</span>
+                  </ParallaxComponent>
                 </div>
                 <div>
-                  <span className="text-appPrimary font-bold">Holzmann.</span>
+                  <ParallaxComponent
+                    translateYStart={0}
+                    translateYEnd={-25}
+                  >
+                    <span className="text-appPrimary font-bold">Holzmann.</span>
+                  </ParallaxComponent>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="px-10 2xl:px-50 4xl:px-100 py-15 sm:py-25 flex flex-col sm:flex-row gap-5 sm:gap-20">
-            <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
-              <img
-                src="/haraldotto1.webp" alt="Harald Otto"
-                className="object-contain rounded-lg shadow-2xl"
-              />
-              <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
-              <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                <div className="text-lg sm:text-5xl font-bold">
-                  Harald Otto
-                </div>
-                <div className="text-xs sm:text-2xl">
-                  Geschäftsführer & Versicherungsmakler
-                </div>
-              </div>
-            </div>
-            <div className="flex-1 relative hover:scale-102 ease-out transition duration-300">
-              <img
-                src="/holzmannmanuel.png" alt="Manuel Holzmann"
-                className="object-cover rounded-lg shadow-2xl"
-              />
-              <div className="hidden sm:block absolute top-0 w-full h-full rounded-lg bg-gray-400 opacity-30 hover:opacity-0 ease-out transition duration-300" />
-              <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                <div className="text-lg sm:text-5xl font-bold">
-                  Manuel Holzmann
-                </div>
-                <div className="text-xs sm:text-2xl">
-                  Geschäftsführer & Vermögensberater
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ParallaxComponent>
+        </ParallaxComponent>
+      </div>
 
       <div className={`${defaultPadding} px-10 w-full`}>
-        <div className={`text-2xl sm:text-5xl text-center ${radley.className}`}>
-          Es bleibt nicht nur bei Versicherungen.
-        </div>
-        <div className="flex flex-col sm:flex-row justify-evenly gap-5 sm:gap-5 my-15">
-          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
-            <div className="relative">
-              <img src="/electric.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
+        <ParallaxComponent
+          translateYStart={20}
+          translateYEnd={-60}
+          scaleStart={0.9}
+          scaleEnd={1}
+        >
+          <div className={`text-2xl sm:text-5xl text-center ${radley.className}`}>
+            Es bleibt nicht nur bei Versicherungen.
+          </div>
+          <div className="flex flex-col sm:flex-row justify-evenly gap-5 sm:gap-5 my-15">
+            <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+              <div className="relative">
+                <img src="/electric.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
 
-              <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                Strom und Gas
+                <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
+                  Strom und Gas
+                </div>
+              </div>
+              <div className="p-5">
+                <b className="text-lg sm:text-xl">Wir finden den besten Tarif für Sie.</b>
+
+                <ul className="list-disc pl-5 py-1.5 pt-2">
+                  <li>
+                    <b>
+                      Unabhängiger Vergleich:
+                    </b> Wir durchsuchen für Sie über 100 Strom- und Gasanbieter.
+                  </li>
+                  <li>
+                    <b>
+                      Transparenz & Fairness:
+                    </b> Sie sehen auf einen Blick, welche Tarife wirklich zu Ihrem Verbrauch passen.
+                  </li>
+                  <li>
+                    <b>
+                      Einfacher Wechsel:
+                    </b> Wir kümmern uns um die Abwicklung, Sie sparen Zeit und Geld.
+                  </li>
+                </ul>
+                <p>
+                  Ob Haushalt oder Unternehmen - wir sorgen dafür, dass Sie <b>nicht mehr zahlen als nötig</b>.
+                </p>
               </div>
             </div>
-            <div className="p-5">
-              <b className="text-lg sm:text-xl">Wir finden den besten Tarif für Sie.</b>
 
-              <ul className="list-disc pl-5 py-1.5 pt-2">
-                <li>
-                  <b>
-                    Unabhängiger Vergleich:
-                  </b> Wir durchsuchen für Sie über 100 Strom- und Gasanbieter.
-                </li>
-                <li>
-                  <b>
-                    Transparenz & Fairness:
-                  </b> Sie sehen auf einen Blick, welche Tarife wirklich zu Ihrem Verbrauch passen.
-                </li>
-                <li>
-                  <b>
-                    Einfacher Wechsel:
-                  </b> Wir kümmern uns um die Abwicklung, Sie sparen Zeit und Geld.
-                </li>
-              </ul>
-              <p>
-                Ob Haushalt oder Unternehmen - wir sorgen dafür, dass Sie <b>nicht mehr zahlen als nötig</b>.
-              </p>
-            </div>
-          </div>
+            <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+              <div className="relative">
+                <img src="/finance.webp" alt="Finanzierung Bild" className="w-full rounded-t-xl" />
 
-          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
-            <div className="relative">
-              <img src="/finance.webp" alt="Finanzierung Bild" className="w-full rounded-t-xl" />
+                <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
+                  Finanzierungen
+                </div>
+              </div>
+              <div className="p-5">
+                <b className="text-lg sm:text-xl">Maßgeschneidert für Ihre Bedürfnisse.</b>
 
-              <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                Finanzierungen
+                <ul className="list-disc pl-5 py-1.5 pt-2">
+                  <li>
+                    <b>
+                      Individuelle Beratung:
+                    </b> Wir finden gemeinsam heraus, welche Finanzierungslösung zu Ihrer Situation passt.
+                  </li>
+                  <li>
+                    <b>
+                      Große Auswahl:
+                    </b> Dank unseres Zugriffs auf mehr als 120 Banken haben wir Zugriff auf ein breites Angebot.
+                  </li>
+                  <li>
+                    <b>
+                      Beste Konditionen:
+                    </b> Durch den Vergleich sichern wir Ihnen attraktive Zinsen und faire Vertragsbedingungen.
+                  </li>
+                </ul>
+                <p>
+                  So kommen Sie sicher zu Ihrer Wunschfinanzierung - ob für Immobilien, Investitionen oder private Projekte.
+                </p>
               </div>
             </div>
-            <div className="p-5">
-              <b className="text-lg sm:text-xl">Maßgeschneidert für Ihre Bedürfnisse.</b>
+            <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+              <div className="relative">
+                <img src="/consulting.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
 
-              <ul className="list-disc pl-5 py-1.5 pt-2">
-                <li>
-                  <b>
-                    Individuelle Beratung:
-                  </b> Wir finden gemeinsam heraus, welche Finanzierungslösung zu Ihrer Situation passt.
-                </li>
-                <li>
-                  <b>
-                    Große Auswahl:
-                  </b> Dank unseres Zugriffs auf mehr als 120 Banken haben wir Zugriff auf ein breites Angebot.
-                </li>
-                <li>
-                  <b>
-                    Beste Konditionen:
-                  </b> Durch den Vergleich sichern wir Ihnen attraktive Zinsen und faire Vertragsbedingungen.
-                </li>
-              </ul>
-              <p>
-                So kommen Sie sicher zu Ihrer Wunschfinanzierung - ob für Immobilien, Investitionen oder private Projekte.
-              </p>
-            </div>
-          </div>
-          <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
-            <div className="relative">
-              <img src="/consulting.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
+                <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
+                  Persönliche Beratung
+                </div>
+              </div>
+              <div className="p-5">
+                <b className="text-lg sm:text-xl">Alles aus einer Hand.</b>
 
-              <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                Persönliche Beratung
+                <ul className="list-disc pl-5 py-1.5 pt-2">
+                  <li>
+                    <b>
+                      Autoversicherung:
+                    </b> Wir finden für Sie die passende Versicherung mit optimalem Schutz und fairen Prämien.
+                  </li>
+                  <li>
+                    <b>
+                      Strom & Gas:
+                    </b> Über 100 Anbieter im Vergleich - damit Sie nie mehr zahlen als nötig.
+                  </li>
+                  <li>
+                    <b>
+                      Weitere Versicherungen & Services:
+                    </b> Ob Haushalt, Gesundheit oder Vorsorge - wir beraten Sie ganzheitlich..
+                  </li>
+                </ul>
+                <p>
+                  Mit uns haben Sie einen Partner, der <b>alles vergleicht, für Sie auswählt und verständlich erklärt</b>.
+                </p>
               </div>
             </div>
-            <div className="p-5">
-              <b className="text-lg sm:text-xl">Alles aus einer Hand.</b>
-
-              <ul className="list-disc pl-5 py-1.5 pt-2">
-                <li>
-                  <b>
-                    Autoversicherung:
-                  </b> Wir finden für Sie die passende Versicherung mit optimalem Schutz und fairen Prämien.
-                </li>
-                <li>
-                  <b>
-                    Strom & Gas:
-                  </b> Über 100 Anbieter im Vergleich - damit Sie nie mehr zahlen als nötig.
-                </li>
-                <li>
-                  <b>
-                    Weitere Versicherungen & Services:
-                  </b> Ob Haushalt, Gesundheit oder Vorsorge - wir beraten Sie ganzheitlich..
-                </li>
-              </ul>
-              <p>
-                Mit uns haben Sie einen Partner, der <b>alles vergleicht, für Sie auswählt und verständlich erklärt</b>.
-              </p>
+          </div>
+          <div className="flex flex-col sm:flex-row justify-center place-items-center gap-5">
+            <div className="text-sm sm:text-xl text-center">
+              Haben wir Ihr Interesse geweckt?
             </div>
+            <Button text="Kontaktiere Uns" isPrimary={false} />
           </div>
-        </div>
-        <div className="flex flex-col sm:flex-row justify-center place-items-center gap-5">
-          <div className="text-sm sm:text-xl text-center">
-            Haben wir Ihr Interesse geweckt?
-          </div>
-          <Button text="Kontaktiere Uns" isPrimary={false} />
-        </div>
+        </ParallaxComponent>
       </div>
 
       <div className={`${defaultPadding} w-full`}>
-        <div className={`text-xl sm:text-3xl text-left ${radley.className}`}>
-          Was unsere Kunden über uns sagen.
-        </div>
-        <HCarousel
-          outerDivClassName="sm:w-full"
-          innerDivClassName="[&_li]:mx-2 sm:[&_li]:mx-4"
-          items={
-            customerReviews.map((item, index) => (
-              <li key={index} className="mb-5">
-                <div className="flex flex-col gap-2 p-3 bg-appGray rounded-4xl w-60 sm:w-100 h-60 sm:h-80 sm:text-xl justify-center place-items-center text-center shadow-lg">
-                  <div>
-                    {
-                      item.text
-                    }
+        <ParallaxComponent
+          translateYStart={20}
+          translateYEnd={-60}
+          scaleStart={0.9}
+          scaleEnd={1}
+        >
+          <div className={`text-xl sm:text-3xl text-left ${radley.className}`}>
+            Was unsere Kunden über uns sagen.
+          </div>
+          <HCarousel
+            outerDivClassName="sm:w-full"
+            innerDivClassName="[&_li]:mx-2 sm:[&_li]:mx-4"
+            items={
+              customerReviews.map((item, index) => (
+                <li key={index} className="mb-5">
+                  <div className="flex flex-col gap-2 p-3 bg-appGray rounded-4xl w-60 sm:w-100 h-60 sm:h-80 sm:text-xl justify-center place-items-center text-center shadow-lg">
+                    <div>
+                      {
+                        item.text
+                      }
+                    </div>
+                    <div className="font-bold">
+                      {
+                        item.name
+                      }
+                    </div>
                   </div>
-                  <div className="font-bold">
-                    {
-                      item.name
-                    }
-                  </div>
-                </div>
-              </li>
-            ))
-          } />
+                </li>
+              ))
+            } />
+        </ParallaxComponent>
       </div>
 
       <div className={`${defaultPadding} mb-30 w-full content-center`}>
-        <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center">
-          <div className={`flex-1 text-2xl sm:text-5xl ${radley.className} text-right`}>
-            <div>
-              Immer für Sie da,
+        <ParallaxComponent
+          translateYStart={20}
+          translateYEnd={-60}
+          scaleStart={0.9}
+          scaleEnd={1}
+        >
+          <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center">
+            <div className={`flex-1 text-2xl sm:text-5xl ${radley.className} text-right`}>
+              <div>
+                Immer für Sie da,
+              </div>
+              <div>
+                auch im <span className="decoration-appPrimary underline underline-offset-8">Ernstfall</span>.
+              </div>
             </div>
-            <div>
-              auch im <span className="decoration-appPrimary underline underline-offset-8">Ernstfall</span>.
+            <div className="flex-1 sm:text-xl text-left">
+              Unfälle und Schäden sind schon nervig genug - da braucht's keinen Papierkram-Stress obendrauf.
+              Genau da kommen wir ins Spiel: Sie rufen uns an, und wir kümmern uns um den Rest.
+              Ob Meldung, Abwicklung oder Diskussion mit der Versicherung - wir nehmen Ihnen den Aufwand ab.
+              <br /><br />
+              <b>Schnell, unkompliziert und mit einem Lächeln</b> - <br />
+              damit Sie sich auf das Wesentliche konzentrieren können.
             </div>
           </div>
-          <div className="flex-1 sm:text-xl text-left">
-            Unfälle und Schäden sind schon nervig genug - da braucht's keinen Papierkram-Stress obendrauf.
-            Genau da kommen wir ins Spiel: Sie rufen uns an, und wir kümmern uns um den Rest.
-            Ob Meldung, Abwicklung oder Diskussion mit der Versicherung - wir nehmen Ihnen den Aufwand ab.
-            <br /><br />
-            <b>Schnell, unkompliziert und mit einem Lächeln</b> - <br />
-            damit Sie sich auf das Wesentliche konzentrieren können.
-          </div>
-        </div>
+        </ParallaxComponent>
       </div>
 
       <div className={`${defaultPadding} w-full bg-appSecondary text-white`}>
