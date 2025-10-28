@@ -1,10 +1,11 @@
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
 
 export default function ParallaxComponent(
     {
+        speed,
         translateXStart,
         translateXEnd,
         translateYStart,
@@ -16,6 +17,7 @@ export default function ParallaxComponent(
         opacityEnd,
         children
     }: {
+        speed?: number,
         translateXStart?: number,
         translateXEnd?: number,
         translateYStart?: number,
@@ -35,13 +37,18 @@ export default function ParallaxComponent(
         setIsMobile(innerWidth <= 600)
     })
 
+    const isSpeedAvailable = speed != undefined
+    const isTranslateXAvailable = (translateXStart != undefined || translateXEnd != undefined)
+    const isTranslateYAvailable = (translateYStart != undefined || translateYEnd != undefined)
+
     return <div>
         {
             isMobile
                 ? children
                 : <Parallax
-                    translateX={translateXStart == undefined && translateXEnd == undefined ? undefined : [translateXStart ?? 0, translateXEnd ?? 0]}
-                    translateY={translateYStart == undefined && translateYEnd == undefined ? undefined : [translateYStart ?? 0, translateYEnd ?? 0]}
+                    speed={speed}
+                    translateX={isTranslateXAvailable ? [translateXStart ?? 0, translateXEnd ?? 0] : undefined}
+                    translateY={isTranslateYAvailable ? [translateYStart ?? 0, translateYEnd ?? 0] : undefined}
                     className={className}
                     scale={[scaleStart ?? 1, scaleEnd ?? 1]}
                     opacity={[opacityStart ?? 1, opacityEnd ?? 1]}

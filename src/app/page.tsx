@@ -5,6 +5,7 @@ import { defaultPadding } from "../shared/style";
 import ParallaxComponent from "../components/parallaxComponent";
 import TypedComponent from "../components/typedComponent";
 import SliderComponent from "../components/sliderComponent";
+import Image from "next/image";
 
 export default function Home() {
   const customerReviews = [
@@ -75,10 +76,9 @@ export default function Home() {
         <img src="/bglogo.svg" className="opacity-15 object-cover overflow-hidden" />
       </div>
 
-      <div>
+      <div className="sm:pt-30">
         <ParallaxComponent
-          translateYStart={-30}
-          translateYEnd={20}
+          speed={-50}
           opacityStart={2}
           opacityEnd={0}
           scaleStart={1.1}
@@ -213,11 +213,10 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full bg-linear-to-b from-white via-appPrimary to-white content-center`}>
+      <div className={`${defaultPadding} w-full content-center sm:py-50`}>
         <ParallaxComponent
-          translateYStart={90}
-          translateYEnd={-50}
-          scaleStart={0.8}
+          speed={10}
+          scaleStart={0.9}
           scaleEnd={1}
         >
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
@@ -275,121 +274,131 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full my-20 sm:my-0`}>
+      <div className={`${defaultPadding} w-full my-20 sm:my-100`}>
         <ParallaxComponent
-          translateYStart={90}
-          translateYEnd={-50}
+          speed={-30}
           scaleStart={0.9}
           scaleEnd={1}
         >
           <div className="flex flex-col place-items-center gap-5 sm:gap-30">
             <ParallaxComponent
-              translateYStart={0}
-              translateYEnd={-50}
+              speed={-20}
             >
-              <div className={`text-4xl sm:text-7xl text-left ${radley.className}`}>
-                Wir sind
+              <div className={`text-2xl sm:text-5xl text-left font-bold`}>
+                Wer wir sind
               </div>
             </ParallaxComponent>
             <div className="flex flex-col text-2xl sm:text-5xl gap-1">
-              <div className="grid grid-cols-2">
-                <div>
+              <div className="grid grid-cols-2 gap-1 sm:gap-50">
+                <div className="text-right">
                   <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-250}
+                    speed={-20}
+                    translateXStart={-20}
+                    translateXEnd={10}
                   >
-                    <span className="text-appPrimary">O</span>ffen,
+                    <span className="text-appPrimary">O</span>ffen
                   </ParallaxComponent>
                 </div>
                 <div>
                   <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-250}
+                    speed={-20}
+                    translateXStart={20}
+                    translateXEnd={-10}
                   >
-                    <span className="text-appPrimary">H</span>erzlich.
+                    <span className="text-appPrimary">H</span>erzlich
+                  </ParallaxComponent>
+                </div>
+                <div className="text-right">
+                  <ParallaxComponent
+                    speed={-20}
+                    translateXStart={-20}
+                    translateXEnd={10}
+                  >
+                    <span className="text-appPrimary">O</span>ffensiv
                   </ParallaxComponent>
                 </div>
                 <div>
                   <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-200}
+                    speed={-20}
+                    translateXStart={20}
+                    translateXEnd={-10}
                   >
-                    <span className="text-appPrimary">O</span>ffensiv,
+                    <span className="text-appPrimary">H</span>artnäckig
+                  </ParallaxComponent>
+                </div>
+                <div className="text-right">
+                  <ParallaxComponent
+                    speed={-20}
+                    translateXStart={-20}
+                    translateXEnd={10}
+                  >
+                    <span className="text-appPrimary">O</span>rganisiert
                   </ParallaxComponent>
                 </div>
                 <div>
                   <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-200}
+                    speed={-20}
+                    translateXStart={20}
+                    translateXEnd={-10}
                   >
-                    <span className="text-appPrimary">H</span>artnäckig.
+                    <span className="text-appPrimary">H</span>ilfsbereit
+                  </ParallaxComponent>
+                </div>
+                <div className="text-right">
+                  <ParallaxComponent
+                    speed={-20}
+                    translateXStart={-20}
+                    translateXEnd={10}
+                  >
+                    <span className="text-appPrimary">O</span>ptimal
                   </ParallaxComponent>
                 </div>
                 <div>
                   <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-150}
+                    speed={-20}
+                    translateXStart={20}
+                    translateXEnd={-10}
                   >
-                    <span className="text-appPrimary">O</span>rganisiert,
+                    <span className="text-appPrimary">H</span>erausragend
+                  </ParallaxComponent>
+                </div>
+                <div className="text-right">
+                  <ParallaxComponent
+                    speed={-20}
+                    translateXStart={-20}
+                    translateXEnd={10}
+                  >
+                    <span className="text-appPrimary">O</span>rdentlich
                   </ParallaxComponent>
                 </div>
                 <div>
                   <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-150}
+                    speed={-20}
+                    translateXStart={20}
+                    translateXEnd={-10}
                   >
-                    <span className="text-appPrimary">H</span>ilfsbereit.
-                  </ParallaxComponent>
-                </div>
-                <div>
-                  <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-100}
-                  >
-                    <span className="text-appPrimary">O</span>ptimal,
-                  </ParallaxComponent>
-                </div>
-                <div>
-                  <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-100}
-                  >
-                    <span className="text-appPrimary">H</span>erausragend.
-                  </ParallaxComponent>
-                </div>
-                <div>
-                  <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-50}
-                  >
-                    <span className="text-appPrimary">O</span>rdentlich,
-                  </ParallaxComponent>
-                </div>
-                <div>
-                  <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-50}
-                  >
-                    <span className="text-appPrimary">H</span>ochprofessionell.
-                  </ParallaxComponent>
-                </div>
-                <div>
-                  <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-25}
-                  >
-                    <span className="text-appPrimary font-bold">Otto,</span>
-                  </ParallaxComponent>
-                </div>
-                <div>
-                  <ParallaxComponent
-                    translateYStart={0}
-                    translateYEnd={-25}
-                  >
-                    <span className="text-appPrimary font-bold">Holzmann.</span>
+                    <span className="text-appPrimary">H</span>ochprofessionell
                   </ParallaxComponent>
                 </div>
               </div>
+            </div>
+            <div className="p-10 sm:pt-50 justify-center">
+              <ParallaxComponent
+                speed={-25}
+                scaleStart={0.8}
+                scaleEnd={1.2}
+              >
+                <div className="flex flex-row sm:gap-5 place-content-center">
+                  <span className="text-appPrimary text-center font-bold text-4xl sm:text-8xl">Otto & Holzmann</span>
+                  <Image
+                    src="/ohlogo.svg"
+                    alt="OH GmbH Logo"
+                    width={100}
+                    height={100}
+                    priority
+                  />
+                </div>
+              </ParallaxComponent>
             </div>
           </div>
         </ParallaxComponent>
@@ -478,7 +487,7 @@ export default function Home() {
                 <img src="/consulting.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
 
                 <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                  Persönliche Beratung
+                  Investments
                 </div>
               </div>
               <div className="p-5">
