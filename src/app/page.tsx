@@ -72,7 +72,7 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="absolute -z-10" style={{ paddingTop: '200px' }}>
+      <div className="absolute -z-10" style={{ paddingTop: '5%' }}>
         <img src="/bglogo.svg" className="opacity-15 object-cover overflow-hidden" />
       </div>
 

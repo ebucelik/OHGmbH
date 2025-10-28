@@ -18,7 +18,7 @@ export default function Header() {
     const [hideHeaderWhileScrollingDown, setHideHeaderWhileScrollingDown] = useState("sm:translate-y-0");
     const [menu, setMenu] = useState(Menu.default);
 
-    var previousScrollY = 0
+    let previousScrollY = 0
 
     function toggleShowNavBar() {
         setMenu(Menu.default);
@@ -85,27 +85,27 @@ export default function Header() {
                                     Mobilität
                                 </div>
                                 <div>
-                                    <Link href="/insurance/car" className="hover:text-appPrimary">
+                                    <Link href="/insurance/car" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Auto
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/insurance/lkw" className="hover:text-appPrimary">
+                                    <Link href="/insurance/lkw" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         LKW
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/insurance/motorcycle" className="hover:text-appPrimary">
+                                    <Link href="/insurance/motorcycle" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Motorrad
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Moped
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Fahrrad
                                     </Link>
                                 </div>
@@ -116,12 +116,12 @@ export default function Header() {
                                     Wohnung
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Eigenheim
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Haushalt
                                     </Link>
                                 </div>
@@ -132,22 +132,22 @@ export default function Header() {
                                     Sicherheit
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Krankenvers.
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Berufsunfähigk.
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Unfall
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Ableben
                                     </Link>
                                 </div>
@@ -158,7 +158,7 @@ export default function Header() {
                                     Recht
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Rechtsschutz
                                     </Link>
                                 </div>
@@ -169,12 +169,12 @@ export default function Header() {
                                     Freizeit
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Reise
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Privathaftpflicht
                                     </Link>
                                 </div>
@@ -188,22 +188,22 @@ export default function Header() {
                         <div className="grid grid-cols-2 sm:text-lg">
                             <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Wohnbaukredit
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Konsumkredit
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Umschuldung
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Leasing
                                     </Link>
                                 </div>
@@ -217,17 +217,17 @@ export default function Header() {
                         <div className="grid grid-cols-1 sm:text-lg">
                             <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Tarifvergleich
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Wechsel des Anbieters
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Öko-Tarife
                                     </Link>
                                 </div>
@@ -241,17 +241,17 @@ export default function Header() {
                         <div className="grid grid-cols-1 sm:text-lg">
                             <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Investment-Service
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Gewinnfreibetrag
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Rendite-Rechner
                                     </Link>
                                 </div>
@@ -270,12 +270,12 @@ export default function Header() {
                                     Schadenmeldung
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         KFZ-Schaden
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Haushaltsschaden
                                     </Link>
                                 </div>
@@ -286,7 +286,7 @@ export default function Header() {
                                     Downloads
                                 </div>
                                 <div>
-                                    <Link href="" className="hover:text-appPrimary">
+                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:text-appPrimary">
                                         Formulare (zb.: KFZ-Kaufvertrag)
                                     </Link>
                                 </div>
@@ -301,7 +301,7 @@ export default function Header() {
     }
 
     return (
-        <nav className={`${hideHeaderWhileScrollingDown} fixed w-full top-0 z-10 mb-5 easeIn transition duration-300 opacity-95`}>
+        <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 mb-5 easeIn transition duration-300 opacity-95`}>
             <div className="w-full p-5 rounded-b-2xl bg-white border-b-1 border-gray-200 shadow-lg fade-down-1s">
                 <div className="flex flex-row">
                     <div className="flex-2 font-bold">
