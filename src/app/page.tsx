@@ -77,8 +77,8 @@ export default function Home() {
 
       <div>
         <ParallaxComponent
-          translateYStart={-80}
-          translateYEnd={100}
+          translateYStart={-30}
+          translateYEnd={20}
           opacityStart={2}
           opacityEnd={0}
           scaleStart={1.1}
@@ -97,7 +97,7 @@ export default function Home() {
                   Dein unabhängiger Makler für
                 </p>
                 <p className="text-lg sm:text-2xl">
-                  Versicherungen, Finanzierungen & Energie -
+                  Versicherungen, Finanzierungen, Investments & Energie -
                 </p>
                 <p className="text-lg sm:text-2xl">
                   sicher und zuverlässig.
@@ -216,8 +216,8 @@ export default function Home() {
       <div className={`${defaultPadding} w-full bg-linear-to-b from-white via-appPrimary to-white content-center`}>
         <ParallaxComponent
           translateYStart={90}
-          translateYEnd={-60}
-          scaleStart={0.9}
+          translateYEnd={-50}
+          scaleStart={0.8}
           scaleEnd={1}
         >
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
@@ -275,18 +275,23 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full sm:my-50`}>
+      <div className={`${defaultPadding} w-full my-20 sm:my-0`}>
         <ParallaxComponent
-          translateYStart={0}
-          translateYEnd={0}
+          translateYStart={90}
+          translateYEnd={-50}
           scaleStart={0.9}
           scaleEnd={1}
         >
-          <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-20">
-            <div className={`text-2xl sm:text-5xl text-center sm:text-left ${radley.className} place-content-center`}>
-              Wer wir sind
-            </div>
-            <div className="flex flex-col text-2xl sm:text-5xl text-left sm:w-1/2 gap-1">
+          <div className="flex flex-col place-items-center gap-5 sm:gap-30">
+            <ParallaxComponent
+              translateYStart={0}
+              translateYEnd={-50}
+            >
+              <div className={`text-4xl sm:text-7xl text-left ${radley.className}`}>
+                Wir sind
+              </div>
+            </ParallaxComponent>
+            <div className="flex flex-col text-2xl sm:text-5xl gap-1">
               <div className="grid grid-cols-2">
                 <div>
                   <ParallaxComponent
@@ -365,7 +370,7 @@ export default function Home() {
                     translateYStart={0}
                     translateYEnd={-50}
                   >
-                    <span className="text-appPrimary">H</span>ochprofesionell.
+                    <span className="text-appPrimary">H</span>ochprofessionell.
                   </ParallaxComponent>
                 </div>
                 <div>
@@ -392,8 +397,8 @@ export default function Home() {
 
       <div className={`${defaultPadding} px-10 w-full`}>
         <ParallaxComponent
-          translateYStart={20}
-          translateYEnd={-60}
+          translateYStart={90}
+          translateYEnd={-50}
           scaleStart={0.9}
           scaleEnd={1}
         >
@@ -513,8 +518,8 @@ export default function Home() {
 
       <div className={`${defaultPadding} w-full`}>
         <ParallaxComponent
-          translateYStart={20}
-          translateYEnd={-60}
+          translateYStart={90}
+          translateYEnd={-50}
           scaleStart={0.9}
           scaleEnd={1}
         >
@@ -547,9 +552,9 @@ export default function Home() {
 
       <div className={`${defaultPadding} mb-30 w-full content-center`}>
         <ParallaxComponent
-          translateYStart={20}
-          translateYEnd={-60}
-          scaleStart={0.9}
+          translateYStart={90}
+          translateYEnd={-20}
+          scaleStart={0.8}
           scaleEnd={1}
         >
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center">
@@ -581,9 +586,16 @@ export default function Home() {
 
           <div className="flex flex-col gap-10 sm:gap-0 sm:flex-row sm:my-15 justify-evenly text-center text-lg sm:text-2xl font-bold">
             <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
-              1. Schaden melden
+              <ParallaxComponent
+                translateXStart={-30}
+                translateXEnd={0}
+                scaleStart={0.8}
+                scaleEnd={1}
+              >
+                1. Schaden melden
 
-              <img src="/talk.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500" />
+                <img src="/talk.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500 sm:mt-5" />
+              </ParallaxComponent>
             </div>
             <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
               <span className="sm:hidden">
@@ -597,9 +609,16 @@ export default function Home() {
               </span>
             </div>
             <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
-              3. Zurücklehnen
+              <ParallaxComponent
+                translateXStart={30}
+                translateXEnd={0}
+                scaleStart={0.8}
+                scaleEnd={1}
+              >
+                3. Zurücklehnen
 
-              <img src="/chill.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500" />
+                <img src="/chill.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500 sm:mt-5" />
+              </ParallaxComponent>
             </div>
           </div>
         </div>
