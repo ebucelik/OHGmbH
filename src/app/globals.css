@@ -24,7 +24,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --animate-infinite-scroll: infinite-scroll 100s linear infinite;
+  --animate-infinite-scroll: infinite-scroll 300s linear infinite;
 
   @keyframes infinite-scroll {
     from {
