@@ -302,7 +302,7 @@ export default function Header() {
 
     return (
         <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 mb-5 easeIn transition duration-300`}>
-            <div className="w-full p-5 backdrop-blur-xs bg-white/70 sm:backdrop-blur-none sm:bg-transparent fade-down-1s">
+            <div className="w-full p-5 backdrop-blur-xs bg-white/70 rounded-b-2xl sm:backdrop-blur-none sm:bg-transparent fade-down-1s">
                 <div className="flex flex-row">
                     <div className="flex-2 font-bold">
                         <Link href="/">

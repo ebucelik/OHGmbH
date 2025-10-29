@@ -7,6 +7,7 @@ import TypedComponent from "../components/typedComponent";
 import SliderComponent from "../components/sliderComponent";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 export default function Home() {
   const customerReviews = [
@@ -246,58 +247,67 @@ export default function Home() {
 
             <div className="flex-2 sm:px-25 text-xl sm:text-4xl">
               <div className="grid grid-cols-2 bg-white rounded-2xl shadow-xl text-center">
-                <div className="bg-blue-100 hover:bg-blue-300 rounded-tl-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
-                  <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
-                    <div>
-                      <Icon icon="mingcute:safety-certificate-fill" />
+                <Link href="/insurance/car">
+                  <div className="bg-blue-100 hover:bg-blue-300 rounded-tl-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
+                    <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
+                      <div>
+                        <Icon icon="mingcute:safety-certificate-fill" />
+                      </div>
+                      <div>
+                        Sach-Versicherung
+                      </div>
                     </div>
-                    <div>
-                      Sach-Versicherung
-                    </div>
-                  </div>
-                  <div className="hidden sm:block sm:text-lg">
-                    Schutzt des Eigentums und Vermögens.
-                  </div>
-                </div>
-                <div className="bg-green-100 hover:bg-green-300 rounded-tr-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-content-center place-items-center hover:scale-102 duration-500">
-                  <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
-                    <div>
-                      <Icon icon="solar:health-bold" />
-                    </div>
-                    <div>
-                      Personen-Versicherung
+
+                    <div className="hidden sm:block sm:text-lg">
+                      Schutzt des Eigentums und Vermögens.
                     </div>
                   </div>
-                  <div className="hidden sm:block sm:text-lg">
-                    Denken Sie heute schon an morgen.
-                  </div>
-                </div>
-                <div className="bg-yellow-100 hover:bg-yellow-300 rounded-bl-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
-                  <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
-                    <div>
-                      <Icon icon="mdi:finance" />
+                </Link>
+                <Link href="/insurance/illness">
+                  <div className="bg-green-100 hover:bg-green-300 rounded-tr-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-content-center place-items-center hover:scale-102 duration-500">
+                    <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
+                      <div>
+                        <Icon icon="solar:health-bold" />
+                      </div>
+                      <div>
+                        Personen-Versicherung
+                      </div>
                     </div>
-                    <div>
-                      Investment
-                    </div>
-                  </div>
-                  <div className="hidden sm:block sm:text-lg">
-                    Geld arbeiten lassen, Kapital vermehren.
-                  </div>
-                </div>
-                <div className="bg-orange-100 hover:bg-orange-300 rounded-br-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
-                  <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
-                    <div>
-                      <Icon icon="streamline:investment-selection" />
-                    </div>
-                    <div>
-                      Vorsorge
+                    <div className="hidden sm:block sm:text-lg">
+                      Denken Sie heute schon an morgen.
                     </div>
                   </div>
-                  <div className="hidden sm:block sm:text-lg">
-                    Finanziell abgesichert sein in allen Lebensphasen.
+                </Link>
+                <Link href="/investment">
+                  <div className="bg-yellow-100 hover:bg-yellow-300 rounded-bl-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
+                    <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
+                      <div>
+                        <Icon icon="mdi:finance" />
+                      </div>
+                      <div>
+                        Investment
+                      </div>
+                    </div>
+                    <div className="hidden sm:block sm:text-lg">
+                      Geld arbeiten lassen, Kapital vermehren.
+                    </div>
                   </div>
-                </div>
+                </Link>
+                <Link href="/insurance/life">
+                  <div className="bg-orange-100 hover:bg-orange-300 rounded-br-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
+                    <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
+                      <div>
+                        <Icon icon="streamline:investment-selection" />
+                      </div>
+                      <div>
+                        Vorsorge
+                      </div>
+                    </div>
+                    <div className="hidden sm:block sm:text-lg">
+                      Finanziell abgesichert sein in allen Lebensphasen.
+                    </div>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
