@@ -443,7 +443,7 @@ export default function CarInsurance() {
         ]
 
     async function sendEmail(): Promise<Response> {
-        return await fetch('/api/insurance', {
+        return await fetch('/api/general', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'order': 'Auto-Versicherung' },
             body: JSON.stringify(state().carInsuranceCore)

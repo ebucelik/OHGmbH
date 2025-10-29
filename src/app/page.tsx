@@ -122,7 +122,7 @@ export default function Home() {
                   sicher und zuverlässig.
                 </p>
 
-                <Button text="Jetzt Termin vereinbaren" className="my-5 sm:mt-20" isPrimary={true} />
+                <Button text="Jetzt Termin vereinbaren" className="my-5 sm:mt-20" isPrimary={true} href="/contact" />
               </div>
             </div>
             <div className="flex-1">
@@ -565,7 +565,7 @@ export default function Home() {
             <div className="sm:text-xl text-center">
               Haben wir Ihr Interesse geweckt?
             </div>
-            <Button text="Kontaktiere Uns" isPrimary={false} />
+            <Button text="Kontaktiere Uns" isPrimary={false} href="/contact" />
           </div>
         </ParallaxComponent>
       </div>

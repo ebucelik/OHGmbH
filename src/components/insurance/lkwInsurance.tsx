@@ -463,7 +463,7 @@ export default function LKWInsurance() {
         ]
 
     async function sendEmail(): Promise<Response> {
-        return await fetch('/api/insurance', {
+        return await fetch('/api/general', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'order': 'LKW-Versicherung' },
             body: JSON.stringify(state().carInsuranceCore)

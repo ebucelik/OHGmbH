@@ -38,7 +38,7 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="" className="hover:text-appPrimary">Beratung vereinbaren</Link>
+                                <Link href="/contact" className="hover:text-appPrimary">Beratung vereinbaren</Link>
                             </div>
 
                             <div>
@@ -51,14 +51,14 @@ export default function Footer() {
                             </div>
 
                             <div>
-                                <Link href="" className="hover:text-appPrimary">office@oh-gmbh.at</Link>
+                                <Link href="mailto:office@oh-gmbh.at" className="hover:text-appPrimary">office@oh-gmbh.at</Link>
                             </div>
 
                             <div>
-                                <Link href="" className="hover:text-appPrimary">+43 664 1817109</Link>
+                                <Link href="tel:+43 664 1817109" className="hover:text-appPrimary">+43 664 1817109</Link>
                             </div>
                             <div>
-                                <Link href="" className="hover:text-appPrimary">Kontaktformular</Link>
+                                <Link href="/contact" className="hover:text-appPrimary">Kontaktformular</Link>
                             </div>
                         </div>
                         <div className="flex flex-col gap-1 text-sm sm:text-lg">
@@ -98,7 +98,7 @@ export default function Footer() {
 
                             <div>
                                 <Link href="https://www.instagram.com/oh_gmbh/?igsh=d3psbHd4MHRuY2Fz" target="_blank" className="hover:text-appPrimary">
-                                    <div className="flex flex-row gap-1">
+                                    <div className="flex flex-row gap-1 place-items-center">
                                         <Icon icon="mdi:instagram" className="h-5 w-5" />
                                         <div>
                                             Instagram
@@ -109,7 +109,7 @@ export default function Footer() {
 
                             <div>
                                 <Link href="" target="_blank" className="hover:text-appPrimary">
-                                    <div className="flex flex-row gap-1">
+                                    <div className="flex flex-row gap-1 place-items-center">
                                         <Icon icon="mdi:youtube" className="h-5 w-5" />
                                         <div>
                                             YouTube
@@ -120,7 +120,7 @@ export default function Footer() {
 
                             <div>
                                 <Link href="" target="_blank" className="hover:text-appPrimary">
-                                    <div className="flex flex-row gap-1">
+                                    <div className="flex flex-row gap-1 place-items-center">
                                         <Icon icon="mdi:linkedin" className="h-5 w-5" />
                                         <div>
                                             LinkedIn
