@@ -71,7 +71,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative bg-white">
       <div className="absolute -z-10" style={{ paddingTop: '5%' }}>
         <img src="/bglogo.svg" className="opacity-15 object-cover overflow-hidden" />
       </div>
@@ -213,7 +213,7 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full content-center sm:py-50`}>
+      <div className={`${defaultPadding} w-full content-center sm:my-50 bg-appPrimary`}>
         <ParallaxComponent
           speed={10}
           scaleStart={0.9}
@@ -274,7 +274,7 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full my-20 sm:my-100`}>
+      <div className={`${defaultPadding} w-full my-20 sm:py-100`}>
         <ParallaxComponent
           speed={-30}
           scaleStart={0.9}
@@ -289,7 +289,7 @@ export default function Home() {
               </div>
             </ParallaxComponent>
             <div className="flex flex-col text-2xl sm:text-5xl gap-1">
-              <div className="grid grid-cols-2 gap-1 sm:gap-50">
+              <div className="grid grid-cols-2 gap-1 sm:gap-30">
                 <div className="text-right">
                   <ParallaxComponent
                     speed={-20}
@@ -341,25 +341,7 @@ export default function Home() {
                     translateXStart={20}
                     translateXEnd={-10}
                   >
-                    <span className="text-appPrimary">H</span>ilfsbereit
-                  </ParallaxComponent>
-                </div>
-                <div className="text-right">
-                  <ParallaxComponent
-                    speed={-20}
-                    translateXStart={-20}
-                    translateXEnd={10}
-                  >
-                    <span className="text-appPrimary">O</span>ptimal
-                  </ParallaxComponent>
-                </div>
-                <div>
-                  <ParallaxComponent
-                    speed={-20}
-                    translateXStart={20}
-                    translateXEnd={-10}
-                  >
-                    <span className="text-appPrimary">H</span>erausragend
+                    <span className="text-appPrimary">H</span>ochprofessionell
                   </ParallaxComponent>
                 </div>
                 <div className="text-right">
@@ -377,7 +359,25 @@ export default function Home() {
                     translateXStart={20}
                     translateXEnd={-10}
                   >
-                    <span className="text-appPrimary">H</span>ochprofessionell
+                    <span className="text-appPrimary">H</span>erausragend
+                  </ParallaxComponent>
+                </div>
+                <div className="text-right">
+                  <ParallaxComponent
+                    speed={-20}
+                    translateXStart={-20}
+                    translateXEnd={10}
+                  >
+                    <span className="text-appPrimary">O</span>ptimal
+                  </ParallaxComponent>
+                </div>
+                <div>
+                  <ParallaxComponent
+                    speed={-20}
+                    translateXStart={20}
+                    translateXEnd={-10}
+                  >
+                    <span className="text-appPrimary">H</span>ilfsbereit
                   </ParallaxComponent>
                 </div>
               </div>
@@ -404,120 +404,125 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} px-10 w-full`}>
+      <div className={`${defaultPadding} px-10 w-full sm:py-100`}>
         <ParallaxComponent
-          translateYStart={90}
-          translateYEnd={-50}
-          scaleStart={0.9}
-          scaleEnd={1}
+          speed={-30}
         >
-          <div className={`text-2xl sm:text-5xl text-center ${radley.className}`}>
-            Es bleibt nicht nur bei Versicherungen.
-          </div>
+          <ParallaxComponent
+            speed={-1}
+          >
+            <div className={`text-2xl sm:text-5xl text-center ${radley.className} sm:pb-50`}>
+              Es bleibt nicht nur bei Versicherungen.
+            </div>
+          </ParallaxComponent>
           <div className="flex flex-col sm:flex-row justify-evenly gap-5 sm:gap-5 my-15">
-            <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
-              <div className="relative">
-                <img src="/electric.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
+            <ParallaxComponent
+              speed={-10}
+            >
+              <div className="bg-linear-to-t from-appPrimary via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+                <div className="relative">
+                  <img src="/electric.webp" alt="Strom und Gas Bild" className="w-full h-1/3 rounded-t-xl" />
 
-                <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                  Strom und Gas
+                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
+                    Strom und Gas
+                  </div>
+                </div>
+                <div className="p-5">
+                  <b className="text-lg sm:text-xl">Wir finden den besten Tarif für Sie.</b>
+
+                  <ul className="list-disc pl-5 py-1.5 pt-2">
+                    <li>
+                      <b>
+                        Unabhängiger Vergleich:
+                      </b> Wir durchsuchen für Sie über 100 Strom- und Gasanbieter.
+                    </li>
+                    <li>
+                      <b>
+                        Transparenz & Fairness:
+                      </b> Sie sehen auf einen Blick, welche Tarife wirklich zu Ihrem Verbrauch passen.
+                    </li>
+                    <li>
+                      <b>
+                        Einfacher Wechsel:
+                      </b> Wir kümmern uns um die Abwicklung, Sie sparen Zeit und Geld.
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div className="p-5">
-                <b className="text-lg sm:text-xl">Wir finden den besten Tarif für Sie.</b>
+            </ParallaxComponent>
 
-                <ul className="list-disc pl-5 py-1.5 pt-2">
-                  <li>
-                    <b>
-                      Unabhängiger Vergleich:
-                    </b> Wir durchsuchen für Sie über 100 Strom- und Gasanbieter.
-                  </li>
-                  <li>
-                    <b>
-                      Transparenz & Fairness:
-                    </b> Sie sehen auf einen Blick, welche Tarife wirklich zu Ihrem Verbrauch passen.
-                  </li>
-                  <li>
-                    <b>
-                      Einfacher Wechsel:
-                    </b> Wir kümmern uns um die Abwicklung, Sie sparen Zeit und Geld.
-                  </li>
-                </ul>
-                <p>
-                  Ob Haushalt oder Unternehmen - wir sorgen dafür, dass Sie <b>nicht mehr zahlen als nötig</b>.
-                </p>
-              </div>
-            </div>
+            <ParallaxComponent
+              speed={-5}
+            >
+              <div className="bg-linear-to-t from-appPrimary via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+                <div className="relative">
+                  <img src="/finance.webp" alt="Finanzierung Bild" className="w-full rounded-t-xl" />
 
-            <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
-              <div className="relative">
-                <img src="/finance.webp" alt="Finanzierung Bild" className="w-full rounded-t-xl" />
+                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
+                    Finanzierungen
+                  </div>
+                </div>
+                <div className="p-5">
+                  <b className="text-lg sm:text-xl">Maßgeschneidert für Ihre Bedürfnisse.</b>
 
-                <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                  Finanzierungen
+                  <ul className="list-disc pl-5 py-1.5 pt-2">
+                    <li>
+                      <b>
+                        Individuelle Beratung:
+                      </b> Wir finden gemeinsam heraus, welche Finanzierungslösung zu Ihrer Situation passt.
+                    </li>
+                    <li>
+                      <b>
+                        Große Auswahl:
+                      </b> Dank unseres Zugriffs auf mehr als 120 Banken haben wir Zugriff auf ein breites Angebot.
+                    </li>
+                    <li>
+                      <b>
+                        Beste Konditionen:
+                      </b> Durch den Vergleich sichern wir Ihnen attraktive Zinsen und faire Vertragsbedingungen.
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div className="p-5">
-                <b className="text-lg sm:text-xl">Maßgeschneidert für Ihre Bedürfnisse.</b>
+            </ParallaxComponent>
 
-                <ul className="list-disc pl-5 py-1.5 pt-2">
-                  <li>
-                    <b>
-                      Individuelle Beratung:
-                    </b> Wir finden gemeinsam heraus, welche Finanzierungslösung zu Ihrer Situation passt.
-                  </li>
-                  <li>
-                    <b>
-                      Große Auswahl:
-                    </b> Dank unseres Zugriffs auf mehr als 120 Banken haben wir Zugriff auf ein breites Angebot.
-                  </li>
-                  <li>
-                    <b>
-                      Beste Konditionen:
-                    </b> Durch den Vergleich sichern wir Ihnen attraktive Zinsen und faire Vertragsbedingungen.
-                  </li>
-                </ul>
-                <p>
-                  So kommen Sie sicher zu Ihrer Wunschfinanzierung - ob für Immobilien, Investitionen oder private Projekte.
-                </p>
-              </div>
-            </div>
-            <div className="bg-linear-to-t from-appPrimary to-white rounded-xl shadow-lg hover:scale-101 duration-500">
-              <div className="relative">
-                <img src="/consulting.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
+            <ParallaxComponent
+              speed={-8}
+            >
+              <div className="bg-linear-to-t from-appPrimary via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+                <div className="relative">
+                  <img src="/consulting.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
 
-                <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                  Investments
+                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
+                    Investments
+                  </div>
+                </div>
+                <div className="p-5">
+                  <b className="text-lg sm:text-xl">Ihr Geld, Ihre Zukunft.</b>
+
+                  <ul className="list-disc pl-5 py-1.5 pt-2">
+                    <li>
+                      <b>
+                        Individuelles Portfolio:
+                      </b> Wir erstellen ein auf Sie abgestimmtes Anlageportfolio - passend zu Ihren Zielen und Ihrer Risikobereitschaft.
+                    </li>
+                    <li>
+                      <b>
+                        Professionelle Betreuung:
+                      </b> Ihr Geld wird gezielt investiert, um langfristig stabile Erträge zu erzielen.
+                    </li>
+                    <li>
+                      <b>
+                        Mehr aus Ihrem Geld machen:
+                      </b> Nutzen Sie die Chancen des Marktes und lassen Sie Ihr Kapital für sich arbeiten.
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div className="p-5">
-                <b className="text-lg sm:text-xl">Alles aus einer Hand.</b>
-
-                <ul className="list-disc pl-5 py-1.5 pt-2">
-                  <li>
-                    <b>
-                      Autoversicherung:
-                    </b> Wir finden für Sie die passende Versicherung mit optimalem Schutz und fairen Prämien.
-                  </li>
-                  <li>
-                    <b>
-                      Strom & Gas:
-                    </b> Über 100 Anbieter im Vergleich - damit Sie nie mehr zahlen als nötig.
-                  </li>
-                  <li>
-                    <b>
-                      Weitere Versicherungen & Services:
-                    </b> Ob Haushalt, Gesundheit oder Vorsorge - wir beraten Sie ganzheitlich..
-                  </li>
-                </ul>
-                <p>
-                  Mit uns haben Sie einen Partner, der <b>alles vergleicht, für Sie auswählt und verständlich erklärt</b>.
-                </p>
-              </div>
-            </div>
+            </ParallaxComponent>
           </div>
-          <div className="flex flex-col sm:flex-row justify-center place-items-center gap-5">
-            <div className="text-sm sm:text-xl text-center">
+          <div className="flex flex-col sm:flex-row justify-center place-items-center gap-5 sm:pt-20">
+            <div className="sm:text-xl text-center">
               Haben wir Ihr Interesse geweckt?
             </div>
             <Button text="Kontaktiere Uns" isPrimary={false} />
@@ -525,12 +530,9 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full`}>
+      <div className={`${defaultPadding} w-full py-20 sm:py-50 relative z-2 bg-white`}>
         <ParallaxComponent
-          translateYStart={90}
-          translateYEnd={-50}
-          scaleStart={0.9}
-          scaleEnd={1}
+          speed={-30}
         >
           <div className={`text-xl sm:text-3xl text-left ${radley.className}`}>
             Was unsere Kunden über uns sagen.
@@ -559,14 +561,11 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} mb-30 w-full content-center`}>
+      <div className={`mb-30 w-full content-center sm:py-30 relative z-1`}>
         <ParallaxComponent
-          translateYStart={90}
-          translateYEnd={-20}
-          scaleStart={0.8}
-          scaleEnd={1}
+          speed={-70}
         >
-          <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center">
+          <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center bg-gray-100 p-10">
             <div className={`flex-1 text-2xl sm:text-5xl ${radley.className} text-right`}>
               <div>
                 Immer für Sie da,
@@ -577,7 +576,9 @@ export default function Home() {
             </div>
             <div className="flex-1 sm:text-xl text-left">
               Unfälle und Schäden sind schon nervig genug - da braucht's keinen Papierkram-Stress obendrauf.
+              <br />
               Genau da kommen wir ins Spiel: Sie rufen uns an, und wir kümmern uns um den Rest.
+              <br />
               Ob Meldung, Abwicklung oder Diskussion mit der Versicherung - wir nehmen Ihnen den Aufwand ab.
               <br /><br />
               <b>Schnell, unkompliziert und mit einem Lächeln</b> - <br />
@@ -587,50 +588,54 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full bg-appSecondary text-white`}>
-        <div>
-          <div className="pb-10 text-2xl sm:text-5xl text-left">
-            Was tun bei <span className="decoration-appPrimary underline underline-offset-8">einem Schaden?</span>
+      <div className={`${defaultPadding} w-full bg-appSecondary text-white relative z-2`}>
+        <ParallaxComponent
+          speed={10}
+        >
+          <div>
+            <div className="pb-10 text-2xl sm:text-5xl text-left">
+              Was tun bei <span className="decoration-appPrimary underline underline-offset-8">einem Schaden?</span>
+            </div>
+
+            <div className="flex flex-col gap-10 sm:gap-0 sm:flex-row sm:my-15 justify-evenly text-center text-lg sm:text-2xl font-bold">
+              <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
+                <ParallaxComponent
+                  translateXStart={-30}
+                  translateXEnd={0}
+                  scaleStart={0.8}
+                  scaleEnd={1}
+                >
+                  1. Schaden melden
+
+                  <img src="/talk.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500 sm:mt-5" />
+                </ParallaxComponent>
+              </div>
+              <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
+                <span className="sm:hidden">
+                  2. Unterlagen bereitstellen
+                </span>
+
+                <img src="/documents.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500" />
+
+                <span className="hidden sm:block">
+                  2. Unterlagen bereitstellen
+                </span>
+              </div>
+              <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
+                <ParallaxComponent
+                  translateXStart={30}
+                  translateXEnd={0}
+                  scaleStart={0.8}
+                  scaleEnd={1}
+                >
+                  3. Zurücklehnen
+
+                  <img src="/chill.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500 sm:mt-5" />
+                </ParallaxComponent>
+              </div>
+            </div>
           </div>
-
-          <div className="flex flex-col gap-10 sm:gap-0 sm:flex-row sm:my-15 justify-evenly text-center text-lg sm:text-2xl font-bold">
-            <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
-              <ParallaxComponent
-                translateXStart={-30}
-                translateXEnd={0}
-                scaleStart={0.8}
-                scaleEnd={1}
-              >
-                1. Schaden melden
-
-                <img src="/talk.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500 sm:mt-5" />
-              </ParallaxComponent>
-            </div>
-            <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
-              <span className="sm:hidden">
-                2. Unterlagen bereitstellen
-              </span>
-
-              <img src="/documents.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500" />
-
-              <span className="hidden sm:block">
-                2. Unterlagen bereitstellen
-              </span>
-            </div>
-            <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
-              <ParallaxComponent
-                translateXStart={30}
-                translateXEnd={0}
-                scaleStart={0.8}
-                scaleEnd={1}
-              >
-                3. Zurücklehnen
-
-                <img src="/chill.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500 sm:mt-5" />
-              </ParallaxComponent>
-            </div>
-          </div>
-        </div>
+        </ParallaxComponent>
       </div>
     </div>
   );

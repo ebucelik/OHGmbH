@@ -37,7 +37,6 @@ export default function ParallaxComponent(
         setIsMobile(innerWidth <= 600)
     })
 
-    const isSpeedAvailable = speed != undefined
     const isTranslateXAvailable = (translateXStart != undefined || translateXEnd != undefined)
     const isTranslateYAvailable = (translateYStart != undefined || translateYEnd != undefined)
 
