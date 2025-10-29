@@ -6,6 +6,7 @@ import ParallaxComponent from "../components/parallaxComponent";
 import TypedComponent from "../components/typedComponent";
 import SliderComponent from "../components/sliderComponent";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
 
 export default function Home() {
   const customerReviews = [
@@ -213,62 +214,74 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full content-center sm:my-50 bg-appPrimary`}>
+      <div className={`${defaultPadding} w-full content-center py-15 sm:py-50 bg-appPrimary`}>
         <ParallaxComponent
           speed={10}
-          scaleStart={0.9}
-          scaleEnd={1}
         >
-          <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 text-lg sm:text-4xl text-black">
-            <div className={`sm:hidden ${radley.className}`}>
-              <div className="flex flex-row place-items-baseline">
-                <div className="text-2xl sm:text-5xl">
-                  L
-                </div>
-                <div>
-                  angjährige Erfahrung,
-                </div>
-              </div>
-              <div>
-                unabhängige Marktübersicht,
-              </div>
-              <div>
-                und maßgeschneiderte Lösungen.
+          <div className="flex flex-col gap-5 sm:gap-10 text-black">
+            <div className={`${radley.className} text-2xl sm:text-5xl`}>
+              <b>Das magische Viereck.</b>
+
+              <div className="text-lg sm:text-2xl">
+                Gemeinsam bilden diese vier Bereiche das Fundament für finanzielle Stabilität, Sicherheit und Wachstum - alles aus einer Hand.
               </div>
             </div>
 
-            <div className="flex-1 content-center">
-              <img className="rounded-2xl shadow-lg"
-                src="/insurance1.svg"
-                alt="Langjährige Erfahrung in Versicherungen"
-              />
-            </div>
-
-            <div className="flex-1 flex flex-col gap-5 justify-center">
-              <div className={`hidden sm:block ${radley.className}`}>
-                <div className="flex flex-row place-items-baseline">
-                  <div className="text-2xl sm:text-5xl">
-                    L
+            <div className="flex-2 sm:px-25 text-xl sm:text-4xl">
+              <div className="grid grid-cols-2 bg-white rounded-2xl shadow-xl text-center">
+                <div className="bg-blue-100 hover:bg-blue-300 rounded-tl-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
+                  <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
+                    <div>
+                      <Icon icon="mingcute:safety-certificate-fill" />
+                    </div>
+                    <div>
+                      Absicherung
+                    </div>
                   </div>
-                  <div>
-                    angjährige Erfahrung,
+                  <div className="hidden sm:block sm:text-lg">
+                    Schützt, was Ihnen wichtig ist - mit den richtigen Versicherungen.
                   </div>
                 </div>
-                <div>
-                  unabhängige Marktübersicht,
+                <div className="bg-green-100 hover:bg-green-300 rounded-tr-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-content-center place-items-center hover:scale-102 duration-500">
+                  <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
+                    <div>
+                      <Icon icon="solar:health-bold" />
+                    </div>
+                    <div>
+                      Vorsorge
+                    </div>
+                  </div>
+                  <div className="hidden sm:block sm:text-lg">
+                    Denken Sie heute schon an morgen - mit privaten Vorsorgelösungen für Ihre Zukunft.
+                  </div>
                 </div>
-                <div>
-                  und maßgeschneiderte Lösungen.
+                <div className="bg-yellow-100 hover:bg-yellow-300 rounded-bl-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
+                  <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
+                    <div>
+                      <Icon icon="mdi:finance" />
+                    </div>
+                    <div>
+                      Finanzierung
+                    </div>
+                  </div>
+                  <div className="hidden sm:block sm:text-lg">
+                    Erfüllen Sie sich Ihre Wünsche - ob Eigenheim, Auto oder Investition.
+                  </div>
+                </div>
+                <div className="bg-orange-100 hover:bg-orange-300 rounded-br-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
+                  <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
+                    <div>
+                      <Icon icon="streamline:investment-selection" />
+                    </div>
+                    <div>
+                      Investment
+                    </div>
+                  </div>
+                  <div className="hidden sm:block sm:text-lg">
+                    Lassen Sie Ihr Geld für sich arbeiten - mit einem individuell erstellten Portfolio.
+                  </div>
                 </div>
               </div>
-              <div className="text-sm sm:text-xl">
-                Seit vielen Jahren begleiten wir unsere Kundinnen und Kunden bei allen Fragen rund um Versicherungen.
-                Dabei setzen wir nicht auf Standardlösungen, sondern auf persönliche Beratung und eine unabhängige Marktübersicht.
-                Das bedeutet: Wir vergleichen Angebote zahlreicher Versicherer und wählen gemeinsam mit dir jene Lösung aus, die wirklich zu deinem Leben passt.
-                So erhältst du eine Absicherung, die transparent, fair und auf deine individuellen Bedürfnisse zugeschnitten ist.
-              </div>
-
-              <Button text="Unser Team kontaktieren" className="my-5 sm:mt-10" isPrimary={false} />
             </div>
           </div>
         </ParallaxComponent>
@@ -404,7 +417,7 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} px-10 w-full sm:py-100`}>
+      <div className={`${defaultPadding} px-10 w-full sm:py-150`}>
         <ParallaxComponent
           speed={-30}
         >
