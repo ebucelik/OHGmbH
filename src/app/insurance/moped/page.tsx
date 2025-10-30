@@ -5,42 +5,36 @@ import { ProgressType } from "../../../components/progress/progressType";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
-export default function Car() {
+export default function Moped() {
     return <div>
         <div className="bg-appGray rounded-2xl flex flex-col sm:flex-row gap-5 px-10 py-5 sm:py-20 sm:p-20 sm:mx-10">
             <div className="flex-1 flex flex-col gap-2 place-content-center text-left">
                 <div className={`text-2xl sm:text-6xl ${radley.className} font-bold`}>
-                    Deine Auto-Versicherung
+                    Deine Moped-Versicherung
                 </div>
                 <div className="sm:text-lg">
-                    In Österreich ist die Kfz-Haftpflichtversicherung <b>gesetzlich vorgeschrieben</b> - sie schützt dich, wenn du mit deinem Fahrzeug einen Schaden verursachst.
-                    Wir helfen dir, den passenden Tarif zu finden, der nicht nur alle gesetzlichen Anforderungen erfüllt, sondern auch zu deinem Budget passt.
+                    Ein Unfall oder Schaden kann schnell teuer werden. Die <b>Haftpflichtversicherung</b> schützt dich vor Kosten, wenn du anderen etwas beschädigst - und ist in Österreich Pflicht. Mit <b>Kasko-Schutz</b> bist du auch bei Diebstahl oder Unwetterschäden abgesichert.
                 </div>
             </div>
             <div className="flex-1">
-                <img src="/carInsuranceInitial.webp" alt="Eine Frau fährt ein Auto." className="object-cover rounded-2xl shadow-xl" />
+                <img src="/mopedInsuranceInitial.webp" alt="Fahrendes Moped." className="object-cover rounded-2xl shadow-xl" />
             </div>
         </div>
         <div className={`flex flex-col place-items-center`}>
             <div className="sm:w-2/3 pt-15">
-                <ProgressStore progressType={ProgressType.car} />
+                <ProgressStore progressType={ProgressType.moped} />
             </div>
             <div className="flex flex-col gap-5 sm:gap-20 sm:w-2/3 px-5 py-10 sm:py-20">
                 <div className="text-2xl sm:text-4xl">
-                    Warum eine KFZ-Versicherung <span className="text-appPrimary font-bold">wichtig ist.</span>
+                    Warum eine Moped-Versicherung <span className="text-appPrimary font-bold">wichtig ist.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-5 sm:text-lg">
                     <div className="flex-1">
-                        <img src="/carInsurance.svg" alt="Wichtigkeit der Autoversicherung." className="object-cover rounded-2xl shadow-xl" />
+                        <img src="/mopedInsurance.svg" alt="Wichtigkeit der LKW-Versicherung." className="object-cover rounded-2xl shadow-xl" />
                     </div>
                     <div className="flex-1">
-                        Ein Auto bedeutet Freiheit - aber auch Verantwortung.
-                        Schon ein kleiner Unfall kann schnell hohe Kosten verursachen.
-                        Eine Kfz-Versicherung schützt dich genau davor: Sie übernimmt Schäden, die du anderen zufügst,
-                        und - je nach Deckung - auch Schäden an deinem eigenen Fahrzeug.
-                        <b> Ohne Versicherung müsstest du für Reparaturen, Gutachten oder Personenschäden selbst aufkommen -
-                            und das kann teuer werden.</b> Mit der richtigen Kfz-Versicherung bist du auf der sicheren Seite: finanziell geschützt,
-                        gesetzlich abgesichert und mit dem guten Gefühl, dass im Ernstfall jemand an deiner Seite steht.
+                        Auch mit dem Moped kann schnell etwas passieren - ein kleiner Unfall, ein Kratzer oder ein Schaden an einem anderen Fahrzeug kann hohe Kosten verursachen. Die Moped-Haftpflichtversicherung ist <b>in Österreich gesetzlich vorgeschrieben</b> und schützt dich, wenn du jemand anderem Schaden zufügst.
+                        Mit einer zusätzlichen Kasko-Versicherung bist du auch bei Diebstahl, Vandalismus oder Unwetterschäden abgesichert. So kannst du sorgenfrei fahren - sicher, geschützt und gesetzlich auf der richtigen Seite.
                     </div>
                 </div>
             </div>
@@ -63,15 +57,7 @@ export default function Car() {
                                 <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
                             </div>
                             <div>
-                                Sachschäden (z. B. an fremden Fahrzeugen, Gebäuden, Gegenständen)
-                            </div>
-                        </div>
-                        <div className="flex flex-row gap-5 place-items-center">
-                            <div>
-                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
-                            </div>
-                            <div>
-                                Eigenschäden am eigenen Fahrzeug (je nach Kaskovariante)
+                                Sachschäden (z. B. an fremden Fahrzeugen, Gebäuden oder Gütern)
                             </div>
                         </div>
                         <div className="flex flex-row gap-5 place-items-center">
@@ -87,7 +73,7 @@ export default function Car() {
                                 <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
                             </div>
                             <div>
-                                Diebstahl des Fahrzeugs oder Fahrzeugteilen
+                                Diebstahl des LKW oder einzelner Fahrzeugteile
                             </div>
                         </div>
                         <div className="flex flex-row gap-5 place-items-center">
@@ -95,7 +81,7 @@ export default function Car() {
                                 <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
                             </div>
                             <div>
-                                Glasbruch (Windschutzscheibe, Seitenscheiben, Scheinwerfer)
+                                Glasbruch (z. B. Windschutz- oder Seitenscheiben)
                             </div>
                         </div>
                         <div className="flex flex-row gap-5 place-items-center">
@@ -111,33 +97,7 @@ export default function Car() {
                                 <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
                             </div>
                             <div>
-                                Sturm-, Hagel-, Blitz- und Überschwemmungsschäden
-                            </div>
-                        </div>
-                        <div className="flex flex-row gap-5 place-items-center">
-                            <div>
-                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
-                            </div>
-                            <div>
-                                Marder- oder Kurzschlussschäden (je nach Tarif)
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-3 sm:text-xl">
-                        <div className="flex flex-row gap-5 place-items-center">
-                            <div>
-                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
-                            </div>
-                            <div>
-                                Rechtsschutzversicherung
-                            </div>
-                        </div>
-                        <div className="flex flex-row gap-5 place-items-center">
-                            <div>
-                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
-                            </div>
-                            <div>
-                                Insassen-Unfallversicherung (für Fahrer & Mitfahrer)
+                                Naturgewalten: Sturm, Hagel, Blitz, Überschwemmung
                             </div>
                         </div>
                         <div className="flex flex-row gap-5 place-items-center">
@@ -153,7 +113,7 @@ export default function Car() {
                                 <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
                             </div>
                             <div>
-                                Vandalismusschäden
+                                Marder- oder Kurzschlussschäden (je nach Tarif)
                             </div>
                         </div>
                         <div className="flex flex-row gap-5 place-items-center">
@@ -164,6 +124,8 @@ export default function Car() {
                                 Parkschäden (je nach Tarif)
                             </div>
                         </div>
+                    </div>
+                    <div className="flex flex-col gap-3 sm:text-xl">
                         <div className="flex flex-row gap-5 place-items-center">
                             <div>
                                 <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
@@ -193,7 +155,55 @@ export default function Car() {
                                 <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
                             </div>
                             <div>
-                                Zubehör- und Gepäckschutz (z. B. Felgen, Dachbox, Kindersitz)
+                                Vandalismus durch Dritte
+                            </div>
+                        </div>
+                        <div className="flex flex-row gap-5 place-items-center">
+                            <div>
+                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
+                            </div>
+                            <div>
+                                Schäden durch unbekannte Dritte
+                            </div>
+                        </div>
+                        <div className="flex flex-row gap-5 place-items-center">
+                            <div>
+                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
+                            </div>
+                            <div>
+                                Auslandsschutz (für internationale Fahrten)
+                            </div>
+                        </div>
+                        <div className="flex flex-row gap-5 place-items-center">
+                            <div>
+                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
+                            </div>
+                            <div>
+                                Zubehör- und Bekleidungsschutz (z. B. Helm, Jacke, Koffer)
+                            </div>
+                        </div>
+                        <div className="flex flex-row gap-5 place-items-center">
+                            <div>
+                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
+                            </div>
+                            <div>
+                                Pannenhilfe und Abschleppdienst
+                            </div>
+                        </div>
+                        <div className="flex flex-row gap-5 place-items-center">
+                            <div>
+                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
+                            </div>
+                            <div>
+                                Rechtsschutzversicherung
+                            </div>
+                        </div>
+                        <div className="flex flex-row gap-5 place-items-center">
+                            <div>
+                                <Icon icon="lets-icons:check-fill" className="h-12 w-12 text-green-600" />
+                            </div>
+                            <div>
+                                Insassen-Unfallversicherung
                             </div>
                         </div>
                     </div>
@@ -207,6 +217,18 @@ export default function Car() {
                     Mehr Versicherungen
                 </div>
                 <div className="grid grid-rows-1 sm:grid-cols-3 gap-10 py-5 sm:py-10 place-items-center sm:justify-center">
+                    <div className="hover:scale-101 duration-500">
+                        <Link href="/insurance/car">
+                            <div className="relative">
+                                <img src="/carInsuranceInitial.webp" alt="Auto-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                                <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
+                                    <div className="text-lg text-center">
+                                        Auto-Versicherung
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
                     <div className="hover:scale-101 duration-500">
                         <Link href="/insurance/lkw">
                             <div className="relative">
@@ -226,18 +248,6 @@ export default function Car() {
                                 <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                                     <div className="text-lg text-center">
                                         Motorrad-Versicherung
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="hover:scale-101 duration-500">
-                        <Link href="/insurance/moped">
-                            <div className="relative">
-                                <img src="/mopedInsuranceInitial.webp" alt="Moped-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
-                                <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                                    <div className="text-lg text-center">
-                                        Moped-Versicherung
                                     </div>
                                 </div>
                             </div>

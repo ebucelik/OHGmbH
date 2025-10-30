@@ -247,9 +247,9 @@ export default function LKW() {
                         </Link>
                     </div>
                     <div className="hover:scale-101 duration-500">
-                        <Link href="">
+                        <Link href="/insurance/moped">
                             <div className="relative">
-                                <img src="/mopedInsuranceInitial.webp" alt="Motorrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                                <img src="/mopedInsuranceInitial.webp" alt="Moped-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                                 <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                                     <div className="text-lg text-center">
                                         Moped-Versicherung
@@ -261,10 +261,10 @@ export default function LKW() {
                     <div className="hover:scale-101 duration-500">
                         <Link href="">
                             <div className="relative">
-                                <img src="/bicycleInsuranceInitial.webp" alt="Fahrrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                                <img src="/accidentInsuranceInitial.webp" alt="Unfall-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                                 <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                                     <div className="text-lg text-center">
-                                        Fahrrad-Versicherung
+                                        Unfall-Versicherung
                                     </div>
                                 </div>
                             </div>

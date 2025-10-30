@@ -100,13 +100,8 @@ export default function Header() {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/insurance/moped" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Moped
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Fahrrad
                                     </Link>
                                 </div>
                             </div>

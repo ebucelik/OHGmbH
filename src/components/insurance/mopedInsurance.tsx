@@ -9,7 +9,7 @@ import { shallowEqual } from "react-redux";
 import store from "../../app/store";
 import Link from "next/link";
 
-export default function MotorcycleInsurance() {
+export default function MopedInsurance() {
     const carInsurance = useAppSelector((state) => state.carInsuranceCore, shallowEqual)
     const dispatch = useAppDispatch()
     const required = true
@@ -51,7 +51,7 @@ export default function MotorcycleInsurance() {
             },
             {
                 key: "carDetails",
-                title: "Motorrad Details",
+                title: "Moped Details",
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
@@ -111,15 +111,6 @@ export default function MotorcycleInsurance() {
                             value={carInsurance[FormType.cubicCentimeter]}
                         />
                     </div>
-                    <div>
-                        <FormInput
-                            id={FormType.ownWeight}
-                            type={InputType.text}
-                            required={required}
-                            title={FormType.ownWeight}
-                            value={carInsurance[FormType.ownWeight]}
-                        />
-                    </div>
                     <FormInput
                         id={FormType.putAwayLicensePlateInWinter}
                         type={InputType.radio}
@@ -141,7 +132,7 @@ export default function MotorcycleInsurance() {
             },
             {
                 key: "carDetailsEnhanced",
-                title: "Motorrad Details Erweitert",
+                title: "Moped Details Erweitert",
                 children: <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <FormInput
@@ -449,13 +440,13 @@ export default function MotorcycleInsurance() {
     async function sendEmail(): Promise<Response> {
         return await fetch('/api/general', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'order': 'Motorrad-Versicherung' },
+            headers: { 'Content-Type': 'application/json', 'order': 'Moped-Versicherung' },
             body: JSON.stringify(state().carInsuranceCore)
         })
     }
 
     return <Progress
-        title="In wenigen Schritten zur Motorrad-Versicherung"
+        title="In wenigen Schritten zur Moped-Versicherung"
         firstStep={steps[0]}
         lastStep={steps[steps.length - 1]}
         steps={steps}
