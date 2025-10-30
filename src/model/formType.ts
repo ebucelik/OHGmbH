@@ -32,7 +32,8 @@ export enum FormType {
     city = "Ort",
     email = "E-Mail Adresse",
     phoneNumber = "Telefonnummer",
-    orderAccepted = "Beratungsauftrag akzeptiert"
+    orderAccepted = "Beratungsauftrag akzeptiert",
+    note = "Notiz"
 }
 
 export const carInsuranceFormTypes = Object.values(FormType)

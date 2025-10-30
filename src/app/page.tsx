@@ -128,10 +128,11 @@ export default function Home() {
             <div className="flex-1">
               <SliderComponent
                 children={[
-                  <div className="relative">
-                    <img
+                  <div className="relative" style={{ width: '100%', height: '100%' }}>
+                    <Image
                       src="/haraldotto3.webp" alt="Harald Otto"
-                      className="object-contain rounded-lg shadow-lg"
+                      fill
+                      className="rounded-lg shadow-lg"
                     />
                     <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                       <div className="text-lg sm:text-5xl font-bold">
@@ -142,10 +143,11 @@ export default function Home() {
                       </div>
                     </div>
                   </div>,
-                  <div className="relative">
+                  <div className="relative" style={{ width: '100%', height: '100%' }}>
                     <img
                       src="/holzmannmanuel.png" alt="Manuel Holzmann"
-                      className="object-contain rounded-lg shadow-lg"
+
+                      className="rounded-lg shadow-lg"
                     />
                     <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                       <div className="text-lg sm:text-5xl font-bold">
@@ -156,10 +158,11 @@ export default function Home() {
                       </div>
                     </div>
                   </div>,
-                  <div className="relative">
-                    <img
+                  <div className="relative" style={{ width: '100%', height: '100%' }}>
+                    <Image
                       src="/haraldotto3.webp" alt="Harald Otto"
-                      className="object-contain rounded-lg shadow-lg"
+                      fill
+                      className="rounded-lg shadow-lg"
                     />
                     <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                       <div className="text-lg sm:text-5xl font-bold">
@@ -170,10 +173,11 @@ export default function Home() {
                       </div>
                     </div>
                   </div>,
-                  <div className="relative">
-                    <img
+                  <div className="relative" style={{ width: '100%', height: '100%' }}>
+                    <Image
                       src="/holzmannmanuel.png" alt="Manuel Holzmann"
-                      className="object-contain rounded-lg shadow-lg"
+                      fill
+                      className="rounded-lg shadow-lg"
                     />
                     <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                       <div className="text-lg sm:text-5xl font-bold">
@@ -184,10 +188,11 @@ export default function Home() {
                       </div>
                     </div>
                   </div>,
-                  <div className="relative">
-                    <img
+                  <div className="relative" style={{ width: '100%', height: '100%' }}>
+                    <Image
                       src="/haraldotto3.webp" alt="Harald Otto"
-                      className="object-contain rounded-lg shadow-lg"
+                      fill
+                      className="rounded-lg shadow-lg"
                     />
                     <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                       <div className="text-lg sm:text-5xl font-bold">
@@ -198,10 +203,11 @@ export default function Home() {
                       </div>
                     </div>
                   </div>,
-                  <div className="relative">
-                    <img
+                  <div className="relative" style={{ width: '100%', height: '100%' }}>
+                    <Image
                       src="/holzmannmanuel.png" alt="Manuel Holzmann"
-                      className="object-contain rounded-lg shadow-lg"
+                      fill
+                      className="rounded-lg shadow-lg"
                     />
                     <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                       <div className="text-lg sm:text-5xl font-bold">
@@ -224,7 +230,7 @@ export default function Home() {
               insuranceNames.map(
                 (item, index) => (
                   <li key={index}>
-                    <img src={item + `-logo.svg`} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
+                    <Image src={`/` + item + `-logo.svg`} alt={item} width={200} height={100} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
                   </li>
                 )
               )
@@ -572,7 +578,7 @@ export default function Home() {
 
       <div className={`${defaultPadding} w-full py-20 relative z-2 bg-white`}>
         <div className={`text-xl sm:text-3xl text-left ${radley.className}`}>
-          Was unsere Kunden über uns sagen.
+          Unsere Kunden sind überzeugt.
         </div>
         <HCarousel
           outerDivClassName="sm:w-full"
@@ -620,7 +626,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={`${defaultPadding} w-full bg-appSecondary text-white`}>
+      <div className={`${defaultPadding} w-full bg-linear-to-b from-appSecondary from-10% to-white text-white sm:pb-20`}>
         <div>
           <div className="pb-10 text-2xl sm:text-5xl text-left">
             Was tun bei <span className="decoration-appPrimary underline underline-offset-8">einem Schaden?</span>

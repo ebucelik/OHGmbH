@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Contact() {
     return <div className={`${defaultPadding}`}>
-        <div className="flex flex-col sm:flex-row gap-15 sm:gap-0 py-30 sm:py-20 place-content-center sm:justify-evenly">
+        <div className="flex flex-col sm:flex-row gap-15 sm:gap-0 py-0 sm:py-20 sm:justify-evenly">
             <div className="flex flex-col sm:gap-15">
                 <div className="text-2xl sm:text-4xl">
                     Kontaktformular
@@ -25,7 +25,7 @@ export default function Contact() {
                             <Icon icon="ic:baseline-call" />
                         </div>
                         <div>
-                            <Link href="" className="hover:text-appPrimary">+43 664 1817109</Link>
+                            <Link href="tel:+43 664 1817109" className="hover:text-appPrimary">+43 664 1817109</Link>
                         </div>
                     </div>
                     <div className="flex flex-row place-items-center gap-5 text-lg sm:text-xl 2xl:text-2xl">
@@ -33,7 +33,7 @@ export default function Contact() {
                             <Icon icon="material-symbols:mail" />
                         </div>
                         <div>
-                            <Link href="" className="hover:text-appPrimary">office@oh-gmbh.at</Link>
+                            <Link href="mailto:office@oh-gmbh.at" className="hover:text-appPrimary">office@oh-gmbh.at</Link>
                         </div>
                     </div>
                 </div>
