@@ -3,5 +3,6 @@ export enum ProgressType {
     lkw = "lkw",
     motorcycle = "motorcycle",
     moped = "moped",
-    bicycle = "bicycle"
+    bicycle = "bicycle",
+    ownhome = "ownhome"
 }

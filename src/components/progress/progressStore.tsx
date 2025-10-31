@@ -7,6 +7,7 @@ import { ProgressType } from "./progressType";
 import LKWInsurance from "../insurance/lkwInsurance";
 import MotorcycleInsurance from "../insurance/motorcycleInsurance";
 import MopedInsurance from "../insurance/mopedInsurance";
+import OwnhomeInsurance from "../insurance/ownhomeInsurance";
 
 export default function ProgressStore(
     { progressType }: { progressType: ProgressType }
@@ -26,8 +27,8 @@ export default function ProgressStore(
             case ProgressType.moped:
                 return <MopedInsurance />
 
-            case ProgressType.bicycle:
-                return <div></div>
+            case ProgressType.ownhome:
+                return <OwnhomeInsurance />
         }
     }
 

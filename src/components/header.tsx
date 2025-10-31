@@ -111,7 +111,7 @@ export default function Header() {
                                     Wohnung
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/insurance/ownhome" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Eigenheim
                                     </Link>
                                 </div>
