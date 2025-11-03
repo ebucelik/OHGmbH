@@ -1,25 +1,25 @@
 "use client";
 
-import { FormType, carInsuranceFormTypes } from "../../model/formType";
+import { FormType, insuranceFormTypes } from "../../model/formType";
 import FormInput, { InputType } from "../formInput";
 import Progress, { Step } from "../progress/progress";
 import { useAppDispatch, useAppSelector } from "../../app/hook";
-import { InsuranceState, reset, setInsurance } from "../../core/carInsuranceCore";
+import { Insurance, reset, setInsuranceVehicle } from "../../core/insuranceCore";
 import { shallowEqual } from "react-redux";
 import store from "../../app/store";
 import Link from "next/link";
 
 export default function MotorcycleInsurance() {
-    const carInsurance = useAppSelector((state) => state.carInsuranceCore, shallowEqual)
+    const insurance = useAppSelector((state) => state.insuranceCore, shallowEqual)
     const dispatch = useAppDispatch()
     const required = true
     const state = store.getState
 
     function setInsuranceForm(
-        insuranceState: InsuranceState
+        insurance: Insurance
     ) {
         dispatch(
-            setInsurance(insuranceState)
+            setInsuranceVehicle(insurance)
         )
     }
 
@@ -39,12 +39,12 @@ export default function MotorcycleInsurance() {
                             "Haftpflicht und Teilkasko",
                             "Haftpflicht und Vollkasko"
                         ]}
-                        value={carInsurance[FormType.insuranceType]}
+                        value={insurance.vehicle[FormType.insuranceType]}
                         onChange={(event) => {
-                            const newInsuranceState: InsuranceState = {}
-                            newInsuranceState[FormType.insuranceType] = event.target.getAttribute('id') ?? ""
+                            const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
+                            newInsurance.vehicle[FormType.insuranceType] = event.target.getAttribute('id') ?? ""
 
-                            setInsuranceForm(newInsuranceState)
+                            setInsuranceForm(newInsurance)
                         }}
                     />
                 </div>
@@ -66,7 +66,7 @@ export default function MotorcycleInsurance() {
                                 "Hybrid",
                                 "Erdgas"
                             ]}
-                            value={carInsurance[FormType.movementType]}
+                            value={insurance.vehicle[FormType.movementType]}
                         />
                     </div>
                     <div>
@@ -78,7 +78,7 @@ export default function MotorcycleInsurance() {
                             listValues={[
                                 "Abarth", "AC", "Acura", "Aiways", "Alfa Romeo", "Alpina", "Alpine", "Ariel", "Arrinera", "Artega", "Asia Motors", "Aston Martin", "Audi", "BAC", "Baojun", "Bentley", "BMW", "Borgward", "Brabus", "Brilliance", "Bugatti", "Buick", "BYD", "Cadillac", "Carver", "Caterham", "Changan", "Changhe", "Chery", "Chevrolet", "Chrysler", "Citroën", "Cupra", "Dacia", "Daewoo", "Daihatsu", "De Tomaso", "Delorean", "DFSK", "Dodge", "Dongfeng", "DS Automobiles", "Elaris", "Exeed", "FAW", "Ferrari", "Fiat", "Fisker", "Ford", "Foton", "GAC", "Geely", "Genesis", "Ginetta", "GMC", "Great Wall", "Gumpert", "Haval", "HiPhi", "Hindustan Motors", "Holden", "Honda", "Hongqi", "Hummer", "Hyundai", "Infiniti", "Isuzu", "Iveco", "JAC", "Jaguar", "Jeep", "Jensen", "Karma", "Kia", "Koenigsegg", "KTM", "Lada", "Lamborghini", "Lancia", "Land Rover", "LEVC", "Lexus", "Ligier", "Lincoln", "Lotus", "Lucid", "Luxgen", "Maserati", "Maybach", "Mazda", "McLaren", "Mercedes-AMG", "Mercedes-Benz", "Mercury", "MG", "Microcar", "Mini", "Mitsubishi", "Morgan", "Nio", "Nissan", "Noble", "Oldsmobile", "Opel", "Pagani", "Peugeot", "Piaggio", "Pininfarina", "Plymouth", "Polestar", "Pontiac", "Porsche", "Proton", "Qoros", "RAM", "Renault", "Rezvani", "Rimac", "Rivian", "Rolls-Royce", "Rover", "Saab", "Saleen", "Samsung", "Saturn", "Scion", "SEAT", "Seres", "Shelby", "Škoda", "Smart", "Spyker", "SsangYong", "Subaru", "Suzuki", "Tata", "Tazzari", "Tesla", "Toyota", "Trabant", "TVR", "Vauxhall", "Venturi", "Volkswagen", "Volvo", "W Motors", "Wartburg", "Wiesmann", "XPeng", "Yugo", "Zastava", "Zhidou", "Zotye"
                             ]}
-                            value={carInsurance[FormType.brand]}
+                            value={insurance.vehicle[FormType.brand]}
                         />
                     </div>
                     <div>
@@ -88,7 +88,7 @@ export default function MotorcycleInsurance() {
                             required={required}
                             title={FormType.modelName}
                             placeholder="zB.: CLA 180"
-                            value={carInsurance[FormType.modelName]}
+                            value={insurance.vehicle[FormType.modelName]}
                         />
                     </div>
                     <div>
@@ -98,7 +98,7 @@ export default function MotorcycleInsurance() {
                             required={required}
                             title={FormType.enginePower}
                             placeholder="zB.: 110"
-                            value={carInsurance[FormType.enginePower]}
+                            value={insurance.vehicle[FormType.enginePower]}
                         />
                     </div>
                     <div>
@@ -108,7 +108,7 @@ export default function MotorcycleInsurance() {
                             required={required}
                             title={FormType.cubicCentimeter}
                             placeholder="zB.: 125 ccm"
-                            value={carInsurance[FormType.cubicCentimeter]}
+                            value={insurance.vehicle[FormType.cubicCentimeter]}
                         />
                     </div>
                     <div>
@@ -117,7 +117,7 @@ export default function MotorcycleInsurance() {
                             type={InputType.text}
                             required={required}
                             title={FormType.ownWeight}
-                            value={carInsurance[FormType.ownWeight]}
+                            value={insurance.vehicle[FormType.ownWeight]}
                         />
                     </div>
                     <FormInput
@@ -129,12 +129,12 @@ export default function MotorcycleInsurance() {
                             "Ja",
                             "Nein"
                         ]}
-                        value={carInsurance[FormType.putAwayLicensePlateInWinter]}
+                        value={insurance.vehicle[FormType.putAwayLicensePlateInWinter]}
                         onChange={(event) => {
-                            const newInsuranceState: InsuranceState = {}
-                            newInsuranceState[FormType.putAwayLicensePlateInWinter] = event.target.getAttribute('id') ?? ""
+                            const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
+                            newInsurance.vehicle[FormType.putAwayLicensePlateInWinter] = event.target.getAttribute('id') ?? ""
 
-                            setInsuranceForm(newInsuranceState)
+                            setInsuranceForm(newInsurance)
                         }}
                     />
                 </div>
@@ -150,7 +150,7 @@ export default function MotorcycleInsurance() {
                             required={required}
                             title={FormType.creationDate}
                             placeholder="zB.: 2020"
-                            value={carInsurance[FormType.creationDate]}
+                            value={insurance.vehicle[FormType.creationDate]}
                         />
                     </div>
                     <div>
@@ -169,7 +169,7 @@ export default function MotorcycleInsurance() {
                                 "8",
                                 "9"
                             ]}
-                            value={carInsurance[FormType.amountOfSeats]}
+                            value={insurance.vehicle[FormType.amountOfSeats]}
                         />
                     </div>
                     <div>
@@ -181,7 +181,7 @@ export default function MotorcycleInsurance() {
                             listValues={[
                                 "AM", "B", "BL", "BN", "BZ", "E", "FW", "G", "GM", "GS", "GU", "HA", "HB", "HE", "HO", "IL", "IM", "JE", "JO", "KI", "KL", "KO", "KR", "KS", "KU", "LA", "LB", "LE", "LF", "LI", "LN", "LO", "LZ", "MD", "ME", "MI", "MU", "ND", "NK", "OP", "PE", "PL", "RE", "RI", "RO", "S", "SD", "SE", "SL", "SP", "SR", "ST", "SZ", "TA", "TU", "UU", "VB", "VI", "VL", "VO", "W", "WB", "WE", "WL", "WO", "WT", "WU", "WY", "ZE"
                             ]}
-                            value={carInsurance[FormType.registrationDistrict]}
+                            value={insurance.vehicle[FormType.registrationDistrict]}
                         />
                     </div>
                     <div>
@@ -217,7 +217,7 @@ export default function MotorcycleInsurance() {
                                 "16",
                                 "17"
                             ]}
-                            value={carInsurance[FormType.bonusLevel]}
+                            value={insurance.vehicle[FormType.bonusLevel]}
                         />
                     </div>
                     <div>
@@ -233,7 +233,7 @@ export default function MotorcycleInsurance() {
                                 "max 30.000 km",
                                 "mehr als 30.000 km",
                             ]}
-                            value={carInsurance[FormType.kmPerYear]}
+                            value={insurance.vehicle[FormType.kmPerYear]}
                         />
                     </div>
                 </div>
@@ -252,7 +252,7 @@ export default function MotorcycleInsurance() {
                                 "Abbuchungsauftrag",
                                 "Zahlschein"
                             ]}
-                            value={carInsurance[FormType.paymentType]}
+                            value={insurance.vehicle[FormType.paymentType]}
                         />
                     </div>
                     <div>
@@ -267,7 +267,7 @@ export default function MotorcycleInsurance() {
                                 "halbjährlich",
                                 "jährlich"
                             ]}
-                            value={carInsurance[FormType.paymentFrequency]}
+                            value={insurance.vehicle[FormType.paymentFrequency]}
                         />
                     </div>
                 </div>
@@ -288,7 +288,7 @@ export default function MotorcycleInsurance() {
                                     "Frau",
                                     "Firma"
                                 ]}
-                                value={carInsurance[FormType.salutation]}
+                                value={insurance.vehicle[FormType.salutation]}
                             />
                         </div>
                         <div>
@@ -297,7 +297,7 @@ export default function MotorcycleInsurance() {
                                 type={InputType.text}
                                 title={FormType.academicTitlePre}
                                 placeholder="zB.: Ing."
-                                value={carInsurance[FormType.academicTitlePre]}
+                                value={insurance.vehicle[FormType.academicTitlePre]}
                             />
                         </div>
                         <div>
@@ -306,7 +306,7 @@ export default function MotorcycleInsurance() {
                                 type={InputType.text}
                                 required={required}
                                 title={FormType.firstname}
-                                value={carInsurance[FormType.firstname]}
+                                value={insurance.vehicle[FormType.firstname]}
                             />
                         </div>
                         <div>
@@ -315,7 +315,7 @@ export default function MotorcycleInsurance() {
                                 type={InputType.text}
                                 required={required}
                                 title={FormType.lastname}
-                                value={carInsurance[FormType.lastname]}
+                                value={insurance.vehicle[FormType.lastname]}
                             />
                         </div>
                         <div>
@@ -324,7 +324,7 @@ export default function MotorcycleInsurance() {
                                 type={InputType.text}
                                 title={FormType.academicTitlePost}
                                 placeholder="zB.: BSc"
-                                value={carInsurance[FormType.academicTitlePost]}
+                                value={insurance.vehicle[FormType.academicTitlePost]}
                             />
                         </div>
                         <div>
@@ -336,7 +336,7 @@ export default function MotorcycleInsurance() {
                                 listValues={[
                                     "Afghanistan", "Albanien", "Algerien", "Andorra", "Angola", "Antigua und Barbuda", "Äquatorialguinea", "Argentinien", "Armenien", "Aserbaidschan", "Äthiopien", "Australien", "Bahamas", "Bahrain", "Bangladesch", "Barbados", "Belarus", "Belgien", "Belize", "Benin", "Bhutan", "Bolivien", "Bosnien und Herzegowina", "Botswana", "Brasilien", "Brunei", "Bulgarien", "Burkina Faso", "Burundi", "Cabo Verde", "Chile", "China", "Costa Rica", "Dänemark", "Deutschland", "Dominica", "Dominikanische Republik", "Dschibuti", "Ecuador", "El Salvador", "Elfenbeinküste", "Eritrea", "Estland", "Eswatini", "Fidschi", "Finnland", "Frankreich", "Gabun", "Gambia", "Georgien", "Ghana", "Grenada", "Griechenland", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Indien", "Indonesien", "Irak", "Iran", "Irland", "Island", "Israel", "Italien", "Jamaika", "Japan", "Jemen", "Jordanien", "Kambodscha", "Kamerun", "Kanada", "Kasachstan", "Katar", "Kenia", "Kirgisistan", "Kiribati", "Kolumbien", "Komoren", "Kongo", "Kongo, Demokratische Republik", "Kroatien", "Kuba", "Kuwait", "Laos", "Lesotho", "Lettland", "Libanon", "Liberia", "Libyen", "Liechtenstein", "Litauen", "Luxemburg", "Madagaskar", "Malawi", "Malaysia", "Malediven", "Mali", "Malta", "Marokko", "Marshallinseln", "Mauretanien", "Mauritius", "Mexiko", "Mikronesien", "Moldau", "Monaco", "Mongolei", "Montenegro", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Neuseeland", "Nicaragua", "Niederlande", "Niger", "Nigeria", "Nordkorea", "Nordmazedonien", "Norwegen", "Oman", "Österreich", "Osttimor", "Pakistan", "Palästina", "Panama", "Papua-Neuguinea", "Paraguay", "Peru", "Philippinen", "Polen", "Portugal", "Ruanda", "Rumänien", "Russland", "Salomonen", "Sambia", "Samoa", "San Marino", "São Tomé und Príncipe", "Saudi-Arabien", "Schweden", "Schweiz", "Senegal", "Serbien", "Seychellen", "Sierra Leone", "Simbabwe", "Singapur", "Slowakei", "Slowenien", "Somalia", "Spanien", "Sri Lanka", "St. Kitts und Nevis", "St. Lucia", "St. Vincent und die Grenadinen", "Südafrika", "Sudan", "Südsudan", "Suriname", "Syrien", "Tadschikistan", "Tansania", "Thailand", "Togo", "Tonga", "Trinidad und Tobago", "Tschad", "Tschechien", "Tunesien", "Türkei", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "Ungarn", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstadt", "Venezuela", "Vereinigte Arabische Emirate", "Vereinigte Staaten", "Vereinigtes Königreich", "Vietnam", "Weißrussland", "Zentralafrikanische Republik", "Zypern"
                                 ]}
-                                value={carInsurance[FormType.citizenship]}
+                                value={insurance.vehicle[FormType.citizenship]}
                             />
                         </div>
                         <div>
@@ -346,7 +346,7 @@ export default function MotorcycleInsurance() {
                                 required={required}
                                 title={FormType.birthday}
                                 placeholder="zB.: 22.01.1998"
-                                value={carInsurance[FormType.birthday]}
+                                value={insurance.vehicle[FormType.birthday]}
                             />
                         </div>
                         <div>
@@ -356,7 +356,7 @@ export default function MotorcycleInsurance() {
                                 required={required}
                                 title={FormType.job}
                                 placeholder="zB.: Informatiker"
-                                value={carInsurance[FormType.job]}
+                                value={insurance.vehicle[FormType.job]}
                             />
                         </div>
                         <div>
@@ -366,7 +366,7 @@ export default function MotorcycleInsurance() {
                                 required={required}
                                 title={FormType.address}
                                 placeholder="zB.: Hauptstraße 1"
-                                value={carInsurance[FormType.address]}
+                                value={insurance.vehicle[FormType.address]}
                             />
                         </div>
                         <div>
@@ -376,7 +376,7 @@ export default function MotorcycleInsurance() {
                                 required={required}
                                 title={FormType.doornumber}
                                 placeholder="zB.: 28/2"
-                                value={carInsurance[FormType.doornumber]}
+                                value={insurance.vehicle[FormType.doornumber]}
                             />
                         </div>
                         <div>
@@ -386,7 +386,7 @@ export default function MotorcycleInsurance() {
                                 required={required}
                                 title={FormType.postalCode}
                                 placeholder="zB.: 2500"
-                                value={carInsurance[FormType.postalCode]}
+                                value={insurance.vehicle[FormType.postalCode]}
                             />
                         </div>
                         <div>
@@ -396,7 +396,7 @@ export default function MotorcycleInsurance() {
                                 required={required}
                                 title={FormType.city}
                                 placeholder="zB.: Baden"
-                                value={carInsurance[FormType.city]}
+                                value={insurance.vehicle[FormType.city]}
                             />
                         </div>
                         <div>
@@ -406,7 +406,7 @@ export default function MotorcycleInsurance() {
                                 required={required}
                                 title={FormType.email}
                                 placeholder="zB.: maxmustermann@hotmail.com"
-                                value={carInsurance[FormType.email]}
+                                value={insurance.vehicle[FormType.email]}
                             />
                         </div>
                         <div>
@@ -416,7 +416,7 @@ export default function MotorcycleInsurance() {
                                 required={required}
                                 title={FormType.phoneNumber}
                                 placeholder="zB.: +43 660 1111100"
-                                value={carInsurance[FormType.phoneNumber]}
+                                value={insurance.vehicle[FormType.phoneNumber]}
                             />
                         </div>
                     </div>
@@ -434,11 +434,11 @@ export default function MotorcycleInsurance() {
                                     <Link href=""><b className="text-appPrimary"> AGB</b></Link>.
                                 </div>
                             ]}
-                            value={carInsurance[FormType.orderAccepted]}
+                            value={insurance.vehicle[FormType.orderAccepted]}
                             onChange={() => {
-                                const newInsuranceState: InsuranceState = {}
-                                newInsuranceState[FormType.orderAccepted] = state().carInsuranceCore[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
-                                setInsuranceForm(newInsuranceState)
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
+                                newInsurance.vehicle[FormType.orderAccepted] = state().insuranceCore.vehicle[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
+                                setInsuranceForm(newInsurance)
                             }}
                         />
                     </div>
@@ -450,7 +450,7 @@ export default function MotorcycleInsurance() {
         return await fetch('/api/general', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'order': 'Motorrad-Versicherung' },
-            body: JSON.stringify(state().carInsuranceCore)
+            body: JSON.stringify(state().insuranceCore.vehicle)
         })
     }
 
@@ -461,15 +461,15 @@ export default function MotorcycleInsurance() {
         steps={steps}
         onSendEmail={sendEmail}
         onNextStep={(formData) => {
-            const newInsuranceState: InsuranceState = {}
+            const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
 
-            carInsuranceFormTypes.forEach((type) => {
-                newInsuranceState[type] = formData.get(type)?.toString() ?? ""
+            insuranceFormTypes.forEach((type) => {
+                newInsurance.vehicle[type] = formData.get(type)?.toString() ?? ""
             })
 
-            newInsuranceState[FormType.orderAccepted] = newInsuranceState[FormType.orderAccepted] != 'NEIN' ? 'JA' : 'NEIN'
+            newInsurance.vehicle[FormType.orderAccepted] = newInsurance.vehicle[FormType.orderAccepted] != 'NEIN' ? 'JA' : 'NEIN'
 
-            setInsuranceForm(newInsuranceState)
+            setInsuranceForm(newInsurance)
         }}
         afterEmailSent={() => dispatch(reset())} />
 }

@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import carInsuranceReducer from '../core/carInsuranceCore'
+import insuranceReducer from '../core/insuranceCore'
 
 export const store = configureStore({
     reducer: {
-        carInsuranceCore: carInsuranceReducer
+        insuranceCore: insuranceReducer
     }
 })
 

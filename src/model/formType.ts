@@ -40,7 +40,14 @@ export enum FormType {
     floor2 = "2. Stockwerk",
     floor3 = "3. Stockwerk",
     attic = "Mansarde",
-    cellar = "Keller"
+    cellar = "Keller",
+    addressOfOwnhome = "Adresse Eigenheim",
+    doorOfOwnhome = "Haus/Stiege/Stock/Türnummer",
+    plzOfOwnhome = "PLZ Eigenheim",
+    cityOfOwnhome = "Ort Eigenheim",
+    livingAreaOwnhome = "Wohnfläche m2 (ohne Balkon)",
+    equipmentOwnhome = "Ausstattung",
+    paymentOwnhome = "Zahlweise"
 }
 
-export const carInsuranceFormTypes = Object.values(FormType)
+export const insuranceFormTypes = Object.values(FormType)

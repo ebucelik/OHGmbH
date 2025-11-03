@@ -1,5 +1,5 @@
-import { carInsuranceFormTypes } from "../../model/formType";
-import { InsuranceState } from "../../core/carInsuranceCore";
+import { insuranceFormTypes } from "../../model/formType";
+import { InsuranceState } from "../../core/insuranceCore";
 
 export default function EmailTemplate({ order, insurance }: { order: String | null, insurance: InsuranceState }) {
     const currentDay = new Date().toLocaleDateString("de-DE", { timeZone: "Europe/Paris", hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -7,7 +7,7 @@ export default function EmailTemplate({ order, insurance }: { order: String | nu
     function getInsurance(): React.ReactNode {
         return <div>
             {
-                carInsuranceFormTypes.map((type, key) => {
+                insuranceFormTypes.map((type, key) => {
                     return insurance[type] != "" && insurance[type] != undefined
                         ? (
                             <div key={key}>

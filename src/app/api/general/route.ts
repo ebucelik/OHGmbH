@@ -1,4 +1,4 @@
-import { InsuranceState } from "../../../core/carInsuranceCore"
+import { InsuranceState } from "../../../core/insuranceCore"
 import EmailTemplate from "../../../components/emailTemplate/emailTemplate"
 import { Resend } from "resend"
 import { NextRequest } from "next/server"
