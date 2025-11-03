@@ -5,41 +5,39 @@ import { ProgressType } from "../../../components/progress/progressType";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 
-export default function Motorcycle() {
+export default function Flat() {
     return <div>
         <div className="bg-appGray rounded-2xl flex flex-col sm:flex-row gap-5 px-10 py-5 sm:py-20 sm:p-20 sm:mx-10">
             <div className="flex-1 flex flex-col gap-2 place-content-center text-left">
                 <div className={`text-2xl sm:text-6xl ${radley.className} font-bold`}>
-                    Deine Motorrad-Versicherung
+                    Deine Haushalts-Versicherung
                 </div>
                 <div className="sm:text-lg">
-                    Ob kurze Ausfahrt oder lange Tour - mit der passenden Motorrad-Versicherung bist du auf jeder Strecke gut geschützt.
-                    Die <b>Haftpflichtversicherung</b> deckt Schäden ab, die du anderen zufügst, und ist in Österreich verpflichtend.
-                    Für zusätzlichen Schutz sorgt die <b>Kasko-Versicherung</b>: Sie übernimmt Kosten bei Diebstahl, Unwetterschäden, Vandalismus oder selbstverschuldeten Unfällen.
+                    Eine <b>Haushaltsversicherung</b> schützt dein Hab und Gut vor <b>Feuer, Wasser, Einbruch oder Sturm</b>. So ist dein Zuhause und alles darin bestens abgesichert - egal, was passiert.
                 </div>
             </div>
             <div className="flex-1">
-                <img src="/motorcycleInsuranceInitial.webp" alt="Fahrendes Motorrad." className="object-cover rounded-2xl shadow-xl" />
+                <img src="/householdInsuranceInitial.webp" alt="Haushalt" className="object-cover rounded-2xl shadow-xl" />
             </div>
         </div>
         <div className={`flex flex-col place-items-center`}>
             <div className="sm:w-2/3 pt-15">
-                <ProgressStore progressType={ProgressType.motorcycle} />
+                <ProgressStore progressType={ProgressType.flat} />
             </div>
             <div className="flex flex-col gap-5 sm:gap-20 sm:w-2/3 px-5 py-10 sm:py-20">
                 <div className="text-2xl sm:text-4xl">
-                    Warum eine Motorrad-Versicherung <span className="text-appPrimary font-bold">wichtig ist.</span>
+                    Warum eine Haushalts-Versicherung <span className="text-appPrimary font-bold">wichtig ist.</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-5 sm:text-lg">
                     <div className="flex-1">
-                        <img src="/motorcycleInsurance.svg" alt="Wichtigkeit der LKW-Versicherung." className="object-cover rounded-2xl shadow-xl" />
+                        <img src="/householdInsurance.svg" alt="Wichtigkeit der Haushalts-Versicherung." className="object-cover rounded-2xl shadow-xl" />
                     </div>
                     <div className="flex-1">
-                        Freiheit auf zwei Rädern - aber sicher!
-                        Mit der richtigen Motorrad-Versicherung bist du bestens geschützt, egal ob auf der Landstraße, in der Stadt oder auf Tour.
-                        Die <b>Kfz-Haftpflichtversicherung ist gesetzlich vorgeschrieben</b> und deckt Schäden ab, die du anderen zufügst.
-                        Eine Teilkasko oder Vollkasko sichert zusätzlich dein eigenes Bike - etwa bei Diebstahl, Unwetterschäden oder selbstverschuldeten Unfällen.
-                        So kannst du dich ganz aufs Fahren konzentrieren - <b>wir kümmern uns um den passenden Schutz</b>.
+                        Dein Zuhause ist mehr als nur vier Wände - es steckt voller Erinnerungen und Wertgegenstände. Eine <b>Haushaltsversicherung</b> schützt alles, was sich im Haushalt befindet: Möbel, Kleidung, Elektrogeräte, Schmuck und vieles mehr.
+                        <br />
+                        Sie greift bei <b>Einbruchdiebstahl, Feuer, Leitungswasser-, Sturm- und Hagelschäden</b> und übernimmt auch Folgekosten wie Aufräumarbeiten oder Hotelkosten nach einem großen Schaden.
+                        <br />
+                        So kannst du dich darauf verlassen, dass dein Besitz und dein Alltag auch im Ernstfall gut geschützt sind.
                     </div>
                 </div>
             </div>
@@ -283,12 +281,12 @@ export default function Motorcycle() {
                         </Link>
                     </div>
                     <div className="hover:scale-101 duration-500">
-                        <Link href="/insurance/flat">
+                        <Link href="/insurance/ownhome">
                             <div className="relative">
-                                <img src="/householdInsuranceInitial.webp" alt="Haushalts-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                                <img src="/ownhomeInsuranceInitial.webp" alt="Haushalts-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                                 <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                                     <div className="text-lg text-center">
-                                        Haushalts-Versicherung
+                                        Eigenheim-Versicherung
                                     </div>
                                 </div>
                             </div>

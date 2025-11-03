@@ -8,6 +8,7 @@ import LKWInsurance from "../insurance/lkwInsurance";
 import MotorcycleInsurance from "../insurance/motorcycleInsurance";
 import MopedInsurance from "../insurance/mopedInsurance";
 import OwnhomeInsurance from "../insurance/ownhomeInsurance";
+import FlatInsurance from "../insurance/flatInsurance";
 
 export default function ProgressStore(
     { progressType }: { progressType: ProgressType }
@@ -29,6 +30,9 @@ export default function ProgressStore(
 
             case ProgressType.ownhome:
                 return <OwnhomeInsurance />
+
+            case ProgressType.flat:
+                return <FlatInsurance />
         }
     }
 

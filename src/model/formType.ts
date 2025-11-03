@@ -47,7 +47,12 @@ export enum FormType {
     cityOfOwnhome = "Ort Eigenheim",
     livingAreaOwnhome = "Wohnfläche m2 (ohne Balkon)",
     equipmentOwnhome = "Ausstattung",
-    paymentOwnhome = "Zahlweise"
+    paymentOwnhome = "Zahlweise",
+    areaOfFlat = "Wie groß ist deine Wohnung?",
+    animalInsurance = "Tierhaftpflicht",
+    addressOfFlat = "Adresse Wohnung",
+    plzOfFlat = "PLZ Wohnung",
+    cityOfFlat = "Ort Wohnung",
 }
 
 export const insuranceFormTypes = Object.values(FormType)
