@@ -41,7 +41,7 @@ export default function LKWInsurance() {
                         ]}
                         value={insurance.vehicle[FormType.insuranceType]}
                         onChange={(event) => {
-                            const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
+                            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
                             newInsurance.vehicle[FormType.insuranceType] = event.target.getAttribute('id') ?? ""
 
                             setInsuranceForm(newInsurance)
@@ -452,7 +452,7 @@ export default function LKWInsurance() {
                             ]}
                             value={insurance.vehicle[FormType.orderAccepted]}
                             onChange={() => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
                                 newInsurance.vehicle[FormType.orderAccepted] = state().insuranceCore.vehicle[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
                                 setInsuranceForm(newInsurance)
                             }}
@@ -477,7 +477,7 @@ export default function LKWInsurance() {
         steps={steps}
         onSendEmail={sendEmail}
         onNextStep={(formData) => {
-            const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
+            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
 
             insuranceFormTypes.forEach((type) => {
                 newInsurance.vehicle[type] = formData.get(type)?.toString() ?? ""

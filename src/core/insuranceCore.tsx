@@ -7,17 +7,20 @@ export interface InsuranceState {
 
 export interface Insurance {
     vehicle: InsuranceState,
-    ownHome: InsuranceState
+    ownHome: InsuranceState,
+    law: InsuranceState
 }
 
 const initialState: Insurance = {
     vehicle: {},
-    ownHome: {}
+    ownHome: {},
+    law: {}
 }
 
 insuranceFormTypes.forEach((type) => {
     initialState.vehicle[type] = ''
     initialState.ownHome[type] = ''
+    initialState.law[type] = ''
 })
 
 initialState.vehicle[FormType.bonusLevel] = '9'
@@ -51,15 +54,25 @@ export const insuranceCore = createSlice({
 
             return newState
         },
+        setInsuranceLaw: (state, action: PayloadAction<Insurance>) => {
+            const newState = action.payload
+
+            insuranceFormTypes.forEach((type) => {
+                newState.law[type] = newState.law[type] === "" || newState.law[type] == undefined ? state.law[type] : newState.law[type]
+            })
+
+            return newState
+        },
         reset: () => {
             return {
                 vehicle: {},
-                ownHome: {}
+                ownHome: {},
+                law: {}
             }
         }
     }
 })
 
-export const { setInsuranceVehicle, setInsuranceOwnhome, reset } = insuranceCore.actions
+export const { setInsuranceVehicle, setInsuranceOwnhome, setInsuranceLaw, reset } = insuranceCore.actions
 
 export default insuranceCore.reducer

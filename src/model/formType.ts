@@ -23,6 +23,7 @@ export enum FormType {
     firstname = "Vorname",
     lastname = "Nachname",
     academicTitlePost = "Akad. Grad (nachgestellt)",
+    work = "Ihre berufliche Situation",
     citizenship = "Staatsbürgerschaft",
     birthday = "Geburtstag",
     job = "Beruf",
@@ -53,6 +54,13 @@ export enum FormType {
     addressOfFlat = "Adresse Wohnung",
     plzOfFlat = "PLZ Wohnung",
     cityOfFlat = "Ort Wohnung",
+    lawType = "Zu versichernder Umfang",
+    lawPersons = "Zu versichernde Person(en)",
+    lawVehicles = "Zu versichernde Fahrzeuge",
+    lawInheritance = "Erbrecht",
+    lawFamily = "Familienrecht",
+    lawProperty = "Immobilienrecht",
+
 }
 
 export const insuranceFormTypes = Object.values(FormType)

@@ -295,7 +295,7 @@ export default function FlatInsurance() {
                             ]}
                             value={insurance.ownHome[FormType.orderAccepted]}
                             onChange={() => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
                                 newInsurance.ownHome[FormType.orderAccepted] = state().insuranceCore.ownHome[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
                                 setInsuranceForm(newInsurance)
                             }}
@@ -320,7 +320,7 @@ export default function FlatInsurance() {
         steps={steps}
         onSendEmail={sendEmail}
         onNextStep={(formData) => {
-            const newInsurance: Insurance = { vehicle: {}, ownHome: {} }
+            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
 
             insuranceFormTypes.forEach((type) => {
                 newInsurance.ownHome[type] = formData.get(type)?.toString() ?? ""

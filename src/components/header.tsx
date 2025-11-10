@@ -153,24 +153,8 @@ export default function Header() {
                                     Recht
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/insurance/law" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Rechtsschutz
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="py-2 pl-2">
-                                <div className="font-bold pb-2">
-                                    Freizeit
-                                </div>
-                                <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Reise
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Privathaftpflicht
                                     </Link>
                                 </div>
                             </div>

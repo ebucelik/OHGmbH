@@ -4,5 +4,6 @@ export enum ProgressType {
     motorcycle = "motorcycle",
     moped = "moped",
     ownhome = "ownhome",
-    flat = "flat"
+    flat = "flat",
+    law = "law"
 }
