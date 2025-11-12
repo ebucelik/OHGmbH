@@ -60,7 +60,18 @@ export enum FormType {
     lawInheritance = "Erbrecht",
     lawFamily = "Familienrecht",
     lawProperty = "Immobilienrecht",
-
+    accidentPersons = "Zu versichernde Personen",
+    accidentBirthday = "Geburtsdatum",
+    accidentWorkDetail = "Beruf näher angeben",
+    accidentBirthdayOfPartner = "Geburtdatum Ihres Partners",
+    accidentWorkOfPartner = "Berufliche Situation Ihres Partners",
+    accidentWorkDetailOfPartner = "Beruf Ihres Partners näher angeben",
+    accidentInvalidity = "Invaliditätssumme",
+    accidentPension = "Unfallrente",
+    accidentDead = "Unfalltod (Summe für Hinterbliebene)",
+    accidentCosts = "Unfallkosten",
+    accidentBonebreak = "Knochenbruch",
+    accidentHospitalMoney = "Spitalgeld"
 }
 
 export const insuranceFormTypes = Object.values(FormType)

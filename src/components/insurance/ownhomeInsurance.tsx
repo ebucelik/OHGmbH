@@ -43,7 +43,7 @@ export default function OwnhomeInsurance() {
                             ]}
                             value={insurance.ownHome[FormType.floors]}
                             onChange={(event) => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
                                 newInsurance.ownHome[FormType.floors] = event.target.getAttribute('id') ?? ""
 
                                 setInsuranceForm(newInsurance)
@@ -372,7 +372,7 @@ export default function OwnhomeInsurance() {
                             ]}
                             value={insurance.ownHome[FormType.orderAccepted]}
                             onChange={() => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
                                 newInsurance.ownHome[FormType.orderAccepted] = state().insuranceCore.ownHome[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
                                 setInsuranceForm(newInsurance)
                             }}
@@ -397,7 +397,7 @@ export default function OwnhomeInsurance() {
         steps={steps}
         onSendEmail={sendEmail}
         onNextStep={(formData) => {
-            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
+            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
 
             insuranceFormTypes.forEach((type) => {
                 newInsurance.ownHome[type] = formData.get(type)?.toString() ?? ""

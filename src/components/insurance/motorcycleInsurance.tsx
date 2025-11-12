@@ -41,7 +41,7 @@ export default function MotorcycleInsurance() {
                         ]}
                         value={insurance.vehicle[FormType.insuranceType]}
                         onChange={(event) => {
-                            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
+                            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
                             newInsurance.vehicle[FormType.insuranceType] = event.target.getAttribute('id') ?? ""
 
                             setInsuranceForm(newInsurance)
@@ -131,7 +131,7 @@ export default function MotorcycleInsurance() {
                         ]}
                         value={insurance.vehicle[FormType.putAwayLicensePlateInWinter]}
                         onChange={(event) => {
-                            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
+                            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
                             newInsurance.vehicle[FormType.putAwayLicensePlateInWinter] = event.target.getAttribute('id') ?? ""
 
                             setInsuranceForm(newInsurance)
@@ -436,7 +436,7 @@ export default function MotorcycleInsurance() {
                             ]}
                             value={insurance.vehicle[FormType.orderAccepted]}
                             onChange={() => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
                                 newInsurance.vehicle[FormType.orderAccepted] = state().insuranceCore.vehicle[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
                                 setInsuranceForm(newInsurance)
                             }}
@@ -461,7 +461,7 @@ export default function MotorcycleInsurance() {
         steps={steps}
         onSendEmail={sendEmail}
         onNextStep={(formData) => {
-            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {} }
+            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
 
             insuranceFormTypes.forEach((type) => {
                 newInsurance.vehicle[type] = formData.get(type)?.toString() ?? ""
