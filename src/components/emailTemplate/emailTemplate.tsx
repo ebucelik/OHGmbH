@@ -23,10 +23,10 @@ export default function EmailTemplate({ order, insurance }: { order: String | nu
     return (
         <div>
             <h3>
-                Ein {order} ist angefragt worden.
+                {order} ist angefragt worden.
             </h3>
             <div>
-                <b>Details zur {order}:</b>
+                <b>Details</b>
             </div>
             <br />
             {
