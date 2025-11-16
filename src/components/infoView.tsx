@@ -1,4 +1,4 @@
-import { defaultPadding } from "@/shared/style";
+import { defaultPadding } from "../shared/style";
 
 export default function InfoView() {
     return <div className={`${defaultPadding} flex flex-col gap-5 justfiy-center text-center`}>
