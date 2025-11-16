@@ -1,5 +1,7 @@
+import InfoView from "../../components/infoView";
+
 export default function Service() {
     return (
-        <h1>Services</h1>
+        <InfoView />
     );
 }

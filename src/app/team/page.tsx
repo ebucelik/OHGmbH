@@ -1,3 +1,5 @@
+import InfoView from "../../components/infoView";
+
 export default function Team() {
-    return <div>Team</div>;
+    return <InfoView />;
 }

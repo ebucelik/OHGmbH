@@ -39,15 +39,15 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="" className="hover:text-appPrimary">Impressum</Link>
+                            <Link href="/impressum" className="hover:text-appPrimary">Impressum</Link>
                         </div>
 
                         <div>
-                            <Link href="" className="hover:text-appPrimary">Datenschutz</Link>
+                            <Link href="/dataprotection" className="hover:text-appPrimary">Datenschutz</Link>
                         </div>
 
                         <div>
-                            <Link href="" className="hover:text-appPrimary">AGB</Link>
+                            <Link href="/agb" className="hover:text-appPrimary">AGB</Link>
                         </div>
                     </div>
                     <div className="flex flex-col gap-1 text-sm sm:text-lg">
