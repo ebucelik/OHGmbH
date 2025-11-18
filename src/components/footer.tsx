@@ -43,10 +43,6 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="/dataprotection" className="hover:text-appPrimary">Datenschutz</Link>
-                        </div>
-
-                        <div>
                             <Link href="/agb" className="hover:text-appPrimary">AGB</Link>
                         </div>
                     </div>
