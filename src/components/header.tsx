@@ -127,12 +127,12 @@ export default function Header() {
                                     Sicherheit
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Krankenvers.
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Berufsunfähigk.
                                     </Link>
                                 </div>
@@ -142,7 +142,7 @@ export default function Header() {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Ableben
                                     </Link>
                                 </div>
@@ -167,22 +167,22 @@ export default function Header() {
                         <div className="grid grid-cols-2 sm:text-lg">
                             <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Wohnbaukredit
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Konsumkredit
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Umschuldung
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Leasing
                                     </Link>
                                 </div>
@@ -196,17 +196,17 @@ export default function Header() {
                         <div className="grid grid-cols-1 sm:text-lg">
                             <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Tarifvergleich
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Wechsel des Anbieters
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Öko-Tarife
                                     </Link>
                                 </div>
@@ -220,17 +220,17 @@ export default function Header() {
                         <div className="grid grid-cols-1 sm:text-lg">
                             <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Investment-Service
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Gewinnfreibetrag
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Rendite-Rechner
                                     </Link>
                                 </div>
@@ -249,12 +249,12 @@ export default function Header() {
                                     Schadenmeldung
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         KFZ-Schaden
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Haushaltsschaden
                                     </Link>
                                 </div>
@@ -265,7 +265,7 @@ export default function Header() {
                                     Downloads
                                 </div>
                                 <div>
-                                    <Link href="" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Formulare (zb.: KFZ-Kaufvertrag)
                                     </Link>
                                 </div>

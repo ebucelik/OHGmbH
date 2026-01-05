@@ -18,11 +18,11 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="" className="hover:text-appPrimary">Finanzierungen</Link>
+                            <Link href="/info" className="hover:text-appPrimary">Finanzierungen</Link>
                         </div>
 
                         <div>
-                            <Link href="" className="hover:text-appPrimary">Strom & Gas Vergleich</Link>
+                            <Link href="/info" className="hover:text-appPrimary">Strom & Gas Vergleich</Link>
                         </div>
 
                         <div>
@@ -30,7 +30,7 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="" className="hover:text-appPrimary">Schaden melden</Link>
+                            <Link href="/contact" className="hover:text-appPrimary">Schaden melden</Link>
                         </div>
                     </div>
                     <div className="flex flex-col gap-1 text-sm sm:text-lg">
@@ -67,18 +67,7 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="" target="_blank" className="hover:text-appPrimary">
-                                <div className="flex flex-row gap-1 place-items-center">
-                                    <Icon icon="mdi:youtube" className="h-5 w-5" />
-                                    <div>
-                                        YouTube
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-
-                        <div>
-                            <Link href="" target="_blank" className="hover:text-appPrimary">
+                            <Link href="https://www.linkedin.com/in/harald-otto-658478284/" target="_blank" className="hover:text-appPrimary">
                                 <div className="flex flex-row gap-1 place-items-center">
                                     <Icon icon="mdi:linkedin" className="h-5 w-5" />
                                     <div>
