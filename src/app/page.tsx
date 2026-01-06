@@ -215,7 +215,7 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`w-full pt-10 sm:py-100`}>
+      <div className={`w-full p-10 sm:py-100`}>
         <ParallaxComponent
           speed={-10}
           scaleStart={0.9}

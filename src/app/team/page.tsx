@@ -9,7 +9,12 @@ const teamMembers = [
         image: "/haraldotto1.webp",
         email: "office@oh-gmbh.at",
         linkedin: "https://www.linkedin.com/in/harald-otto-658478284/",
-        phone: "+43 664 1817109"
+        phone: "+43 664 1817109",
+        certifications: [
+            "Staatlich geprüfter Versicherungsmakler",
+            "Unabhängige Versicherungsberatung",
+            "Risikoanalyse für Privat- & Firmenkunden"
+        ]
     },
     {
         name: "Manuel Holzmann",
@@ -17,7 +22,12 @@ const teamMembers = [
         image: "/holzmannmanuel1.webp",
         email: "office@oh-gmbh.at",
         linkedin: "https://www.linkedin.com/in/manuel-holzmann-076519270/",
-        phone: "+43 664 1519170"
+        phone: "+43 664 1519170",
+        certifications: [
+            "Zertifizierter Vermögensberater",
+            "Ganzheitliche Finanz- & Investmentstrategien",
+            "Individuelle Finanzierungsberatung"
+        ]
     }
 ];
 
@@ -52,7 +62,7 @@ export default function Team() {
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
 
                             {/* Infos */}
@@ -61,6 +71,17 @@ export default function Team() {
                                     {member.name}
                                 </h3>
                                 <p className="text-appPrimary font-medium mt-1">{member.role}</p>
+
+                                <div className="flex flex-col place-items-center mt-6">
+                                    <div className="flex flex-col">
+                                        {member.certifications.map((certification) => (
+                                            <div key={certification} className="flex text-xs sm:text-lg items-center gap-2 text-gray-700">
+                                                <Icon icon="ph:seal-check-fill" className="h-5 w-5 text-appPrimary" />
+                                                {certification}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
 
                                 {/* Social Links */}
                                 <div className="flex flex-col text-left sm:grid sm:grid-cols-3 place-items-center gap-2 mt-6">
