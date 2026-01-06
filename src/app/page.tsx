@@ -8,6 +8,7 @@ import SliderComponent from "../components/sliderComponent";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import CountUpComponent from "../components/countUpComponent";
 
 export default function Home() {
   const customerReviews = [
@@ -132,6 +133,7 @@ export default function Home() {
         <div className="flex flex-col place-content-center absolute bottom-0 w-full sm:px-50 fade-up-1s">
           <HCarousel
             leadingTitle="Unsere Partner"
+            className="my-5"
             innerDivClassName="[&_li]:mx-5"
             items={
               insuranceNames.map(
@@ -317,21 +319,28 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="p-10 sm:pt-50 justify-center">
+            <div className="p-10 sm:pt-150 justify-center">
               <ParallaxComponent
-                speed={-25}
+                speed={-20}
                 scaleStart={1}
                 scaleEnd={1.2}
               >
-                <div className="flex flex-row sm:gap-5 place-content-center">
-                  <span className="text-appPrimary text-center font-bold text-4xl sm:text-8xl">Otto & Holzmann</span>
-                  <Image
-                    src="/ohlogo.svg"
+                <div className="relative flex flex-row place-content-center">
+                  <img
+                    src="/harald_manuel.webp"
                     alt="OH GmbH Logo"
-                    width={100}
-                    height={100}
-                    priority
+                    className="rounded-4xl shadow-2xl sm:w-[70%] 2xl:w-[60%]"
                   />
+
+                  <div className="absolute bottom-0 w-full flex flex-col place-items-center">
+                    <ParallaxComponent
+                      translateYStart={-900}
+                      scaleStart={1}
+                      scaleEnd={1.1}
+                    >
+                      <span className="text-appPrimary text-center font-bold text-4xl sm:text-8xl">Otto & Holzmann</span>
+                    </ParallaxComponent>
+                  </div>
                 </div>
               </ParallaxComponent>
             </div>
@@ -339,7 +348,7 @@ export default function Home() {
               <ParallaxComponent
                 speed={0}
                 scaleStart={1}
-                scaleEnd={1.3}
+                scaleEnd={1.2}
               >
                 <span className="flex text-center font-bold text-4xl sm:text-7xl 2xl:text-8xl">Wir jagen nicht dem Preis nach, <br /> sondern der Leistung.</span>
               </ParallaxComponent>
@@ -473,22 +482,70 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      {
-        // Statistiken einbauen zahlen: Kunden, Versicherungen, Finanzierungen, Partner, 
-        // Kundenrezension anzeigen nur kleiner anzeigen
-      }
+      <div className={`${defaultPadding} flex flex-col gap-15 sm:gap-30 bg-appPrimary text-white text-center`}>
+        <div className="flex flex-col sm:flex-row gap-10 sm:gap-30 text-center justify-center">
+          <div>
+            <CountUpComponent
+              countEnd={142}
+              className="text-4xl sm:text-7xl font-bold"
+            />
+            <div>
+              Zufriedene Kunden
+            </div>
+          </div>
+          <div>
+            <CountUpComponent
+              countEnd={212}
+              className="text-4xl sm:text-7xl font-bold"
+            />
+            <div>
+              Versicherungen
+            </div>
+          </div>
+          <div>
+            <CountUpComponent
+              countEnd={53}
+              className="text-4xl sm:text-7xl font-bold"
+            />
+            <div>
+              Finanzierungen
+            </div>
+          </div>
+          <div>
+            <CountUpComponent
+              countEnd={30}
+              className="text-4xl sm:text-7xl font-bold"
+            />
+            <div>
+              Partner
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="text-xl sm:text-3xl sm:pb-5">
+            Unsere Zahlen sprechen Fakten.
+          </div>
+          <div className="text-2xl sm:text-5xl font-bold">
+            Sprechen Sie mit uns.
+          </div>
+        </div>
+        <div className="flex flex-row place-content-center">
+          <Button text={"Jetzt Termin anfragen"} iconName="hugeicons:appointment-01" isPrimary={true} className="text-black bg-white" href="/contact" />
+        </div>
+      </div>
 
-      <div className={`${defaultPadding} w-full py-20 relative z-2 bg-white`}>
-        <div className={`text-xl sm:text-3xl text-left ${radley.className}`}>
-          Unsere Kunden sind überzeugt.
+      <div className={`${defaultPadding} w-full my-20 relative z-2 bg-white`}>
+        <div className={`text-xl sm:text-2xl text-left ${radley.className}`}>
+          Unsere Kunden sind überzeugt
         </div>
         <HCarousel
+          className="sm:my-5"
           outerDivClassName="sm:w-full"
           innerDivClassName="[&_li]:mx-4 sm:[&_li]:mx-4"
           items={
             customerReviews.map((item, index) => (
               <li key={index} className="mb-5">
-                <div className="flex flex-col gap-2 p-3 bg-appGray rounded-4xl w-60 sm:w-100 h-60 sm:h-80 sm:text-xl justify-center place-items-center text-center shadow-lg">
+                <div className="flex flex-col gap-2 bg-appGray/30 rounded-4xl w-60 sm:w-100 h-30 sm:h-35 text-xs sm:text-sm justify-center place-items-center text-center shadow-lg">
                   <div>
                     {
                       item.text

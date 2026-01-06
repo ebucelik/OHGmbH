@@ -4,16 +4,19 @@ export default function HCarousel(
     {
         leadingTitle,
         items,
+        className,
         outerDivClassName,
-        innerDivClassName }: {
-            leadingTitle?: String,
-            outerDivClassName?: String,
-            innerDivClassName?: String,
-            items: ReactElement[]
-        }
+        innerDivClassName
+    }: {
+        leadingTitle?: String,
+        className?: String,
+        outerDivClassName?: String,
+        innerDivClassName?: String,
+        items: ReactElement[]
+    }
 ) {
     return (
-        <div className="flex place-content-center my-15 mx-5 sm:mx-10">
+        <div className={`${className} flex place-content-center mx-5 sm:mx-10`}>
             <div className={`flex flex-col sm:flex-row w-full sm:w-1/2 ${outerDivClassName}`}>
                 <div className="whitespace-nowrap font-bold sm:place-content-center">
                     {leadingTitle}
