@@ -8,19 +8,21 @@ const teamMembers = [
         role: "Geschäftsführer & Gründer",
         image: "/haraldotto1.webp",
         email: "office@oh-gmbh.at",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/harald-otto-658478284/",
+        phone: "+43 664 1817109"
     },
     {
         name: "Manuel Holzmann",
         role: "Geschäftsführer & Gründer",
-        image: "/holzmannmanuel.png",
+        image: "/holzmannmanuel1.webp",
         email: "office@oh-gmbh.at",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/manuel-holzmann-076519270/",
+        phone: "+43 664 1519170"
     }
 ];
 
 export default function Team() {
-    return <div>
+    return <div className="pt-30">
         <section className="relative bg-gray-50 py-24 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent"></div>
             <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
@@ -28,8 +30,7 @@ export default function Team() {
                     Unser Team
                 </h1>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Wir sind ein eingespieltes Team aus Experten, die mit Leidenschaft
-                    und Präzision an deinen Projekten arbeiten.
+                    Wir sind ein eingespieltes Team aus spezialisierten Expert:innen, das fachliche Kompetenz, langjährige Erfahrung und persönliches Engagement vereint. Gemeinsam entwickeln wir maßgeschneiderte Lösungen, die genau auf die individuellen Bedürfnisse und Ziele unserer Kund:innen abgestimmt sind. Dabei legen wir großen Wert auf transparente Beratung, nachhaltige Strategien und eine vertrauensvolle Zusammenarbeit – als verlässlicher Partner in den Bereichen Versicherung, Vermögen und Finanzierung.
                 </p>
             </div>
         </section>
@@ -67,7 +68,7 @@ export default function Team() {
                                 <p className="text-appPrimary font-medium mt-1">{member.role}</p>
 
                                 {/* Social Links */}
-                                <div className="flex justify-center gap-4 mt-6">
+                                <div className="grid grid-cols-3 place-items-center gap-2 mt-6">
                                     <Link
                                         href={`mailto:${member.email}`}
                                         className="text-gray-600 hover:text-appPrimary transition"
@@ -94,10 +95,43 @@ export default function Team() {
                                             </div>
                                         </div>
                                     </Link>
+                                    <Link
+                                        href={`tel:${member.phone}`}
+                                        rel="noopener noreferrer"
+                                        className="text-gray-600 hover:text-appPrimary transition"
+                                        aria-label="Telefonnummer"
+                                    >
+                                        <div className="flex flex-row gap-1 place-items-center">
+                                            <Icon icon="mdi:phone" className="h-5 w-5" />
+                                            <div>
+                                                {member.phone}
+                                            </div>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="flex flex-col gap-5 place-items-center mt-20">
+                    <div className="text-lg sm:text-2xl">
+                        Unsere GISA Zahlen
+                    </div>
+
+                    <div>
+                        <ul className="list-disc pl-10 sm:text-lg">
+                            <li>
+                                38712760
+                            </li>
+                            <li>
+                                38781612
+                            </li>
+                            <li>
+                                38923609
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

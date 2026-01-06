@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 
 export default function Motorcycle() {
-    return <div>
+    return <div className="pt-30">
         <div className="bg-appGray rounded-2xl flex flex-col sm:flex-row gap-5 px-10 py-5 sm:py-20 sm:p-20 sm:mx-10">
             <div className="flex-1 flex flex-col gap-2 place-content-center text-left">
                 <div className={`text-2xl sm:text-6xl ${radley.className} font-bold`}>

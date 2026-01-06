@@ -2,6 +2,8 @@ import InfoView from "../../components/infoView";
 
 export default function Info() {
     return (
-        <InfoView />
+        <div className="pt-30">
+            <InfoView />
+        </div>
     );
 }

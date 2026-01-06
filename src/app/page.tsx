@@ -3,11 +3,7 @@ import Button from "../components/button";
 import { archivo, radley } from "./layout";
 import { defaultPadding } from "../shared/style";
 import ParallaxComponent from "../components/parallaxComponent";
-import TypedComponent from "../components/typedComponent";
-import SliderComponent from "../components/sliderComponent";
 import Image from "next/image";
-import { Icon } from "@iconify/react";
-import Link from "next/link";
 import CountUpComponent from "../components/countUpComponent";
 
 export default function Home() {
@@ -71,6 +67,10 @@ export default function Home() {
     "wstv",
     "wustenrot",
     "zurich",
+    "infina",
+    "froots",
+    "stromkreis",
+    "synegetix",
     "allianz",
     "acredia",
     "apk-versicherung",
@@ -87,7 +87,11 @@ export default function Home() {
     "vig",
     "wstv",
     "wustenrot",
-    "zurich"
+    "zurich",
+    "infina",
+    "froots",
+    "stromkreis",
+    "synegetix"
   ];
 
   return (
@@ -211,7 +215,7 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full py-10 sm:py-100`}>
+      <div className={`w-full py-10 sm:py-100`}>
         <ParallaxComponent
           speed={-10}
           scaleStart={0.9}
@@ -221,12 +225,12 @@ export default function Home() {
             <ParallaxComponent
               speed={-20}
             >
-              <div className={`${archivo.className} text-2xl sm:text-7xl font-bold`}>
+              <div className={`${archivo.className} px-5 sm:px-10 text-2xl sm:text-7xl font-bold`}>
                 Wer wir sind
               </div>
             </ParallaxComponent>
             <div className="flex flex-col text-2xl sm:text-5xl gap-1">
-              <div className="grid grid-cols-2 gap-1 sm:gap-30">
+              <div className="grid grid-cols-2 gap-1 sm:gap-30 px-5 sm:px-10">
                 <div className="sm:text-right">
                   <ParallaxComponent
                     speed={-20}
@@ -328,7 +332,7 @@ export default function Home() {
                 <div className="relative flex flex-row place-content-center">
                   <img
                     src="/harald_manuel.webp"
-                    alt="OH GmbH Logo"
+                    alt="Harald Otto und Manuel Holzmann"
                     className="rounded-4xl shadow-2xl sm:w-[70%] 2xl:w-[60%]"
                   />
 
@@ -338,7 +342,7 @@ export default function Home() {
                       scaleStart={1}
                       scaleEnd={1.1}
                     >
-                      <span className="text-appPrimary text-center font-bold text-4xl sm:text-8xl">Otto & Holzmann</span>
+                      <span className="text-appPrimary text-center font-bold text-3xl sm:text-8xl">Otto & Holzmann</span>
                     </ParallaxComponent>
                   </div>
                 </div>
@@ -357,122 +361,75 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} px-10 w-full sm:py-150`}>
+      <div className={`${defaultPadding} px-10 w-full sm:py-100`}>
         <ParallaxComponent
           speed={-30}
         >
-          {
-            // Noch ein Reiter mit Versicherungen
-            // Weniger Text einbauen.
-            // Nur ein zwei Texte einbauen.
-            // In einem Viereck
-          }
-          <div className="flex flex-col sm:flex-row justify-evenly gap-5 sm:gap-5 my-15">
-            <ParallaxComponent
-              speed={-10}
-            >
-              <div className="bg-linear-to-t from-appPrimary via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+          <div className="flex flex-row place-content-center">
+            <div className="grid sm:grid-cols-2 gap-5 sm:gap-15 my-15 sm:w-[70%]">
+              <div className="bg-linear-to-t from-appPrimary/40 via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
                 <div className="relative">
-                  <img src="/electric.webp" alt="Strom und Gas Bild" className="w-full h-1/3 rounded-t-xl" />
+                  <img src="/ownhomeInsuranceInitial.webp" alt="Versicherungen Bild" className="w-full h-1/3 rounded-t-xl" />
 
-                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                    Strom und Gas
+                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-sm rounded-t-xl">
+                    Versicherungen
                   </div>
                 </div>
-                <div className="p-5">
-                  <b className="text-lg sm:text-xl">Wir finden den besten Tarif für Sie.</b>
 
-                  <ul className="list-disc pl-5 py-1.5 pt-2">
-                    <li>
-                      <b>
-                        Unabhängiger Vergleich:
-                      </b> Wir durchsuchen für Sie über 100 Strom- und Gasanbieter.
-                    </li>
-                    <li>
-                      <b>
-                        Transparenz & Fairness:
-                      </b> Sie sehen auf einen Blick, welche Tarife wirklich zu Ihrem Verbrauch passen.
-                    </li>
-                    <li>
-                      <b>
-                        Einfacher Wechsel:
-                      </b> Wir kümmern uns um die Abwicklung, Sie sparen Zeit und Geld.
-                    </li>
-                  </ul>
+                <div className="p-5 flex flex-col">
+                  <b className="text-lg sm:text-xl">Optimale Sicherheit mit uns.</b>
+
+                  Als ungebundener Makler vertreten wir Ihre Interessen gegenüber allen Versicherungen. Wir filtern den Markt nach dem besten Preis-Leistungs-Verhältnis für Ihren Schutz.
                 </div>
               </div>
-            </ParallaxComponent>
 
-            <ParallaxComponent
-              speed={-5}
-            >
-              <div className="bg-linear-to-t from-appPrimary via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+              <div className="bg-linear-to-t from-appPrimary/40 via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
                 <div className="relative">
                   <img src="/finance.webp" alt="Finanzierung Bild" className="w-full rounded-t-xl" />
 
-                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
+                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-sm rounded-t-xl">
                     Finanzierungen
                   </div>
                 </div>
-                <div className="p-5">
+                <div className="p-5 flex flex-col">
                   <b className="text-lg sm:text-xl">Maßgeschneidert für Ihre Bedürfnisse.</b>
 
-                  <ul className="list-disc pl-5 py-1.5 pt-2">
-                    <li>
-                      <b>
-                        Individuelle Beratung:
-                      </b> Wir finden gemeinsam heraus, welche Finanzierungslösung zu Ihrer Situation passt.
-                    </li>
-                    <li>
-                      <b>
-                        Große Auswahl:
-                      </b> Dank unseres Zugriffs auf mehr als 120 Banken haben wir Zugriff auf ein breites Angebot.
-                    </li>
-                    <li>
-                      <b>
-                        Beste Konditionen:
-                      </b> Durch den Vergleich sichern wir Ihnen attraktive Zinsen und faire Vertragsbedingungen.
-                    </li>
-                  </ul>
+                  Als ungebundener Kreditvermittler vergleichen wir über 120 Banken und 600 Modelle für Sie. Wir finden garantiert die beste Kondition und die passende Bank für Ihr Projekt.
                 </div>
               </div>
-            </ParallaxComponent>
 
-            <ParallaxComponent
-              speed={-8}
-            >
-              <div className="bg-linear-to-t from-appPrimary via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+              <div className="bg-linear-to-t from-appPrimary/40 via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
                 <div className="relative">
                   <img src="/consulting.webp" alt="Strom und Gas Bild" className="w-full rounded-t-xl" />
 
-                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-md rounded-t-xl">
-                    Investments
+                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-sm rounded-t-xl">
+                    Vermögensaufbau
                   </div>
                 </div>
-                <div className="p-5">
+                <div className="p-5 flex flex-col">
                   <b className="text-lg sm:text-xl">Ihr Geld, Ihre Zukunft.</b>
 
-                  <ul className="list-disc pl-5 py-1.5 pt-2">
-                    <li>
-                      <b>
-                        Individuelles Portfolio:
-                      </b> Wir erstellen ein auf Sie abgestimmtes Anlageportfolio - passend zu Ihren Zielen und Ihrer Risikobereitschaft.
-                    </li>
-                    <li>
-                      <b>
-                        Professionelle Betreuung:
-                      </b> Ihr Geld wird gezielt investiert, um langfristig stabile Erträge zu erzielen.
-                    </li>
-                    <li>
-                      <b>
-                        Mehr aus Ihrem Geld machen:
-                      </b> Nutzen Sie die Chancen des Marktes und lassen Sie Ihr Kapital für sich arbeiten.
-                    </li>
-                  </ul>
+                  Wir managen Ihr Portfolio kosteneffizient, aktiv und flexibel, angepasst an Ihren persönlichen Zeithorizont. Dabei nutzen wir auch Strategien, mit denen Sie die Kapitalertragssteuer legal vermeiden können.
                 </div>
               </div>
-            </ParallaxComponent>
+
+              <div className="bg-linear-to-t from-appPrimary/40 via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
+                <div className="relative">
+                  <img src="/electric.webp" alt="Strom und Gas Bild" className="w-full h-1/3 rounded-t-xl" />
+
+                  <div className="absolute top-0 py-2 w-full text-center text-lg sm:text-2xl font-bold backdrop-blur-sm rounded-t-xl">
+                    Strom und Gas
+                  </div>
+                </div>
+                <div className="p-5 flex flex-col">
+                  <b className="text-lg sm:text-xl">Wir finden den besten Tarif für Sie.</b>
+
+                  Wir vergleichen den Markt und wechseln Sie zum kostengünstigsten Anbieter. So minimieren wir Ihre monatlichen Fixkosten sofort und dauerhaft.
+                </div>
+              </div>
+            </div>
           </div>
+
           <div className="flex flex-col sm:flex-row justify-center place-items-center gap-5 sm:pt-20">
             <div className="sm:text-xl text-center">
               Haben wir Ihr Interesse geweckt?
@@ -534,7 +491,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={`${defaultPadding} w-full my-20 relative z-2 bg-white`}>
+      <div className={`${defaultPadding} w-full sm:my-20 relative z-2 bg-white`}>
         <div className={`text-xl sm:text-2xl text-left ${radley.className}`}>
           Unsere Kunden sind überzeugt
         </div>
@@ -560,42 +517,6 @@ export default function Home() {
               </li>
             ))
           } />
-      </div>
-
-      {
-        // Rüberschieben in Schadenmeldungsseite.
-      }
-
-      <div className={`${defaultPadding} w-full bg-linear-to-b from-appSecondary from-10% to-white text-white sm:pb-20`}>
-        <div>
-          <div className="pb-10 text-2xl sm:text-5xl text-left">
-            Was tun bei <span className="decoration-appPrimary underline underline-offset-8">einem Schaden?</span>
-          </div>
-
-          <div className="flex flex-col gap-10 sm:gap-0 sm:flex-row sm:my-15 justify-evenly text-center text-lg sm:text-2xl font-bold">
-            <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
-              1. Schaden melden
-
-              <img src="/talk.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500 sm:mt-5" />
-            </div>
-            <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
-              <span className="sm:hidden">
-                2. Unterlagen bereitstellen
-              </span>
-
-              <img src="/documents.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500" />
-
-              <span className="hidden sm:block">
-                2. Unterlagen bereitstellen
-              </span>
-            </div>
-            <div className="flex flex-col gap-5 sm:gap-10 hover:scale-101 duration-500 place-items-center">
-              3. Zurücklehnen
-
-              <img src="/chill.svg" className="object-cover w-50 sm:w-100 h-50 sm:h-100 rounded-2xl shadow-lg shadow-gray-500 sm:mt-5" />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="/info" className="hover:text-appPrimary">Finanzierungen</Link>
+                            <Link href="/finance/homecredit" className="hover:text-appPrimary">Finanzierungen</Link>
                         </div>
 
                         <div>
@@ -30,7 +30,7 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="/contact" className="hover:text-appPrimary">Schaden melden</Link>
+                            <Link href="/services" className="hover:text-appPrimary">Schaden melden</Link>
                         </div>
                     </div>
                     <div className="flex flex-col gap-1 text-sm sm:text-lg">
