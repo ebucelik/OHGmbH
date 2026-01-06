@@ -39,6 +39,9 @@ export default function Impressum() {
             <div>
                 <Link href="https://www.pexels.com" className="hover:text-appPrimary">www.pexels.com</Link>
             </div>
+            <div>
+                <Link href="https://www.vrano-pictures.at" className="hover:text-appPrimary">© Vrano Pictures - Patrick Vranovsky</Link>
+            </div>
 
             <div className="font-bold pt-5">
                 Branding und Technische Umsetzung

@@ -1,6 +1,6 @@
 import HCarousel from "../components/hcarousel";
 import Button from "../components/button";
-import { radley } from "./layout";
+import { archivo, radley } from "./layout";
 import { defaultPadding } from "../shared/style";
 import ParallaxComponent from "../components/parallaxComponent";
 import TypedComponent from "../components/typedComponent";
@@ -91,143 +91,45 @@ export default function Home() {
 
   return (
     <div className="relative">
-      <div className="absolute -z-10" style={{ padding: '5%' }}>
-        <img src="/bglogo.svg" className="opacity-15 object-cover overflow-hidden" />
-      </div>
+      <div className="relative text-center overflow-hidden">
+        <video preload="metadata" className="-z-10 overflow-hidden object-cover h-screen sm:h-screen w-full fade-in-1s"
+          autoPlay loop muted playsInline>
+          <source v-if="loadedVideo" src="/nsc-pv-intro.mp4" type="video/mp4" />
+        </video>
 
-      {
-        // Video im Hintergrund wie bei nsc-coral.vercel.app und OH GmbH mit Versicherungs-berater in die Mitte.
-        // Statt Finanzierungsberater usw: Versicherungen, Finanzierungen, Vermögensaufbau
-      }
-
-      <div className="sm:pt-10">
-        <ParallaxComponent
-          speed={-30}
-          opacityStart={2}
-          opacityEnd={0}
-          scaleStart={1.1}
-          scaleEnd={0.8}
-        >
-          <div className="mx-5 sm:mx-10 sm:flex sm:flex-row fade-up-1s">
-            <div className="flex-1 content-center sm:pl-15">
-              <div className="flex flex-col">
-                <p className={`text-5xl sm:text-8xl ${radley.className}`}>
-                  Stets
-                </p>
-
-                <TypedComponent words={["an deiner Seite.", "für dich da.", "professionell.", "qualitativ.", "innovativ."]} className={`text-5xl sm:text-8xl ${radley.className}`} />
-
-                <p className="text-lg sm:text-2xl pt-5">
-                  Dein unabhängiger Makler für
-                </p>
-                <p className="text-lg sm:text-2xl">
-                  Versicherungen, Finanzierungen, Investments & Energie -
-                </p>
-                <p className="text-lg sm:text-2xl">
-                  sicher und zuverlässig.
-                </p>
-
-                <Button text="Jetzt Termin vereinbaren" className="my-5 sm:mt-20" isPrimary={true} href="/contact" />
+        <div className="flex flex-col gap-5 2xl:gap-10 place-content-center place-items-center absolute top-0 left-0 w-full h-screen backdrop-blur-xs fade-up-1s">
+          <div className={`${archivo.className} text-6xl sm:text-9xl bg-linear-to-r from-black to-appPrimary bg-clip-text text-transparent`}>
+            OH GmbH
+          </div>
+          <span className={`${archivo.className} flex text-2xl sm:text-5xl text-appPrimary`}>
+            <div className="window">
+              <div className="flex flex-col window-inner overflow-hidden">
+                <div className="pb-1">
+                  Versicherungen
+                </div>
+                <div className="pb-1">
+                  Finanzierungen
+                </div>
+                <div className="pb-1">
+                  Vermögensaufbau
+                </div>
+                <div aria-hidden className="pb-1">
+                  Versicherungen
+                </div>
+                <div aria-hidden className="pb-1">
+                  Finanzierungen
+                </div>
+                <div aria-hidden className="pb-1">
+                  Vermögensaufbau
+                </div>
               </div>
             </div>
-            <div className="flex-1">
-              <SliderComponent
-                children={[
-                  <div className="relative" style={{ width: '100%', height: '100%' }}>
-                    <Image
-                      src="/haraldotto3.webp" alt="Harald Otto"
-                      fill
-                      className="rounded-lg shadow-lg"
-                    />
-                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                      <div className="text-lg sm:text-5xl font-bold">
-                        Harald Otto
-                      </div>
-                      <div className="text-xs sm:text-2xl">
-                        Geschäftsführer & Versicherungsmakler
-                      </div>
-                    </div>
-                  </div>,
-                  <div className="relative" style={{ width: '100%', height: '100%' }}>
-                    <img
-                      src="/holzmannmanuel.png" alt="Manuel Holzmann"
+          </span>
 
-                      className="rounded-lg shadow-lg"
-                    />
-                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                      <div className="text-lg sm:text-5xl font-bold">
-                        Manuel Holzmann
-                      </div>
-                      <div className="text-xs sm:text-2xl">
-                        Geschäftsführer & Vermögensberater
-                      </div>
-                    </div>
-                  </div>,
-                  <div className="relative" style={{ width: '100%', height: '100%' }}>
-                    <Image
-                      src="/haraldotto3.webp" alt="Harald Otto"
-                      fill
-                      className="rounded-lg shadow-lg"
-                    />
-                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                      <div className="text-lg sm:text-5xl font-bold">
-                        Harald Otto
-                      </div>
-                      <div className="text-xs sm:text-2xl">
-                        Geschäftsführer & Versicherungsberater
-                      </div>
-                    </div>
-                  </div>,
-                  <div className="relative" style={{ width: '100%', height: '100%' }}>
-                    <Image
-                      src="/holzmannmanuel.png" alt="Manuel Holzmann"
-                      fill
-                      className="rounded-lg shadow-lg"
-                    />
-                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                      <div className="text-lg sm:text-5xl font-bold">
-                        Manuel Holzmann
-                      </div>
-                      <div className="text-xs sm:text-2xl">
-                        Geschäftsführer & Vermögensberater
-                      </div>
-                    </div>
-                  </div>,
-                  <div className="relative" style={{ width: '100%', height: '100%' }}>
-                    <Image
-                      src="/haraldotto3.webp" alt="Harald Otto"
-                      fill
-                      className="rounded-lg shadow-lg"
-                    />
-                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                      <div className="text-lg sm:text-5xl font-bold">
-                        Harald Otto
-                      </div>
-                      <div className="text-xs sm:text-2xl">
-                        Geschäftsführer & Versicherungsberater
-                      </div>
-                    </div>
-                  </div>,
-                  <div className="relative" style={{ width: '100%', height: '100%' }}>
-                    <Image
-                      src="/holzmannmanuel.png" alt="Manuel Holzmann"
-                      fill
-                      className="rounded-lg shadow-lg"
-                    />
-                    <div className="absolute p-3 sm:p-5 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
-                      <div className="text-lg sm:text-5xl font-bold">
-                        Manuel Holzmann
-                      </div>
-                      <div className="text-xs sm:text-2xl">
-                        Geschäftsführer & Vermögensberater
-                      </div>
-                    </div>
-                  </div>
-                ]}
-              />
-            </div>
-          </div>
+          <Button text="Jetzt Termin vereinbaren" className="my-5 px-10 bg-appPrimary/80" isPrimary={true} href="/contact" />
+        </div>
 
+        <div className="flex flex-col place-content-center absolute bottom-0 w-full sm:px-50 fade-up-1s">
           <HCarousel
             leadingTitle="Unsere Partner"
             innerDivClassName="[&_li]:mx-5"
@@ -235,21 +137,81 @@ export default function Home() {
               insuranceNames.map(
                 (item, index) => (
                   <li key={index}>
-                    <Image src={`/` + item + `-logo.svg`} alt={item} width={200} height={100} className={`w-32 ${item == 'roland' ? 'bg-black' : ''}`} />
+                    <Image src={`/` + item + `-logo.svg`} alt={item} width={200} height={100} className={`w-16 ${item == 'roland' ? 'bg-black' : ''}`} />
                   </li>
                 )
               )
             } />
+        </div>
+      </div>
+
+      <div className="pt-25">
+        <ParallaxComponent
+          speed={0}
+          opacityStart={3}
+          opacityEnd={0}
+          scaleStart={1.1}
+          scaleEnd={0.8}
+        >
+          <div className="flex flex-col">
+            <div className="mx-5 sm:mx-60 2xl:mx-110 flex flex-row gap-5 sm:gap-10 fade-up-1s">
+              <div className="flex-1">
+                <img src="/harald_intro.webp" alt="Harald Otto" className="rounded-2xl shadow-2xl object-contain" />
+              </div>
+
+              <div className="flex-1 flex flex-col gap-2 sm:gap-10 place-items-center">
+                <div className="text-lg sm:text-4xl font-bold text-left w-full">
+                  Harald Otto
+                </div>
+
+                <div className="text-xs sm:text-2xl">
+                  Ich bin Harald Otto, Geschäftsführer und Versicherungsmakler der OH GmbH – deinem unabhängigen Partner für Versicherungen, Finanzierungen, Investments und Energie. Bei OH GmbH steht für Offenheit, hartnäckiges Engagement und kundenorientierte Lösungen – genau diese Werte lebe ich tagtäglich in meiner Arbeit.
+                </div>
+
+                <div className="hidden sm:block sm:text-2xl">
+                  Mit meinem Fokus auf Versicherungsberatung helfe ich Kund:innen dabei, Risiken richtig einzuschätzen und passgenaue Absicherungen zu finden. Für mich bedeutet gute Beratung nicht nur, Produkte zu erklären, sondern Vertrauen aufzubauen und komplexe Themen verständlich zu machen. Verantwortung, Verlässlichkeit und eine strategische, langfristige Perspektive zeichnen mich als Berater aus.
+                </div>
+              </div>
+            </div>
+          </div>
         </ParallaxComponent>
       </div>
 
-      {
-        // Hier kommt das video mir parrallax effekt und ein text eventuell wie zb.: "Vertrauen schaffen."
-      }
+      <div className="pt-25">
+        <ParallaxComponent
+          speed={10}
+          opacityStart={3}
+          opacityEnd={0}
+          scaleStart={1.1}
+          scaleEnd={0.8}
+        >
+          <div className="flex flex-col">
+            <div className="mx-5 sm:mx-60 2xl:mx-110 flex flex-row gap-5 sm:gap-10 fade-up-1s">
+              <div className="flex-1 flex flex-col gap-2 sm:gap-10 place-items-center">
+                <div className="text-lg sm:text-4xl font-bold text-left w-full">
+                  Manuel Holzmann
+                </div>
+
+                <div className="text-xs sm:text-2xl">
+                  Ich bin Manuel Holzmann, Geschäftsführer und Vermögensberater bei der OH GmbH. Mein Herz schlägt für ganzheitliche Finanzstrategien, bei denen die Ziele meiner Kund:innen im Mittelpunkt stehen. Ob Investmentplanung, Vermögensberatung oder maßgeschneiderte Finanzierungslösungen – ich begleite Menschen und Unternehmen mit Klarheit, Weitblick und fundiertem Know-how.
+                </div>
+
+                <div className="hidden sm:block sm:text-2xl">
+                  Als Vermögensberater bringe ich analytisches Denken, strukturierte Planung und ein hohes Verantwortungsbewusstsein in jede Beratung ein. Mir ist wichtig, dass meine Kund:innen nicht nur gut beraten werden, sondern auch verstehen, welche Schritte sinnvoll sind und warum. Ehrlichkeit, Transparenz und eine partnerschaftliche Zusammenarbeit stehen für mich an erster Stelle.
+                </div>
+              </div>
+
+              <div className="flex-1">
+                <img src="/manuel_intro.webp" alt="Manuel Holzmann" className="rounded-2xl shadow-2xl" />
+              </div>
+            </div>
+          </div>
+        </ParallaxComponent>
+      </div>
 
       <div className={`${defaultPadding} w-full py-10 sm:py-100`}>
         <ParallaxComponent
-          speed={-20}
+          speed={-10}
           scaleStart={0.9}
           scaleEnd={1}
         >
@@ -257,7 +219,7 @@ export default function Home() {
             <ParallaxComponent
               speed={-20}
             >
-              <div className={`text-2xl sm:text-5xl font-bold`}>
+              <div className={`${archivo.className} text-2xl sm:text-7xl font-bold`}>
                 Wer wir sind
               </div>
             </ParallaxComponent>
@@ -373,13 +335,18 @@ export default function Home() {
                 </div>
               </ParallaxComponent>
             </div>
+            <div className="px-10 py-20 sm:p-20 sm:pt-150 justify-center">
+              <ParallaxComponent
+                speed={0}
+                scaleStart={1}
+                scaleEnd={1.3}
+              >
+                <span className="flex text-center font-bold text-4xl sm:text-7xl 2xl:text-8xl">Wir jagen nicht dem Preis nach, <br /> sondern der Leistung.</span>
+              </ParallaxComponent>
+            </div>
           </div>
         </ParallaxComponent>
       </div>
-
-      {
-        // Wir jagen nicht dem Preis nach, sondern der Leistung.
-      }
 
       <div className={`${defaultPadding} px-10 w-full sm:py-150`}>
         <ParallaxComponent

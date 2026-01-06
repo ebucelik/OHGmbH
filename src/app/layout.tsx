@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Radley, Outfit } from "next/font/google";
+import { Radley, Outfit, Archivo_Black } from "next/font/google";
 import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -7,6 +7,7 @@ import { Providers } from "./providers";
 
 const outfit = Outfit();
 export const radley = Radley({ weight: '400' });
+export const archivo = Archivo_Black({ weight: '400' })
 
 export const metadata: Metadata = {
   title: "OH GmbH - Versicherungsmakler & Vermögensberater",
@@ -26,9 +27,7 @@ export default function RootLayout({
         <Header />
 
         <Providers>
-          <div className="pt-30">
-            {children}
-          </div>
+          {children}
         </Providers>
 
         <Footer />

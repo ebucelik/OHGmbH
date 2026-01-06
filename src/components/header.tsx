@@ -75,7 +75,7 @@ export default function Header() {
             case Menu.solution:
                 return <div className="flex flex-col sm:flex-row fade-in-05s gap-1">
                     <div className="sm:flex-1"></div>
-                    <div className="flex-2 p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
+                    <div className="flex-2 p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Versicherungen
                         </div>
@@ -165,7 +165,7 @@ export default function Header() {
                         // Die restlichen Seiten content hinzufügen für informationsgewinn.
                     }
 
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
+                    <div className="flex-1 p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Finanzierungen
                         </div>
@@ -185,7 +185,7 @@ export default function Header() {
                         </div>
                     </div>
 
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
+                    <div className="flex-1 p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Vermögensaufbau
                         </div>
@@ -209,7 +209,7 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
+                    <div className="flex-1 p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Strom & Gas
                         </div>
@@ -240,7 +240,7 @@ export default function Header() {
                     <div className="sm:flex-2"></div>
                     <div className="flex-2">
                         <div className="grid grid-cols-2 gap-1 sm:text-lg">
-                            <div className="p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
+                            <div className="p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
                                 <div className="font-bold pb-2">
                                     Schadenmeldung
                                 </div>
@@ -256,7 +256,7 @@ export default function Header() {
                                 </div>
                             </div>
 
-                            <div className="p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
+                            <div className="p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
                                 <div className="font-bold pb-2">
                                     Digitale Leistungen
                                 </div>
@@ -276,59 +276,18 @@ export default function Header() {
     }
 
     return (
-        <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 mb-5 easeIn transition duration-300`}>
+        <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 mb-5 easeIn transition duration-300 bg-white/20`}>
             <div className="w-full p-5 backdrop-blur-xs bg-white/70 rounded-b-2xl sm:backdrop-blur-none sm:bg-transparent fade-down-1s">
                 <div className="flex flex-row">
                     <div className="flex-2 font-bold">
                         <Link href="/">
-                            <div className="flex sm:flex-col-2 gap-1 sm:gap-3">
-                                <Image
-                                    src="/ohlogo.svg"
-                                    alt="OH GmbH Logo"
-                                    width={80}
-                                    height={80}
-                                    priority
-                                />
-                                <div className="content-center">
-                                    <p className="text-xl sm:text-3xl">
-                                        OH GmbH
-                                    </p>
-                                    <span className="flex flex-row">
-                                        <div className="window">
-                                            <div className="flex flex-col window-inner overflow-hidden text-right bg-linear-to-r from-black to-appPrimary bg-clip-text text-transparent">
-                                                <div className="text-lg sm:text-xl">
-                                                    Versicherungs
-                                                </div>
-                                                <div className="text-lg sm:text-xl">
-                                                    Finanzierungs
-                                                </div>
-                                                <div className="text-lg sm:text-xl">
-                                                    Vermögens
-                                                </div>
-                                                <div className="text-lg sm:text-xl">
-                                                    Energie
-                                                </div>
-                                                <div aria-hidden className="text-lg sm:text-xl">
-                                                    Versicherungs
-                                                </div>
-                                                <div aria-hidden className="text-lg sm:text-xl">
-                                                    Finanzierungs
-                                                </div>
-                                                <div aria-hidden className="text-lg sm:text-xl">
-                                                    Vermögens
-                                                </div>
-                                                <div aria-hidden className="text-lg sm:text-xl">
-                                                    Energie
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="text-lg sm:text-xl text-appPrimary">
-                                            berater
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>
+                            <Image
+                                src="/ohlogo.svg"
+                                alt="OH GmbH Logo"
+                                width={70}
+                                height={70}
+                                priority
+                            />
                         </Link>
                     </div>
                     <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
