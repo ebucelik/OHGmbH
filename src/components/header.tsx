@@ -258,11 +258,11 @@ export default function Header() {
 
                             <div className="p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
                                 <div className="font-bold pb-2">
-                                    Downloads
+                                    Digitale Leistungen
                                 </div>
                                 <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Formulare (zb.: KFZ-Kaufvertrag)
+                                    <Link target="_blank" href="https://www.wefox.at/fix-app" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                        WeFox (fixApp)
                                     </Link>
                                 </div>
                             </div>

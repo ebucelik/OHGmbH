@@ -388,6 +388,8 @@ export default function Home() {
           {
             // Noch ein Reiter mit Versicherungen
             // Weniger Text einbauen.
+            // Nur ein zwei Texte einbauen.
+            // In einem Viereck
           }
           <div className="flex flex-col sm:flex-row justify-evenly gap-5 sm:gap-5 my-15">
             <ParallaxComponent
