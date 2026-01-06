@@ -24,7 +24,7 @@ const teamMembers = [
 export default function Team() {
     return <div className="pt-30">
         <section className="relative bg-gray-50 py-24 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-blue-600/5 to-transparent"></div>
             <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
                 <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
                     Unser Team
@@ -55,11 +55,6 @@ export default function Team() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
 
-                            {
-                                // Eigenschaften einbauen wie zb.: Staatlich geprüfte Versicherungsmakler mit Siegel/Checkmark
-                                // GISA Zahlen jeweils einbauen
-                            }
-
                             {/* Infos */}
                             <div className="p-8 text-center">
                                 <h3 className="text-2xl font-bold text-gray-900">
@@ -68,7 +63,7 @@ export default function Team() {
                                 <p className="text-appPrimary font-medium mt-1">{member.role}</p>
 
                                 {/* Social Links */}
-                                <div className="grid grid-cols-3 place-items-center gap-2 mt-6">
+                                <div className="flex flex-col text-left sm:grid sm:grid-cols-3 place-items-center gap-2 mt-6">
                                     <Link
                                         href={`mailto:${member.email}`}
                                         className="text-gray-600 hover:text-appPrimary transition"
