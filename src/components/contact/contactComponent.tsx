@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { FormType } from "../../model/formType";
 import FormComponent from "../formComponent";
 import FormInput, { InputType } from "../formInput";
