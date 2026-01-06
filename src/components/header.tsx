@@ -160,6 +160,11 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
+
+                    {
+                        // Die restlichen Seiten content hinzufügen für informationsgewinn.
+                    }
+
                     <div className="flex-1 p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Finanzierungen
@@ -173,19 +178,34 @@ export default function Header() {
                                 </div>
                                 <div>
                                     <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Konsumkredit
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Umschuldung
                                     </Link>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex-1 p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
+                        <div className="font-bold sm:text-xl">
+                            Vermögensaufbau
+                        </div>
+                        <div className="grid grid-cols-1 sm:text-lg">
+                            <div className="py-2 pl-2">
                                 <div>
                                     <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Leasing
+                                        Investment-Service
                                     </Link>
                                 </div>
+                                <div>
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                        Gewinnfreibetrag
+                                    </Link>
+                                </div>
+                                {/* <div>
+                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                        Rendite-Rechner
+                                    </Link>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -208,30 +228,6 @@ export default function Header() {
                                 <div>
                                     <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Öko-Tarife
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/70 border border-gray-200 rounded-2xl">
-                        <div className="font-bold sm:text-xl">
-                            Investment
-                        </div>
-                        <div className="grid grid-cols-1 sm:text-lg">
-                            <div className="py-2 pl-2">
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Investment-Service
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Gewinnfreibetrag
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Rendite-Rechner
                                     </Link>
                                 </div>
                             </div>

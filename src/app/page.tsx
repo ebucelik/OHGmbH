@@ -95,6 +95,11 @@ export default function Home() {
         <img src="/bglogo.svg" className="opacity-15 object-cover overflow-hidden" />
       </div>
 
+      {
+        // Video im Hintergrund wie bei nsc-coral.vercel.app und OH GmbH mit Versicherungs-berater in die Mitte.
+        // Statt Finanzierungsberater usw: Versicherungen, Finanzierungen, Vermögensaufbau
+      }
+
       <div className="sm:pt-10">
         <ParallaxComponent
           speed={-30}
@@ -238,87 +243,9 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} w-full content-center py-15 sm:py-50 bg-appPrimary`}>
-        <ParallaxComponent
-          speed={10}
-        >
-          <div className="flex flex-col gap-5 sm:gap-10">
-            <div className={`text-2xl sm:text-5xl`}>
-              <b>Das magische Viereck.</b>
-
-              <div className="text-lg sm:text-2xl pt-2">
-                Gemeinsam bilden diese vier Bereiche das Fundament für finanzielle Stabilität, Sicherheit und Wachstum - alles aus einer Hand.
-              </div>
-            </div>
-
-            <div className="flex-2 sm:px-25 text-xl sm:text-4xl">
-              <div className="grid grid-cols-2 bg-white rounded-2xl shadow-xl text-center">
-                <Link href="/insurance/car">
-                  <div className="bg-blue-100 hover:bg-blue-300 rounded-tl-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
-                    <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
-                      <div>
-                        <Icon icon="mingcute:safety-certificate-fill" />
-                      </div>
-                      <div>
-                        Sach-Versicherung
-                      </div>
-                    </div>
-
-                    <div className="hidden sm:block sm:text-lg">
-                      Schutzt des Eigentums und Vermögens.
-                    </div>
-                  </div>
-                </Link>
-                <Link href="/insurance/illness">
-                  <div className="bg-green-100 hover:bg-green-300 rounded-tr-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-content-center place-items-center hover:scale-102 duration-500">
-                    <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
-                      <div>
-                        <Icon icon="solar:health-bold" />
-                      </div>
-                      <div>
-                        Personen-Versicherung
-                      </div>
-                    </div>
-                    <div className="hidden sm:block sm:text-lg">
-                      Denken Sie heute schon an morgen.
-                    </div>
-                  </div>
-                </Link>
-                <Link href="/investment">
-                  <div className="bg-yellow-100 hover:bg-yellow-300 rounded-bl-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
-                    <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
-                      <div>
-                        <Icon icon="mdi:finance" />
-                      </div>
-                      <div>
-                        Investment
-                      </div>
-                    </div>
-                    <div className="hidden sm:block sm:text-lg">
-                      Geld arbeiten lassen, Kapital vermehren.
-                    </div>
-                  </div>
-                </Link>
-                <Link href="/insurance/life">
-                  <div className="bg-orange-100 hover:bg-orange-300 rounded-br-2xl p-15 sm:p-20 w-full flex flex-col gap-2 place-items-center hover:scale-102 duration-500">
-                    <div className="flex flex-row gap-2 place-content-center place-items-center font-bold">
-                      <div>
-                        <Icon icon="streamline:investment-selection" />
-                      </div>
-                      <div>
-                        Vorsorge
-                      </div>
-                    </div>
-                    <div className="hidden sm:block sm:text-lg">
-                      Finanziell abgesichert sein in allen Lebensphasen.
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </ParallaxComponent>
-      </div>
+      {
+        // Hier kommt das video mir parrallax effekt und ein text eventuell wie zb.: "Vertrauen schaffen."
+      }
 
       <div className={`${defaultPadding} w-full py-10 sm:py-100`}>
         <ParallaxComponent
@@ -450,17 +377,18 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
+      {
+        // Wir jagen nicht dem Preis nach, sondern der Leistung.
+      }
+
       <div className={`${defaultPadding} px-10 w-full sm:py-150`}>
         <ParallaxComponent
           speed={-30}
         >
-          <ParallaxComponent
-            speed={-1}
-          >
-            <div className={`text-2xl sm:text-5xl text-center ${radley.className} sm:pb-50`}>
-              Es bleibt nicht nur bei Versicherungen.
-            </div>
-          </ParallaxComponent>
+          {
+            // Noch ein Reiter mit Versicherungen
+            // Weniger Text einbauen.
+          }
           <div className="flex flex-col sm:flex-row justify-evenly gap-5 sm:gap-5 my-15">
             <ParallaxComponent
               speed={-10}
@@ -576,6 +504,11 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
+      {
+        // Statistiken einbauen zahlen: Kunden, Versicherungen, Finanzierungen, Partner, 
+        // Kundenrezension anzeigen nur kleiner anzeigen
+      }
+
       <div className={`${defaultPadding} w-full py-20 relative z-2 bg-white`}>
         <div className={`text-xl sm:text-3xl text-left ${radley.className}`}>
           Unsere Kunden sind überzeugt.
@@ -603,28 +536,9 @@ export default function Home() {
           } />
       </div>
 
-      <div className={`w-full content-center sm:py-30 bg-gray-100`}>
-        <div className="flex flex-col sm:flex-row gap-5 sm:gap-20 place-items-center p-10">
-          <div className={`flex-1 text-2xl sm:text-6xl text-right`}>
-            <div>
-              Immer für Sie da,
-            </div>
-            <div>
-              auch im <span className="bg-linear-to-r from-appSecondary to-appSecondary bg-clip-text text-transparent">Ernstfall</span>.
-            </div>
-          </div>
-          <div className="flex-1 sm:text-2xl text-left">
-            Unfälle und Schäden sind schon nervig genug - da braucht's keinen Papierkram-Stress obendrauf.
-            <br />
-            Genau da kommen wir ins Spiel: Sie rufen uns an, und wir kümmern uns um den Rest.
-            <br />
-            Ob Meldung, Abwicklung oder Diskussion mit der Versicherung - wir nehmen Ihnen den Aufwand ab.
-            <br /><br />
-            <b>Schnell, unkompliziert und mit einem Lächeln</b> - <br />
-            damit Sie sich auf das Wesentliche konzentrieren können.
-          </div>
-        </div>
-      </div>
+      {
+        // Rüberschieben in Schadenmeldungsseite.
+      }
 
       <div className={`${defaultPadding} w-full bg-linear-to-b from-appSecondary from-10% to-white text-white sm:pb-20`}>
         <div>
