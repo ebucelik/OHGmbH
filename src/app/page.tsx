@@ -343,16 +343,18 @@ export default function Home() {
                   <img
                     src="/harald_manuel.webp"
                     alt="Harald Otto und Manuel Holzmann"
-                    className="rounded-4xl shadow-2xl 2xl:w-[60%]"
+                    className="rounded-4xl shadow-2xl lg:w-[70%]"
                   />
 
                   <div className="absolute bottom-0 w-full flex flex-col place-items-center">
                     <ParallaxComponent
-                      translateYStart={-900}
+                      translateYStart={-950}
                       scaleStart={1}
                       scaleEnd={1.1}
+                      opacityStart={0.5}
+                      opacityEnd={3}
                     >
-                      <span className="text-appPrimary text-center font-bold text-3xl sm:text-8xl">Otto & Holzmann</span>
+                      <span className="text-appPrimary text-center font-bold text-3xl sm:text-8xl sm:py-600">Otto & Holzmann</span>
                     </ParallaxComponent>
                   </div>
                 </div>
@@ -372,12 +374,13 @@ export default function Home() {
             </div>
           </div>
         </ParallaxComponent>
-      </div>
+      </div >
 
       {
         // Our services
       }
-      <div className={`${defaultPadding} sm:px-0 w-full sm:py-100`}>
+      < div className={`${defaultPadding} sm:px-0 w-full sm:py-100`
+      }>
         <ParallaxComponent
           speed={-30}
         >
@@ -450,12 +453,12 @@ export default function Home() {
             </div>
           </div>
         </ParallaxComponent>
-      </div>
+      </div >
 
       {
         // Statistics
       }
-      <div className={`${defaultPadding} flex flex-col gap-15 sm:gap-30 bg-appPrimary text-white text-center`}>
+      < div className={`${defaultPadding} flex flex-col gap-15 sm:gap-30 bg-appPrimary text-white text-center`}>
         <div className="flex flex-col sm:flex-row gap-10 sm:gap-30 text-center justify-center">
           <div>
             <CountUpComponent
@@ -505,12 +508,12 @@ export default function Home() {
         <div className="flex flex-row place-content-center">
           <Button text={"Jetzt Termin anfragen"} iconName="hugeicons:appointment-01" isPrimary={true} className="text-black bg-white" href="/contact" />
         </div>
-      </div>
+      </div >
 
       {
         // Customer reviews
       }
-      <div className={`${defaultPadding} w-full sm:mt-20 relative z-2 bg-white`}>
+      < div className={`${defaultPadding} w-full sm:mt-20 relative z-2 bg-white`}>
         <div className={`text-xl sm:text-2xl text-left ${radley.className}`}>
           Unsere Kunden sind überzeugt
         </div>
@@ -536,7 +539,7 @@ export default function Home() {
               </li>
             ))
           } />
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
