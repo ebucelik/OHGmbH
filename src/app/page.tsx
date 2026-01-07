@@ -152,6 +152,9 @@ export default function Home() {
         </div>
       </div>
 
+      {
+        // Harald Otto
+      }
       <div className="pt-25">
         <ParallaxComponent
           speed={0}
@@ -184,6 +187,9 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
+      {
+        // Manuel Holzmann
+      }
       <div className="pt-25">
         <ParallaxComponent
           speed={10}
@@ -216,6 +222,9 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
+      {
+        // Who we are
+      }
       <div className={`w-full pt-20 sm:py-100`}>
         <ParallaxComponent
           speed={-10}
@@ -349,7 +358,7 @@ export default function Home() {
                 </div>
               </ParallaxComponent>
             </div>
-            <div className="px-5 pt-30 pb-15 sm:p-20 sm:pt-150 justify-center">
+            <div className="px-5 py-30 sm:p-20 sm:pt-150 justify-center">
               <ParallaxComponent
                 speed={0}
                 scaleStart={1}
@@ -362,12 +371,19 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`${defaultPadding} px-10 w-full sm:py-100`}>
+      {
+        // Our services
+      }
+      <div className={`${defaultPadding} sm:px-0 w-full sm:py-100`}>
         <ParallaxComponent
           speed={-30}
         >
+          <div className={`${archivo.className} sm:px-10 mb-2.5 sm:mb-10 text-2xl sm:text-7xl font-bold sm:text-center`}>
+            Unsere Dienste
+          </div>
+
           <div className="flex flex-row place-content-center">
-            <div className="grid sm:grid-cols-2 gap-5 sm:gap-15 my-15 sm:w-[70%]">
+            <div className="grid sm:grid-cols-2 gap-5 sm:gap-15 sm:w-[70%]">
               <div className="bg-linear-to-t from-appPrimary/40 via-appPrimaryLight to-white rounded-xl shadow-lg hover:scale-101 duration-500">
                 <div className="relative">
                   <img src="/ownhomeInsuranceInitial.webp" alt="Versicherungen Bild" className="w-full h-1/3 rounded-t-xl" />
@@ -430,16 +446,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col sm:flex-row justify-center place-items-center gap-5 sm:pt-20">
-            <div className="sm:text-xl text-center">
-              Haben wir Ihr Interesse geweckt?
-            </div>
-            <Button text="Kontaktiere Uns" isPrimary={false} href="/contact" />
-          </div>
         </ParallaxComponent>
       </div>
 
+      {
+        // Statistics
+      }
       <div className={`${defaultPadding} flex flex-col gap-15 sm:gap-30 bg-appPrimary text-white text-center`}>
         <div className="flex flex-col sm:flex-row gap-10 sm:gap-30 text-center justify-center">
           <div>
@@ -457,7 +469,7 @@ export default function Home() {
               className="text-4xl sm:text-7xl font-bold"
             />
             <div>
-              Versicherungen
+              Abgeschlossene Versicherungen
             </div>
           </div>
           <div>
@@ -492,7 +504,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={`${defaultPadding} w-full sm:my-20 relative z-2 bg-white`}>
+      {
+        // Customer reviews
+      }
+      <div className={`${defaultPadding} w-full sm:mt-20 relative z-2 bg-white`}>
         <div className={`text-xl sm:text-2xl text-left ${radley.className}`}>
           Unsere Kunden sind überzeugt
         </div>

@@ -84,7 +84,7 @@ export default function Team() {
                                 </div>
 
                                 {/* Social Links */}
-                                <div className="flex flex-col text-left sm:grid sm:grid-cols-3 place-items-center gap-2 mt-6">
+                                <div className="grid grid-cols-2 sm:grid-cols-3 text-xs lg:text-sm place-items-start sm:place-items-center gap-2 mt-6">
                                     <Link
                                         href={`mailto:${member.email}`}
                                         className="text-gray-600 hover:text-appPrimary transition"
@@ -94,6 +94,19 @@ export default function Team() {
                                             <Icon icon="material-symbols:mail" className="h-5 w-5" />
                                             <div>
                                                 office@oh-gmbh.at
+                                            </div>
+                                        </div>
+                                    </Link>
+                                    <Link
+                                        href={`tel:${member.phone}`}
+                                        rel="noopener noreferrer"
+                                        className="text-gray-600 hover:text-appPrimary transition"
+                                        aria-label="Telefonnummer"
+                                    >
+                                        <div className="flex flex-row gap-1 place-items-center">
+                                            <Icon icon="mdi:phone" className="h-5 w-5" />
+                                            <div>
+                                                {member.phone}
                                             </div>
                                         </div>
                                     </Link>
@@ -111,42 +124,48 @@ export default function Team() {
                                             </div>
                                         </div>
                                     </Link>
-                                    <Link
-                                        href={`tel:${member.phone}`}
-                                        rel="noopener noreferrer"
-                                        className="text-gray-600 hover:text-appPrimary transition"
-                                        aria-label="Telefonnummer"
-                                    >
-                                        <div className="flex flex-row gap-1 place-items-center">
-                                            <Icon icon="mdi:phone" className="h-5 w-5" />
-                                            <div>
-                                                {member.phone}
-                                            </div>
-                                        </div>
-                                    </Link>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <div className="flex flex-col gap-5 place-items-center mt-20">
+                <div className="flex flex-col gap-5 place-items-start mt-20 sm:mx-30 lg:mx-70">
                     <div className="text-lg sm:text-2xl">
                         Unsere GISA Zahlen
                     </div>
 
-                    <div>
-                        <ul className="list-disc pl-10 sm:text-lg">
-                            <li>
-                                38712760
-                            </li>
-                            <li>
-                                38781612
-                            </li>
-                            <li>
-                                38923609
-                            </li>
-                        </ul>
+                    <div className="flex flex-col gap-2">
+                        <div>
+                            <b>38712760</b>
+                        </div>
+
+                        <div>
+                            Versicherungsvermittlung in der Form Versicherungsmakler und Beratung in Versicherungsangelegenheiten
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <div>
+                            <b>38781612</b>
+                        </div>
+
+                        <div>
+                            Vermittlung von Werk- und Dienstleistungsverträgen an Befugte unter Ausschluss der Übernahme von
+                            Aufträgen im eigenen Namen und auf eigene Rechnung sowie ausgenommen der den
+                            Immobilientreuhändern, Reisebüros, Transportagenten, Spediteuren, Vermögensberatern,
+                            Versicherungsvermittlern und Wertpapiervermittlern vorbehaltenen Tätigkeiten
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <div>
+                            <b>38923609</b>
+                        </div>
+
+                        <div>
+                            Gewerbliche Vermögensberatung mit Berechtigung nach § 1 Z 44 WAG 2018 als vertraglich
+                            gebundener Vermittler ohne Berechtigung zur Vermittlung von Lebens- und Unfallversicherungen
+                            Berechtigung zu Tätigkeiten der ungebundenen Kreditvermittlung
+                        </div>
                     </div>
                 </div>
             </div>
