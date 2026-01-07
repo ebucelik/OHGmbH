@@ -5,6 +5,7 @@ import { defaultPadding } from "../shared/style";
 import ParallaxComponent from "../components/parallaxComponent";
 import Image from "next/image";
 import CountUpComponent from "../components/countUpComponent";
+import SliderComponent from "../components/sliderComponent";
 
 export default function Home() {
   const customerReviews = [
@@ -160,21 +161,21 @@ export default function Home() {
           scaleEnd={0.8}
         >
           <div className="flex flex-col">
-            <div className="mx-5 sm:mx-60 2xl:mx-110 flex flex-row gap-5 sm:gap-10 fade-up-1s">
+            <div className="mx-3 sm:mx-[10%] 2xl:mx-[15%] flex flex-row gap-5 sm:gap-10 fade-up-1s">
               <div className="flex-1">
                 <img src="/harald_intro.webp" alt="Harald Otto" className="rounded-2xl shadow-2xl object-contain" />
               </div>
 
-              <div className="flex-1 flex flex-col gap-2 sm:gap-10 place-items-center">
+              <div className="flex-1 sm:flex-2 flex flex-col gap-1 sm:gap-10 place-items-center">
                 <div className="text-lg sm:text-4xl font-bold text-left w-full">
                   Harald Otto
                 </div>
 
-                <div className="text-xs sm:text-2xl">
+                <div className="text-xs lg:text-base xl:text-lg 2xl:text-2xl">
                   Ich bin Harald Otto, Geschäftsführer und Versicherungsmakler der OH GmbH – deinem unabhängigen Partner für Versicherungen, Finanzierungen, Investments und Energie. Bei OH GmbH steht für Offenheit, hartnäckiges Engagement und kundenorientierte Lösungen – genau diese Werte lebe ich tagtäglich in meiner Arbeit.
                 </div>
 
-                <div className="hidden sm:block sm:text-2xl">
+                <div className="hidden sm:block text-xs lg:text-base xl:text-lg 2xl:text-2xl">
                   Mit meinem Fokus auf Versicherungsberatung helfe ich Kund:innen dabei, Risiken richtig einzuschätzen und passgenaue Absicherungen zu finden. Für mich bedeutet gute Beratung nicht nur, Produkte zu erklären, sondern Vertrauen aufzubauen und komplexe Themen verständlich zu machen. Verantwortung, Verlässlichkeit und eine strategische, langfristige Perspektive zeichnen mich als Berater aus.
                 </div>
               </div>
@@ -192,17 +193,17 @@ export default function Home() {
           scaleEnd={0.8}
         >
           <div className="flex flex-col">
-            <div className="mx-5 sm:mx-60 2xl:mx-110 flex flex-row gap-5 sm:gap-10 fade-up-1s">
-              <div className="flex-1 flex flex-col gap-2 sm:gap-10 place-items-center">
+            <div className="mx-3 sm:mx-[10%] 2xl:mx-[15%] flex flex-row gap-5 sm:gap-10 fade-up-1s">
+              <div className="flex-1 sm:flex-2 flex flex-col gap-1 sm:gap-10 place-items-center">
                 <div className="text-lg sm:text-4xl font-bold text-left w-full">
                   Manuel Holzmann
                 </div>
 
-                <div className="text-xs sm:text-2xl">
+                <div className="text-xs lg:text-base xl:text-lg 2xl:text-2xl">
                   Ich bin Manuel Holzmann, Geschäftsführer und Vermögensberater bei der OH GmbH. Mein Herz schlägt für ganzheitliche Finanzstrategien, bei denen die Ziele meiner Kund:innen im Mittelpunkt stehen. Ob Investmentplanung, Vermögensberatung oder maßgeschneiderte Finanzierungslösungen – ich begleite Menschen und Unternehmen mit Klarheit, Weitblick und fundiertem Know-how.
                 </div>
 
-                <div className="hidden sm:block sm:text-2xl">
+                <div className="hidden sm:block text-xs lg:text-base xl:text-lg 2xl:text-2xl">
                   Als Vermögensberater bringe ich analytisches Denken, strukturierte Planung und ein hohes Verantwortungsbewusstsein in jede Beratung ein. Mir ist wichtig, dass meine Kund:innen nicht nur gut beraten werden, sondern auch verstehen, welche Schritte sinnvoll sind und warum. Ehrlichkeit, Transparenz und eine partnerschaftliche Zusammenarbeit stehen für mich an erster Stelle.
                 </div>
               </div>
@@ -215,7 +216,7 @@ export default function Home() {
         </ParallaxComponent>
       </div>
 
-      <div className={`w-full p-10 sm:py-100`}>
+      <div className={`w-full pt-20 sm:py-100`}>
         <ParallaxComponent
           speed={-10}
           scaleStart={0.9}
@@ -323,17 +324,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="p-10 sm:pt-150 justify-center">
+            <div className="p-5 sm:pt-150 justify-center">
               <ParallaxComponent
                 speed={-20}
                 scaleStart={1}
-                scaleEnd={1.2}
+                scaleEnd={1.1}
               >
                 <div className="relative flex flex-row place-content-center">
                   <img
                     src="/harald_manuel.webp"
                     alt="Harald Otto und Manuel Holzmann"
-                    className="rounded-4xl shadow-2xl sm:w-[70%] 2xl:w-[60%]"
+                    className="rounded-4xl shadow-2xl 2xl:w-[60%]"
                   />
 
                   <div className="absolute bottom-0 w-full flex flex-col place-items-center">
@@ -348,11 +349,11 @@ export default function Home() {
                 </div>
               </ParallaxComponent>
             </div>
-            <div className="px-10 py-20 sm:p-20 sm:pt-150 justify-center">
+            <div className="px-5 pt-30 pb-15 sm:p-20 sm:pt-150 justify-center">
               <ParallaxComponent
                 speed={0}
                 scaleStart={1}
-                scaleEnd={1.2}
+                scaleEnd={1.1}
               >
                 <span className="flex text-center font-bold text-4xl sm:text-7xl 2xl:text-8xl">Wir jagen nicht dem Preis nach, <br /> sondern der Leistung.</span>
               </ParallaxComponent>

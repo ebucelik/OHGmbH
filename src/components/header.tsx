@@ -75,7 +75,7 @@ export default function Header() {
             case Menu.solution:
                 return <div className="flex flex-col sm:flex-row fade-in-05s gap-1">
                     <div className="sm:flex-1"></div>
-                    <div className="flex-2 p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
+                    <div className="flex-2 p-2 backdrop-blur-md bg-white/60 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Versicherungen
                         </div>
@@ -160,12 +160,7 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
-
-                    {
-                        // Die restlichen Seiten content hinzufügen für informationsgewinn.
-                    }
-
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
+                    <div className="flex-1 p-2 backdrop-blur-md bg-white/60 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Finanzierungen
                         </div>
@@ -185,7 +180,7 @@ export default function Header() {
                         </div>
                     </div>
 
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
+                    <div className="flex-1 p-2 backdrop-blur-md bg-white/60 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Vermögensaufbau
                         </div>
@@ -209,7 +204,7 @@ export default function Header() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
+                    <div className="flex-1 p-2 backdrop-blur-md bg-white/60 border border-gray-200 rounded-2xl">
                         <div className="font-bold sm:text-xl">
                             Strom & Gas
                         </div>
