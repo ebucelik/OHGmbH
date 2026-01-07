@@ -358,13 +358,16 @@ export default function Home() {
                 </div>
               </ParallaxComponent>
             </div>
-            <div className="px-5 py-30 sm:p-20 sm:pt-150 justify-center">
+            <div className="px-5 py-30 sm:p-20 sm:pt-150">
               <ParallaxComponent
                 speed={0}
                 scaleStart={1}
                 scaleEnd={1.1}
               >
-                <span className="flex text-center font-bold text-4xl sm:text-7xl 2xl:text-8xl">Wir jagen nicht dem Preis nach, <br /> sondern der Leistung.</span>
+                <div className="flex flex-col font-bold text-4xl sm:text-7xl 2xl:text-8xl place-items-center text-center">
+                  <span>Wir jagen nicht dem Preis nach,</span>
+                  <span className="bg-linear-to-r from-black to-appPrimary bg-clip-text text-transparent pb-2">sondern der Leistung.</span>
+                </div>
               </ParallaxComponent>
             </div>
           </div>
