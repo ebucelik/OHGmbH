@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 
 export default function Contact() {
-    return <div className={`${defaultPadding}`}>
+    return <div className={`${defaultPadding} pt-30`}>
         <div className="flex flex-col sm:flex-row gap-15 sm:gap-0 py-0 sm:py-20 sm:justify-evenly">
             <div className="flex flex-col sm:gap-15">
                 <div className="text-2xl sm:text-4xl">

@@ -104,7 +104,7 @@ export default function Home() {
         </video>
 
         <div className="flex flex-col gap-5 2xl:gap-10 place-content-center place-items-center absolute top-0 left-0 w-full h-screen backdrop-blur-xs fade-up-1s">
-          <div className={`${archivo.className} text-6xl sm:text-9xl bg-linear-to-r from-black to-appPrimary bg-clip-text text-transparent`}>
+          <div className={`${archivo.className} text-6xl sm:text-9xl bg-linear-to-r from-black from-10% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
             OH GmbH
           </div>
           <span className={`${archivo.className} flex text-2xl sm:text-5xl text-appPrimary`}>

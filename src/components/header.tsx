@@ -271,103 +271,106 @@ export default function Header() {
     }
 
     return (
-        <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 mb-5 easeIn transition duration-300 bg-white/20`}>
-            <div className="w-full p-5 backdrop-blur-xs bg-white/70 rounded-b-2xl sm:backdrop-blur-none sm:bg-transparent fade-down-1s">
-                <div className="flex flex-row">
-                    <div className="flex-2 font-bold">
-                        <Link href="/">
-                            <Image
-                                src="/ohlogo.svg"
-                                alt="OH GmbH Logo"
-                                width={70}
-                                height={70}
-                                priority
-                            />
-                        </Link>
+        <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 easeIn transition duration-300`}>
+            <div className="p-2">
+                <div className="p-2 backdrop-blur-xs bg-white/30 rounded-xl fade-down-1s">
+                    <div className="flex flex-row">
+                        <div className="flex-2 font-bold">
+                            <Link href="/">
+                                <Image
+                                    src="/ohlogo.svg"
+                                    alt="OH GmbH Logo"
+                                    width={70}
+                                    height={70}
+                                    priority
+                                    onClick={() => setMenu(Menu.default)}
+                                />
+                            </Link>
+                        </div>
+                        <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
+                            <div
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
+                                onMouseEnter={() => setMenu(Menu.solution)}
+                                onMouseLeave={() => setMenu(Menu.default)}
+                            >
+                                <div className="flex flex-row place-items-center gap-1">
+                                    <div>
+                                        Lösungen
+                                    </div>
+                                    <div>
+                                        <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.solution ? 'rotate-180' : ''}`} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
+                                onMouseEnter={() => setMenu(Menu.service)}
+                                onMouseLeave={() => setMenu(Menu.default)}
+                            >
+                                <div className="flex flex-row place-items-center gap-1">
+                                    <div>
+                                        Leistungen
+                                    </div>
+                                    <div>
+                                        <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.service ? 'rotate-180' : ''}`} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.team ? 'decoration-3 underline underline-offset-7 scale-104' : 'hover:decoration-3 hover:underline hover:underline-offset-7 hover:scale-104'}`}
+                                onMouseEnter={() => setMenu(Menu.team)}
+                                onClick={() => setMenu(Menu.team)}
+                            >
+                                <Link href="/team">Team</Link>
+                            </div>
+                            <div
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7 scale-104' : 'hover:decoration-3 hover:underline hover:underline-offset-7 hover:scale-104'}`}
+                                onMouseEnter={() => setMenu(Menu.contact)}
+                                onClick={() => setMenu(Menu.contact)}
+                            >
+                                <Link href="/contact">Kontakt</Link>
+                            </div>
+                        </div>
+                        <div className="block content-center sm:hidden" onClick={toggleShowNavBar}>
+                            <Icon icon="ri:menu-3-line" className={`h-10 w-10 easeIn transition duration-500 ${showNavBar ? 'rotate-90' : ''}`} />
+                        </div>
                     </div>
-                    <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
+                    <div className="hidden sm:block">
+                        {
+                            navBody()
+                        }
+                    </div>
+                    <div className={`fade-in-05s flex flex-col gap-3 pt-5 sm:hidden text-lg font-bold text-left ${showNavBar ? 'block' : 'hidden'} ${menu != Menu.default ? 'hidden' : ''}`}>
                         <div
-                            className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
-                            onMouseEnter={() => setMenu(Menu.solution)}
-                            onMouseLeave={() => setMenu(Menu.default)}
+                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.solution ? 'decoration-3 underline underline-offset-7' : ''}`}
+                            onClick={() => setMenu(menu != Menu.solution ? Menu.solution : Menu.default)}
                         >
-                            <div className="flex flex-row place-items-center gap-1">
-                                <div>
-                                    Lösungen
-                                </div>
-                                <div>
-                                    <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.solution ? 'rotate-180' : ''}`} />
-                                </div>
-                            </div>
+                            <Link href="">Lösungen</Link>
                         </div>
                         <div
-                            className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
-                            onMouseEnter={() => setMenu(Menu.service)}
-                            onMouseLeave={() => setMenu(Menu.default)}
+                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.service ? 'decoration-3 underline underline-offset-7' : ''}`}
+                            onClick={() => setMenu(menu != Menu.service ? Menu.service : Menu.default)}
                         >
-                            <div className="flex flex-row place-items-center gap-1">
-                                <div>
-                                    Leistungen
-                                </div>
-                                <div>
-                                    <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.service ? 'rotate-180' : ''}`} />
-                                </div>
-                            </div>
+                            <Link href="">Leistungen</Link>
                         </div>
                         <div
-                            className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.team ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
-                            onMouseEnter={() => setMenu(Menu.team)}
-                            onMouseLeave={() => setMenu(Menu.default)}
+                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.team ? 'decoration-3 underline underline-offset-7' : ''}`}
+                            onClick={() => setMenu(menu != Menu.team ? Menu.team : Menu.default)}
                         >
                             <Link href="/team">Team</Link>
                         </div>
                         <div
-                            className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
-                            onMouseEnter={() => setMenu(Menu.contact)}
-                            onMouseLeave={() => setMenu(Menu.default)}
+                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7' : ''}`}
+                            onClick={() => setMenu(menu != Menu.contact ? Menu.contact : Menu.default)}
                         >
                             <Link href="/contact">Kontakt</Link>
                         </div>
                     </div>
-                    <div className="block content-center sm:hidden" onClick={toggleShowNavBar}>
-                        <Icon icon="ri:menu-3-line" className={`h-10 w-10 easeIn transition duration-500 ${showNavBar ? 'rotate-90' : ''}`} />
+                    <div className="sm:hidden">
+                        {
+                            navBody()
+                        }
                     </div>
-                </div>
-                <div className="hidden sm:block">
-                    {
-                        navBody()
-                    }
-                </div>
-                <div className={`fade-in-05s flex flex-col gap-3 pt-5 sm:hidden text-lg font-bold text-left ${showNavBar ? 'block' : 'hidden'} ${menu != Menu.default ? 'hidden' : ''}`}>
-                    <div
-                        className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.solution ? 'decoration-3 underline underline-offset-7' : ''}`}
-                        onClick={() => setMenu(menu != Menu.solution ? Menu.solution : Menu.default)}
-                    >
-                        <Link href="">Lösungen</Link>
-                    </div>
-                    <div
-                        className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.service ? 'decoration-3 underline underline-offset-7' : ''}`}
-                        onClick={() => setMenu(menu != Menu.service ? Menu.service : Menu.default)}
-                    >
-                        <Link href="">Leistungen</Link>
-                    </div>
-                    <div
-                        className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.team ? 'decoration-3 underline underline-offset-7' : ''}`}
-                        onClick={() => setMenu(menu != Menu.team ? Menu.team : Menu.default)}
-                    >
-                        <Link href="/team">Team</Link>
-                    </div>
-                    <div
-                        className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7' : ''}`}
-                        onClick={() => setMenu(menu != Menu.contact ? Menu.contact : Menu.default)}
-                    >
-                        <Link href="/contact">Kontakt</Link>
-                    </div>
-                </div>
-                <div className="sm:hidden">
-                    {
-                        navBody()
-                    }
                 </div>
             </div>
         </nav>
