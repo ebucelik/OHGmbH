@@ -289,7 +289,7 @@ export default function Header() {
                         </div>
                         <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
                             <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
                                 onMouseEnter={() => setMenu(Menu.solution)}
                                 onMouseLeave={() => setMenu(Menu.default)}
                             >
@@ -298,12 +298,12 @@ export default function Header() {
                                         Lösungen
                                     </div>
                                     <div>
-                                        <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.solution ? 'rotate-180' : ''}`} />
+                                        <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.solution ? 'rotate-180 text-appPrimary' : ''}`} />
                                     </div>
                                 </div>
                             </div>
                             <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'decoration-3 underline underline-offset-7 scale-104' : ''}`}
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'text-appPrimary' : ''}`}
                                 onMouseEnter={() => setMenu(Menu.service)}
                                 onMouseLeave={() => setMenu(Menu.default)}
                             >
@@ -312,18 +312,18 @@ export default function Header() {
                                         Leistungen
                                     </div>
                                     <div>
-                                        <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.service ? 'rotate-180' : ''}`} />
+                                        <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.service ? 'rotate-180 text-appPrimary' : ''}`} />
                                     </div>
                                 </div>
                             </div>
                             <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.team ? 'decoration-3 underline underline-offset-7 scale-104' : 'hover:decoration-3 hover:underline hover:underline-offset-7 hover:scale-104'}`}
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.team ? 'text-appPrimary' : 'hover:text-appPrimary'}`}
                                 onClick={() => setMenu(Menu.team)}
                             >
                                 <Link href="/team">Team</Link>
                             </div>
                             <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7 scale-104' : 'hover:decoration-3 hover:underline hover:underline-offset-7 hover:scale-104'}`}
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.contact ? 'text-appPrimary' : 'hover:text-appPrimary'}`}
                                 onClick={() => setMenu(Menu.contact)}
                             >
                                 <Link href="/contact">Kontakt</Link>
@@ -340,25 +340,25 @@ export default function Header() {
                     </div>
                     <div className={`fade-in-05s flex flex-col gap-3 pt-5 sm:hidden text-lg font-bold text-left ${showNavBar ? 'block' : 'hidden'} ${menu != Menu.default ? 'hidden' : ''}`}>
                         <div
-                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.solution ? 'decoration-3 underline underline-offset-7' : ''}`}
+                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
                             onClick={() => setMenu(menu != Menu.solution ? Menu.solution : Menu.default)}
                         >
                             <Link href="">Lösungen</Link>
                         </div>
                         <div
-                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.service ? 'decoration-3 underline underline-offset-7' : ''}`}
+                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.service ? 'text-appPrimary' : ''}`}
                             onClick={() => setMenu(menu != Menu.service ? Menu.service : Menu.default)}
                         >
                             <Link href="">Leistungen</Link>
                         </div>
                         <div
-                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.team ? 'decoration-3 underline underline-offset-7' : ''}`}
+                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.team ? 'text-appPrimary' : ''}`}
                             onClick={() => setMenu(menu != Menu.team ? Menu.team : Menu.default)}
                         >
                             <Link href="/team">Team</Link>
                         </div>
                         <div
-                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7' : ''}`}
+                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.contact ? 'text-appPrimary' : ''}`}
                             onClick={() => setMenu(menu != Menu.contact ? Menu.contact : Menu.default)}
                         >
                             <Link href="/contact">Kontakt</Link>
