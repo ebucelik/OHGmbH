@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 export default function Footer() {
     return (
         <footer className="relative z-1 overflow-y-hidden">
-            <div className="py-5 flex place-content-center pb-5 sm:pb-10 px-10 sm:px-30 mt-20">
+            <div className="py-5 flex place-content-center pb-5 sm:pb-10 px-10 sm:px-30 mt-10">
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:gap-x-100">
                     <div className="flex flex-col gap-1 text-sm sm:text-lg">
                         <div className="font-bold py-2 text-lg sm:text-xl">
@@ -87,7 +87,7 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="tel:+43 664 1817109" className="hover:text-appPrimary">+43 664 1817109</Link>
+                            <Link href="tel:+43 664 4113339" className="hover:text-appPrimary">+43 664 4113339</Link>
                         </div>
                         <div>
                             <Link href="/contact" className="hover:text-appPrimary">Kontaktformular</Link>

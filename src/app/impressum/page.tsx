@@ -19,7 +19,7 @@ export default function Impressum() {
                     2550 Enzesfeld, Neugasse 9
                 </div>
                 <div>
-                    <Link href="tel:+43 664 1817109" className="hover:text-appPrimary">+43 664 1817109</Link>
+                    <Link href="tel:+43 664 4113339" className="hover:text-appPrimary">+43 664 4113339</Link>
                 </div>
                 <div>
                     <Link href="mailto:office@oh-gmbh.at" className="hover:text-appPrimary">office@oh-gmbh.at</Link>

@@ -25,7 +25,7 @@ export default function Contact() {
                             <Icon icon="ic:baseline-call" />
                         </div>
                         <div>
-                            <Link href="tel:+43 664 1817109" className="hover:text-appPrimary">+43 664 1817109</Link>
+                            <Link href="tel:+43 664 4113339" className="hover:text-appPrimary">+43 664 4113339</Link>
                         </div>
                     </div>
                     <div className="flex flex-row place-items-center gap-5 text-lg sm:text-xl 2xl:text-2xl">

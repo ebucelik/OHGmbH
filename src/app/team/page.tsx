@@ -6,10 +6,10 @@ const teamMembers = [
     {
         name: "Harald Otto",
         role: "Geschäftsführer & Gründer",
-        image: "/haraldotto1.webp",
+        image: "/harry.webp",
         email: "office@oh-gmbh.at",
         linkedin: "https://www.linkedin.com/in/harald-otto-658478284/",
-        phone: "+43 664 1817109",
+        phone: "+43 664 4113339",
         certifications: [
             "Staatlich geprüfter Versicherungsmakler",
             "Unabhängige Versicherungsberatung",
@@ -19,7 +19,7 @@ const teamMembers = [
     {
         name: "Manuel Holzmann",
         role: "Geschäftsführer & Gründer",
-        image: "/holzmannmanuel1.webp",
+        image: "/manuel.webp",
         email: "office@oh-gmbh.at",
         linkedin: "https://www.linkedin.com/in/manuel-holzmann-076519270/",
         phone: "+43 664 1519170",
