@@ -348,11 +348,11 @@ export default function Home() {
 
                   <div className="absolute bottom-0 w-full flex flex-col place-items-center">
                     <ParallaxComponent
-                      translateYStart={-950}
+                      translateYStart={-1000}
                       scaleStart={1}
                       scaleEnd={1.1}
-                      opacityStart={0.5}
-                      opacityEnd={3}
+                      opacityStart={0.01}
+                      opacityEnd={5}
                     >
                       <span className="text-appPrimary text-center font-bold text-3xl sm:text-8xl sm:py-600">Otto & Holzmann</span>
                     </ParallaxComponent>
