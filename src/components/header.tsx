@@ -318,14 +318,12 @@ export default function Header() {
                             </div>
                             <div
                                 className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.team ? 'decoration-3 underline underline-offset-7 scale-104' : 'hover:decoration-3 hover:underline hover:underline-offset-7 hover:scale-104'}`}
-                                onMouseEnter={() => setMenu(Menu.team)}
                                 onClick={() => setMenu(Menu.team)}
                             >
                                 <Link href="/team">Team</Link>
                             </div>
                             <div
                                 className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.contact ? 'decoration-3 underline underline-offset-7 scale-104' : 'hover:decoration-3 hover:underline hover:underline-offset-7 hover:scale-104'}`}
-                                onMouseEnter={() => setMenu(Menu.contact)}
                                 onClick={() => setMenu(Menu.contact)}
                             >
                                 <Link href="/contact">Kontakt</Link>
