@@ -159,7 +159,7 @@ export default function Home() {
           <div className="text-2xl sm:text-4xl font-bold text-left w-full">
             Harald Otto
           </div>
-          <div className="flex flex-row gap-5 sm:gap-10 fade-up-1s">
+          <div className="flex flex-row gap-5 sm:gap-10">
             <div className="flex-1">
               <img src="/harald_intro.webp" alt="Harald Otto" className="rounded-2xl shadow-2xl object-contain" />
             </div>
@@ -186,7 +186,7 @@ export default function Home() {
             Manuel Holzmann
           </div>
 
-          <div className="flex flex-row gap-5 sm:gap-10 fade-up-1s">
+          <div className="flex flex-row gap-5 sm:gap-10">
             <div className="flex-1 sm:flex-2 flex flex-col gap-1 sm:gap-10 place-items-center text-sm lg:text-base xl:text-2xl">
               <div>
                 Ich bin Manuel Holzmann, Geschäftsführer und Vermögensberater bei der OH GmbH. Mein Herz schlägt für ganzheitliche Finanzstrategien, bei denen die Ziele meiner Kund:innen im Mittelpunkt stehen. Ob Investmentplanung, Vermögensberatung oder maßgeschneiderte Finanzierungslösungen – ich begleite Menschen und Unternehmen mit Klarheit, Weitblick und fundiertem Know-how.
@@ -212,8 +212,8 @@ export default function Home() {
           <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className={`${archivo.className} px-5 sm:px-10 text-4xl sm:text-7xl font-bold`}>
             Wer wir sind
           </motion.div>
-          <div className="flex flex-col text-3xl sm:text-5xl gap-1">
-            <div className="grid grid-cols-2 gap-10 sm:gap-20 sm:px-10">
+          <div className="flex flex-col text-2xl sm:text-5xl gap-1">
+            <div className="grid grid-cols-2 gap-5 sm:gap-20 sm:px-10">
               <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} className="text-right">
                 <span className="text-appPrimary">O</span>ffen
               </motion.div>
