@@ -214,34 +214,34 @@ export default function Home() {
           </motion.div>
           <div className="flex flex-col text-2xl sm:text-5xl gap-1">
             <div className="grid grid-cols-2 gap-5 sm:gap-20 sm:px-10">
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} className="text-right">
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} className="text-right">
                 <span className="text-appPrimary">O</span>ffen
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }}>
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}>
                 <span className="text-appPrimary">H</span>erzlich
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} className="text-right">
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} className="text-right">
                 <span className="text-appPrimary">O</span>ffensiv
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }}>
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}>
                 <span className="text-appPrimary">H</span>artnäckig
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} className="text-right">
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} className="text-right">
                 <span className="text-appPrimary">O</span>rganisiert
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }}>
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}>
                 <span className="text-appPrimary">H</span>andlungsstark
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} className="text-right">
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} className="text-right">
                 <span className="text-appPrimary">O</span>rdentlich
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }}>
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}>
                 <span className="text-appPrimary">H</span>erausragend
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} className="text-right">
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} className="text-right">
                 <span className="text-appPrimary">O</span>ptimal
               </motion.div>
-              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }}>
+              <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }}>
                 <span className="text-appPrimary">H</span>ilfsbereit
               </motion.div>
             </div>
