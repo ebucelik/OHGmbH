@@ -244,7 +244,7 @@ export default function Accident() {
                         </Link>
                     </div>
                     <div className="hover:scale-101 duration-500">
-                        <Link href="">
+                        <Link href="/insurance/moped">
                             <div className="relative">
                                 <img src="/mopedInsuranceInitial.webp" alt="Motorrad-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                                 <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
@@ -256,19 +256,19 @@ export default function Accident() {
                         </Link>
                     </div>
                     <div className="hover:scale-101 duration-500">
-                        <Link href="">
+                        <Link href="/insurance/law">
                             <div className="relative">
-                                <img src="/accidentInsuranceInitial.webp" alt="Unfall-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
+                                <img src="/lawInsuranceInitial.webp" alt="Rechtsschutz-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                                 <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">
                                     <div className="text-lg text-center">
-                                        Unfall-Versicherung
+                                        Rechtsschutz-Versicherung
                                     </div>
                                 </div>
                             </div>
                         </Link>
                     </div>
                     <div className="hover:scale-101 duration-500">
-                        <Link href="">
+                        <Link href="/insurance/life">
                             <div className="relative">
                                 <img src="/lifeInsuranceInitial.webp" alt="Lebens-Versicherung" className="object-cover rounded-2xl shadow-xl shadow-gray-600 h-50 sm:h-80 w-50 sm:w-80" />
                                 <div className="absolute p-3 bottom-0 left-0 flex flex-col text-white w-full backdrop-blur-md rounded-b-xl">

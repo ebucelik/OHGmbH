@@ -22,7 +22,7 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="/info" className="hover:text-appPrimary">Strom & Gas Vergleich</Link>
+                            <Link href="/energy/compare" className="hover:text-appPrimary">Strom & Gas Vergleich</Link>
                         </div>
 
                         <div>

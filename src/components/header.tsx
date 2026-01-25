@@ -127,12 +127,12 @@ export default function Header() {
                                     Sicherheit
                                 </div>
                                 <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/insurance/health" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Krankenvers.
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/insurance/disability" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Berufsunfähigk.
                                     </Link>
                                 </div>
@@ -211,17 +211,17 @@ export default function Header() {
                         <div className="grid grid-cols-1 sm:text-lg">
                             <div className="py-2 pl-2">
                                 <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/energy/compare" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Tarifvergleich
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/energy/switch" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Wechsel des Anbieters
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                    <Link href="/energy/eco" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         Öko-Tarife
                                     </Link>
                                 </div>
@@ -343,13 +343,13 @@ export default function Header() {
                             className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
                             onClick={() => setMenu(menu != Menu.solution ? Menu.solution : Menu.default)}
                         >
-                            <Link href="">Lösungen</Link>
+                            <span>Lösungen</span>
                         </div>
                         <div
                             className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.service ? 'text-appPrimary' : ''}`}
                             onClick={() => setMenu(menu != Menu.service ? Menu.service : Menu.default)}
                         >
-                            <Link href="">Leistungen</Link>
+                            <span>Leistungen</span>
                         </div>
                         <div
                             className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.team ? 'text-appPrimary' : ''}`}
