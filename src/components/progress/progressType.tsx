@@ -6,5 +6,8 @@ export enum ProgressType {
     ownhome = "ownhome",
     flat = "flat",
     law = "law",
-    accident = "accident"
+    accident = "accident",
+    life = "life",
+    health = "health",
+    disability = "disability"
 }

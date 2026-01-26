@@ -431,7 +431,7 @@ export default function MotorcycleInsurance() {
                             listReactValues={[
                                 <div>
                                     Diese Anfrage ist zu <b>100% unverbindlich</b>. Ich erteile einen Beratungsauftrag und akzeptiere die zugrundeliegende
-                                    <Link href=""><b className="text-appPrimary"> AGB</b></Link>.
+                                    <Link href="/agb"><b className="text-appPrimary"> AGB</b></Link>.
                                 </div>
                             ]}
                             value={insurance.vehicle[FormType.orderAccepted]}
