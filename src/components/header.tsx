@@ -272,16 +272,16 @@ export default function Header() {
 
     return (
         <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 easeIn transition duration-300`}>
-            <div className="p-2">
-                <div className="p-2 backdrop-blur-xs bg-white/30 rounded-xl fade-down-1s">
+            <div className="pr-15 p-5 pl-15" >
+                <div className="pl-15 backdrop-blur-xs bg-white/30 rounded-4xl fade-down-1s">
                     <div className="flex flex-row">
-                        <div className="flex-2 font-bold">
+                        <div className="p-5 flex-2 font-bold">
                             <Link href="/">
                                 <Image
                                     src="/ohlogo.svg"
                                     alt="OH GmbH Logo"
-                                    width={70}
-                                    height={70}
+                                    width={120}
+                                    height={120}
                                     priority
                                     onClick={() => setMenu(Menu.default)}
                                 />
@@ -289,7 +289,7 @@ export default function Header() {
                         </div>
                         <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
                             <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
+                                className={`flex-1 invisible decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
                                 onMouseEnter={() => setMenu(Menu.solution)}
                                 onMouseLeave={() => setMenu(Menu.default)}
                             >
@@ -303,7 +303,7 @@ export default function Header() {
                                 </div>
                             </div>
                             <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'text-appPrimary' : ''}`}
+                                className={`flex-1 invisible decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'text-appPrimary' : ''}`}
                                 onMouseEnter={() => setMenu(Menu.service)}
                                 onMouseLeave={() => setMenu(Menu.default)}
                             >

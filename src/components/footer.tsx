@@ -14,23 +14,23 @@ export default function Footer() {
                         </div>
 
                         <div>
-                            <Link href="/insurance/car" className="hover:text-appPrimary">Versicherungen</Link>
+                            <Link href="" /*/insurance/car*/className="hover:text-appPrimary">Versicherungen</Link>
                         </div>
 
                         <div>
-                            <Link href="/finance/homecredit" className="hover:text-appPrimary">Finanzierungen</Link>
+                            <Link href="" /*/finance/homecredit*/ className="hover:text-appPrimary">Finanzierungen</Link>
                         </div>
 
                         <div>
-                            <Link href="/info" className="hover:text-appPrimary">Strom & Gas Vergleich</Link>
+                            <Link href="" /*/info*/className="hover:text-appPrimary">Strom & Gas Vergleich</Link>
                         </div>
 
                         <div>
-                            <Link href="/contact" className="hover:text-appPrimary">Beratung vereinbaren</Link>
+                            <Link href="" /*/contact*/className="hover:text-appPrimary">Beratung vereinbaren</Link>
                         </div>
 
                         <div>
-                            <Link href="/services" className="hover:text-appPrimary">Schaden melden</Link>
+                            <Link href="" /*/services*/ className="hover:text-appPrimary">Schaden melden</Link>
                         </div>
                     </div>
                     <div className="flex flex-col gap-1 text-sm sm:text-lg">

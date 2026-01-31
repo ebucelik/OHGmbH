@@ -10,8 +10,8 @@ export default function Dataprotection() {
                     <p>
                         OH GmbH<br />
                         Vertreten durch Harald Otto und Manuel Holzmann<br />
-                        Neugasse 9<br />
-                        2550 Enzesfeld<br />
+                        Neugasse 8<br />
+                        2551 Enzesfeld-Lindabrunn<br />
                         E-Mail: <a href="mailto:info@oh-gmbh.de" className="text-appPrimary underline">office@oh-gmbh.at</a><br />
                     </p>
                     <p className="mt-4">Wir sind als unabhängiger Versicherungsmakler und Vermögensberater tätig.</p>
