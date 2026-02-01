@@ -272,16 +272,16 @@ export default function Header() {
 
     return (
         <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 easeIn transition duration-300`}>
-            <div className="pr-15 p-5 pl-15" >
-                <div className="pl-15 backdrop-blur-xs bg-white/30 rounded-4xl fade-down-1s">
+            <div className="p-3" >
+                <div className="px-3 py-2 sm:p-5 backdrop-blur-md bg-white/60 sm:bg-white/30 rounded-2xl sm:rounded-4xl fade-down-1s border border-white/30">
                     <div className="flex flex-row">
-                        <div className="p-5 flex-2 font-bold">
+                        <div className="py-1 px-2 flex-1">
                             <Link href="/">
                                 <Image
                                     src="/ohlogo.svg"
                                     alt="OH GmbH Logo"
-                                    width={120}
-                                    height={120}
+                                    width={70}
+                                    height={70}
                                     priority
                                     onClick={() => setMenu(Menu.default)}
                                 />
@@ -289,11 +289,11 @@ export default function Header() {
                         </div>
                         <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
                             <div
-                                className={`flex-1 invisible decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
                                 onMouseEnter={() => setMenu(Menu.solution)}
                                 onMouseLeave={() => setMenu(Menu.default)}
                             >
-                                <div className="flex flex-row place-items-center gap-1">
+                                <div className="invisible flex flex-row place-items-center gap-1">
                                     <div>
                                         Lösungen
                                     </div>
@@ -303,11 +303,11 @@ export default function Header() {
                                 </div>
                             </div>
                             <div
-                                className={`flex-1 invisible decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'text-appPrimary' : ''}`}
+                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'text-appPrimary' : ''}`}
                                 onMouseEnter={() => setMenu(Menu.service)}
                                 onMouseLeave={() => setMenu(Menu.default)}
                             >
-                                <div className="flex flex-row place-items-center gap-1">
+                                <div className="invisible flex flex-row place-items-center gap-1">
                                     <div>
                                         Leistungen
                                     </div>
@@ -330,7 +330,7 @@ export default function Header() {
                             </div>
                         </div>
                         <div className="block content-center sm:hidden" onClick={toggleShowNavBar}>
-                            <Icon icon="ri:menu-3-line" className={`h-10 w-10 easeIn transition duration-500 ${showNavBar ? 'rotate-90' : ''}`} />
+                            <Icon icon="ri:menu-3-line" className={`h-6 w-6 easeIn transition duration-500 ${showNavBar ? 'rotate-90' : ''}`} />
                         </div>
                     </div>
                     <div className="hidden sm:block">
@@ -338,32 +338,47 @@ export default function Header() {
                             navBody()
                         }
                     </div>
-                    <div className={`fade-in-05s flex flex-col gap-3 pt-5 sm:hidden text-lg font-bold text-left ${showNavBar ? 'block' : 'hidden'} ${menu != Menu.default ? 'hidden' : ''}`}>
-                        <div
-                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
-                            onClick={() => setMenu(menu != Menu.solution ? Menu.solution : Menu.default)}
-                        >
-                            <Link href="">Lösungen</Link>
+                    {showNavBar && (
+                        <div className="sm:hidden mt-2">
+                            <div className="rounded-2xl border border-white/30 bg-white/70 backdrop-blur-md shadow-xl overflow-hidden">
+
+                                <button
+                                    className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold tracking-wide"
+                                    onClick={toggleShowNavBar}
+                                >
+                                    <span className="uppercase tracking-[0.2em] opacity-80">Menü</span>
+                                    <Icon icon="material-symbols:close-rounded" className="h-6 w-6" />
+                                </button>
+
+                                <div className="px-2 pb-2 flex flex-col">
+                                    <Link
+                                        href="/team"
+                                        className="px-3 py-3 rounded-xl text-base font-semibold hover:bg-black/5"
+                                        onClick={toggleShowNavBar}
+                                    >
+                                        Team
+                                    </Link>
+
+                                    <Link
+                                        href="/contact"
+                                        className="px-3 py-3 rounded-xl text-base font-semibold hover:bg-black/5"
+                                        onClick={toggleShowNavBar}
+                                    >
+                                        Kontakt
+                                    </Link>
+
+                                    {/* Optional: CTA Button */}
+                                    <Link
+                                        href="/contact"
+                                        className="mt-2 mx-2 mb-2 px-4 py-3 rounded-xl text-base font-semibold text-center bg-appPrimary text-black"
+                                        onClick={toggleShowNavBar}
+                                    >
+                                        Beratung anfragen
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
-                        <div
-                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.service ? 'text-appPrimary' : ''}`}
-                            onClick={() => setMenu(menu != Menu.service ? Menu.service : Menu.default)}
-                        >
-                            <Link href="">Leistungen</Link>
-                        </div>
-                        <div
-                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.team ? 'text-appPrimary' : ''}`}
-                            onClick={() => setMenu(menu != Menu.team ? Menu.team : Menu.default)}
-                        >
-                            <Link href="/team">Team</Link>
-                        </div>
-                        <div
-                            className={`decoration-appPrimary content-center rounded-lg ${menu == Menu.contact ? 'text-appPrimary' : ''}`}
-                            onClick={() => setMenu(menu != Menu.contact ? Menu.contact : Menu.default)}
-                        >
-                            <Link href="/contact">Kontakt</Link>
-                        </div>
-                    </div>
+                    )}
                     <div className="sm:hidden">
                         {
                             navBody()

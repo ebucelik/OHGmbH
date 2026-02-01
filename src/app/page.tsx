@@ -48,7 +48,7 @@ export default function Home() {
                 </video>
 
                 <div className="flex flex-col gap-5 2xl:gap-10 place-content-center place-items-center absolute top-0 left-0 w-full h-screen backdrop-blur-xs fade-up-1s">
-                    <div className={`${archivo.className} text-7xl sm:text-9xl bg-linear-to-r from-black from-10% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
+                    <div className={`${archivo.className} text-7xl sm:text-9xl bg-linear-to-r from-black from-35% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
                         OH GmbH
                     </div>
                     <span className={`${archivo.className} flex text-2xl sm:text-5xl text-appPrimary`}>
@@ -96,65 +96,125 @@ export default function Home() {
                 </div>
             </div>
 
-            {
-                // Harald Otto
-            }
-            <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ scale: 0, opacity: 0 }} whileInView={{ opacity: 1, scale: 1 }} className="pt-25" >
-                <div className="flex flex-col p-30 mx-3 sm:mx-[10%] 2xl:mx-[15%] gap-5">
-                    <div className="text-2xl sm:text-4xl font-bold text-left w-full">
+
+            <motion.div
+                transition={{ duration: 0.5, ease: "circOut" }}
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                className="pt-25"
+            >
+                <div className="flex flex-col p-6 sm:p-10 mx-3 sm:mx-[10%] 2xl:mx-[15%] gap-5">
+
+                    <div className={`${archivo.className} text-center text-4xl sm:text-8xl bg-linear-to-r from-black from-35% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
                         Harald Otto
                     </div>
-                    <div className="flex flex-row gap-5 sm:gap-10">
-                        <div className="flex-1">
-                            <img src="/harald_intro.webp" alt="Harald Otto" className="rounded-2xl shadow-2xl object-contain" />
+
+                    {/* CONTENT */}
+                    <div className="flex flex-col sm:flex-row gap-5 sm:gap-10">
+
+                        {/* BILD */}
+                        <div className="w-full sm:flex-1">
+                            <img
+                                src="/harald_intro.webp"
+                                alt="Harald Otto"
+                                className="rounded-2xl shadow-2xl object-contain w-full"
+                            />
                         </div>
 
-                        <div className="flex-1 sm:flex-2 flex flex-col gap-1 sm:gap-10 place-items-center text-sm lg:text-base xl:text-2xl">
+                        {/* TEXT */}
+                        <div className="w-full sm:flex-1 flex flex-col gap-4 sm:gap-10 text-sm lg:text-base xl:text-2xl">
+
                             <div>
-                                Ich bin Harald Otto, Geschäftsführer und Versicherungsmakler der OH GmbH – deinem unabhängigen Partner für Versicherungen, Finanzierungen, Investments und Energie. Bei OH GmbH steht für Offenheit, hartnäckiges Engagement und kundenorientierte Lösungen – genau diese Werte lebe ich tagtäglich in meiner Arbeit.
+                                Ich bin Harald Otto, Geschäftsführer und Versicherungsmakler der OH GmbH – deinem
+                                unabhängigen Partner für Versicherungen, Finanzierungen, Investments und Energie.
+                                Bei OH GmbH steht für Offenheit, hartnäckiges Engagement und kundenorientierte
+                                Lösungen – genau diese Werte lebe ich tagtäglich in meiner Arbeit.
                             </div>
 
+                            {/* nur Desktop sichtbar */}
                             <div className="hidden sm:block">
-                                Mit meinem Fokus auf Versicherungsberatung helfe ich Kund:innen dabei, Risiken richtig einzuschätzen und passgenaue Absicherungen zu finden. Für mich bedeutet gute Beratung nicht nur, Produkte zu erklären, sondern Vertrauen aufzubauen und komplexe Themen verständlich zu machen. Verantwortung, Verlässlichkeit und eine strategische, langfristige Perspektive zeichnen mich als Berater aus.
+                                Mit meinem Fokus auf Versicherungsberatung helfe ich Kund:innen dabei,
+                                Risiken richtig einzuschätzen und passgenaue Absicherungen zu finden.
+                                Für mich bedeutet gute Beratung nicht nur, Produkte zu erklären,
+                                sondern Vertrauen aufzubauen und komplexe Themen verständlich zu machen.
+                                Verantwortung, Verlässlichkeit und eine strategische, langfristige Perspektive
+                                zeichnen mich als Berater aus.
                             </div>
+
                         </div>
                     </div>
                 </div>
             </motion.div>
+
+
 
             {
                 // Manuel Holzmann
             }
-            <motion.div transition={{ duration: 0.5, ease: "circOut" }} initial={{ scale: 0, opacity: 0 }} whileInView={{ opacity: 1, scale: 1 }} className="pt-25">
-                <div className="flex flex-col p-30 mx-3 sm:mx-[10%] 2xl:mx-[15%] gap-5">
-                    <div className="text-2xl sm:text-4xl font-bold text-right w-full">
+            {/* Platzhalter nur Desktop */}
+            <div className="hidden sm:block invisible text-2xl sm:text-4xl font-bold">
+                Manuel Holzmann
+            </div>
+            <motion.div
+                transition={{ duration: 0.5, ease: "circOut" }}
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                className="pt-25"
+            >
+                <div className="flex flex-col p-6 sm:p-10 mx-3 sm:mx-[10%] 2xl:mx-[15%] gap-5">
+
+                    {/* NAME – NUR MOBILE GANZ OBEN */}
+                    <div className={`${archivo.className} text-center text-4xl sm:text-8xl bg-linear-to-r from-black from-35% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
                         Manuel Holzmann
                     </div>
 
-                    <div className="flex flex-row gap-5 sm:gap-10">
-                        <div className="flex-1 sm:flex-2 flex flex-col gap-1 sm:gap-10 place-items-center text-sm lg:text-base xl:text-2xl">
+                    <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 items-start">
+
+                        {/* TEXT */}
+                        <div className="w-full sm:flex-1 flex flex-col gap-4 sm:gap-10 text-sm lg:text-base xl:text-2xl">
+
+
+
                             <div>
-                                Ich bin Manuel Holzmann, Geschäftsführer und Vermögensberater bei der OH GmbH. Mein Herz schlägt für ganzheitliche Finanzstrategien, bei denen die Ziele meiner Kund:innen im Mittelpunkt stehen. Ob Investmentplanung, Vermögensberatung oder maßgeschneiderte Finanzierungslösungen – ich begleite Menschen und Unternehmen mit Klarheit, Weitblick und fundiertem Know-how.
+                                Ich bin Manuel Holzmann, Geschäftsführer und Vermögensberater bei der OH GmbH.
+                                Mein Herz schlägt für ganzheitliche Finanzstrategien, bei denen die Ziele meiner
+                                Kund:innen im Mittelpunkt stehen. Ob Investmentplanung, Vermögensberatung oder
+                                maßgeschneiderte Finanzierungslösungen – ich begleite Menschen und Unternehmen
+                                mit Klarheit, Weitblick und fundiertem Know-how.
                             </div>
 
                             <div className="hidden sm:block">
-                                Als Vermögensberater bringe ich analytisches Denken, strukturierte Planung und ein hohes Verantwortungsbewusstsein in jede Beratung ein. Mir ist wichtig, dass meine Kund:innen nicht nur gut beraten werden, sondern auch verstehen, welche Schritte sinnvoll sind und warum. Ehrlichkeit, Transparenz und eine partnerschaftliche Zusammenarbeit stehen für mich an erster Stelle.
+                                Als Vermögensberater bringe ich analytisches Denken, strukturierte Planung und ein
+                                hohes Verantwortungsbewusstsein in jede Beratung ein. Mir ist wichtig, dass meine
+                                Kund:innen nicht nur gut beraten werden, sondern auch verstehen, welche Schritte
+                                sinnvoll sind und warum. Ehrlichkeit, Transparenz und eine partnerschaftliche
+                                Zusammenarbeit stehen für mich an erster Stelle.
                             </div>
                         </div>
 
-                        <div className="flex-1">
-                            <img src="/manuel_intro.webp" alt="Manuel Holzmann" className="rounded-2xl shadow-2xl" />
+                        {/* BILD + NAME (DESKTOP) */}
+                        <div className="w-full sm:flex-1 flex flex-col gap-3">
+
+                            <img
+                                src="/manuel_intro.webp"
+                                alt="Manuel Holzmann"
+                                className="rounded-2xl shadow-2xl object-contain w-full"
+                            />
                         </div>
+
                     </div>
                 </div>
             </motion.div>
+
+
+
 
             {
                 // Our services
             }
             < div className={`${defaultPadding} sm:px-0 w-full sm:py-25`}>
                 <div className={`${archivo.className} sm:px-10 mb-2.5 sm:mb-10 text-4xl sm:text-7xl font-bold sm:text-center `}>
-                    <div className={`${archivo.className} text-7xl sm:text-9xl bg-linear-to-r from-black from-10% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
+                    <div className={`${archivo.className} text-5xl sm:text-7xl bg-linear-to-r from-black from-35% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
                         Unsere Fachgebiete
                     </div>
                 </div>
