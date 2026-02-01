@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Contact() {
     return <div className={`${defaultPadding}`}>
-        <div className="flex flex-col sm:flex-row gap-15 sm:gap-0 py-0 sm:py-20 sm:justify-evenly">
+        <div className="flex flex-col sm:flex-row gap-15 sm:gap-0 py-10 sm:py-20 sm:justify-evenly">
             <div className="flex flex-col sm:gap-15 pt-12">
                 <div className="text-2xl sm:text-4xl">
                     Kontaktformular
@@ -15,7 +15,7 @@ export default function Contact() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-10 sm:gap-15 pt-12">
+            <div className="flex flex-col gap-15 sm:gap-20 pt-12">
                 <div className="text-2xl sm:text-4xl">
                     Falls es schneller gehen muss
                 </div>
