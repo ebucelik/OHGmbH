@@ -16,19 +16,16 @@ export default function Impressum() {
                     Versicherungs-, Vermögens-, Finanzierungs- und Energieberater
                 </div>
                 <div>
-                    2550 Enzesfeld, Neugasse 9
+                    2551 Enzesfeld-Lindabrunn, Neugasse 8
                 </div>
                 <div>
-                    <Link href="tel:+43 664 1817109" className="hover:text-appPrimary">+43 664 1817109</Link>
+                    <Link href="tel:+43 664 4113339" className="hover:text-appPrimary">+43 664 4113339</Link>
                 </div>
                 <div>
                     <Link href="mailto:office@oh-gmbh.at" className="hover:text-appPrimary">office@oh-gmbh.at</Link>
                 </div>
                 <div>
-                    ATU123456
-                </div>
-                <div>
-                    <b>Geschäftsführer:</b> Harald Otto
+                    <b>Geschäftsführer:</b> Harald Otto & Manuel Holzmann
                 </div>
 
                 <div className="font-bold pt-5">
