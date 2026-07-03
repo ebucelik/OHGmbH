@@ -1,11 +1,14 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { FormType } from "../../model/formType";
 import FormComponent from "../formComponent";
 import FormInput, { InputType } from "../formInput";
 
 export default function ContactComponent() {
     const required = true
+    const searchParams = useSearchParams()
+    const noteFromQuery = searchParams.get("note") ?? undefined
 
     return <div>
         <FormComponent children={
@@ -97,6 +100,7 @@ export default function ContactComponent() {
                         type={InputType.text}
                         title={FormType.note}
                         placeholder="zB.: Brauche Versicherung"
+                        value={noteFromQuery}
                     />
                 </div>
             </div>

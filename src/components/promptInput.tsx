@@ -4,12 +4,50 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
 
+type RouteMatch = { keywords: string[]; href: string };
+
+const routeMatches: RouteMatch[] = [
+    { keywords: ["lkw", "lastwagen", "laster"], href: "/insurance/lkw" },
+    { keywords: ["motorrad", "biker", "töff", "toff"], href: "/insurance/motorcycle" },
+    { keywords: ["moped", "roller"], href: "/insurance/moped" },
+    { keywords: ["auto", "pkw", "kfz", "fahrzeug", "wagen"], href: "/insurance/car" },
+    { keywords: ["eigenheim", "haus ", "hausversicherung", "immobilie"], href: "/insurance/ownhome" },
+    { keywords: ["haushalt", "wohnung"], href: "/insurance/flat" },
+    { keywords: ["rechtsschutz", "anwalt", "rechtsstreit"], href: "/insurance/law" },
+    { keywords: ["unfall"], href: "/insurance/accident" },
+    { keywords: ["umschuldung"], href: "/finance/debtrestructing" },
+    { keywords: ["wohnbaukredit", "kredit", "finanzierung"], href: "/finance/homecredit" },
+    { keywords: ["gewinnfreibetrag"], href: "/investment/profitallowance" },
+    { keywords: ["investment", "anlage", "vermögen", "vermogen"], href: "/investment/investmentservice" },
+];
+
+function findRoute(text: string): string | null {
+    const normalized = text.toLowerCase();
+
+    for (const match of routeMatches) {
+        if (match.keywords.some((keyword) => normalized.includes(keyword))) {
+            return match.href;
+        }
+    }
+
+    return null;
+}
+
 export default function PromptInput() {
     const [value, setValue] = useState("");
     const router = useRouter();
 
     function submit() {
-        router.push("/contact");
+        const trimmed = value.trim();
+
+        if (!trimmed) {
+            router.push("/contact");
+            return;
+        }
+
+        const matchedRoute = findRoute(trimmed);
+
+        router.push(matchedRoute ?? `/contact?note=${encodeURIComponent(trimmed)}`);
     }
 
     function onKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {

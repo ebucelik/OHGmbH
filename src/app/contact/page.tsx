@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { defaultPadding } from "../../shared/style";
 import ContactComponent from "../../components/contact/contactComponent";
 import { Icon } from "@iconify/react";
@@ -11,7 +12,9 @@ export default function Contact() {
                     Kontaktformular
                 </div>
                 <div>
-                    <ContactComponent />
+                    <Suspense fallback={null}>
+                        <ContactComponent />
+                    </Suspense>
                 </div>
             </div>
 
