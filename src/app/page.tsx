@@ -35,6 +35,9 @@ const fields: Field[] = [
             { label: "Haushalt", href: "/insurance/flat" },
             { label: "Unfall", href: "/insurance/accident" },
             { label: "Rechtsschutz", href: "/insurance/law" },
+            { label: "Kranken", href: "/insurance/health" },
+            { label: "Berufsunfähigkeit", href: "/insurance/disability" },
+            { label: "Leben", href: "/insurance/life" },
         ],
     },
     {
@@ -66,7 +69,9 @@ const fields: Field[] = [
         headline: "Wir finden den besten Tarif für Sie.",
         text: "Wir vergleichen den Markt und wechseln Sie zum kostengünstigsten Anbieter. So minimieren wir Ihre monatlichen Fixkosten sofort und dauerhaft.",
         links: [
-            { label: "Beratung anfragen", href: "/contact" },
+            { label: "Tarifvergleich", href: "/energy/compare" },
+            { label: "Öko-Tarife", href: "/energy/eco" },
+            { label: "Anbieterwechsel", href: "/energy/switch" },
         ],
     },
 ];

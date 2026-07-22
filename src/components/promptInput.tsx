@@ -15,10 +15,16 @@ const routeMatches: RouteMatch[] = [
     { keywords: ["haushalt", "wohnung"], href: "/insurance/flat" },
     { keywords: ["rechtsschutz", "anwalt", "rechtsstreit"], href: "/insurance/law" },
     { keywords: ["unfall"], href: "/insurance/accident" },
+    { keywords: ["berufsunfähigkeit", "berufsunfahigkeit", "bu-versicherung", "arbeitskraft"], href: "/insurance/disability" },
+    { keywords: ["kranken", "sonderklasse", "wahlarzt"], href: "/insurance/health" },
+    { keywords: ["leben", "ableben", "hinterbliebene"], href: "/insurance/life" },
     { keywords: ["umschuldung"], href: "/finance/debtrestructing" },
     { keywords: ["wohnbaukredit", "kredit", "finanzierung"], href: "/finance/homecredit" },
     { keywords: ["gewinnfreibetrag"], href: "/investment/profitallowance" },
     { keywords: ["investment", "anlage", "vermögen", "vermogen"], href: "/investment/investmentservice" },
+    { keywords: ["öko", "oeko", "grünstrom", "gruenstrom"], href: "/energy/eco" },
+    { keywords: ["anbieterwechsel", "stromwechsel"], href: "/energy/switch" },
+    { keywords: ["strom", "gas", "energie", "tarifvergleich"], href: "/energy/compare" },
 ];
 
 function findRoute(text: string): string | null {

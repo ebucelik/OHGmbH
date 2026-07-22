@@ -11,7 +11,8 @@ type InsuranceInfo = {
     key: ProgressType;
     label: string;
     href: string;
-    image: string;
+    image?: string;
+    icon?: string;
 };
 
 const allInsurances: InsuranceInfo[] = [
@@ -23,17 +24,22 @@ const allInsurances: InsuranceInfo[] = [
     { key: ProgressType.flat, label: "Haushalt", href: "/insurance/flat", image: "/householdInsuranceInitial.webp" },
     { key: ProgressType.law, label: "Rechtsschutz", href: "/insurance/law", image: "/legalProtectionInsuranceInitial.webp" },
     { key: ProgressType.accident, label: "Unfall", href: "/insurance/accident", image: "/accidentInsuranceInitial.webp" },
+    { key: ProgressType.health, label: "Kranken", href: "/insurance/health", icon: "solar:health-bold" },
+    { key: ProgressType.disability, label: "Berufsunfähigkeit", href: "/insurance/disability", icon: "mdi:briefcase-account" },
+    { key: ProgressType.life, label: "Leben", href: "/insurance/life", image: "/lifeInsuranceInitial.webp" },
 ];
 
 type InsurancePageProps = {
     type: ProgressType;
     title: string;
     intro: ReactNode;
-    heroImage: string;
-    heroImageAlt: string;
+    heroImage?: string;
+    heroImageAlt?: string;
+    heroIcon?: string;
     whyTitle: string;
-    whyImage: string;
-    whyImageAlt: string;
+    whyImage?: string;
+    whyImageAlt?: string;
+    whyIcon?: string;
     whyText: ReactNode;
     covered: string[];
 };
@@ -46,15 +52,39 @@ function kicker(text: string) {
     );
 }
 
+function iconPanel(icon: string) {
+    return (
+        <div className="flex aspect-square w-full items-center justify-center rounded-2xl border border-black/5 bg-linear-to-br from-appGray to-white shadow-lg sm:aspect-video">
+            <Icon icon={icon} className="h-20 w-20 text-appPrimary sm:h-28 sm:w-28" />
+        </div>
+    );
+}
+
+function visual(image: string | undefined, alt: string | undefined, icon: string | undefined) {
+    if (image) {
+        return (
+            <img
+                src={image}
+                alt={alt}
+                className="w-full rounded-2xl border border-black/5 object-cover shadow-lg"
+            />
+        );
+    }
+
+    return iconPanel(icon ?? "material-symbols:shield-outline");
+}
+
 export default function InsurancePage({
     type,
     title,
     intro,
     heroImage,
     heroImageAlt,
+    heroIcon,
     whyTitle,
     whyImage,
     whyImageAlt,
+    whyIcon,
     whyText,
     covered,
 }: InsurancePageProps) {
@@ -90,11 +120,7 @@ export default function InsurancePage({
                             </div>
                         </div>
                         <div className="flex-1 fade-in-1s">
-                            <img
-                                src={heroImage}
-                                alt={heroImageAlt}
-                                className="w-full rounded-2xl border border-black/5 object-cover shadow-lg"
-                            />
+                            {visual(heroImage, heroImageAlt, heroIcon)}
                         </div>
                     </div>
                 </div>
@@ -117,11 +143,7 @@ export default function InsurancePage({
                 </h2>
                 <div className="mt-8 flex flex-col items-center gap-8 sm:flex-row sm:gap-12">
                     <div className="flex-1">
-                        <img
-                            src={whyImage}
-                            alt={whyImageAlt}
-                            className="w-full rounded-2xl border border-black/5 object-cover shadow-lg"
-                        />
+                        {visual(whyImage, whyImageAlt, whyIcon)}
                     </div>
                     <div className="flex-1 text-neutral-700 sm:text-lg">
                         {whyText}
@@ -179,14 +201,25 @@ export default function InsurancePage({
                             className="group block overflow-hidden rounded-2xl border border-black/5 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
                         >
                             <div className="relative h-28 overflow-hidden sm:h-40">
-                                <Image
-                                    src={insurance.image}
-                                    alt={`${insurance.label}-Versicherung`}
-                                    fill
-                                    sizes="(min-width: 640px) 25vw, 50vw"
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
+                                {insurance.image ? (
+                                    <>
+                                        <Image
+                                            src={insurance.image}
+                                            alt={`${insurance.label}-Versicherung`}
+                                            fill
+                                            sizes="(min-width: 640px) 25vw, 50vw"
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
+                                    </>
+                                ) : (
+                                    <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-appGray to-white">
+                                        <Icon
+                                            icon={insurance.icon ?? "material-symbols:shield-outline"}
+                                            className="h-10 w-10 text-appPrimary transition-transform duration-500 group-hover:scale-110 sm:h-14 sm:w-14"
+                                        />
+                                    </div>
+                                )}
                             </div>
                             <div className="flex items-center justify-between gap-2 px-4 py-3 text-sm font-semibold text-neutral-900">
                                 {insurance.label}

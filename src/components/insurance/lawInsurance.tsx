@@ -42,7 +42,7 @@ export default function LawInsurance() {
                             ]}
                             value={insurance.law[FormType.lawType]}
                             onChange={(event) => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {}, health: {}, disability: {}, life: {} }
                                 newInsurance.law[FormType.lawType] = event.target.getAttribute('id') ?? ""
 
                                 setInsuranceForm(newInsurance)
@@ -68,7 +68,7 @@ export default function LawInsurance() {
                             ]}
                             value={insurance.law[FormType.lawVehicles]}
                             onChange={(event) => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {}, health: {}, disability: {}, life: {} }
                                 newInsurance.law[FormType.lawVehicles] = event.target.getAttribute('id') ?? ""
 
                                 setInsuranceForm(newInsurance)
@@ -88,7 +88,7 @@ export default function LawInsurance() {
                             ]}
                             value={insurance.law[FormType.lawPersons]}
                             onChange={(event) => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {}, health: {}, disability: {}, life: {} }
                                 newInsurance.law[FormType.lawPersons] = event.target.getAttribute('id') ?? ""
 
                                 setInsuranceForm(newInsurance)
@@ -322,7 +322,7 @@ export default function LawInsurance() {
                             ]}
                             value={insurance.law[FormType.orderAccepted]}
                             onChange={() => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {}, health: {}, disability: {}, life: {} }
                                 newInsurance.law[FormType.orderAccepted] = state().insuranceCore.law[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
                                 setInsuranceForm(newInsurance)
                             }}
@@ -347,7 +347,7 @@ export default function LawInsurance() {
         steps={steps}
         onSendEmail={sendEmail}
         onNextStep={(formData) => {
-            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
+            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {}, health: {}, disability: {}, life: {} }
 
             insuranceFormTypes.forEach((type) => {
                 newInsurance.law[type] = formData.get(type)?.toString() ?? ""
