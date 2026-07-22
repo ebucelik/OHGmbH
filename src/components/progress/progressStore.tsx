@@ -11,6 +11,9 @@ import OwnhomeInsurance from "../insurance/ownhomeInsurance";
 import FlatInsurance from "../insurance/flatInsurance";
 import LawInsurance from "../insurance/lawInsurance";
 import AccidentInsurance from "../insurance/accidentInsurance";
+import HealthInsurance from "../insurance/healthInsurance";
+import DisabilityInsurance from "../insurance/disabilityInsurance";
+import LifeInsurance from "../insurance/lifeInsurance";
 
 export default function ProgressStore(
     { progressType }: { progressType: ProgressType }
@@ -41,6 +44,15 @@ export default function ProgressStore(
 
             case ProgressType.accident:
                 return <AccidentInsurance />
+
+            case ProgressType.health:
+                return <HealthInsurance />
+
+            case ProgressType.disability:
+                return <DisabilityInsurance />
+
+            case ProgressType.life:
+                return <LifeInsurance />
         }
     }
 

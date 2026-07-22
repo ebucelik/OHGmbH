@@ -242,7 +242,7 @@ body {
   --line-height: 1.1;
   --font-size-sm: 2rem;
   --line-height-sm: 1;
-  --animation-duration: 20s;
+  --animation-duration: 12s;
 }
 
 @media only screen and (min-width: 601px) {
@@ -299,39 +299,22 @@ body {
 }
 
 @keyframes scroll-text {
-  0% {
+  /* 3 Wörter + Duplikate: jedes Wort steht still, dann schneller Wechsel.
+     Endet auf dem Duplikat von Wort 1 → nahtloser Sprung zurück zu 0. */
+  0%, 28% {
     transform: translateY(0%);
-    /* trust */
   }
 
-  16.66% {
-    transform: translateY(calc(-16.66%));
-    /* loyalty */
+  33.32%, 61.32% {
+    transform: translateY(-16.66%);
   }
 
-  33.32% {
-    transform: translateY(calc(-33.32%));
-    /* respect */
-  }
-
-  49.98% {
-    transform: translateY(calc(-49.98%));
-    /* value */
-  }
-
-  66.64% {
-    transform: translateY(calc(-66.64%));
-    /* referrals */
-  }
-
-  83.3% {
-    transform: translateY(calc(-83.3%));
-    /* trust (at the end) */
+  66.64%, 94.64% {
+    transform: translateY(-33.32%);
   }
 
   100% {
-    transform: translateY(calc(-83.3%));
-    /* trust (at the end) */
+    transform: translateY(-50%);
   }
 }
 
