@@ -256,6 +256,11 @@ export default function Header() {
                                     Digitale Leistungen
                                 </div>
                                 <div>
+                                    <Link href="/services/kfz-versichererauskunft" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
+                                        KFZ-Versichererauskunft
+                                    </Link>
+                                </div>
+                                <div>
                                     <Link target="_blank" href="https://www.wefox.at/fix-app" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
                                         WeFox (fixApp)
                                     </Link>
@@ -351,6 +356,14 @@ export default function Header() {
                                 </button>
 
                                 <div className="px-2 pb-2 flex flex-col">
+                                    <Link
+                                        href="/services/kfz-versichererauskunft"
+                                        className="px-3 py-3 rounded-xl text-base font-semibold hover:bg-black/5"
+                                        onClick={toggleShowNavBar}
+                                    >
+                                        KFZ-Versichererauskunft
+                                    </Link>
+
                                     <Link
                                         href="/team"
                                         className="px-3 py-3 rounded-xl text-base font-semibold hover:bg-black/5"

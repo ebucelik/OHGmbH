@@ -2,7 +2,7 @@ export default function Dataprotection() {
     return <div className="pt-30">
         <main className="max-w-4xl mx-auto px-6 py-12">
             <h2 className="text-3xl font-bold text-appPrimary mb-8">Datenschutzerklärung</h2>
-            <p className="text-sm text-gray-500 mb-10">Stand: 19. November 2025</p>
+            <p className="text-sm text-gray-500 mb-10">Stand: 22. Juli 2026</p>
 
             <div className="space-y-10 text-lg">
                 <section>
@@ -88,7 +88,14 @@ export default function Dataprotection() {
                 </section>
 
                 <section>
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">9. Keine automatisierte Entscheidungsfindung</h3>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">9. KFZ-Versichererauskunft</h3>
+                    <p>
+                        Bei Nutzung unserer KFZ-Versichererauskunft werden das eingegebene Kennzeichen und das Unfalldatum ausschließlich zur Ermittlung des zuständigen Haftpflichtversicherers an den Versicherungsverband Österreich (VVO) übermittelt. Wir speichern das Kennzeichen und das Abfrageergebnis nicht dauerhaft. Weitere Informationen finden Sie in der <a href="https://www.vvo.at/datenschutzerklaerung/" target="_blank" rel="noreferrer" className="text-appPrimary underline">Datenschutzerklärung des VVO</a>.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">10. Keine automatisierte Entscheidungsfindung</h3>
                     <p>Es findet keine automatisierte Entscheidungsfindung oder Profiling statt.</p>
                 </section>
 
