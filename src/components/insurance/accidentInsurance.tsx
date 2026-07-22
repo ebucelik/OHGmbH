@@ -375,7 +375,7 @@ export default function AccidentInsurance() {
                             ]}
                             value={insurance.accident[FormType.orderAccepted]}
                             onChange={() => {
-                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
+                                const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {}, health: {}, disability: {}, life: {} }
                                 newInsurance.accident[FormType.orderAccepted] = state().insuranceCore.accident[FormType.orderAccepted] == 'NEIN' ? 'JA' : 'NEIN'
                                 setInsuranceForm(newInsurance)
                             }}
@@ -400,7 +400,7 @@ export default function AccidentInsurance() {
         steps={steps}
         onSendEmail={sendEmail}
         onNextStep={(formData) => {
-            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {} }
+            const newInsurance: Insurance = { vehicle: {}, ownHome: {}, law: {}, accident: {}, health: {}, disability: {}, life: {} }
 
             insuranceFormTypes.forEach((type) => {
                 newInsurance.accident[type] = formData.get(type)?.toString() ?? ""

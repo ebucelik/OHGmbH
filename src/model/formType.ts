@@ -71,7 +71,15 @@ export enum FormType {
     accidentDead = "Unfalltod (Summe für Hinterbliebene)",
     accidentCosts = "Unfallkosten",
     accidentBonebreak = "Knochenbruch",
-    accidentHospitalMoney = "Spitalgeld"
+    accidentHospitalMoney = "Spitalgeld",
+    healthTreatmentClass = "Sonderklasse",
+    healthDental = "Zahnersatz",
+    healthForeignCountry = "Auslandskrankenversicherung",
+    disabilityMonthlyPension = "Gewünschte monatliche BU-Rente",
+    disabilityEndAge = "Versicherung bis zum Alter von",
+    lifePurpose = "Zweck der Lebensversicherung",
+    lifeInsuranceSum = "Gewünschte Versicherungssumme",
+    lifeDuration = "Laufzeit"
 }
 
 export const insuranceFormTypes = Object.values(FormType)

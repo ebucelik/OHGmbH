@@ -2,390 +2,141 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ReactElement, useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import React from "react";
+
+const rotatingWords = ["Versicherungs", "Finanzierungs", "Vermögens", "Energie"];
 
 export default function Header() {
-    enum Menu {
-        solution = "Lösungen",
-        service = "Leistungen",
-        team = "Team",
-        contact = "Kontakt",
-        default = ""
-    }
-    const [showNavBar, setShowNavBar] = useState(false);
-    const [hideHeaderWhileScrollingDown, setHideHeaderWhileScrollingDown] = useState("sm:translate-y-0");
-    const [menu, setMenu] = useState(Menu.default);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [hidden, setHidden] = useState(false);
 
-    let previousScrollY = 0
+    useEffect(() => {
+        let previousY = window.scrollY;
 
-    function toggleShowNavBar() {
-        setMenu(Menu.default);
-        setShowNavBar(!showNavBar);
-    }
+        function onScroll() {
+            const y = window.scrollY;
+            setScrolled(y > 8);
+            setHidden(y > previousY && y > 120);
+            previousY = y;
+        }
 
-    React.useEffect(() => {
-        window.addEventListener("wheel", (event) => {
-            if (event.deltaY > 0) {
-                setHideHeaderWhileScrollingDown("sm:-translate-y-100");
-            } else {
-                setHideHeaderWhileScrollingDown("sm:translate-y-0");
-            }
-        })
-
-        window.addEventListener("scroll", () => {
-            if (innerWidth < 768) {
-                if (previousScrollY > scrollY || scrollY <= 0) {
-                    setHideHeaderWhileScrollingDown("sm:translate-y-0");
-                } else {
-                    setHideHeaderWhileScrollingDown("sm:-translate-y-100");
-                }
-            }
-
-            previousScrollY = scrollY
-        })
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    function navBody(): ReactElement {
-        return <div
-            className={`flex flex-col sm:flex-row sm:block ${menu == Menu.default || menu == Menu.contact || menu == Menu.team ? 'hidden' : 'pt-5'}`}
-            onMouseEnter={() => setMenu(menu)}
-            onMouseLeave={() => setMenu(Menu.default)}
-        >
-            <div className="flex flex-row sm:hidden" onClick={() => setMenu(Menu.default)}>
-                <div>
-                    <Icon icon="material-symbols:chevron-left-rounded" />
-                </div>
-                <div className="text-xs place-content-center">
-                    {
-                        menu
-                    }
-                </div>
-            </div>
-
-            {
-                menuBody()
-            }
-        </div>;
-    }
-
-    function menuBody(): ReactElement {
-        switch (menu) {
-            case Menu.solution:
-                return <div className="flex flex-col sm:flex-row fade-in-05s gap-1">
-                    <div className="sm:flex-1"></div>
-                    <div className="flex-2 p-2 backdrop-blur-md bg-white/60 border border-gray-200 rounded-2xl">
-                        <div className="font-bold sm:text-xl">
-                            Versicherungen
-                        </div>
-                        <div className="grid grid-cols-3 sm:text-lg">
-                            <div className="py-2 pl-2">
-                                <div className="font-bold pb-2">
-                                    Mobilität
-                                </div>
-                                <div>
-                                    <Link href="/insurance/car" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Auto
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/insurance/lkw" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        LKW
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/insurance/motorcycle" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Motorrad
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/insurance/moped" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Moped
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="py-2 pl-2">
-                                <div className="font-bold pb-2">
-                                    Wohnung
-                                </div>
-                                <div>
-                                    <Link href="/insurance/ownhome" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Eigenheim
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/insurance/flat" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Haushalt
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="py-2 pl-2">
-                                <div className="font-bold pb-2">
-                                    Sicherheit
-                                </div>
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Krankenvers.
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Berufsunfähigk.
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/insurance/accident" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Unfall
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Ableben
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="py-2 pl-2">
-                                <div className="font-bold pb-2">
-                                    Recht
-                                </div>
-                                <div>
-                                    <Link href="/insurance/law" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Rechtsschutz
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/60 border border-gray-200 rounded-2xl">
-                        <div className="font-bold sm:text-xl">
-                            Finanzierungen
-                        </div>
-                        <div className="grid grid-cols-2 sm:text-lg">
-                            <div className="py-2 pl-2">
-                                <div>
-                                    <Link href="/finance/homecredit" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Wohnbaukredit
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/finance/debtrestructing" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Umschuldung
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/60 border border-gray-200 rounded-2xl">
-                        <div className="font-bold sm:text-xl">
-                            Vermögensaufbau
-                        </div>
-                        <div className="grid grid-cols-1 sm:text-lg">
-                            <div className="py-2 pl-2">
-                                <div>
-                                    <Link href="/investment/investmentservice" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Investment-Service
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/investment/profitallowance" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Gewinnfreibetrag
-                                    </Link>
-                                </div>
-                                {/* <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Rendite-Rechner
-                                    </Link>
-                                </div> */}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex-1 p-2 backdrop-blur-md bg-white/60 border border-gray-200 rounded-2xl">
-                        <div className="font-bold sm:text-xl">
-                            Strom & Gas
-                        </div>
-                        <div className="grid grid-cols-1 sm:text-lg">
-                            <div className="py-2 pl-2">
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Tarifvergleich
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Wechsel des Anbieters
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/info" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Öko-Tarife
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>;
-
-            case Menu.service:
-                return <div className="flex flex-col sm:flex-row fade-in-05s gap-1 sm:gap-10">
-                    <div className="sm:flex-2"></div>
-                    <div className="flex-2">
-                        <div className="grid grid-cols-2 gap-1 sm:text-lg">
-                            <div className="p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
-                                <div className="font-bold pb-2">
-                                    Schadenmeldung
-                                </div>
-                                <div>
-                                    <Link href="/services" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        KFZ-Schaden
-                                    </Link>
-                                </div>
-                                <div>
-                                    <Link href="/services" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        Haushaltsschaden
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="p-2 backdrop-blur-md bg-white/30 border border-gray-200 rounded-2xl">
-                                <div className="font-bold pb-2">
-                                    Digitale Leistungen
-                                </div>
-                                <div>
-                                    <Link target="_blank" href="https://www.wefox.at/fix-app" onClick={() => { toggleShowNavBar() }} className="hover:underline hover:underline-offset-8 hover:decoration-appPrimary">
-                                        WeFox (fixApp)
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>;
-
-            default:
-                return <div></div>;
-        };
+    function closeAll() {
+        setMobileOpen(false);
     }
 
     return (
-        <nav className={`${hideHeaderWhileScrollingDown} absolute sm:fixed w-full top-0 z-10 easeIn transition duration-300`}>
-            <div className="p-3" >
-                <div className="px-3 py-2 sm:p-5 backdrop-blur-md bg-white/60 sm:bg-white/30 rounded-2xl sm:rounded-4xl fade-down-1s border border-white/30">
-                    <div className="flex flex-row">
-                        <div className="py-1 px-2 flex-1">
-                            <Link href="/">
-                                <Image
-                                    src="/ohlogo.svg"
-                                    alt="OH GmbH Logo"
-                                    width={70}
-                                    height={70}
-                                    priority
-                                    onClick={() => setMenu(Menu.default)}
-                                />
+        <header
+            className={`fixed inset-x-0 top-0 z-50 transition-transform duration-300 ease-in-out ${hidden && !mobileOpen ? "-translate-y-[130%]" : "translate-y-0"}`}
+        >
+            <div className="mx-auto max-w-6xl px-3 pt-3 sm:px-5">
+                <div
+                    className={`rounded-2xl border border-black/5 backdrop-blur-lg transition-all duration-300 ${mobileOpen ? "bg-white/95" : "bg-white/80"} ${scrolled || mobileOpen ? "shadow-[0_12px_40px_rgba(0,0,0,0.12)]" : "shadow-[0_4px_20px_rgba(0,0,0,0.06)]"}`}
+                >
+                    <div className="flex h-16 items-center justify-between px-4 sm:px-6 md:h-18">
+                        <Link href="/" onClick={closeAll} className="flex items-center gap-2.5">
+                            <Image
+                                src="/ohlogo.svg"
+                                alt="OH GmbH Logo"
+                                width={44}
+                                height={44}
+                                priority
+                            />
+                            <div className="leading-tight">
+                                <div className="text-lg font-bold tracking-tight text-neutral-900">
+                                    OH GmbH
+                                </div>
+                                <div className="hidden text-sm font-medium sm:flex">
+                                    <div className="tagline-window grow">
+                                        <div className="tagline-inner bg-linear-to-r from-black to-appPrimary bg-clip-text text-transparent">
+                                            {[...rotatingWords, ...rotatingWords].map((word, index) => (
+                                                <div
+                                                    key={index}
+                                                    aria-hidden={index >= rotatingWords.length}
+                                                    className="h-5 leading-5"
+                                                >
+                                                    {word}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <span className="leading-5 text-appPrimary">berater</span>
+                                </div>
+                            </div>
+                        </Link>
+
+                        <nav className="hidden items-center gap-1 md:flex">
+                            <Link
+                                href="/team"
+                                onClick={closeAll}
+                                className="rounded-full px-4 py-2 text-[15px] font-semibold text-neutral-800 transition-colors duration-300 hover:bg-appGray/70"
+                            >
+                                Team
+                            </Link>
+                            <Link
+                                href="/contact"
+                                onClick={closeAll}
+                                className="rounded-full px-4 py-2 text-[15px] font-semibold text-neutral-800 transition-colors duration-300 hover:bg-appGray/70"
+                            >
+                                Kontakt
+                            </Link>
+                        </nav>
+
+                        <Link
+                            href="/contact"
+                            onClick={closeAll}
+                            aria-label="Beratung anfragen"
+                            className="hidden items-center justify-center rounded-full bg-appPrimary h-11 w-11 shadow-sm transition duration-300 hover:shadow-md hover:brightness-95 md:flex"
+                        >
+                            <Icon icon="material-symbols:calendar-month-rounded" className="h-6 w-6 text-neutral-900" />
+                        </Link>
+
+                        <button
+                            type="button"
+                            onClick={() => setMobileOpen(!mobileOpen)}
+                            aria-label="Menü öffnen"
+                            className="flex items-center justify-center rounded-full p-2 transition-colors hover:bg-appGray/70 md:hidden"
+                        >
+                            <Icon
+                                icon={mobileOpen ? "ri:close-line" : "ri:menu-3-line"}
+                                className="h-7 w-7"
+                            />
+                        </button>
+                    </div>
+
+                    {mobileOpen && (
+                        <div className="border-t border-black/5 px-5 pb-5 fade-in-05s md:hidden">
+                            <Link
+                                href="/team"
+                                onClick={closeAll}
+                                className="block border-b border-black/5 py-3 text-base font-semibold text-neutral-900"
+                            >
+                                Team
+                            </Link>
+                            <Link
+                                href="/contact"
+                                onClick={closeAll}
+                                className="block border-b border-black/5 py-3 text-base font-semibold text-neutral-900"
+                            >
+                                Kontakt
+                            </Link>
+                            <Link
+                                href="/contact"
+                                onClick={closeAll}
+                                className="mt-4 flex items-center justify-center gap-1.5 rounded-full bg-appPrimary px-5 py-3 text-sm font-bold text-neutral-900 shadow-sm"
+                            >
+                                Beratung anfragen
+                                <Icon icon="material-symbols:arrow-forward-rounded" className="h-4 w-4" />
                             </Link>
                         </div>
-                        <div className="hidden mx-auto w-2/4 sm:flex flex-row text-xl font-bold text-center">
-                            <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.solution ? 'text-appPrimary' : ''}`}
-                                onMouseEnter={() => setMenu(Menu.solution)}
-                                onMouseLeave={() => setMenu(Menu.default)}
-                            >
-                                <div className="invisible flex flex-row place-items-center gap-1">
-                                    <div>
-                                        Lösungen
-                                    </div>
-                                    <div>
-                                        <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.solution ? 'rotate-180 text-appPrimary' : ''}`} />
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.service ? 'text-appPrimary' : ''}`}
-                                onMouseEnter={() => setMenu(Menu.service)}
-                                onMouseLeave={() => setMenu(Menu.default)}
-                            >
-                                <div className="invisible flex flex-row place-items-center gap-1">
-                                    <div>
-                                        Leistungen
-                                    </div>
-                                    <div>
-                                        <Icon icon="ooui:down-triangle" className={`h-4 w-4 easeIn transition duration-500 ${menu == Menu.service ? 'rotate-180 text-appPrimary' : ''}`} />
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.team ? 'text-appPrimary' : 'hover:text-appPrimary'}`}
-                                onClick={() => setMenu(Menu.team)}
-                            >
-                                <Link href="/team">Team</Link>
-                            </div>
-                            <div
-                                className={`flex-1 decoration-appPrimary content-center rounded-lg duration-500 cursor-pointer ${menu == Menu.contact ? 'text-appPrimary' : 'hover:text-appPrimary'}`}
-                                onClick={() => setMenu(Menu.contact)}
-                            >
-                                <Link href="/contact">Kontakt</Link>
-                            </div>
-                        </div>
-                        <div className="block content-center sm:hidden" onClick={toggleShowNavBar}>
-                            <Icon icon="ri:menu-3-line" className={`h-6 w-6 easeIn transition duration-500 ${showNavBar ? 'rotate-90' : ''}`} />
-                        </div>
-                    </div>
-                    <div className="hidden sm:block">
-                        {
-                            navBody()
-                        }
-                    </div>
-                    {showNavBar && (
-                        <div className="sm:hidden mt-2">
-                            <div className="rounded-2xl border border-white/30 bg-white/70 backdrop-blur-md shadow-xl overflow-hidden">
-
-                                <button
-                                    className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold tracking-wide"
-                                    onClick={toggleShowNavBar}
-                                >
-                                    <span className="uppercase tracking-[0.2em] opacity-80">Menü</span>
-                                    <Icon icon="material-symbols:close-rounded" className="h-6 w-6" />
-                                </button>
-
-                                <div className="px-2 pb-2 flex flex-col">
-                                    <Link
-                                        href="/team"
-                                        className="px-3 py-3 rounded-xl text-base font-semibold hover:bg-black/5"
-                                        onClick={toggleShowNavBar}
-                                    >
-                                        Team
-                                    </Link>
-
-                                    <Link
-                                        href="/contact"
-                                        className="px-3 py-3 rounded-xl text-base font-semibold hover:bg-black/5"
-                                        onClick={toggleShowNavBar}
-                                    >
-                                        Kontakt
-                                    </Link>
-
-                                    {/* Optional: CTA Button */}
-                                    <Link
-                                        href="/contact"
-                                        className="mt-2 mx-2 mb-2 px-4 py-3 rounded-xl text-base font-semibold text-center bg-appPrimary text-black"
-                                        onClick={toggleShowNavBar}
-                                    >
-                                        Beratung anfragen
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
                     )}
-                    <div className="sm:hidden">
-                        {
-                            navBody()
-                        }
-                    </div>
                 </div>
             </div>
-        </nav>
+        </header>
     );
 }

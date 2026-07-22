@@ -242,7 +242,7 @@ body {
   --line-height: 1.1;
   --font-size-sm: 2rem;
   --line-height-sm: 1;
-  --animation-duration: 20s;
+  --animation-duration: 12s;
 }
 
 @media only screen and (min-width: 601px) {
@@ -265,6 +265,30 @@ body {
   }
 }
 
+.tagline-window {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  height: 1.25rem;
+}
+
+.tagline-inner {
+  display: block;
+  text-align: right;
+  animation: tagline-scroll 16s ease-in-out infinite;
+}
+
+@keyframes tagline-scroll {
+  0%, 10.5% { transform: translateY(0); }
+  12.5%, 23% { transform: translateY(-12.5%); }
+  25%, 35.5% { transform: translateY(-25%); }
+  37.5%, 48% { transform: translateY(-37.5%); }
+  50%, 60.5% { transform: translateY(-50%); }
+  62.5%, 73% { transform: translateY(-62.5%); }
+  75%, 85.5% { transform: translateY(-75%); }
+  87.5%, 100% { transform: translateY(-87.5%); }
+}
+
 .window-inner {
   display: inline-block;
   animation: scroll-text var(--animation-duration) ease-in-out infinite;
@@ -275,39 +299,22 @@ body {
 }
 
 @keyframes scroll-text {
-  0% {
+  /* 3 Wörter + Duplikate: jedes Wort steht still, dann schneller Wechsel.
+     Endet auf dem Duplikat von Wort 1 → nahtloser Sprung zurück zu 0. */
+  0%, 28% {
     transform: translateY(0%);
-    /* trust */
   }
 
-  16.66% {
-    transform: translateY(calc(-16.66%));
-    /* loyalty */
+  33.32%, 61.32% {
+    transform: translateY(-16.66%);
   }
 
-  33.32% {
-    transform: translateY(calc(-33.32%));
-    /* respect */
-  }
-
-  49.98% {
-    transform: translateY(calc(-49.98%));
-    /* value */
-  }
-
-  66.64% {
-    transform: translateY(calc(-66.64%));
-    /* referrals */
-  }
-
-  83.3% {
-    transform: translateY(calc(-83.3%));
-    /* trust (at the end) */
+  66.64%, 94.64% {
+    transform: translateY(-33.32%);
   }
 
   100% {
-    transform: translateY(calc(-83.3%));
-    /* trust (at the end) */
+    transform: translateY(-50%);
   }
 }
 
