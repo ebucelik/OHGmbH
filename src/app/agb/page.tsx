@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Agb() {
     return <div className="pt-30">
-        <main className="max-w-4xl mx-auto px-6 py-12">
+        <main className="max-w-6xl mx-auto px-3 sm:px-5 py-12">
             <h2 className="text-3xl font-bold text-appPrimary mb-8">Allgemeine Geschäftsbedingungen (AGB)</h2>
             <p className="text-sm text-gray-500 mb-10">Stand: 19. November 2025</p>
 

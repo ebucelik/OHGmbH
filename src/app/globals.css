@@ -342,3 +342,42 @@ body {
   flex: 0 0 100%;
   min-width: 0;
 }
+
+.section--gold {
+  position: relative;
+  overflow: hidden;
+  background: #faf6ee;
+}
+
+.oh-stamp {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 340px;
+  height: 340px;
+  transform: translate(-50%, -50%);
+  opacity: 0.11;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.oh-stamp__ring {
+  position: absolute;
+  inset: 0;
+  border: 8px solid #a37f2e;
+  border-radius: 50%;
+}
+
+.oh-stamp__ring--inner {
+  inset: 16px;
+  border-width: 3px;
+}
+
+.oh-stamp__mark {
+  position: absolute;
+  inset: 58px;
+  background: #a37f2e;
+  -webkit-mask: url("/ohlogo.svg") center / contain no-repeat;
+  mask: url("/ohlogo.svg") center / contain no-repeat;
+}

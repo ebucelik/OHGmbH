@@ -1,1 +1,1 @@
-export const defaultPadding = "py-15 sm:py-10 px-5 sm:px-10";
+export const defaultPadding = "mx-auto max-w-6xl py-15 sm:py-10 px-3 sm:px-5";

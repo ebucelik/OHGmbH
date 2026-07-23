@@ -180,7 +180,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 className="pt-25"
             >
-                <div className="flex flex-col p-6 sm:p-10 mx-3 sm:mx-[10%] 2xl:mx-[15%] gap-5">
+                <div className="flex flex-col p-6 sm:p-10 mx-auto max-w-6xl px-3 sm:px-5 gap-5">
 
                     <div className={`${archivo.className} text-center text-4xl sm:text-8xl bg-linear-to-r from-black from-35% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
                         Harald Otto
@@ -243,7 +243,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 className="pt-25"
             >
-                <div className="flex flex-col p-6 sm:p-10 mx-3 sm:mx-[10%] 2xl:mx-[15%] gap-5">
+                <div className="flex flex-col p-6 sm:p-10 mx-auto max-w-6xl px-3 sm:px-5 gap-5">
 
                     {/* NAME – NUR MOBILE GANZ OBEN */}
                     <div className={`${archivo.className} text-center text-4xl sm:text-8xl bg-linear-to-r from-black from-35% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
@@ -298,7 +298,7 @@ export default function Home() {
             {
                 // Our services
             }
-            < div className={`${defaultPadding} sm:px-0 w-full sm:py-25`}>
+            < div className={`${defaultPadding} w-full sm:py-25`}>
                 <div className={`${archivo.className} sm:px-10 mb-2.5 sm:mb-10 text-4xl sm:text-7xl font-bold sm:text-center `}>
                     <div className={`${archivo.className} text-5xl sm:text-7xl bg-linear-to-r from-black from-35% via-appPrimary via-50% to-appPrimary to-100% bg-clip-text text-transparent`}>
                         Unsere Fachgebiete
@@ -356,7 +356,7 @@ export default function Home() {
             {
                 // Partner
             }
-            < div className={`${defaultPadding} sm:px-0 w-full`}>
+            < div className={`${defaultPadding} w-full`}>
                 <div className={`${archivo.className} px-5 sm:px-10 mb-8 sm:mb-12 text-3xl sm:text-5xl font-bold text-center`}>
                     Über 30 starke Partner im Vergleich
                 </div>
@@ -379,7 +379,8 @@ export default function Home() {
             {
                 // Statistics
             }
-            < div className={`${defaultPadding} flex flex-col gap-15 sm:gap-20 bg-appPrimary text-white text-center`}>
+            < div className="w-full bg-appPrimary text-white text-center">
+            <div className={`${defaultPadding} flex flex-col gap-15 sm:gap-20`}>
                 <div className="flex flex-col mt-30 sm:flex-row gap-10 sm:gap-30 text-center justify-center">
                     <div>
                         <CountUpComponent
@@ -429,6 +430,7 @@ export default function Home() {
                 <div className="flex flex-row place-content-center">
                     <Button text={"Jetzt Termin anfragen"} iconName="hugeicons:appointment-01" isPrimary={true} className="text-black bg-white" href="/contact" />
                 </div>
+            </div>
             </div >
 
             {
