@@ -35,13 +35,18 @@ const teamMembers = [
 
 export default function Team() {
     return <div className="pt-38">
-        <section className="relative bg-appPrimary py-10 overflow-hidden">
-            <div className="absolute inset-0 bg-linear-to-br from-blue-600/5 to-transparent"></div>
-            <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        <section className="section--gold py-10">
+            <div className="oh-stamp">
+                <div className="oh-stamp__ring" />
+                <div className="oh-stamp__ring oh-stamp__ring--inner" />
+                <div className="oh-stamp__mark" />
+            </div>
+            <div className="relative z-1 max-w-6xl mx-auto px-3 sm:px-5 text-center">
+                <h1 className={`${archivo.className} text-5xl md:text-6xl text-[#2a2018] mb-4`}>
                     Unser Team
                 </h1>
-                <p className="text-xl text-black max-w-3xl mx-auto">
+                <div className="mx-auto mb-6 h-1 w-16 rounded-full bg-[#d3af5b]" />
+                <p className="text-xl text-[#5c5344] max-w-3xl mx-auto">
                     Wir sind ein eingespieltes Team, das fachliche Kompetenz,
                     langjährige Erfahrung und persönliches Engagement vereint. Gemeinsam entwickeln wir maßgeschneiderte
                     Lösungen, die genau auf die individuellen Bedürfnisse und Ziele unserer Kunden abgestimmt sind.
@@ -54,7 +59,7 @@ export default function Team() {
 
         {/* Team Grid */}
         <section className="py-20 bg-white">
-            <div className="mx-auto lg:px-8">
+            <div className="mx-auto max-w-6xl px-3 sm:px-5">
                 <div className="flex flex-col sm:flex-row justify-center gap-10">
                     {teamMembers.map((member) => (
                         <div
@@ -142,31 +147,37 @@ export default function Team() {
             </div>
         </section>
 
-        <section className="py-20 bg-appPrimary text-white">
-            <div className={`${defaultPadding} flex flex-col gap-30 pb-40 sm:gap-20 bg-appPrimary text-black`}>
+        <section className="section--gold py-20">
+            <div className="oh-stamp">
+                <div className="oh-stamp__ring" />
+                <div className="oh-stamp__ring oh-stamp__ring--inner" />
+                <div className="oh-stamp__mark" />
+            </div>
+            <div className={`${defaultPadding} relative z-1 flex flex-col gap-30 pb-40 sm:gap-20`}>
                 <div>
 
                     <div className="flex flex-col gap-1 place-items-start sm:mx-30 lg:mx-70">
-                        <div className={`${archivo.className} text-7xl sm:text-7xl bg-linear-to-r to-100% bg-clip-text`}>
+                        <div className={`${archivo.className} text-7xl sm:text-7xl text-[#2a2018]`}>
                             Gewerbe
                         </div>
+                        <div className="mb-2 h-1 w-16 rounded-full bg-[#d3af5b]" />
 
                         <div className="flex flex-col gap-2 pt-3">
                             <div className="flex flex-col gap-2 t text-2xl sm:text-2xl">
-                                <b>Gisa 38712760</b>
+                                <b className="text-[#a37f2e]">Gisa 38712760</b>
                             </div>
 
-                            <div>
+                            <div className="text-[#5c5344]">
                                 Versicherungsvermittlung in der Form Versicherungsmakler und Beratung in
                                 Versicherungsangelegenheiten
                             </div>
                         </div>
                         <div className="flex flex-col gap-2 pt-3">
                             <div className="flex flex-col gap-2 t text-2xl sm:text-2xl">
-                                <b> Gisa 38781612</b>
+                                <b className="text-[#a37f2e]"> Gisa 38781612</b>
                             </div>
 
-                            <div>
+                            <div className="text-[#5c5344]">
                                 Vermittlung von Werk- und Dienstleistungsverträgen an Befugte unter Ausschluss der
                                 Übernahme von
                                 Aufträgen im eigenen Namen und auf eigene Rechnung sowie ausgenommen der den
@@ -176,10 +187,10 @@ export default function Team() {
                         </div>
                         <div className="flex flex-col gap-2 pt-3">
                             <div className="flex flex-col gap-2 t text-2xl sm:text-2xl">
-                                <b>Gisa 38923609</b>
+                                <b className="text-[#a37f2e]">Gisa 38923609</b>
                             </div>
 
-                            <div>
+                            <div className="text-[#5c5344]">
                                 Gewerbliche Vermögensberatung mit Berechtigung nach § 1 Z 44 WAG 2018 als vertraglich
                                 gebundener Vermittler ohne Berechtigung zur Vermittlung von Lebens- und
                                 Unfallversicherungen

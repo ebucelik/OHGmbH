@@ -2,8 +2,8 @@ import Button from "../../../components/button";
 
 export default function DebtRestructing() {
     return <div className="pt-30">
-        <div className={`flex flex-col gap-10`}>
-            <div className="bg-appGray rounded-2xl flex flex-col place-items-center sm:flex-row gap-5 px-10 py-5 sm:py-20 sm:p-20 sm:mx-10">
+        <div className="flex flex-col gap-10 mx-auto max-w-6xl px-3 sm:px-5">
+            <div className="bg-appGray rounded-2xl flex flex-col place-items-center sm:flex-row gap-5 px-10 py-5 sm:py-20 sm:p-20">
                 <div className="flex-1 text-2xl sm:text-5xl text-left">
                     Altkredite prüfen und <span className="decoration-appPrimary underline underline-offset-8">Zinskosten senken</span>
                 </div>

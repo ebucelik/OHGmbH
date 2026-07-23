@@ -64,7 +64,7 @@ export default function VvoLookup() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
             <form
                 onSubmit={handleSubmit}
-                className="rounded-3xl border border-appPrimary/30 bg-white p-6 shadow-xl shadow-appSecondary/10 sm:p-9"
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:p-9"
             >
                 <div className="space-y-6">
                     <div>
@@ -81,14 +81,14 @@ export default function VvoLookup() {
                             autoComplete="off"
                             maxLength={12}
                             required
-                            className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-4 text-xl font-semibold uppercase outline-none transition focus:border-appPrimary focus:ring-4 focus:ring-appPrimary/20"
+                            className="w-full rounded-2xl border border-gray-100 bg-transparent px-3 py-4 text-xl font-semibold uppercase shadow-sm transition duration-300 ease focus:border-gray-400 focus:shadow focus:outline-none hover:border-gray-300"
                         />
                         <p className="mt-2 text-sm text-gray-500">Bitte nach dem Orts- oder Bezirkskürzel einen Bindestrich setzen.</p>
                     </div>
 
                     <div>
                         <label htmlFor="accident-date" className="mb-2 block text-sm font-bold uppercase tracking-wider text-appSecondary">
-                            Unfalldatum
+                            Datum
                         </label>
                         <input
                             id="accident-date"
@@ -98,7 +98,7 @@ export default function VvoLookup() {
                             onChange={(event) => setDate(event.target.value)}
                             max={today}
                             required
-                            className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-4 text-xl font-semibold outline-none transition focus:border-appPrimary focus:ring-4 focus:ring-appPrimary/20"
+                            className="w-full rounded-2xl border border-gray-100 bg-transparent px-3 py-4 text-xl font-semibold shadow-sm transition duration-300 ease focus:border-gray-400 focus:shadow focus:outline-none hover:border-gray-300"
                         />
                     </div>
                 </div>
@@ -116,7 +116,7 @@ export default function VvoLookup() {
                 </button>
             </form>
 
-            <div className="min-h-80 rounded-3xl bg-appSecondary p-6 text-white shadow-xl shadow-appSecondary/20 sm:p-9" aria-live="polite">
+            <div className="min-h-80 rounded-2xl bg-appSecondary p-6 text-white shadow-sm sm:p-9" aria-live="polite">
                 {!insurer && !error && (
                     <div className="flex h-full min-h-64 flex-col justify-center">
                         <p className="text-sm font-bold uppercase tracking-[0.2em] text-appPrimary">VVO-Auskunft</p>
