@@ -88,9 +88,19 @@ Das echte Projekt ist **`~/Downloads/OHGmbH-git`** (dieses Git-Repo).
 
 ### Git-Regeln
 - **Nie direkt auf `main` arbeiten** — immer Feature-Branch anlegen, Änderungen per Pull Request
-- Branch-Namen englisch, z. B. `feat/...`, `fix/...`, `redesign/...`
+- Branch-Namen englisch, z. B. `feat/...`, `fix/...`, `docs/...`
 - Commit-Messages englisch und aussagekräftig
-- Remote ist `ebucelik/OHGmbH`; Branches löschen kann nur der Repo-Admin
+- Remote ist `ebucelik/OHGmbH`
+
+**Wichtig — GitHub-Regeln des Repos:** Für **alle** Branches gilt „Änderungen nur per
+Pull Request". Ein Push auf einen bereits bestehenden Remote-Branch wird deshalb immer
+abgelehnt (`GH013`). Arbeit hochladen geht nur über einen **neuen** Branch:
+
+```bash
+git push origin <lokaler-branch>:refs/heads/<neuer-branch-name>
+```
+
+Branches löschen und Force-Push sind ebenfalls gesperrt — das kann nur der Repo-Admin.
 
 ### Secrets
 - **Niemals API-Schlüssel oder Passwörter in den Code schreiben oder committen**
